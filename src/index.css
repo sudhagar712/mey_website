@@ -128,7 +128,12 @@
 
     font-family: 'Poppins', sans-serif;
 
-background: #FFB800;
+background: linear-gradient(
+  135deg,
+  #FFE45C 0%,
+  #FDCC14 50%,
+  #E6B800 100%
+);
 
     min-height: 100vh;
     width: 100%;
