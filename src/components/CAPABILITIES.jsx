@@ -103,15 +103,15 @@ const CAPABILITIES = () => {
                             className="scroll-reveal relative overflow-hidden bg-[#0f0f0f] text-white rounded-[2rem] p-10 md:p-12 flex flex-col justify-between group hover:-translate-y-3 transition-transform duration-500 ease-out shadow-2xl shadow-black/10 min-h-[320px]"
                             style={{ transitionDelay: `${i * 0.1}s` }}
                         >
-                            {/* Hover Background Image (Absolute positioned behind content) */}
-                            <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-40 transition-opacity duration-700 ease-in-out">
+                            {/* Background Image (Absolute positioned behind content) */}
+                            <div className="absolute inset-0 z-0 opacity-50">
                                 <img
                                     src={cap.imgUrl}
                                     alt={cap.title}
-                                    className="w-full h-full object-cover transform scale-110 group-hover:scale-100 transition-transform duration-700 ease-out"
+                                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                                 />
                                 {/* Gradient Overlay to ensure text remains readable */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent mix-blend-multiply"></div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20"></div>
                             </div>
 
                             {/* Card Content (Relative positioned above image) */}
@@ -121,12 +121,12 @@ const CAPABILITIES = () => {
                                         {cap.num} /
                                     </span>
 
-                                    <h3 className="text-[1.75rem] md:text-[2rem] font-bold tracking-tight mb-4 text-[#ffff00] group-hover:text-white transition-colors duration-500 drop-shadow-lg" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                                    <h3 className="text-[1.75rem] md:text-[2rem] font-bold tracking-tight mb-4 text-white drop-shadow-lg" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                                         {cap.title}.
                                     </h3>
                                 </div>
 
-                                <p className="text-base md:text-lg text-white/50 group-hover:text-white leading-relaxed font-light mt-12 transition-colors duration-500 drop-shadow-md" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                                <p className="text-base md:text-lg text-white/90 leading-relaxed font-light mt-12 drop-shadow-md" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                                     {cap.desc}
                                 </p>
                             </div>

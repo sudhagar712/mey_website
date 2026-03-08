@@ -1,7 +1,8 @@
 import React from 'react'
+import SEO from '../components/SEO'
 import Hero from '../components/Hero'
 
-  import CAPABILITIES from '../components/CAPABILITIES'
+import CAPABILITIES from '../components/CAPABILITIES'
 import DIFFERENTIATOR from '../components/DIFFERENTIATOR'
 import ContactForm from '../components/ContactForm'
 import ContactSidebar from '../components/ContactSidebar'
@@ -9,6 +10,10 @@ import ContactSidebar from '../components/ContactSidebar'
 const Home = () => {
   return (
     <div className="mt-30">
+      <SEO
+        title="MEY | Branding & Digital Marketing Agency in Chennai"
+        description="MEY is a premium branding and digital marketing agency in Chennai offering brand identity, social media management, website development, performance marketing and outdoor advertising."
+      />
       <Hero />
 
       <CAPABILITIES />

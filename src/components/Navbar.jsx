@@ -75,8 +75,8 @@ const Navbar = () => {
                     {/* Center: Logo */}
                     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
                         <Link to="/" className="flex items-center group">
-                            <h1 className="text-[#ffff00] text-[1.8rem] md:text-[2.2rem] font-bold tracking-tighter group-hover:scale-105 transition-transform duration-300" style={{ fontFamily: 'Playfair Display, serif' }}>
-                                MEY.
+                            <h1 className="text-[#ffff00] text-[3rem] md:text-[4rem] font-bold tracking-tighter group-hover:scale-105 transition-transform duration-300" style={{ fontFamily: 'Playfair Display, serif' }}>
+                                MEY
                             </h1>
                         </Link>
                     </div>

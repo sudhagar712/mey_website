@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import SEO from '../components/SEO';
 import PageBanner from '../components/PageBanner';
 import AboutMey from '../components/AboutMey';
 
@@ -20,6 +21,10 @@ const About = () => {
 
   return (
     <>
+      <SEO
+        title="About MEY | Branding Agency in Chennai"
+        description="Learn about MEY, a branding and digital marketing agency in Chennai built on the principle Truth Before Business."
+      />
       <style>
         {`
                     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
@@ -70,7 +75,7 @@ const About = () => {
 
 
 
-              <AboutMey />
+        <AboutMey />
 
         {/* 2. Philosophy & Mission (Dark Premium Container) */}
         <section className="bg-[#0f0f0f] text-white pt-32 lg:pt-40 pb-40 px-6 md:px-12 lg:px-24 rounded-t-[2.5rem] md:rounded-t-[4.5rem] relative">

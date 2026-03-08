@@ -1,4 +1,5 @@
 import React from 'react';
+import SEO from '../components/SEO';
 import PageBanner from '../components/PageBanner';
 import ContactForm from '../components/ContactForm';
 import ContactSidebar from '../components/ContactSidebar';
@@ -26,6 +27,10 @@ const Contact = () => {
 
     return (
         <main>
+            <SEO
+                title="Contact MEY | Branding & Marketing Agency Chennai"
+                description="Contact MEY to start your next branding or digital marketing project with us."
+            />
             {/* 1. Page Banner */}
             <PageBanner title="Contact Us" breadcrumb="Contact" />
 
