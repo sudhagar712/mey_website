@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import PageBanner from '../components/PageBanner';
+import AboutMey from '../components/AboutMey';
 
 const About = () => {
   useEffect(() => {
@@ -65,10 +66,11 @@ const About = () => {
                 `}
       </style>
 
-      <main className="bg-[#ffff00] min-h-screen text-black w-full overflow-hidden">
+      <main className="bg-[#ffff00]  min-h-screen text-black w-full overflow-hidden">
 
-        {/* 1. Banner Section */}
-        <PageBanner title="About Us" breadcrumb="About" />
+
+
+              <AboutMey />
 
         {/* 2. Philosophy & Mission (Dark Premium Container) */}
         <section className="bg-[#0f0f0f] text-white pt-32 lg:pt-40 pb-40 px-6 md:px-12 lg:px-24 rounded-t-[2.5rem] md:rounded-t-[4.5rem] relative">

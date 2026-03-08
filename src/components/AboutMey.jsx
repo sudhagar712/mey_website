@@ -1,0 +1,63 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+
+const AboutMey = () => {
+    return (
+        <section className="relative w-full flex flex-col lg:flex-row min-h-[80vh] bg-black overflow-hidden">
+
+            {/* Left Side: Content (Black Background) */}
+            <div className="w-full lg:w-1/2 flex items-center justify-center p-10 py-24 md:p-16 lg:p-24 bg-black relative z-10">
+                <motion.div
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="max-w-xl w-full flex flex-col items-start"
+                >
+                    <div className="flex items-center gap-4 mb-8 mt-10">
+                        <div className="w-12 h-[2px] bg-[#ffff00]"></div>
+                        <h2 className="text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] text-[#ffff00]" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                            About Section
+                        </h2>
+                    </div>
+
+                    <h1 className="text-5xl md:text-6xl lg:text-[5rem] leading-[1.1] font-bold tracking-tighter mb-10 text-white" style={{ fontFamily: 'Playfair Display, serif' }}>
+                        About <br className="hidden md:block" />
+                        <span className="italic font-light text-[#ffff00]">MEY.</span>
+                    </h1>
+
+                    <p className="text-lg md:text-xl lg:text-2xl text-white/90 font-medium leading-[1.6] mb-8" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                        MEY is a branding and digital marketing agency in Chennai focused on building <span className="text-white border-b border-white/30 italic">clear</span>, <span className="text-white border-b border-white/30 italic">premium</span> and <span className="text-[#ffff00] border-b border-[#ffff00]/30 font-bold italic">growth-oriented</span> brands.
+                    </p>
+
+                    <p className="text-base md:text-lg text-white/50 font-medium leading-[1.6]" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                        We combine strategy, creativity and execution under one structured direction.
+                    </p>
+                </motion.div>
+            </div>
+
+            {/* Right Side: Image spanning full height/width of its half */}
+            <div className="w-full lg:w-1/2 relative min-h-[50vh] lg:min-h-[80vh] overflow-hidden group">
+                <motion.div
+                    initial={{ opacity: 0, scale: 1.05 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1.2, ease: "easeOut" }}
+                    className="absolute inset-0 w-full h-full"
+                >
+                    <img
+                        src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                        alt="About MEY Agency"
+                        className="w-full h-full object-cover filter grayscale-[20%] group-hover:scale-105 transition-transform duration-[1.5s] ease-[cubic-bezier(0.25,1,0.5,1)] origin-center"
+                    />
+
+                    {/* Gradient overlay to seamlessly blend the split edge on Desktop */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent w-[30%] lg:w-[25%] h-full pointer-events-none hidden lg:block z-10"></div>
+                </motion.div>
+            </div>
+
+        </section>
+    );
+};
+
+export default AboutMey;

@@ -12,7 +12,7 @@ const Hero = () => {
           }
         `}
             </style>
-            <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-25 pb-16 px-6 md:px-12 overflow-hidden bg-[#ffff00]">
+            <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-20 pb-16 px-6 md:px-12 overflow-hidden bg-[#ffff00]">
 
                 {/* Subtle Grid Background */}
                 <div className="absolute inset-0 pointer-events-none opacity-[0.05]"
@@ -84,13 +84,7 @@ const Hero = () => {
                     </div>
                 </div>
 
-                {/* Scroll indicator */}
-                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 overflow-hidden h-24">
-                    <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-black/50" style={{ fontFamily: 'Poppins, sans-serif' }}>Scroll</span>
-                    <div className="w-[1px] h-full bg-black/20 block relative">
-                        <div className="absolute top-0 left-0 w-full h-1/2 bg-black animate-[slideDown_2s_ease-in-out_infinite]"></div>
-                    </div>
-                </div>
+              
 
                 <style dangerouslySetInnerHTML={{
                     __html: `

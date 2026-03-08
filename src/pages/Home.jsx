@@ -1,14 +1,16 @@
 import React from 'react'
 import Hero from '../components/Hero'
-import CAPABILITIES from '../components/CAPABILITIES'
+
+  import CAPABILITIES from '../components/CAPABILITIES'
 import DIFFERENTIATOR from '../components/DIFFERENTIATOR'
 import ContactForm from '../components/ContactForm'
 import ContactSidebar from '../components/ContactSidebar'
 
 const Home = () => {
   return (
-    <div>
+    <div className="mt-30">
       <Hero />
+
       <CAPABILITIES />
       <DIFFERENTIATOR />
       <section className="bg-black py-24 px-6 md:px-12 lg:px-24">
