@@ -71,7 +71,7 @@ const About = () => {
                 `}
       </style>
 
-      <main className="bg-[#ffff00]  min-h-screen text-black w-full overflow-hidden">
+      <main className="bg-[#ffcc01]  min-h-screen text-black w-full overflow-hidden">
 
 
 

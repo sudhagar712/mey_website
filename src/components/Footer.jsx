@@ -4,7 +4,7 @@ import { FaInstagram, FaLinkedinIn, FaTwitter, FaFacebookF } from 'react-icons/f
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-20 px-6 md:px-12 lg:px-24 rounded-t-[3rem] relative overflow-hidden">
+    <footer className="bg-black text-white py-20 px-6 md:px-12 lg:px-24  relative overflow-hidden">
       {/* Decorative Blob */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#ffff00] rounded-full mix-blend-multiply filter blur-[150px] opacity-10 pointer-events-none animate-pulse"></div>
 
@@ -13,8 +13,8 @@ const Footer = () => {
 
           {/* Brand Column */}
           <div className="space-y-6">
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-              MEY.
+            <h2 className="text-5xl md:text-7xl text-[#ffcc01] font-bold tracking-tighter" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              MEY
             </h2>
             <p className="text-lg md:text-xl font-medium text-white/70 italic tracking-wide">
               Truth Before Business.
@@ -26,7 +26,7 @@ const Footer = () => {
 
           {/* Nav Links Column */}
           <div className="flex flex-col space-y-4">
-            <h4 className="text-xs tracking-[0.3em] uppercase font-bold text-white/50 mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>
+            <h4 className="text-xs tracking-[0.3em] uppercase font-bold text-[#ffcc01] mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>
               Navigation
             </h4>
             <div className="grid grid-cols-2 gap-y-4 gap-x-8">
@@ -45,7 +45,7 @@ const Footer = () => {
 
           {/* Social Links Column */}
           <div className="flex flex-col space-y-6">
-            <h4 className="text-xs tracking-[0.3em] uppercase font-bold text-white/50 mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
+            <h4 className="text-xs tracking-[0.3em] uppercase font-bold text-[#ffcc01] mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
               Connect
             </h4>
             <div className="flex gap-4">

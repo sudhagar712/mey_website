@@ -12,7 +12,7 @@ const Hero = () => {
           }
         `}
             </style>
-            <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-20 pb-16 px-6 md:px-12 overflow-hidden bg-[#ffff00]">
+            <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-20 pb-16 px-6 md:px-12 overflow-hidden">
 
                 {/* Subtle Grid Background */}
                 <div className="absolute inset-0 pointer-events-none opacity-[0.05]"
@@ -29,7 +29,7 @@ const Hero = () => {
 
                         {/* Glassmorphism Strip Overlay */}
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] flex justify-center items-center pointer-events-none z-10">
-                            <div className="w-full h-[60px] md:h-[110px] bg-[#ffff00]/60 backdrop-blur-md flex items-center justify-center border-y border-black/10 transform shadow-2xl shadow-[#ffff00]/50">
+                            <div className="w-full h-[60px] md:h-[110px] bg-[#ffcc01]/60 backdrop-blur-md flex items-center justify-center border-y border-black/10 transform shadow-2xl shadow-[#ffff00]/50">
                                 <p className="font-premium-serif italic text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-black tracking-wider whitespace-nowrap px-8 font-light">
                                     Truth Before Business
                                 </p>

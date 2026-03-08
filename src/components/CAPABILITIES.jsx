@@ -61,7 +61,7 @@ const CAPABILITIES = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className="bg-[#ffff00] py-32 px-6 md:px-12 lg:px-24">
+        <section ref={sectionRef} className=" py-32 px-6 md:px-12 lg:px-24">
             <style>
                 {`
           .scroll-reveal {

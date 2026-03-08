@@ -134,7 +134,7 @@ const DIFFERENTIATOR = () => {
                             Our Approach
                         </h4>
                         <h2 className="font-premium-serif text-5xl md:text-7xl font-bold text-black tracking-tighter">
-                            Why MEY 
+                            Why MEY
                         </h2>
                     </div>
 
@@ -234,8 +234,18 @@ const DIFFERENTIATOR = () => {
             </section>
 
             {/* 3. FINAL CTA Section */}
-            <section className="bg-[#ffff00] py-32 lg:py-56 px-6 md:px-12 text-center flex flex-col items-center">
-                <div className="max-w-4xl mx-auto scroll-fade-up" ref={addToRefs}>
+            <section className="relative py-32 lg:py-56 px-6 md:px-12 text-center flex flex-col items-center overflow-hidden">
+                {/* Background Image & Overlay */}
+                <div className="absolute inset-0 z-0">
+                    <img
+                        src="https://images.pexels.com/photos/35550/ipad-tablet-technology-touch.jpg"
+                        alt="CTA Background"
+                        className="w-full h-full object-cover grayscale"
+                    />
+                    <div className="absolute inset-0 bg-[#ffcc01]/90 mix-blend-multiply"></div>
+                </div>
+
+                <div className="relative z-10 max-w-4xl mx-auto scroll-fade-up" ref={addToRefs}>
 
                     <h2 className="font-premium-serif text-5xl sm:text-7xl md:text-[6rem] lg:text-[7.5rem] font-bold text-black tracking-tighter leading-[1.05] mb-6">
                         Ready to build <br />
