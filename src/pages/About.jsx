@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PageBanner from '../components/PageBanner';
 
 const About = () => {
   useEffect(() => {
@@ -64,48 +65,10 @@ const About = () => {
                 `}
       </style>
 
-      <main className="bg-[#ffff00] min-h-screen text-black w-full overflow-hidden pt-36 lg:pt-48">
+      <main className="bg-[#ffff00] min-h-screen text-black w-full overflow-hidden">
 
         {/* 1. Banner Section */}
-        <section className="px-6 md:px-12 lg:px-24 w-full max-w-[1500px] mx-auto mb-32 lg:mb-48">
-          <div className="flex flex-col gap-12">
-
-            {/* Huge Animated Headline (Staggered lines) */}
-            <div className="flex flex-col gap-2 md:gap-4">
-              <div className="overflow-hidden pb-2">
-                <h1 className="font-premium-serif text-[28px] sm:text-4xl md:text-[3.5rem] lg:text-[4.5rem] xl:text-[5.5rem] font-bold text-black leading-[1.05] animate-reveal opacity-0" style={{ letterSpacing: '-0.02em' }}>
-                  MEY is a branding and digital
-                </h1>
-              </div>
-              <div className="overflow-hidden pb-2">
-                <h1 className="font-premium-serif text-[28px] sm:text-4xl md:text-[3.5rem] lg:text-[4.5rem] xl:text-[5.5rem] font-bold text-black leading-[1.05] animate-reveal delay-100 opacity-0" style={{ letterSpacing: '-0.02em' }}>
-                  marketing agency in Chennai
-                </h1>
-              </div>
-              <div className="overflow-hidden pb-2 mt-2 md:mt-4">
-                <h1 className="font-premium-serif text-[28px] sm:text-4xl md:text-[3.5rem] lg:text-[4.5rem] xl:text-[5.5rem] font-light italic text-black/60 leading-[1.05] animate-reveal delay-200 opacity-0" style={{ letterSpacing: '-0.02em' }}>
-                  focused on building clear, premium
-                </h1>
-              </div>
-              <div className="overflow-hidden pb-2">
-                <h1 className="font-premium-serif text-[28px] sm:text-4xl md:text-[3.5rem] lg:text-[4.5rem] xl:text-[5.5rem] font-light italic text-black/60 leading-[1.05] animate-reveal delay-300 opacity-0" style={{ letterSpacing: '-0.02em' }}>
-                  and growth-oriented brands.
-                </h1>
-              </div>
-            </div>
-
-            {/* Divider */}
-            <div className="w-16 md:w-24 h-[1.5px] bg-black opacity-0 animate-fade-up delay-400"></div>
-
-            {/* Subparagraph */}
-            <div className="overflow-hidden">
-              <p className="text-base sm:text-lg md:text-2xl font-medium tracking-wide text-black/80 max-w-3xl opacity-0 animate-reveal delay-500" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                We combine strategy, creativity and execution under one structured direction.
-              </p>
-            </div>
-
-          </div>
-        </section>
+        <PageBanner title="About Us" breadcrumb="About" />
 
         {/* 2. Philosophy & Mission (Dark Premium Container) */}
         <section className="bg-[#0f0f0f] text-white pt-32 lg:pt-40 pb-40 px-6 md:px-12 lg:px-24 rounded-t-[2.5rem] md:rounded-t-[4.5rem] relative">

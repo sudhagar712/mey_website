@@ -12,7 +12,7 @@ const Hero = () => {
           }
         `}
             </style>
-            <section className="relative min-h-[100vh] flex flex-col items-center justify-center pt-32 pb-16 px-6 md:px-12 overflow-hidden bg-[#ffff00]">
+            <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-25 pb-16 px-6 md:px-12 overflow-hidden bg-[#ffff00]">
 
                 {/* Subtle Grid Background */}
                 <div className="absolute inset-0 pointer-events-none opacity-[0.05]"

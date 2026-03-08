@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PageBanner from '../components/PageBanner';
 
 const articles = [
     {
@@ -51,17 +52,7 @@ const Insights = () => {
 
     return (
         <main>
-            <section className="page-hero">
-                <div className="container">
-                    <span className="section-tag section-tag--yellow">Journal</span>
-                    <h1 className="section-title text-[clamp(2.5rem,6vw,5rem)] text-white max-w-[700px] mb-6 leading-tight">
-                        Agency Insights
-                    </h1>
-                    <p className="text-white/55 font-sans text-[1.05rem] max-w-[560px] leading-relaxed">
-                        Our thoughts on building strong brands, designing clear systems, and navigating the digital marketing landscape in Chennai.
-                    </p>
-                </div>
-            </section>
+            <PageBanner title="Agency Insights" breadcrumb="Insights" />
 
             <section className="bg-black py-20 pb-32">
                 <div className="container">

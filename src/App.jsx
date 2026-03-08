@@ -9,6 +9,7 @@ import About from './pages/About';
 import Insights from './pages/Insights';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
+import FloatingButtons from './components/FloatingButtons';
 
 // Page meta updater
 const pageMeta = {
@@ -60,6 +61,7 @@ const Layout = ({ children }) => (
     <Navbar />
     {children}
     <Footer />
+    <FloatingButtons />
   </>
 );
 

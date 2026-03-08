@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const differentiators = [
     {
@@ -125,37 +126,74 @@ const DIFFERENTIATOR = () => {
             </style>
 
             {/* 1. WHY MEY Section */}
-            <section className="bg-white py-32 lg:py-48 px-6 md:px-12 lg:px-24">
+            <section className="bg-[#fcfcfc] py-32 lg:py-48 px-6 md:px-12 lg:px-24 overflow-hidden relative">
                 <div className="max-w-[1500px] mx-auto">
 
-                    <div className="mb-24 text-center scroll-fade-up" ref={addToRefs}>
+                    <div className="mb-20 scroll-fade-up text-left" ref={addToRefs}>
                         <h4 className="text-[10px] md:text-xs tracking-[0.4em] uppercase font-bold text-black/50 mb-6" style={{ fontFamily: 'Poppins, sans-serif' }}>
                             Our Approach
                         </h4>
                         <h2 className="font-premium-serif text-5xl md:text-7xl font-bold text-black tracking-tighter">
-                            Why MEY
+                            Why MEY 
                         </h2>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-16 lg:gap-x-16">
-                        {differentiators.map((diff, i) => (
-                            <div
-                                key={diff.title}
-                                className="flex flex-col items-center text-center scroll-fade-up"
-                                ref={addToRefs}
-                                style={{ transitionDelay: `${i * 0.15}s` }}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                        {/* Left Side: Cards */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
+                            {differentiators.map((diff, i) => (
+                                <motion.div
+                                    key={diff.title}
+                                    initial={{ opacity: 0, y: 50 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, margin: "-100px" }}
+                                    transition={{ duration: 0.8, delay: i * 0.15, ease: [0.25, 1, 0.5, 1] }}
+                                    className="bg-white p-8 md:p-10 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col items-start hover:shadow-[0_30px_60px_rgba(0,0,0,0.1)] transition-shadow duration-500 group relative overflow-hidden"
+                                >
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-[#ffff00]/10 rounded-full blur-3xl group-hover:bg-[#ffff00]/20 transition-colors duration-500"></div>
+                                    <div className="text-black mb-8 p-4 bg-[#f8f8f8] rounded-2xl group-hover:bg-[#ffff00] group-hover:scale-110 transition-all duration-500 relative z-10">
+                                        {diff.icon}
+                                    </div>
+                                    <h3 className="text-xl font-bold tracking-tight text-black mb-4 relative z-10" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                                        {diff.title}
+                                    </h3>
+                                    <p className="text-sm text-black/60 font-medium leading-relaxed relative z-10" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                                        {diff.desc}
+                                    </p>
+                                </motion.div>
+                            ))}
+                        </div>
+
+                        {/* Right Side: Image */}
+                        <motion.div
+                            initial={{ opacity: 0, x: 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true, margin: "-100px" }}
+                            transition={{ duration: 1, ease: [0.25, 1, 0.5, 1] }}
+                            className="relative h-[600px] rounded-[3rem] overflow-hidden group shadow-2xl"
+                        >
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
+                            <motion.img
+                                whileHover={{ scale: 1.05 }}
+                                transition={{ duration: 0.8, ease: "easeOut" }}
+                                src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop"
+                                alt="MEY Strategy Presentation"
+                                className="w-full h-full object-cover"
+                            />
+
+                            {/* Floating Element over Image */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: 0.6, duration: 0.8 }}
+                                className="absolute bottom-8 left-8 right-8 z-20 bg-white/10 backdrop-blur-md p-6 lg:p-8 rounded-3xl border border-white/20"
                             >
-                                <div className="text-black mb-8">
-                                    {diff.icon}
-                                </div>
-                                <h3 className="text-xl md:text-2xl font-bold tracking-tight text-black mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                                    {diff.title}
-                                </h3>
-                                <p className="text-base text-black/60 font-medium leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                                    {diff.desc}
+                                <p className="text-white font-medium text-base md:text-lg leading-relaxed italic" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                                    "Design is intelligence made visible. We don't just create visuals, we engineer business solutions."
                                 </p>
-                            </div>
-                        ))}
+                            </motion.div>
+                        </motion.div>
                     </div>
 
                 </div>
