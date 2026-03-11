@@ -1,6 +1,7 @@
 import React from 'react'
 import SEO from '../components/SEO'
 import Hero from '../components/Hero'
+import SmartConversations from '../components/SmartConversations'
 
 import CAPABILITIES from '../components/CAPABILITIES'
 import DIFFERENTIATOR from '../components/DIFFERENTIATOR'
@@ -15,7 +16,7 @@ const Home = () => {
         description="MEY is a premium branding and digital marketing agency in Chennai offering brand identity, social media management, website development, performance marketing and outdoor advertising."
       />
       <Hero />
-
+      <SmartConversations />
       <CAPABILITIES />
       <DIFFERENTIATOR />
       <section className="bg-black py-24 px-6 md:px-12 lg:px-24">
