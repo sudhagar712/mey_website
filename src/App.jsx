@@ -50,7 +50,7 @@ const MetaUpdater = () => {
       if (descEl) descEl.setAttribute('content', meta.description);
     }
     // Scroll to top on route change
-    window.scrollTo({ top: 0, behavior: 'instant' });
+    window.scrollTo({ top: 0, behavior: 'auto' });
   }, [location.pathname]);
 
   return null;

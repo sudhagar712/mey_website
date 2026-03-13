@@ -148,16 +148,16 @@ const DIFFERENTIATOR = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true, margin: "-100px" }}
                                     transition={{ duration: 0.8, delay: i * 0.15, ease: [0.25, 1, 0.5, 1] }}
-                                    className="bg-white p-8 md:p-10 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col items-start hover:shadow-[0_30px_60px_rgba(0,0,0,0.1)] transition-shadow duration-500 group relative overflow-hidden"
+                                    className="bg-black  p-8 md:p-10 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col items-start hover:shadow-[0_30px_60px_rgba(0,0,0,0.1)] transition-shadow duration-500 group relative overflow-hidden"
                                 >
                                     <div className="absolute top-0 right-0 w-32 h-32 bg-[#ffff00]/10 rounded-full blur-3xl group-hover:bg-[#ffff00]/20 transition-colors duration-500"></div>
-                                    <div className="text-black mb-8 p-4 bg-[#f8f8f8] rounded-2xl group-hover:bg-[#ffff00] group-hover:scale-110 transition-all duration-500 relative z-10">
+                                    <div className="text-white mb-8 p-4 bg-[#f7d83c] rounded-2xl group-hover:bg-[#ffff00] group-hover:scale-110 transition-all duration-500 relative z-10">
                                         {diff.icon}
                                     </div>
-                                    <h3 className="text-xl font-bold tracking-tight text-black mb-4 relative z-10" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                                    <h3 className="text-xl font-bold tracking-tight text-white mb-4 relative z-10" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                                         {diff.title}
                                     </h3>
-                                    <p className="text-sm text-black/60 font-medium leading-relaxed relative z-10" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                                    <p className="text-sm text-white font-medium leading-relaxed relative z-10" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                                         {diff.desc}
                                     </p>
                                 </motion.div>
