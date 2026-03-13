@@ -79,10 +79,10 @@ const Hero = () => {
                             {/* Premium Button 1 */}
                             <Link
                                 to="/work"
-                                className="group relative px-14 py-6 bg-black text-white text-[11px] md:text-xs font-bold tracking-[0.25em] uppercase w-full sm:w-auto transition-all duration-500 hover:text-black flex items-center justify-center gap-4 rounded-none border-[1.5px] border-black overflow-hidden shadow-2xl shadow-black/20"
+                                className="group relative px-14 py-6 bg-black text-white text-[11px] md:text-xs font-bold tracking-[0.25em] uppercase w-full sm:w-auto transition-all duration-500 hover:text-white flex items-center justify-center gap-4 rounded-none border-[1.5px] border-black overflow-hidden shadow-2xl shadow-black/20"
                                 style={{ fontFamily: 'Poppins, sans-serif' }}
                             >
-                                <div className="absolute inset-0 w-full h-full bg-[#ffff00] translate-y-full group-hover:translate-y-0 transition-transform duration-500 -z-10 ease-out"></div>
+                                <div className="absolute inset-0 w-full h-full bg-[#ffff00]  translate-y-full group-hover:translate-y-0 transition-transform duration-500 -z-10 ease-out"></div>
                                 View Work
                                 <svg className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />

@@ -1,83 +1,105 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { FaInstagram, FaLinkedinIn, FaTwitter, FaFacebookF } from 'react-icons/fa';
+import React from "react";
+import { Link } from "react-router-dom";
+import { FaInstagram, FaLinkedinIn, FaTwitter, FaFacebookF } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-20 px-6 md:px-12 lg:px-24  relative overflow-hidden">
-      {/* Decorative Blob */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#ffff00] rounded-full mix-blend-multiply filter blur-[150px] opacity-10 pointer-events-none animate-pulse"></div>
+    <footer className="relative bg-[#0b0b0b] text-white py-24 px-6 md:px-12 lg:px-24 overflow-hidden">
 
-      <div className="max-w-[1500px] mx-auto relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-24 mb-20 border-b border-white/10 pb-20">
+      {/* Glow Background */}
+      <div className="absolute -top-40 left-1/3 w-[600px] h-[600px] bg-yellow-400 opacity-10 blur-[180px] rounded-full pointer-events-none"></div>
 
-          {/* Brand Column */}
+      <div className="max-w-[1400px] mx-auto relative z-10">
+
+        {/* Top Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 pb-20 border-b border-white/10">
+
+          {/* Brand */}
           <div className="space-y-6">
-            <h2 className="text-5xl md:text-7xl text-[#ffcc01] font-bold tracking-tighter" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            <h2 className="text-5xl md:text-6xl font-extrabold tracking-tight">
               MEY
             </h2>
-            <p className="text-lg md:text-xl font-medium text-white/70 italic tracking-wide">
+
+            <p className="text-lg italic text-gray-300">
               Truth Before Business.
             </p>
-            <p className="text-sm text-white/50 tracking-widest uppercase font-semibold" style={{ fontFamily: 'Poppins, sans-serif' }}>
+
+            <p className="text-sm uppercase tracking-[0.3em] text-gray-400">
               Chennai, India
             </p>
           </div>
 
-          {/* Nav Links Column */}
-          <div className="flex flex-col space-y-4">
-            <h4 className="text-xs tracking-[0.3em] uppercase font-bold text-[#ffcc01] mb-4" style={{ fontFamily: 'Poppins, sans-serif' }}>
+          {/* Navigation */}
+          <div>
+            <h4 className="text-xs tracking-[0.35em] uppercase text-gray-400 mb-8">
               Navigation
             </h4>
-            <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-              {['Home', 'Services', 'Work', 'About', 'Insights', 'Contact'].map((item) => (
+
+            <div className="grid grid-cols-2 gap-y-5 gap-x-10">
+              {["Home", "Services", "Work", "About", "Insights", "Contact"].map((item) => (
                 <Link
                   key={item}
-                  to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
-                  className="text-base font-medium text-white/80 hover:text-[#ffff00] hover:translate-x-2 transition-all duration-300 w-fit"
-                  style={{ fontFamily: 'Montserrat, sans-serif' }}
+                  to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                  className="group text-gray-300 hover:text-yellow-400 transition duration-300 relative w-fit"
                 >
                   {item}
+
+                  {/* underline animation */}
+                  <span className="absolute left-0 -bottom-1 h-[1px] w-0 bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
                 </Link>
               ))}
             </div>
           </div>
 
-          {/* Social Links Column */}
-          <div className="flex flex-col space-y-6">
-            <h4 className="text-xs tracking-[0.3em] uppercase font-bold text-[#ffcc01] mb-2" style={{ fontFamily: 'Poppins, sans-serif' }}>
+          {/* Social */}
+          <div>
+            <h4 className="text-xs tracking-[0.35em] uppercase text-gray-400 mb-8">
               Connect
             </h4>
+
             <div className="flex gap-4">
               {[
-                { icon: <FaInstagram />, href: '#' },
-                { icon: <FaLinkedinIn />, href: '#' },
-                { icon: <FaTwitter />, href: '#' },
-                { icon: <FaFacebookF />, href: '#' },
+                { icon: <FaInstagram />, href: "#" },
+                { icon: <FaLinkedinIn />, href: "#" },
+                { icon: <FaTwitter />, href: "#" },
+                { icon: <FaFacebookF />, href: "#" },
               ].map((social, idx) => (
                 <a
                   key={idx}
                   href={social.href}
-                  className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:bg-[#ffff00] hover:text-black hover:border-transparent hover:scale-110 transition-all duration-300"
+                  className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-gray-300 hover:text-black hover:bg-yellow-400 hover:border-yellow-400 transition-all duration-300 hover:scale-110"
                 >
                   {social.icon}
                 </a>
               ))}
             </div>
+
+            <p className="text-sm text-gray-400 mt-8 max-w-xs">
+              Follow us on social media for updates, insights, and digital innovations.
+            </p>
           </div>
 
         </div>
 
-        {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-xs text-white/40 tracking-wider font-medium" style={{ fontFamily: 'Poppins, sans-serif' }}>
+        {/* Bottom Bar */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-10">
+
+          <p className="text-sm text-gray-500">
             © {new Date().getFullYear()} MEY. All rights reserved.
           </p>
-          <div className="flex gap-8">
-            <Link to="#" className="text-xs text-white/40 hover:text-white transition-colors duration-300">Privacy Policy</Link>
-            <Link to="#" className="text-xs text-white/40 hover:text-white transition-colors duration-300">Terms of Service</Link>
+
+          <div className="flex gap-8 text-sm text-gray-400">
+            <Link to="#" className="hover:text-yellow-400 transition">
+              Privacy Policy
+            </Link>
+
+            <Link to="#" className="hover:text-yellow-400 transition">
+              Terms of Service
+            </Link>
           </div>
+
         </div>
+
       </div>
     </footer>
   );

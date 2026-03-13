@@ -1,190 +1,134 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
-const navLinks = [
-  { label: "HOME", href: "/" },
-  { label: "SERVICES", href: "/services" },
-  { label: "ABOUT", href: "/about" },
-  { label: "WORKS", href: "/work" },
+const menuItems = [
+  { name: "HOME", path: "/" },
+  { name: "SERVICES", path: "/services" },
+  { name: "ABOUT", path: "/about" },
+  { name: "CONTACT", path: "/contact" },
 ];
 
-const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
 
-  // Disable body scroll when menu open
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [menuOpen]);
-
-  // Close menu on route change
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [location.pathname]);
-
-  // Change background on scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
-    };
-
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    document.body.style.overflow = open ? "hidden" : "auto";
+  }, [open]);
 
   return (
-    <div className="fixed top-0 left-0 w-full z-100">
-      {/* Navbar */}
-      <nav
-        className={`border border-white/10 transition-colors duration-300 ${
-          scrolled
-            ? "bg-black/90 backdrop-blur-sm"
-            : "bg-black/90 backdrop-blur-sm"
-        }`}
-      >
-        <div className="w-full max-w-[1500px] mx-auto px-6 lg:px-12 flex items-center justify-between h-[80px]">
-          {/* Left: Logo */}
-          <Link to="/" className="flex items-center">
-            <h1
-              className="text-[#ffcc01] text-[2.4rem] md:text-[2.8rem] font-bold tracking-tighter"
-              style={{ fontFamily: "Playfair Display, serif" }}
-            >
-              MEY
-            </h1>
+    <>
+      {/* NAVBAR */}
+      <div className="fixed top-0 left-0 w-full z-50 flex justify-center pt-5 px-4">
+        <div className="w-full max-w-[1400px] flex items-center justify-between bg-[#1b1b1b]/80 backdrop-blur-xl border border-white/10 rounded-full px-6 py-4">
+          {/* LOGO */}
+          <Link
+            to="/"
+            className="text-white text-lg md:text-2xl font-semibold tracking-wider"
+          >
+            MEY
           </Link>
 
-          {/* Center: Desktop Nav */}
-          <div className="hidden lg:flex flex-1 justify-center">
-            <div className="flex gap-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.label}
-                  to={link.href}
-                  className={`font-bold text-[13px] uppercase tracking-wide transition-colors ${
-                    location.pathname === link.href
-                      ? "text-[#ffff00]"
-                      : "text-white hover:text-[#ffff00]"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* Right: CTA + Mobile Hamburger */}
-          <div className="flex items-center gap-4">
-            <div className="hidden lg:flex">
+          {/* DESKTOP MENU */}
+          <div className="hidden md:flex gap-10 text-white text-sm tracking-widest">
+            {menuItems.map((item) => (
               <Link
-                to="/contact"
-                className="bg-linear-to-r from-[#ffd359] to-[#df9d1b] text-black font-bold text-[13px] uppercase px-6 py-2.5 rounded-tl-[16px] rounded-br-[16px] shadow-md hover:scale-105 transition-transform"
+                key={item.name}
+                to={item.path}
+                className="hover:text-gray-300 transition"
               >
-                CONTACT US
+                {item.name}
               </Link>
+            ))}
+          </div>
+
+          {/* HAMBURGER */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="relative w-8 h-6 flex flex-col justify-between md:ml-6"
+          >
+            <span
+              className={`h-[2px] w-full bg-white transition-all duration-300 ${
+                open ? "rotate-45 translate-y-2.5" : ""
+              }`}
+            />
+            <span
+              className={`h-[2px] w-full bg-white transition-all duration-300 ${
+                open ? "opacity-0" : ""
+              }`}
+            />
+            <span
+              className={`h-[2px] w-full bg-white transition-all duration-300 ${
+                open ? "-rotate-45 -translate-y-2.5" : ""
+              }`}
+            />
+          </button>
+        </div>
+      </div>
+
+      {/* FULLSCREEN MENU */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] bg-[#0d0d0d] flex flex-col md:flex-row"
+          >
+            {/* LEFT MENU */}
+            <div className="flex-1 flex flex-col justify-center items-start p-6 md:pl-32 gap-10">
+              {menuItems.map((item, index) => (
+                <motion.div
+                  key={item.name}
+                  initial={{ y: 60, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Link
+                    to={item.path}
+                    onClick={() => setOpen(false)}
+                    className="text-white text-[36px] md:text-[60px] font-semibold tracking-wide hover:text-gray-400 transition"
+                  >
+                    {item.name}
+                  </Link>
+                </motion.div>
+              ))}
             </div>
 
-            {/* Mobile Hamburger */}
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="lg:hidden flex flex-col gap-[6px] z-50"
-            >
-              {[0, 1, 2].map((i) => (
-                <span
-                  key={i}
-                  className={`block w-7 h-[2px] bg-[#ffff00] transition-all duration-300 ${
-                    menuOpen
-                      ? i === 0
-                        ? "rotate-45 translate-y-[8px]"
-                        : i === 1
-                          ? "opacity-0"
-                          : "-rotate-45 -translate-y-[8px]"
-                      : ""
-                  }`}
-                />
-              ))}
-            </button>
-          </div>
-        </div>
-      </nav>
-
-      <AnimatePresence>
-        {menuOpen ? (
-          <>
-            {/* Backdrop */}
-            <motion.div
-              key="backdrop"
-              onClick={() => setMenuOpen(false)}
-              className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.25, ease: "easeOut" }}
-            />
-
-            {/* Offcanvas Menu */}
-            <motion.div
-              key="panel"
-              className="fixed top-0 left-0 z-50 h-full w-[280px] bg-[#111] shadow-2xl"
-              initial={{ x: -320 }}
-              animate={{ x: 0 }}
-              exit={{ x: -320 }}
-              transition={{ duration: 0.32, ease: "easeOut" }}
-            >
-              <div className="flex flex-col h-full p-8">
-                {/* Logo */}
-                <Link
-                  to="/"
-                  className="text-[#ffcc01] text-3xl font-bold mb-10"
-                  style={{ fontFamily: "Playfair Display, serif" }}
-                >
-                  MEY
-                </Link>
-
-                {/* Links */}
-                <div className="flex flex-col gap-6">
-                  {navLinks.map((link) => (
-                    <motion.div
-                      key={link.label}
-                      initial={{ x: -8, opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      transition={{ duration: 0.25, ease: "easeOut" }}
-                    >
-                      <Link
-                        to={link.href}
-                        className={`text-[16px] font-semibold transition-all ${
-                          location.pathname === link.href
-                            ? "text-yellow-400"
-                            : "text-white hover:text-yellow-400"
-                        }`}
-                      >
-                        {link.label}
-                      </Link>
-                    </motion.div>
-                  ))}
-                </div>
-
-                {/* Contact */}
-                <div className="mt-auto">
-                  <Link
-                    to="/contact"
-                    className="block text-center bg-white text-black font-bold py-3 rounded-lg"
-                  >
-                    CONTACT US
-                  </Link>
-                </div>
+            {/* RIGHT INFO PANEL */}
+            <div className="flex-1 border-t md:border-t-0 md:border-l border-white/10 flex flex-col justify-center px-10 md:px-24 py-16 md:py-0 space-y-10 text-gray-300">
+              <div>
+                <p className="text-xs tracking-widest text-gray-500 mb-3">
+                  HEADQUARTERS
+                </p>
+                <p className="text-sm md:text-lg">
+                  Address Line
+                  <br />
+                  Chennai, Tamil Nadu
+                </p>
               </div>
-            </motion.div>
-          </>
-        ) : null}
-      </AnimatePresence>
-    </div>
-  );
-};
 
-export default Navbar;
+              <div>
+                <p className="text-xs tracking-widest text-gray-500 mb-3">
+                  CONTACT
+                </p>
+                <p className="hover:text-white cursor-pointer">info@mey.com</p>
+                <p className="hover:text-white cursor-pointer">
+                  +91 7018888888
+                </p>
+              </div>
+            </div>
+
+            {/* CLOSE BUTTON */}
+            <button
+              onClick={() => setOpen(false)}
+              className="absolute top-8 right-8 w-12 h-12 border border-white/20 rounded-full flex items-center justify-center text-white text-xl hover:bg-white/10 transition"
+            >
+              ✕
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+}

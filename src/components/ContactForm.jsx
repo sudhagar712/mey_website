@@ -50,13 +50,13 @@ const ContactForm = () => {
                         initial={{ opacity: 0, scale: 0.95, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
-                        className="bg-white rounded-[2.5rem] p-12 lg:p-20 text-center shadow-[0_30px_60px_rgba(0,0,0,0.08)] border border-gray-100 flex flex-col items-center justify-center min-h-[500px]"
+                        className="rounded-[2.5rem] p-12 lg:p-20 text-center shadow-[0_30px_60px_rgba(0,0,0,0.08)] border border-gray-100 flex flex-col items-center justify-center min-h-[500px]"
                     >
                         <motion.div
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
                             transition={{ delay: 0.2, type: "spring", stiffness: 200, damping: 20 }}
-                            className="w-24 h-24 rounded-full bg-[#ffff00] flex items-center justify-center mb-8 text-5xl text-black shadow-xl shadow-[#ffff00]/20"
+                            className="w-24 h-24 rounded-full  flex items-center justify-center mb-8 text-5xl text-black shadow-xl shadow-[#ffff00]/20"
                         >
                             ✓
                         </motion.div>
@@ -74,30 +74,30 @@ const ContactForm = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
                         onSubmit={handleSubmit}
-                        className="w-full bg-white p-6 md:p-12 lg:p-16 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-gray-100 relative group"
+                        className="w-full bg-black p-6 md:p-12 lg:p-16 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-gray-100 relative group"
                     >
                         {/* Subtle decorative accent */}
-                        <div className="absolute top-0 left-0 w-full h-2 bg-[#ffff00] rounded-t-[2.5rem]"></div>
+                        <div className="absolute top-0 left-0 w-full h-2 rounded-t-[2.5rem]"></div>
 
                         <div className="mb-12">
-                            <h3 className="text-3xl md:text-4xl text-black font-bold tracking-tighter mb-3" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                            <h3 className="text-3xl md:text-4xl text-white font-bold tracking-tighter mb-3" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                                 Start a Conversation
                             </h3>
-                            <p className="text-black/50 text-base md:text-lg font-medium" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                            <p className="text-white text-base md:text-lg font-medium" style={{ fontFamily: 'Poppins, sans-serif' }}>
                                 Fill out the details below.
                             </p>
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
                             <div className="flex flex-col relative group/input">
-                                <label className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-black/50 mb-3 transition-colors group-focus-within/input:text-black">Your Name *</label>
+                                <label className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-white mb-3 transition-colors group-focus-within/input:text-black">Your Name *</label>
                                 <input
                                     type="text"
                                     name="name"
                                     value={form.name}
                                     onChange={handleChange}
-                                    className="bg-[#fcfcfc] border-b-2 border-gray-200 px-4 py-4 text-black text-lg focus:outline-none focus:border-black transition-all duration-300 hover:bg-gray-50 rounded-t-lg"
-                                    placeholder="John Doe"
+                                    className="bg-gray-300  border-b-2 border-gray-200 px-4 py-4 text-black text-lg focus:outline-none focus:border-black transition-all duration-300 hover:bg-gray-50 rounded-t-lg"
+                                    placeholder="Enter your name "
                                     required
                                 />
                             </div>

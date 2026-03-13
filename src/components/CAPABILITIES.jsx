@@ -61,9 +61,12 @@ const CAPABILITIES = () => {
     }, []);
 
     return (
-        <section ref={sectionRef} className=" py-32 px-6 md:px-12 lg:px-24">
-            <style>
-                {`
+      <section
+        ref={sectionRef}
+        className="bg-white py-32 px-6 md:px-12 lg:px-24"
+      >
+        <style>
+          {`
           .scroll-reveal {
             opacity: 0;
             transform: translateY(40px);
@@ -74,68 +77,82 @@ const CAPABILITIES = () => {
             transform: translateY(0);
           }
         `}
-            </style>
+        </style>
 
-            <div className="max-w-[1500px] mx-auto">
+        <div className="max-w-[1500px] mx-auto">
+          {/* Header Section */}
+          <div className="mb-20 scroll-reveal">
+            <h4
+              className="text-[10px] md:text-xs tracking-[0.4em] uppercase font-bold text-black/60 mb-6"
+              style={{ fontFamily: "Poppins, sans-serif" }}
+            >
+              Our Capabilities
+            </h4>
 
-                {/* Header Section */}
-                <div className="mb-20 scroll-reveal">
-                    <h4 className="text-[10px] md:text-xs tracking-[0.4em] uppercase font-bold text-black/60 mb-6" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                        Our Capabilities
-                    </h4>
+            <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-10 items-end border-b-2 border-black pb-12">
+              <h2 className="font-premium-serif text-5xl sm:text-6xl md:text-[5.5rem] font-bold text-black tracking-tighter leading-[1.05]">
+                Complete Brand & <br className="hidden md:block" /> Marketing
+                Solutions
+              </h2>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-10 items-end border-b-2 border-black pb-12">
-                        <h2 className="font-premium-serif text-5xl sm:text-6xl md:text-[5.5rem] font-bold text-black tracking-tighter leading-[1.05]">
-                            Complete Brand & <br className="hidden md:block" /> Marketing Solutions
-                        </h2>
-
-                        <p className="text-xl md:text-2xl text-black/70 font-medium leading-relaxed" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                            Everything your brand needs — structured under one direction.
-                        </p>
-                    </div>
-                </div>
-
-                {/* Cards Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                    {capabilities.map((cap, i) => (
-                        <div
-                            key={cap.num}
-                            className="scroll-reveal relative overflow-hidden bg-[#0f0f0f] text-white rounded-[2rem] p-10 md:p-12 flex flex-col justify-between group hover:-translate-y-3 transition-transform duration-500 ease-out shadow-2xl shadow-black/10 min-h-[320px]"
-                            style={{ transitionDelay: `${i * 0.1}s` }}
-                        >
-                            {/* Background Image (Absolute positioned behind content) */}
-                            <div className="absolute inset-0 z-0 opacity-50">
-                                <img
-                                    src={cap.imgUrl}
-                                    alt={cap.title}
-                                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                                />
-                                {/* Gradient Overlay to ensure text remains readable */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20"></div>
-                            </div>
-
-                            {/* Card Content (Relative positioned above image) */}
-                            <div className="relative z-10 h-full flex flex-col justify-between">
-                                <div>
-                                    <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#ffff00] block mb-12 drop-shadow-md" style={{ fontFamily: 'Poppins, sans-serif' }}>
-                                        {cap.num} /
-                                    </span>
-
-                                    <h3 className="text-[1.75rem] md:text-[2rem] font-bold tracking-tight mb-4 text-white drop-shadow-lg" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                                        {cap.title}.
-                                    </h3>
-                                </div>
-
-                                <p className="text-base md:text-lg text-white/90 leading-relaxed font-light mt-12 drop-shadow-md" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                                    {cap.desc}
-                                </p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
+              <p
+                className="text-xl md:text-2xl text-black/70 font-medium leading-relaxed"
+                style={{ fontFamily: "Montserrat, sans-serif" }}
+              >
+                Everything your brand needs — structured under one direction.
+              </p>
             </div>
-        </section >
+          </div>
+
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {capabilities.map((cap, i) => (
+              <div
+                key={cap.num}
+                className="scroll-reveal relative overflow-hidden bg-[#0f0f0f] text-white rounded-[2rem] p-10 md:p-12 flex flex-col justify-between group hover:-translate-y-3 transition-transform duration-500 ease-out shadow-2xl shadow-black/10 min-h-[320px]"
+                style={{ transitionDelay: `${i * 0.1}s` }}
+              >
+                {/* Background Image (Absolute positioned behind content) */}
+                <div className="absolute inset-0 z-0 opacity-50">
+                  <img
+                    src={cap.imgUrl}
+                    alt={cap.title}
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                  {/* Gradient Overlay to ensure text remains readable */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20"></div>
+                </div>
+
+                {/* Card Content (Relative positioned above image) */}
+                <div className="relative z-10 h-full flex flex-col justify-between">
+                  <div>
+                    <span
+                      className="text-xs font-bold uppercase tracking-[0.2em] text-[#ffff00] block mb-12 drop-shadow-md"
+                      style={{ fontFamily: "Poppins, sans-serif" }}
+                    >
+                      {cap.num} /
+                    </span>
+
+                    <h3
+                      className="text-[1.75rem] md:text-[2rem] font-bold tracking-tight mb-4 text-white drop-shadow-lg"
+                      style={{ fontFamily: "Montserrat, sans-serif" }}
+                    >
+                      {cap.title}.
+                    </h3>
+                  </div>
+
+                  <p
+                    className="text-base md:text-lg text-white/90 leading-relaxed font-light mt-12 drop-shadow-md"
+                    style={{ fontFamily: "Montserrat, sans-serif" }}
+                  >
+                    {cap.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     );
 };
 
