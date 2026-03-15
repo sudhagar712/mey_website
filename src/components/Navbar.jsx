@@ -23,7 +23,7 @@ export default function Navbar() {
     <>
       {/* NAVBAR */}
       <div className="fixed top-0 left-0 w-full z-50  flex justify-center pt-5 px-4">
-        <div className="w-full max-w-[1400px] flex items-center justify-between bg-[#fbba00]  border border-white/10 rounded-full px-6 py-4">
+        <div className="w-full max-w-[1200px] flex items-center justify-between bg-[#fbba00]  border border-white/10 rounded-full px-6 py-4">
           {/* LOGO */}
           <Link
             to="/"
@@ -33,13 +33,9 @@ export default function Navbar() {
           </Link>
 
           {/* DESKTOP MENU */}
-          <div className="hidden md:flex gap-10  text-sm tracking-widest">
+          <div className="hidden md:flex gap-10  font-bold text-sm tracking-widest">
             {menuItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className=" transition "
-              >
+              <Link key={item.name} to={item.path} className=" transition ">
                 {item.name}
               </Link>
             ))}
@@ -51,17 +47,17 @@ export default function Navbar() {
             className="relative w-8 h-6 flex flex-col justify-between md:ml-6"
           >
             <span
-              className={`h-[2px] w-full bg-white transition-all duration-300 ${
+              className={`h-[2px] w-full bg-black transition-all duration-300 ${
                 open ? "rotate-45 translate-y-2.5" : ""
               }`}
             />
             <span
-              className={`h-[2px] w-full bg-white transition-all duration-300 ${
+              className={`h-[2px] w-full bg-black transition-all duration-300 ${
                 open ? "opacity-0" : ""
               }`}
             />
             <span
-              className={`h-[2px] w-full bg-white transition-all duration-300 ${
+              className={`h-[2px] w-full bg-black transition-all duration-300 ${
                 open ? "-rotate-45 -translate-y-2.5" : ""
               }`}
             />

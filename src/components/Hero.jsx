@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
+import { Link } from 'react-router-dom';
+import logo from "../assets/bannerright.png"
 
 const Hero = () => {
     return (
@@ -25,7 +27,7 @@ const Hero = () => {
             {/* Giant Logo with Overlay Text */}
             <div className="relative mb-24 w-full mt-10  flex flex-col items-center justify-center">
               <motion.h1
-                className="text-[150px] sm:text-[240px]  md:text-[290px] lg:text-[300px] leading-[0.75] font-premium-serif font-bold tracking-tighter text-black select-none z-0"
+                className="text-[150px] sm:text-[240px] text-black md:text-[290px] lg:text-[300px] leading-[0.75]  font-extrabold tracking-tighter  select-none z-0"
                 initial={{ y: 18, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
@@ -40,8 +42,8 @@ const Hero = () => {
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
               >
-                <div className="w-full h-[60px] md:h-[90px] bg-[#ffcc01]/60 backdrop-blur-md flex items-center justify-center border-y border-black/10 transform shadow-2xl shadow-[#ffff00]/50">
-                  <p className=" text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white  tracking-wider whitespace-nowrap px-8 font-bold">
+                <div className="w-full h-[60px] md:h-[90px] bg-white/60 backdrop-blur-md flex items-center justify-center border-y border-black/10 transform shadow-2xl shadow-[#ffff00]/50">
+                  <p className=" text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-[#fbba00]  tracking-wider whitespace-nowrap px-8 font-bold">
                     Truth Before Business
                   </p>
                 </div>
@@ -58,15 +60,15 @@ const Hero = () => {
             >
               <p className="text-lg md:text-3xl lg:text-[2.1rem] text-black/80 font-medium leading-[1.6] mb-10">
                 We build{" "}
-                <span className="text-black font-bold  border-b border-black/30">
+                <span className="text-[#fbba00] font-bold  border-b border-black/30">
                   clear
                 </span>
                 ,{" "}
-                <span className="text-black font-bold  border-b border-black/30">
+                <span className="text-[#fbba00] font-bold  border-b border-black/30">
                   powerful
                 </span>{" "}
                 and{" "}
-                <span className="text-black font-bold  border-b border-black/30">
+                <span className="text-[#fbba00] font-bold  border-b border-black/30">
                   growth-focused
                 </span>{" "}
                 brands for startups and ambitious businesses.
@@ -82,7 +84,7 @@ const Hero = () => {
                 {/* Premium Button 1 */}
                 <Link
                   to="/work"
-                  className="group relative px-14 py-6 bg-[#fbba00] text-white text-[11px] md:text-xs font-bold tracking-[0.25em] uppercase w-full sm:w-auto transition-all duration-500 hover:text-white flex items-center justify-center gap-4 rounded-none border-[1.5px]  overflow-hidden shadow-2xl shadow-black/20"
+                  className="group relative px-14 cursor-pointer py-6 bg-[#fbba00] text-white text-[11px] md:text-xs font-bold tracking-[0.25em] uppercase w-full sm:w-auto transition-all duration-500 hover:text-white flex items-center justify-center gap-4 rounded-none border-[1.5px]  overflow-hidden shadow-2xl shadow-black/20"
                   style={{ fontFamily: "Poppins, sans-serif" }}
                 >
                   <div className="absolute inset-0 w-full h-full bg-[#ffff00]  translate-y-full group-hover:translate-y-0 transition-transform duration-500 -z-10 ease-out"></div>
@@ -103,15 +105,15 @@ const Hero = () => {
                 </Link>
 
                 {/* Premium Button 2 */}
-                <Link
+                <ScrollLink
                   to="contact"
                   smooth={true}
                   duration={600}
                   offset={-80}
-                  className="group relative px-14 py-6 bg-transparent text-black text-[11px] md:text-xs font-bold tracking-[0.25em] uppercase w-full sm:w-auto transition-all duration-500 hover:text-white flex items-center justify-center gap-4 rounded-none border-[1.5px]  overflow-hidden"
+                  className="group relative px-14 py-6 bg-transparent cursor-pointer text-black text-[11px] md:text-xs font-bold tracking-[0.25em] uppercase w-full sm:w-auto transition-all duration-500 hover:text-white flex items-center justify-center gap-4 rounded-none border-[1.5px]  overflow-hidden"
                   style={{ fontFamily: "Poppins, sans-serif" }}
                 >
-                  <div className="absolute inset-0 w-full h-full bg-[#fbba00] cursor-pointer translate-y-full group-hover:translate-y-0 transition-transform duration-500 -z-10 ease-out"></div>
+                  <div className="absolute inset-0 w-full h-full bg-[#fbba00]  translate-y-full group-hover:translate-y-0 transition-transform duration-500 -z-10 ease-out"></div>
                   Start a Project
                   <svg
                     className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-2"
@@ -126,7 +128,7 @@ const Hero = () => {
                       d="M14 5l7 7m0 0l-7 7m7-7H3"
                     />
                   </svg>
-                </Link>
+                </ScrollLink>
               </motion.div>
             </motion.div>
           </div>
@@ -143,6 +145,25 @@ const Hero = () => {
             }}
           />
         </motion.section>
+
+        {/* image section */}
+
+        <motion.div
+          className="flex justify-center items-center bg-white"
+          initial={{ opacity: 0, y: 80 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <motion.img
+            src={logo}
+            alt="banner"
+            className="max-w-full"
+            initial={{ scale: 0.9 }}
+            whileInView={{ scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          />
+        </motion.div>
       </>
     );
 };

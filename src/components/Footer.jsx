@@ -4,25 +4,20 @@ import { FaInstagram, FaLinkedinIn, FaTwitter, FaFacebookF } from "react-icons/f
 
 const Footer = () => {
   return (
-    <footer className="relative py-24 px-6 md:px-12 lg:px-24 overflow-hidden">
-
+    <footer className="relative py-24 px-6 md:px-12 lg:px-24 overflow-hidden bg-[#FBBA00]">
       {/* Glow Background */}
       <div className="absolute -top-40 left-1/3 w-[600px] h-[600px] bg-yellow-400 opacity-10 blur-[180px] rounded-full pointer-events-none"></div>
 
       <div className="max-w-[1400px] mx-auto relative z-10">
-
         {/* Top Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 pb-20 border-b border-white/10">
-
           {/* Brand */}
           <div className="space-y-6">
             <h2 className="text-5xl md:text-8xl font-extrabold tracking-tight">
               MEY
             </h2>
 
-            <p className="text-lg">
-              Truth Before Business.
-            </p>
+            <p className="text-lg">Truth Before Business.</p>
 
             <p className="text-sm uppercase tracking-[0.3em] ">
               Chennai, India
@@ -36,18 +31,20 @@ const Footer = () => {
             </h4>
 
             <div className="grid grid-cols-2 gap-y-5 gap-x-10">
-              {["Home", "Services", "Work", "About", "Insights", "Contact"].map((item) => (
-                <Link
-                  key={item}
-                  to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                  className="group  transition duration-300 relative w-fit"
-                >
-                  {item}
+              {["Home", "Services", "Work", "About", "Insights", "Contact"].map(
+                (item) => (
+                  <Link
+                    key={item}
+                    to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                    className="group  transition duration-300 relative w-fit"
+                  >
+                    {item}
 
-                  {/* underline animation */}
-                  <span className="absolute left-0 -bottom-1 h-[1px] w-0 transition-all duration-300 group-hover:w-full"></span>
-                </Link>
-              ))}
+                    {/* underline animation */}
+                    <span className="absolute left-0 -bottom-1 h-[1px] w-0 transition-all duration-300 group-hover:w-full"></span>
+                  </Link>
+                ),
+              )}
             </div>
           </div>
 
@@ -75,18 +72,16 @@ const Footer = () => {
             </div>
 
             <p className="text-sm  mt-8 max-w-xs">
-              Follow us on social media for updates, insights, and digital innovations.
+              Follow us on social media for updates, insights, and digital
+              innovations.
             </p>
           </div>
-
         </div>
 
         <hr className="text-gray-200" />
 
-
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-10">
-
           <p className="text-sm ">
             © {new Date().getFullYear()} MEY. All rights reserved.
           </p>
@@ -100,9 +95,7 @@ const Footer = () => {
               Terms of Service
             </Link>
           </div>
-
         </div>
-
       </div>
     </footer>
   );
