@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Services from './pages/Services';
+import ServiceDetail from "./pages/ServiceDetail";
 import Work from './pages/Work';
 import About from './pages/About';
 import Insights from './pages/Insights';
@@ -70,13 +71,63 @@ const App = () => {
     <BrowserRouter>
       <MetaUpdater />
       <Routes>
-        <Route path="/" element={<Layout><Home /></Layout>} />
-        <Route path="/services" element={<Layout><Services /></Layout>} />
-        <Route path="/work" element={<Layout><Work /></Layout>} />
-        <Route path="/about" element={<Layout><About /></Layout>} />
-        <Route path="/insights" element={<Layout><Insights /></Layout>} />
-        <Route path="/contact" element={<Layout><Contact /></Layout>} />
-        <Route path="*" element={<Layout><NotFound /></Layout>} />
+        <Route
+          path="/"
+          element={
+            <Layout>
+              <Home />
+            </Layout>
+          }
+        />
+        <Route
+          path="/services"
+          element={
+            <Layout>
+              <Services />
+            </Layout>
+          }
+        />
+        <Route path="/services/:slug" element={<ServiceDetail />} />
+        <Route
+          path="/work"
+          element={
+            <Layout>
+              <Work />
+            </Layout>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <Layout>
+              <About />
+            </Layout>
+          }
+        />
+        <Route
+          path="/insights"
+          element={
+            <Layout>
+              <Insights />
+            </Layout>
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <Layout>
+              <Contact />
+            </Layout>
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <Layout>
+              <NotFound />
+            </Layout>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
