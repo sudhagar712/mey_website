@@ -4,6 +4,7 @@ import PageBanner from "../components/PageBanner";
 import { services } from "../data/servicesData";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import ExpandingCards from "../components/ExpandingCards";
 
 
 const Services = () => {
@@ -14,6 +15,10 @@ const Services = () => {
         description="Explore MEY’s branding, social media marketing, website development, video production and advertising services in Chennai."
       />
       <PageBanner title="Our Services" breadcrumb="services" />
+      <div className="p-3 md:px-5 md:p-10">
+        <ExpandingCards />
+      </div>
+
       <section className="  py-20 px-6 lg:px-16">
         <div className="max-w-7xl  mx-auto">
           {/* Heading */}

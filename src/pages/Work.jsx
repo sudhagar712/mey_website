@@ -10,6 +10,10 @@ const Work = () => {
         description="Explore branding, social media, website and advertising projects delivered by MEY."
       />
       <PageBanner title="Our Work" breadcrumb="Work" />
+
+      <div className="flex justify-center  items-center  mt-10">
+        <h1>Comeing soon....................</h1>
+      </div>
     </main>
   );
 };

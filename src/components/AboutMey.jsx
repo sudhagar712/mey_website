@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const AboutMey = () => {
     return (
-        <section className="relative w-full flex flex-col lg:flex-row min-h-[80vh] overflow-hidden">
+        <section className="relative bg-white w-full flex flex-col lg:flex-row min-h-[80vh] overflow-hidden">
 
             {/* Left Side: Content (Black Background) */}
             <div className="w-full lg:w-1/2 flex items-center justify-center p-10 py-24 md:p-16 lg:p-24  relative z-10">
@@ -15,8 +15,8 @@ const AboutMey = () => {
                     className="max-w-xl w-full flex flex-col items-start"
                 >
                     <div className="flex items-center gap-4 mb-8 mt-10">
-                        <div className="w-12 h-[2px] bg-[#ffff00]"></div>
-                        <h2 className="text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] text-white" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                        <div className="w-12 h-[2px] bg-[#000000f1]"></div>
+                        <h2 className="text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] " style={{ fontFamily: 'Poppins, sans-serif' }}>
                             About Section
                         </h2>
                     </div>
@@ -26,11 +26,11 @@ const AboutMey = () => {
                         <span className="italic font-light ">MEY.</span>
                     </h1>
 
-                    <p className="text-lg md:text-xl lg:text-2xl text-white font-medium leading-[1.6] mb-8" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                        MEY is a branding and digital marketing agency in Chennai focused on building <span className="text-white border-b border-white/30 italic">clear</span>, <span className="text-black font-bold border-b border-white/30 italic">premium</span> and <span className="text-black border-b border-[#ffff00]/30 font-bold italic">growth-oriented</span> brands.
+                    <p className="text-lg md:text-xl lg:text-2xl font-medium leading-[1.6] mb-8" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                        MEY is a branding and digital marketing agency in Chennai focused on building <span className=" border-b border-white/30 italic">clear</span>, <span className="text-black font-bold border-b border-white/30 italic">premium</span> and <span className="text-black border-b border-[#ffff00]/30 font-bold italic">growth-oriented</span> brands.
                     </p>
 
-                    <p className="text-base md:text-lg text-white font-medium leading-[1.6]" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                    <p className="text-base md:text-lg  font-medium leading-[1.6]" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                         We combine strategy, creativity and execution under one structured direction.
                     </p>
                 </motion.div>

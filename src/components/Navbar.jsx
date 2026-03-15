@@ -22,23 +22,23 @@ export default function Navbar() {
   return (
     <>
       {/* NAVBAR */}
-      <div className="fixed top-0 left-0 w-full z-50 flex justify-center ">
-        <div className="w-full px-7 bg-[#fbba00] flex items-center justify-between border-2 border-white/10   py-4">
+      <div className="fixed top-0 left-0 w-full z-50 flex justify-center pt-5 px-4">
+        <div className="w-full max-w-[1400px] flex items-center justify-between bg-[#1b1b1b]/80 backdrop-blur-xl border border-white/10 rounded-full px-6 py-4">
           {/* LOGO */}
           <Link
             to="/"
-            className="text-black  text-3xl md:text-4xl font-extrabold tracking-wider"
+            className="text-white text-lg md:text-2xl font-semibold tracking-wider"
           >
             MEY
           </Link>
 
           {/* DESKTOP MENU */}
-          <div className="hidden md:flex gap-10 text-black font-bold text-sm tracking-widest">
+          <div className="hidden md:flex gap-10 text-white text-sm tracking-widest">
             {menuItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
-                className="hover:text-red-500 transition"
+                className="hover:text-gray-300 transition"
               >
                 {item.name}
               </Link>
@@ -51,17 +51,17 @@ export default function Navbar() {
             className="relative w-8 h-6 flex flex-col justify-between md:ml-6"
           >
             <span
-              className={`h-[2px] w-full bg-black transition-all duration-300 ${
+              className={`h-[2px] w-full bg-white transition-all duration-300 ${
                 open ? "rotate-45 translate-y-2.5" : ""
               }`}
             />
             <span
-              className={`h-[2px] w-full bg-black transition-all duration-300 ${
+              className={`h-[2px] w-full bg-white transition-all duration-300 ${
                 open ? "opacity-0" : ""
               }`}
             />
             <span
-              className={`h-[2px] w-full bg-black transition-all duration-300 ${
+              className={`h-[2px] w-full bg-white transition-all duration-300 ${
                 open ? "-rotate-45 -translate-y-2.5" : ""
               }`}
             />
@@ -76,7 +76,7 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-[#000000] flex flex-col md:flex-row"
+            className="fixed inset-0 z-[100] bg-[#0d0d0d] flex flex-col md:flex-row"
           >
             {/* LEFT MENU */}
             <div className="flex-1 flex flex-col justify-center items-start p-6 md:pl-32 gap-3">
