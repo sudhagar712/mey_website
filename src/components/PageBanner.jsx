@@ -13,7 +13,7 @@ const PageBanner = ({ title, breadcrumb }) => {
                     className="w-full h-full object-cover grayscale opacity-20"
                 />
                 {/* Light yellow gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#ffff00]  mix-blend-multiply"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#dcad02]  mix-blend-multiply"></div>
                 <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px]"></div>
             </div>
 
