@@ -101,9 +101,9 @@ export default function Navbar() {
                   HEADQUARTERS
                 </p>
                 <p className="text-sm md:text-lg">
-                  Address Line
+                  Address:
                   <br />
-                  Chennai, Tamil Nadu
+                  11, Jaganathan st, Nungambakkam, Chennai 600034.
                 </p>
               </div>
 
@@ -111,9 +111,11 @@ export default function Navbar() {
                 <p className="text-xs tracking-widest text-gray-500 mb-3">
                   CONTACT
                 </p>
-                <p className="hover:text-white cursor-pointer">info@mey.com</p>
                 <p className="hover:text-white cursor-pointer">
-                  +91 7018888888
+                  info@mey.co.in
+                </p>
+                <p className="hover:text-white cursor-pointer">
+                  +91 8939009966
                 </p>
               </div>
             </div>

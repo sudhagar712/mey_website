@@ -19,15 +19,15 @@ const ContactSidebar = () => {
             {[
               {
                 label: "Email",
-                value: "hello@mey.in",
-                href: "mailto:hello@mey.in",
+                value: "info@mey.co.in",
+                href: "mailto:info@mey.co.in",
               },
               {
                 label: "Phone",
-                value: "+91 XX XXXX XXXX",
-                href: "tel:+91XXXXXXXXXX",
+                value: "+918939009966",
+                href: "tel:918939009966",
               },
-              { label: "Location", value: "Chennai, Tamil Nadu", href: null },
+              { label: "Location", value: "11, Jaganathan st, Nungambakkam, Chennai - 600034", href: null },
             ].map((item) => (
               <div key={item.label} className="group ">
                 <p

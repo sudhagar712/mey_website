@@ -26,48 +26,46 @@ const budgetOptions = [
 const Contact = () => {
 
     return (
-        <main>
-            <SEO
-                title="Contact MEY | Branding & Marketing Agency Chennai"
-                description="Contact MEY to start your next branding or digital marketing project with us."
-            />
-            {/* 1. Page Banner */}
-            <PageBanner title="Contact Us" breadcrumb="Contact" />
+      <main>
+        <SEO
+          title="Contact MEY | Branding & Marketing Agency Chennai"
+          description="Contact MEY to start your next branding or digital marketing project with us."
+        />
+        {/* 1. Page Banner */}
+        <PageBanner title="Contact Us" breadcrumb="Contact" />
 
-            {/* Main Contact Section */}
-            <section className=" pt-20 pb-28 bg-white">
-                <div className="container md:px-10 ">
-                    <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-20 items-start">
+        {/* Main Contact Section */}
+        <section className=" pt-20 pb-28 bg-white">
+          <div className="container md:px-10 ">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-20 items-start">
+              {/* Sidebar Column (Left) */}
+              <div className="w-full">
+                <ContactSidebar />
+              </div>
 
-                        {/* Sidebar Column (Left) */}
-                        <div className="w-full">
-                            <ContactSidebar />
-                        </div>
+              {/* Form Column (Right) */}
+              <div className="w-full">
+                <ContactForm />
+              </div>
+            </div>
+          </div>
+        </section>
 
-                        {/* Form Column (Right) */}
-                        <div className="w-full">
-                            <ContactForm />
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-            {/* Google Map */}
-            <section className="w-full  h-[500px] bg-white  md:px-10 ">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.5493060592915!2d80.201460314823!3d13.064372290795495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52669b3f9dc3eb%3A0x6e2697b0a708eb6c!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1711204856037!5m2!1sen!2sin"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen=""
-                    loading="lazy"
-                    title="MEY Location"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    className="filter grayscale saturate-0 contrast-125 p-10"
-                ></iframe>
-            </section>
-        </main>
+        {/* Google Map */}
+        <section className="w-full  h-[500px] bg-white  md:px-10 ">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.6042118807945!2d80.24194607454788!3d13.06084631291643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526668672d75f1%3A0x168bf45159b6b928!2s11%2C%20Jagannathan%20St%2C%20Ponnangipuram%2C%20Nungambakkam%2C%20Chennai%2C%20Tamil%20Nadu%20600034!5e0!3m2!1sen!2sin!4v1773601855935!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            title="MEY Location"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="filter grayscale saturate-0 contrast-125 p-10"
+          ></iframe>
+        </section>
+      </main>
     );
 };
 

@@ -23,9 +23,9 @@ const Hero = () => {
             }}
           />
 
-          <div className="relative z-10 max-w-[1400px] mt-30  w-full mx-auto flex flex-col items-center text-center">
+          <div className="relative z-10 max-w-[1200px]  mt-30  w-full mx-auto flex flex-col items-center text-center">
             {/* Giant Logo with Overlay Text */}
-            <div className="relative mb-24 w-full mt-10  flex flex-col items-center justify-center">
+            <div className="relative mb-24 bg-[#fbba00] rounded-md p-8 md:p-10 w-full mt-10  flex flex-col items-center justify-center">
               <motion.h1
                 className="text-[150px] sm:text-[240px] text-black md:text-[290px] lg:text-[300px] leading-[0.75]  font-extrabold tracking-tighter  select-none z-0"
                 initial={{ y: 18, opacity: 0 }}
@@ -42,8 +42,8 @@ const Hero = () => {
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
               >
-                <div className="w-full h-[60px] md:h-[90px] bg-white/60 backdrop-blur-md flex items-center justify-center border-y border-black/10 transform shadow-2xl shadow-[#ffff00]/50">
-                  <p className=" text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-[#fbba00]  tracking-wider whitespace-nowrap px-8 font-bold">
+                <div className="w-full h-[60px] md:h-[90px] bg-white/30 backdrop-blur-md flex items-center justify-center border-y border-black/10 transform shadow-2xl shadow-[#ffff00]/50">
+                  <p className=" text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white  tracking-wider whitespace-nowrap px-8 font-bold">
                     Truth Before Business
                   </p>
                 </div>
