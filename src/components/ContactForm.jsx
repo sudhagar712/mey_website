@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Replace with your business WhatsApp number (country code + number, no + or spaces)
-const WHATSAPP_NUMBER = '919943863916';
+const WHATSAPP_NUMBER = "9163834 34705";
 
 const serviceOptions = [
     'Brand Identity Design',
@@ -101,7 +101,7 @@ const ContactForm = () => {
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
-              className="rounded-[2.5rem] p-12 lg:p-20 text-center shadow-[0_30px_60px_rgba(0,0,0,0.08)] border border-gray-100 flex flex-col items-center justify-center min-h-[500px]"
+              className="rounded-[2.5rem] p-12 lg:p-20 text-center shadow-[0_30px_60px_rgba(0,0,0,0.08)] border border-gray-100 flex flex-col items-center justify-center min-h-[350px] md:min-h-[500px]"
             >
               <motion.div
                 initial={{ scale: 0 }}
@@ -126,7 +126,9 @@ const ContactForm = () => {
                 className="text-black/60 text-lg md:text-xl font-medium leading-relaxed max-w-lg mx-auto"
                 style={{ fontFamily: "Montserrat, sans-serif" }}
               >
-                Thank you for reaching out to MEY. We've opened WhatsApp with your details — send the message to complete your brief. Our team will review and get back to you within 24 hours.
+                Thank you for reaching out to MEY. We've opened WhatsApp with
+                your details — send the message to complete your brief. Our team
+                will review and get back to you within 24 hours.
               </p>
             </motion.div>
           ) : (
@@ -136,14 +138,14 @@ const ContactForm = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
               onSubmit={handleSubmit}
-              className="w-full bg-black p-6 md:p-12 lg:p-16 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-gray-100 relative group"
+              className="w-full bg-black px-5 py-8 md:p-12 lg:p-16 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-gray-100 relative group"
             >
               {/* Subtle decorative accent */}
               <div className="absolute top-0 left-0 w-full h-2 rounded-t-[2.5rem]"></div>
 
               <div className="mb-12">
                 <h3
-                  className="text-3xl md:text-4xl text-white font-bold tracking-tighter mb-3"
+                  className="text-2xl md:text-4xl text-white font-bold tracking-tighter mb-3"
                   style={{ fontFamily: "Montserrat, sans-serif" }}
                 >
                   Start a Conversation
@@ -156,7 +158,7 @@ const ContactForm = () => {
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-8 mb-8">
                 <div className="flex flex-col relative group/input">
                   <label className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-white mb-3 transition-colors group-focus-within/input:text-black">
                     Your Name *
@@ -166,14 +168,18 @@ const ContactForm = () => {
                     name="name"
                     value={form.name}
                     onChange={handleChange}
-                    className={`bg-white border-b-2 px-4 py-4 text-lg focus:outline-none transition-all duration-300 hover:bg-gray-50 rounded-t-lg ${
-                      errors.name ? 'border-red-400 focus:border-red-500' : 'border-gray-200 focus:border-black'
+                    className={`bg-white border-b-2 px-4 py-3 text-base md:text-lg focus:outline-none transition-all duration-300 hover:bg-gray-50 rounded-t-lg ${
+                      errors.name
+                        ? "border-red-400 focus:border-red-500"
+                        : "border-gray-200 focus:border-black"
                     }`}
                     placeholder="Enter your name"
                     required
                   />
                   {errors.name && (
-                    <p className="mt-1.5 text-xs text-red-400 font-medium">{errors.name}</p>
+                    <p className="mt-1.5 text-xs text-red-400 font-medium">
+                      {errors.name}
+                    </p>
                   )}
                 </div>
                 <div className="flex flex-col relative group/input">
@@ -202,13 +208,17 @@ const ContactForm = () => {
                     value={form.phone}
                     onChange={handleChange}
                     className={`bg-[#fcfcfc] border-b-2 px-4 py-4 text-black text-lg focus:outline-none transition-all duration-300 hover:bg-gray-50 rounded-t-lg ${
-                      errors.phone ? 'border-red-400 focus:border-red-500' : 'border-gray-200 focus:border-black'
+                      errors.phone
+                        ? "border-red-400 focus:border-red-500"
+                        : "border-gray-200 focus:border-black"
                     }`}
                     placeholder="Enter a mobile number"
                     required
                   />
                   {errors.phone && (
-                    <p className="mt-1.5 text-xs text-red-400 font-medium">{errors.phone}</p>
+                    <p className="mt-1.5 text-xs text-red-400 font-medium">
+                      {errors.phone}
+                    </p>
                   )}
                 </div>
                 <div className="flex flex-col relative group/input">
@@ -221,15 +231,19 @@ const ContactForm = () => {
                     value={form.email}
                     onChange={handleChange}
                     className={`bg-[#fcfcfc] border-b-2 px-4 py-4 text-black text-lg focus:outline-none transition-all duration-300 hover:bg-gray-50 rounded-t-lg ${
-                      errors.email ? 'border-red-400 focus:border-red-500' : 'border-gray-200 focus:border-black'
+                      errors.email
+                        ? "border-red-400 focus:border-red-500"
+                        : "border-gray-200 focus:border-black"
                     }`}
                     placeholder="Enter your email"
                     required
                   />
                   {errors.email && (
-                    <p className="mt-1.5 text-xs text-red-400 font-medium">{errors.email}</p>
+                    <p className="mt-1.5 text-xs text-red-400 font-medium">
+                      {errors.email}
+                    </p>
                   )}
-         </div>
+                </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-10">
@@ -323,12 +337,12 @@ const ContactForm = () => {
                 />
               </div>
 
-              <div className="flex justify-end">
+              <div className="flex justify-center sm:justify-end">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   type="submit"
-                  className="bg-[#fbba00] text-white font-bold uppercase tracking-[0.2em] text-xs md:text-sm px-12 py-5 rounded-full  hover:text-black transition-all duration-300 flex items-center justify-center gap-4 shadow-xl shadow-black/10"
+                  className="bg-[#fbba00] text-white font-bold uppercase tracking-[0.2em] text-xs md:text-sm w-full sm:w-auto px-8 py-4 rounded-full  hover:text-black transition-all duration-300 flex items-center justify-center gap-4 shadow-xl shadow-black/10"
                 >
                   Send Brief
                   <svg

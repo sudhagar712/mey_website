@@ -19,7 +19,7 @@ const Home = () => {
       <SmartConversations />
       <CAPABILITIES />
       <DIFFERENTIATOR />
-      <section className="bg-white py-24 px-6 md:px-12 lg:px-24">
+      <section className="bg-white py-24  md:px-12 lg:px-24">
         <div className="max-w-[1500px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-20 items-start">
             {/* Sidebar Column (Left) */}
