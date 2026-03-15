@@ -96,19 +96,19 @@ const ContactForm = () => {
                                     name="name"
                                     value={form.name}
                                     onChange={handleChange}
-                                    className="bg-gray-300  border-b-2 border-gray-200 px-4 py-4 text-black text-lg focus:outline-none focus:border-black transition-all duration-300 hover:bg-gray-50 rounded-t-lg"
+                                    className="bg-gray-300  border-b-2 border-gray-200 px-4 py-4 text-white text-lg focus:outline-none focus:border-black transition-all duration-300 hover:bg-gray-50 rounded-t-lg"
                                     placeholder="Enter your name "
                                     required
                                 />
                             </div>
                             <div className="flex flex-col relative group/input">
-                                <label className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-black/50 mb-3 transition-colors group-focus-within/input:text-black">Company</label>
+                                <label className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-white mb-3 transition-colors group-focus-within/input:text-black">Company</label>
                                 <input
                                     type="text"
                                     name="company"
                                     value={form.company}
                                     onChange={handleChange}
-                                    className="bg-[#fcfcfc] border-b-2 border-gray-200 px-4 py-4 text-black text-lg focus:outline-none focus:border-black transition-all duration-300 hover:bg-gray-50 rounded-t-lg"
+                                    className="bg-[#fcfcfc] border-b-2 border-gray-200 px-4 py-4 text-white text-lg focus:outline-none focus:border-black transition-all duration-300 hover:bg-gray-50 rounded-t-lg"
                                     placeholder="Business Name"
                                 />
                             </div>
@@ -116,7 +116,7 @@ const ContactForm = () => {
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
                             <div className="flex flex-col relative group/input">
-                                <label className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-black/50 mb-3 transition-colors group-focus-within/input:text-black">Phone *</label>
+                                <label className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-white mb-3 transition-colors group-focus-within/input:text-black">Phone *</label>
                                 <input
                                     type="tel"
                                     name="phone"
@@ -128,7 +128,7 @@ const ContactForm = () => {
                                 />
                             </div>
                             <div className="flex flex-col relative group/input">
-                                <label className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-black/50 mb-3 transition-colors group-focus-within/input:text-black">Email *</label>
+                                <label className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-white mb-3 transition-colors group-focus-within/input:text-black">Email *</label>
                                 <input
                                     type="email"
                                     name="email"
