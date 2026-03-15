@@ -126,7 +126,7 @@ const DIFFERENTIATOR = () => {
             </style>
 
             {/* 1. WHY MEY Section */}
-            <section className="bg-[#fcfcfc] py-32 lg:py-48 px-6 md:px-12 lg:px-24 overflow-hidden relative">
+            <section className="bg-[#fcfcfc] py-32 lg:py-48 px-2 md:px-12 lg:px-24 overflow-hidden relative">
                 <div className="max-w-[1500px] mx-auto">
 
                     <div className="mb-20 scroll-fade-up text-left" ref={addToRefs}>

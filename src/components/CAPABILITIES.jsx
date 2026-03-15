@@ -63,7 +63,7 @@ const CAPABILITIES = () => {
     return (
       <section
         ref={sectionRef}
-        className="bg-white py-32 px-6 md:px-12 lg:px-24"
+        className="bg-white py-32 px-2 md:px-12 lg:px-24"
       >
         <style>
           {`

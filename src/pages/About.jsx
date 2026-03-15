@@ -78,7 +78,7 @@ const About = () => {
         <AboutMey />
 
         {/* 2. Philosophy & Mission (Dark Premium Container) */}
-        <section className="bg-[#0f0f0f] text-white pt-32 lg:pt-40 pb-40 px-6 md:px-12 lg:px-24 rounded-t-[2.5rem] md:rounded-t-[4.5rem] relative">
+        <section className="bg-[#000000] text-white pt-32 lg:pt-40 pb-40 px-6 md:px-12 lg:px-24 rounded-t-[2.5rem] md:rounded-t-[4.5rem] relative">
           <div className="max-w-[1500px] mx-auto">
 
             {/* Philosophy */}
