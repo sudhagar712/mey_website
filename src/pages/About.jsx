@@ -97,7 +97,7 @@ const About = () => {
                     Our Philosophy
                   </h2>
 
-                  <h3 className=" text-[3rem] sm:text-[4rem] md:text-[5rem] lg:text-[6rem] italic font-bold tracking-tighter leading-none  mb-10">
+                  <h3 className=" text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[5rem]  font-bold tracking-tighter leading-none  mb-10">
                     Truth Before <br />
                     <span className="">Business.</span>
                   </h3>
@@ -105,8 +105,7 @@ const About = () => {
                   {/* Points */}
                   <ul className="flex flex-col  gap-6 md:gap-8 text-lg md:text-xl lg:text-2xl font-light tracking-wide mb-12">
                     <li className="flex items-center gap-6  transition">
-                      <span className="w-12  "></span>✅ Before
-                      campaigns.
+                      <span className="w-12  "></span>✅ Before campaigns.
                     </li>
 
                     <li className="flex items-center gap-6  transition">
@@ -114,8 +113,8 @@ const About = () => {
                     </li>
 
                     <li className="flex items-center gap-6  transition">
-                      <span className="w-12  "></span>✅ Before
-                      advertising budgets.
+                      <span className="w-12  "></span>✅ Before advertising
+                      budgets.
                     </li>
                   </ul>
 
@@ -125,7 +124,7 @@ const About = () => {
                       We understand your business first.
                     </p>
 
-                    <p className="text-2xl md:text-4xl  font-bold italic font-premium-serif">
+                    <p className="text-2xl md:text-4xl  font-bold  font-premium-serif">
                       Then we build your brand.
                     </p>
                   </div>
@@ -136,24 +135,23 @@ const About = () => {
             {/* Mission */}
             <section className="lg:px-16">
               <div className="max-w-6xl mx-auto">
-                <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-black to-neutral-900 border border-white/10 shadow-[0_30px_80px_rgba(0,0,0,0.6)]">
-                  <div >
-                   
+                <div className="relative overflow-hidden rounded-3xl bg-[#fbba00] border border-white/10 shadow-[0_30px_80px_rgba(0,0,0,0.6)]">
+                  <div>
                     {/* Right Content */}
                     <div className="p-10 md:p-16">
                       <h2
-                        className="text-[10px] md:text-xs tracking-[0.4em] uppercase font-bold text-[#ffff00] mb-6"
+                        className="text-[12px] md:text-lg tracking-[0.4em] uppercase font-bold mb-6"
                         style={{ fontFamily: "Poppins, sans-serif" }}
                       >
                         Mission
                       </h2>
 
                       <p className="font-premium-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light leading-[1.3] text-white tracking-tight">
-                        <span className="text-white/40">
+                        <span className="text-white">
                           To help businesses
                         </span>{" "}
                         present themselves with clarity, confidence{" "}
-                        <span className="text-[#ffff00] italic">
+                        <span className="text-black ">
                           and measurable impact.
                         </span>
                       </p>

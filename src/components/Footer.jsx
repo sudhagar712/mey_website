@@ -4,7 +4,7 @@ import { FaInstagram, FaLinkedinIn, FaTwitter, FaFacebookF } from "react-icons/f
 
 const Footer = () => {
   return (
-    <footer className="relative bg-[#0b0b0b] text-white py-24 px-6 md:px-12 lg:px-24 overflow-hidden">
+    <footer className="relative py-24 px-6 md:px-12 lg:px-24 overflow-hidden">
 
       {/* Glow Background */}
       <div className="absolute -top-40 left-1/3 w-[600px] h-[600px] bg-yellow-400 opacity-10 blur-[180px] rounded-full pointer-events-none"></div>
@@ -16,22 +16,22 @@ const Footer = () => {
 
           {/* Brand */}
           <div className="space-y-6">
-            <h2 className="text-5xl md:text-6xl font-extrabold tracking-tight">
+            <h2 className="text-5xl md:text-8xl font-extrabold tracking-tight">
               MEY
             </h2>
 
-            <p className="text-lg italic text-gray-300">
+            <p className="text-lg">
               Truth Before Business.
             </p>
 
-            <p className="text-sm uppercase tracking-[0.3em] text-gray-400">
+            <p className="text-sm uppercase tracking-[0.3em] ">
               Chennai, India
             </p>
           </div>
 
           {/* Navigation */}
           <div>
-            <h4 className="text-xs tracking-[0.35em] uppercase text-gray-400 mb-8">
+            <h4 className="text-xs tracking-[0.35em] uppercase font-bold mb-8">
               Navigation
             </h4>
 
@@ -40,12 +40,12 @@ const Footer = () => {
                 <Link
                   key={item}
                   to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                  className="group text-gray-300 hover:text-yellow-400 transition duration-300 relative w-fit"
+                  className="group  transition duration-300 relative w-fit"
                 >
                   {item}
 
                   {/* underline animation */}
-                  <span className="absolute left-0 -bottom-1 h-[1px] w-0 bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute left-0 -bottom-1 h-[1px] w-0 transition-all duration-300 group-hover:w-full"></span>
                 </Link>
               ))}
             </div>
@@ -53,7 +53,7 @@ const Footer = () => {
 
           {/* Social */}
           <div>
-            <h4 className="text-xs tracking-[0.35em] uppercase text-gray-400 mb-8">
+            <h4 className="text-xs tracking-[0.35em] uppercase mb-8">
               Connect
             </h4>
 
@@ -67,33 +67,36 @@ const Footer = () => {
                 <a
                   key={idx}
                   href={social.href}
-                  className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-gray-300 hover:text-black hover:bg-yellow-400 hover:border-yellow-400 transition-all duration-300 hover:scale-110"
+                  className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:text-black hover:bg-yellow-400 hover:border-yellow-400 transition-all duration-300 hover:scale-110"
                 >
                   {social.icon}
                 </a>
               ))}
             </div>
 
-            <p className="text-sm text-gray-400 mt-8 max-w-xs">
+            <p className="text-sm  mt-8 max-w-xs">
               Follow us on social media for updates, insights, and digital innovations.
             </p>
           </div>
 
         </div>
 
+        <hr className="text-gray-200" />
+
+
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-10">
 
-          <p className="text-sm text-gray-500">
+          <p className="text-sm ">
             © {new Date().getFullYear()} MEY. All rights reserved.
           </p>
 
-          <div className="flex gap-8 text-sm text-gray-400">
-            <Link to="#" className="hover:text-yellow-400 transition">
+          <div className="flex gap-8 text-sm ">
+            <Link to="#" className=" transition">
               Privacy Policy
             </Link>
 
-            <Link to="#" className="hover:text-yellow-400 transition">
+            <Link to="#" className=" transition">
               Terms of Service
             </Link>
           </div>

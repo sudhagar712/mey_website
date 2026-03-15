@@ -14,7 +14,7 @@ const PageBanner = ({ title, breadcrumb }) => {
                 />
                 {/* Light yellow gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#dcad02]  mix-blend-multiply"></div>
-                <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px]"></div>
+                <div className="absolute inset-0 backdrop-blur-[2px]"></div>
             </div>
 
             {/* Content */}
@@ -24,7 +24,7 @@ const PageBanner = ({ title, breadcrumb }) => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
                     className="text-5xl md:text-7xl lg:text-[6rem] font-bold text-black tracking-tighter mb-6"
-                    style={{ fontFamily: 'Playfair Display, serif' }}
+                  
                 >
                     {title}
                 </motion.h1>

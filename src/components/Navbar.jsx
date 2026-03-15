@@ -22,23 +22,23 @@ export default function Navbar() {
   return (
     <>
       {/* NAVBAR */}
-      <div className="fixed top-0 left-0 w-full z-50 flex justify-center pt-5 px-4">
-        <div className="w-full max-w-[1400px] flex items-center justify-between bg-[#1b1b1b]/80 backdrop-blur-xl border border-white/10 rounded-full px-6 py-4">
+      <div className="fixed top-0 left-0 w-full z-50  flex justify-center pt-5 px-4">
+        <div className="w-full max-w-[1400px] flex items-center justify-between bg-[#fbba00]  border border-white/10 rounded-full px-6 py-4">
           {/* LOGO */}
           <Link
             to="/"
-            className="text-white text-lg md:text-2xl font-semibold tracking-wider"
+            className="text-black text-lg md:text-4xl font-extrabold tracking-wider"
           >
             MEY
           </Link>
 
           {/* DESKTOP MENU */}
-          <div className="hidden md:flex gap-10 text-white text-sm tracking-widest">
+          <div className="hidden md:flex gap-10  text-sm tracking-widest">
             {menuItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
-                className="hover:text-gray-300 transition"
+                className=" transition "
               >
                 {item.name}
               </Link>

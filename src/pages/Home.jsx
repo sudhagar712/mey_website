@@ -10,7 +10,7 @@ import ContactSidebar from '../components/ContactSidebar'
 
 const Home = () => {
   return (
-    <div className="mt-30">
+    <div className="">
       <SEO
         title="MEY | Branding & Digital Marketing Agency in Chennai"
         description="MEY is a premium branding and digital marketing agency in Chennai offering brand identity, social media management, website development, performance marketing and outdoor advertising."
