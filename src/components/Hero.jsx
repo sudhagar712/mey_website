@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link } from "react-scroll";
 
 const Hero = () => {
     return (
@@ -90,17 +90,32 @@ const Hero = () => {
                             </Link>
 
                             {/* Premium Button 2 */}
-                            <Link
-                                to="/contact"
-                                className="group relative px-14 py-6 bg-transparent text-black text-[11px] md:text-xs font-bold tracking-[0.25em] uppercase w-full sm:w-auto transition-all duration-500 hover:text-white flex items-center justify-center gap-4 rounded-none border-[1.5px] border-black overflow-hidden"
-                                style={{ fontFamily: 'Poppins, sans-serif' }}
-                            >
-                                <div className="absolute inset-0 w-full h-full bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-500 -z-10 ease-out"></div>
-                                Start a Project
-                                <svg className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                </svg>
-                            </Link>
+                           <Link
+  to="contact"
+  smooth={true}
+  duration={600}
+  offset={-80}
+  className="group relative px-14 py-6 bg-transparent text-black text-[11px] md:text-xs font-bold tracking-[0.25em] uppercase w-full sm:w-auto transition-all duration-500 hover:text-white flex items-center justify-center gap-4 rounded-none border-[1.5px] border-black overflow-hidden"
+  style={{ fontFamily: "Poppins, sans-serif" }}
+>
+  <div className="absolute inset-0 w-full h-full bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-500 -z-10 ease-out"></div>
+
+  Start a Project
+
+  <svg
+    className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-2"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={1.5}
+      d="M14 5l7 7m0 0l-7 7m7-7H3"
+    />
+  </svg>
+</Link>
                         </motion.div>
 
                     </motion.div>
