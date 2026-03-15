@@ -40,7 +40,7 @@ const Hero = () => {
                             transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
                         >
                             <div className="w-full h-[60px] md:h-[110px] bg-[#ffcc01]/60 backdrop-blur-md flex items-center justify-center border-y border-black/10 transform shadow-2xl shadow-[#ffff00]/50">
-                                <p className="font-premium-serif italic text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-black tracking-wider whitespace-nowrap px-8 font-light">
+                                <p className="font-premium-serif italic text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white  tracking-wider whitespace-nowrap px-8 font-light">
                                     Truth Before Business
                                 </p>
                             </div>
@@ -59,13 +59,13 @@ const Hero = () => {
 
                         <div className="flex items-center gap-6 mb-10 w-full justify-center">
                             <div className="w-16 h-px bg-black/30"></div>
-                            <h2 className="text-[12px] md:text-xs bg-white p-5 md:p-3 rounded-md  font-bold uppercase tracking-[0.3em] text-black/80 text-center" style={{ fontFamily: 'Poppins, sans-serif' }}>
+                            <h2 className="text-[11px] md:text-xs   md:p-3 rounded-md  font-bold uppercase tracking-[0.3em] text-white text-center" style={{ fontFamily: 'Poppins, sans-serif' }}>
                                 Branding & Digital Marketing Agency in Chennai
                             </h2>
                             <div className="w-16 h-px bg-black/30"></div>
                         </div>
 
-                        <p className="text-xl md:text-3xl lg:text-[2.1rem] text-black/80 font-medium leading-[1.6] mb-16" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                        <p className="text-lg md:text-3xl lg:text-[2.1rem] text-black/80 font-medium leading-[1.6] mb-10" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                             We build <span className="text-black font-bold italic border-b border-black/30">clear</span>, <span className="text-black font-bold italic border-b border-black/30">powerful</span> and <span className="text-black font-bold italic border-b border-black/30">growth-focused</span> brands <br className="hidden lg:block" /> for startups and ambitious businesses.
                         </p>
 
