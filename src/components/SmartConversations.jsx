@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import brandVideo from '../assets/brandvideo.mp4';
+import brandVideo from '../assets/brandvideo1.mp4';
 
 const SmartConversations = () => {
   return (
@@ -9,7 +9,7 @@ const SmartConversations = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.25 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="max-w-[1300px] mx-auto">
         <motion.h2
@@ -17,7 +17,7 @@ const SmartConversations = () => {
           initial={{ y: 14, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true, amount: 0.6 }}
-          transition={{ duration: 0.55, ease: 'easeOut' }}
+          transition={{ duration: 0.55, ease: "easeOut" }}
         >
           Engage Your Customers with Smart Conversations
         </motion.h2>
@@ -28,7 +28,7 @@ const SmartConversations = () => {
           initial={{ y: 18, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.65, ease: 'easeOut' }}
+          transition={{ duration: 0.65, ease: "easeOut" }}
         >
           {/* Video Card with real video */}
           <div className="relative w-full pt-[56.25%] bg-black">
@@ -42,18 +42,16 @@ const SmartConversations = () => {
             />
 
             {/* Dark overlay */}
-            <div className="absolute inset-0 bg-black/35" />
+            <div className="absolute inset-0 bg-black/65" />
 
             {/* Overlay text */}
-            <div className="absolute inset-0 flex items-center justify-center">
-             
-            </div>
+            <div className="absolute inset-0 flex items-center justify-center"></div>
 
             {/* Play button visual (video already autoplaying) */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               <span className="relative flex items-center justify-center">
                 <span className="absolute w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white/25 blur-lg" />
-                <span className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#000000ad] text-white shadow-lg shadow-black/40 flex items-center justify-center">
+                <span className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#fbb80039] text-white shadow-lg shadow-black/40 flex items-center justify-center">
                   <span className="ml-0.5 inline-block w-0 h-0 border-t-[9px] border-t-transparent border-b-[9px] border-b-transparent border-l-15 border-l-white" />
                 </span>
               </span>
@@ -61,7 +59,7 @@ const SmartConversations = () => {
           </div>
 
           {/* Stats Row */}
-          <div className="bg-[#000000] text-white py-8 sm:py-10 px-5 sm:px-6 md:px-10">
+          <div className="bg-[#fbba00] py-8 sm:py-10 px-5 sm:px-6 md:px-10">
             <motion.div
               className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-20 text-center"
               initial="hidden"
@@ -75,10 +73,16 @@ const SmartConversations = () => {
               <motion.div
                 variants={{
                   hidden: { y: 10, opacity: 0 },
-                  show: { y: 0, opacity: 1, transition: { duration: 0.45, ease: 'easeOut' } },
+                  show: {
+                    y: 0,
+                    opacity: 1,
+                    transition: { duration: 0.45, ease: "easeOut" },
+                  },
                 }}
               >
-                <div className="text-2xl md:text-3xl font-semibold mb-1">8500+</div>
+                <div className="text-2xl md:text-4xl font-semibold mb-1">
+                  8500+
+                </div>
                 <div className="text-xs md:text-sm uppercase tracking-[0.2em] opacity-80">
                   Happy
                   <br />
@@ -88,10 +92,16 @@ const SmartConversations = () => {
               <motion.div
                 variants={{
                   hidden: { y: 10, opacity: 0 },
-                  show: { y: 0, opacity: 1, transition: { duration: 0.45, ease: 'easeOut' } },
+                  show: {
+                    y: 0,
+                    opacity: 1,
+                    transition: { duration: 0.45, ease: "easeOut" },
+                  },
                 }}
               >
-                <div className="text-2xl md:text-3xl font-semibold mb-1">1 Billion+</div>
+                <div className="text-2xl md:text-4xl font-semibold mb-1">
+                  1 Billion+
+                </div>
                 <div className="text-xs md:text-sm uppercase tracking-[0.2em] opacity-80">
                   Billion
                   <br />
@@ -101,10 +111,16 @@ const SmartConversations = () => {
               <motion.div
                 variants={{
                   hidden: { y: 10, opacity: 0 },
-                  show: { y: 0, opacity: 1, transition: { duration: 0.45, ease: 'easeOut' } },
+                  show: {
+                    y: 0,
+                    opacity: 1,
+                    transition: { duration: 0.45, ease: "easeOut" },
+                  },
                 }}
               >
-                <div className="text-2xl md:text-3xl font-semibold mb-1">99%</div>
+                <div className="text-2xl md:text-4xl font-semibold mb-1">
+                  99%
+                </div>
                 <div className="text-xs md:text-sm uppercase tracking-[0.2em] opacity-80">
                   API
                   <br />
@@ -114,10 +130,16 @@ const SmartConversations = () => {
               <motion.div
                 variants={{
                   hidden: { y: 10, opacity: 0 },
-                  show: { y: 0, opacity: 1, transition: { duration: 0.45, ease: 'easeOut' } },
+                  show: {
+                    y: 0,
+                    opacity: 1,
+                    transition: { duration: 0.45, ease: "easeOut" },
+                  },
                 }}
               >
-                <div className="text-2xl md:text-3xl font-semibold mb-1">70%</div>
+                <div className="text-2xl md:text-4xl font-semibold mb-1">
+                  70%
+                </div>
                 <div className="text-xs md:text-sm uppercase tracking-[0.2em] opacity-80">
                   Reducing
                   <br />
@@ -127,10 +149,16 @@ const SmartConversations = () => {
               <motion.div
                 variants={{
                   hidden: { y: 10, opacity: 0 },
-                  show: { y: 0, opacity: 1, transition: { duration: 0.45, ease: 'easeOut' } },
+                  show: {
+                    y: 0,
+                    opacity: 1,
+                    transition: { duration: 0.45, ease: "easeOut" },
+                  },
                 }}
               >
-                <div className="text-2xl md:text-3xl font-semibold mb-1">85%</div>
+                <div className="text-2xl md:text-4xl font-semibold mb-1">
+                  85%
+                </div>
                 <div className="text-xs md:text-sm uppercase tracking-[0.2em] opacity-80">
                   Increasing
                   <br />

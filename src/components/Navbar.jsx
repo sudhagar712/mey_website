@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 
+
 const menuItems = [
   { name: "HOME", path: "/" },
   { name: "ABOUT", path: "/about" },
@@ -22,12 +23,12 @@ export default function Navbar() {
   return (
     <>
       {/* NAVBAR */}
-      <div className="fixed top-0 left-0 w-full z-50  flex justify-center pt-5 px-4">
-        <div className="w-full max-w-[1200px] flex items-center justify-between bg-[#fbba00]  border border-white/10 rounded-full px-6 py-4">
+      <div className="fixed top-0 left-0 w-full z-50  flex justify-center ">
+        <div className="w-full  flex items-center justify-between bg-[#fbba00]  border-2 border-white px-10 md:px-20 py-4">
           {/* LOGO */}
           <Link
             to="/"
-            className="text-black text-lg md:text-4xl font-extrabold tracking-wider"
+            className="text-black text-5xl md:text-5xl font-extrabold tracking-wider"
           >
             MEY
           </Link>

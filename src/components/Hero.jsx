@@ -23,7 +23,7 @@ const Hero = () => {
             }}
           />
 
-          <div className="relative z-10 max-w-[1200px]  mt-30  w-full mx-auto flex flex-col items-center text-center">
+          <div className="relative z-10 max-w-[1600px]  mt-20  w-full mx-auto flex flex-col items-center text-center">
             {/* Giant Logo with Overlay Text */}
             <div className="relative mb-24 bg-[#fbba00] rounded-md p-8 md:p-10 w-full mt-10  flex flex-col items-center justify-center">
               <motion.h1
@@ -43,7 +43,7 @@ const Hero = () => {
                 transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
               >
                 <div className="w-full h-[60px] md:h-[90px] bg-white/30 backdrop-blur-md flex items-center justify-center border-y border-black/10 transform shadow-2xl shadow-[#ffff00]/50">
-                  <p className=" text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white  tracking-wider whitespace-nowrap px-8 font-bold">
+                  <p className=" text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white  tracking-wider whitespace-nowrap px-8 font-thin">
                     Truth Before Business
                   </p>
                 </div>
@@ -52,13 +52,13 @@ const Hero = () => {
 
             {/* Content Box */}
             <motion.div
-              className="flex flex-col  items-center max-w-4xl mx-auto"
+              className="flex flex-col   items-center max-w-4xl mx-auto"
               initial={{ y: 16, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <p className="text-lg md:text-3xl lg:text-[2.1rem] text-black/80 font-medium leading-[1.6] mb-10">
+              <p className="text-lg md:text-3xl  lg:text-[2.1rem] text-black/80 font-medium leading-[1.6] mb-10">
                 We build{" "}
                 <span className="text-[#fbba00] font-bold  border-b border-black/30">
                   clear
