@@ -62,7 +62,7 @@ const Contact = () => {
             loading="lazy"
             title="MEY Location"
             referrerPolicy="no-referrer-when-downgrade"
-            className="filter grayscale saturate-0 contrast-125 p-10"
+            className="filter p-10"
           ></iframe>
         </section>
       </main>

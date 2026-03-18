@@ -38,7 +38,7 @@ const Home = () => {
       </section>
 
       {/* Google Map */}
-      <section className="w-full  h-[500px] bg-white  md:px-10 ">
+      <section className="w-full  h-[500px]   md:px-10 ">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.6042118807945!2d80.24194607454788!3d13.06084631291643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526668672d75f1%3A0x168bf45159b6b928!2s11%2C%20Jagannathan%20St%2C%20Ponnangipuram%2C%20Nungambakkam%2C%20Chennai%2C%20Tamil%20Nadu%20600034!5e0!3m2!1sen!2sin!4v1773601855935!5m2!1sen!2sin"
           width="600"
@@ -54,7 +54,7 @@ const Home = () => {
           loading="lazy"
           title="MEY Location"
           referrerPolicy="no-referrer-when-downgrade"
-          className="filter grayscale saturate-0 contrast-125 p-10"
+          className="filter p-10"
         ></iframe>
       </section>
     </div>

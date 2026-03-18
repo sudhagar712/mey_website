@@ -67,7 +67,7 @@ const Insights = () => {
 
   return (
     <main>
-      <PageBanner title="Agency Insights" breadcrumb="Insights" />
+      <PageBanner title="Recharge" breadcrumb="Insights" />
 
       <section className="bg-white py-20 pb-32 px-6 lg:px-16">
         <div className="max-w-7xl mx-auto">
