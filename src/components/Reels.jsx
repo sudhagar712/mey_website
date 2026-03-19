@@ -28,19 +28,19 @@ const Reels = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-100 text-black px-4 md:px-16 py-16">
-      {/* HEADING */}
-      <div className="max-w-6xl mx-auto mb-12">
-        <h2 className="text-3xl md:text-6xl font-bold tracking-tight">
-          Reels Showcase
-        </h2>
-        <p className="text-gray-500 mt-3 text-sm md:text-lg">
-          Explore our latest video creations.
-        </p>
-      </div>
-
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10 items-start">
+      
         {/* LEFT SIDE - TABS */}
         <div className="w-full lg:w-1/3 flex lg:flex-col gap-4 overflow-x-auto lg:overflow-visible pb-2">
+        <div>
+<h2 className="text-3xl md:text-6xl font-bold tracking-tight">
+            Reels Showcase
+          </h2>
+          <p className="text-gray-500 mt-3 text-sm md:text-lg">
+            Explore our latest video creations.
+          </p>
+        </div>
+          
           {reelsData.map((item, index) => (
             <button
               key={index}
@@ -57,7 +57,7 @@ const Reels = () => {
         </div>
 
         {/* RIGHT SIDE - VIDEO */}
-        <div className="w-full lg:w-2/3 flex justify-center">
+        <div className="w-full lg:w-2/3 flex justify-center ">
           <div className="relative w-full max-w-[380px] sm:max-w-[420px] aspect-[9/16] rounded-[2rem] overflow-hidden bg-black shadow-2xl">
             {/* VIDEO */}
             <video

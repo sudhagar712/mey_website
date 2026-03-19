@@ -67,7 +67,11 @@ const Insights = () => {
 
   return (
     <main>
-      <PageBanner title="Recharge" breadcrumb="Insights" />
+      <PageBanner
+        title="Recharge"
+        breadcrumb="Insights"
+        bgImage="https://peekage.com/blog/wp-content/uploads/2024/04/consumer-insights.jpg"
+      />
 
       <section className="bg-white py-20 pb-32 px-6 lg:px-16">
         <div className="max-w-7xl mx-auto">
@@ -142,8 +146,6 @@ const Insights = () => {
           </div>
         </div>
       </section>
-
-     
     </main>
   );
 };

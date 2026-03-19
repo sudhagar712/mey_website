@@ -14,7 +14,11 @@ const Services = () => {
         title="Branding, Social Media & Website Design Services in Chennai | MEY"
         description="Explore MEY’s branding, social media marketing, website development, video production and advertising services in Chennai."
       />
-      <PageBanner title="Our Services" breadcrumb="services" />
+      <PageBanner
+        title="Our Services"
+        breadcrumb="services"
+        bgImage="https://www.mlcqehs.com/images/vindus_clients_images/ser-1.png"
+      />
       <div className="p-3 md:px-5 md:p-10">
         <ExpandingCards />
       </div>

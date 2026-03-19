@@ -2,7 +2,7 @@ import React from 'react';
 
 const ContactSidebar = () => {
     return (
-      <div className="w-full flex flex-col gap-8 h-full">
+      <div className="w-full flex flex-col gap-8 h-full ">
         {/* Direct Contact Card */}
         <div className="bg-black border border-white/10 rounded-[2.5rem] p-10 lg:p-12 shadow-2xl relative overflow-hidden flex-1">
           {/* Decorative Glow inside black card */}

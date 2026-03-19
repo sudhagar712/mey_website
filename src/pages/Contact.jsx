@@ -32,19 +32,23 @@ const Contact = () => {
           description="Contact MEY to start your next branding or digital marketing project with us."
         />
         {/* 1. Page Banner */}
-        <PageBanner title="Contact Us" breadcrumb="Contact" />
+        <PageBanner
+          title="Contact Us"
+          breadcrumb="Contact"
+          bgImage="https://www.shutterstock.com/image-photo/contact-us-concept-hand-show-600nw-2503143861.jpg"
+        />
 
         {/* Main Contact Section */}
-        <section className=" pt-20 pb-28 bg-white">
+        <section className=" pt-15 pb-28 bg-white">
           <div className="container md:px-10 ">
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-20 items-start">
               {/* Sidebar Column (Left) */}
-              <div className="w-full">
+              <div className="w-full p-2 order-2 lg:order-1">
                 <ContactSidebar />
               </div>
 
               {/* Form Column (Right) */}
-              <div className="w-full">
+              <div className="w-full p-2 order-1 lg:order-2">
                 <ContactForm />
               </div>
             </div>
@@ -62,7 +66,7 @@ const Contact = () => {
             loading="lazy"
             title="MEY Location"
             referrerPolicy="no-referrer-when-downgrade"
-            className="filter p-10"
+            className="filter "
           ></iframe>
         </section>
       </main>

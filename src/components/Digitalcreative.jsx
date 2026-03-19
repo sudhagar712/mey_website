@@ -59,7 +59,7 @@ const Digitalcreative = () => {
       </h1>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 px-2 md:px-10 md:py-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-10 px-2 md:px-10 md:py-5">
         {images.map((img, index) => (
           <div
             key={index}

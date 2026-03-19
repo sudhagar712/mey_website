@@ -145,7 +145,7 @@ const ContactForm = () => {
 
               <div className="mb-12">
                 <h3
-                  className="text-2xl md:text-4xl text-white font-bold tracking-tighter mb-3"
+                  className="text-4xl md:text-5xl text-white font-bold tracking-tighter mb-3"
                   style={{ fontFamily: "Montserrat, sans-serif" }}
                 >
                   Start a Conversation

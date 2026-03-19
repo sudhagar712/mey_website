@@ -51,8 +51,15 @@ const AboutMey = () => {
               style={{ fontFamily: "Montserrat, sans-serif" }}
             >
               We combine strategy, creativity and execution under one structured
-              direction.
+              direction . Every project starts with deep understanding — your
+              business, your audience, and your goals. From there, we build a
+              strong foundation that aligns branding with business growth.
             </p>
+
+            <p
+              className="text-base md:text-lg  font-medium leading-[1.6]"
+              style={{ fontFamily: "Montserrat, sans-serif" }}
+            ></p>
           </motion.div>
         </div>
 
@@ -70,8 +77,6 @@ const AboutMey = () => {
               alt="About MEY Agency"
               className="w-full h-full object-cover filter grayscale-[20%] group-hover:scale-105 transition-transform duration-[1.5s] ease-[cubic-bezier(0.25,1,0.5,1)] origin-center"
             />
-
-          
           </motion.div>
         </div>
       </section>

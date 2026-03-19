@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Reels from '../components/Reels';
 import screen1 from "../assets/sreen.png"
 import Digitalcreative from '../components/Digitalcreative';
+import VideoSlider from '../components/VideoSlider';
 
 
 
@@ -28,7 +29,15 @@ const Work = () => {
         title="Branding & Marketing Projects | MEY Chennai"
         description="Explore branding, social media, website and advertising projects delivered by MEY."
       />
-      <PageBanner title="Our Work" breadcrumb="Work" />
+      <PageBanner
+        title="Our Work"
+        breadcrumb="Work"
+        bgImage="https://www.myfitnesschat.com/wp-content/uploads/2019/03/pexels-photo-1509428.jpeg"
+      />
+
+      <Reels />
+
+      <Digitalcreative />
 
       <div className="min-h-screen  py-20 px-6 md:px-40">
         <h2 className="text-3xl md:text-6xl font-bold mb-12 ">Projects</h2>
@@ -74,15 +83,8 @@ const Work = () => {
         </div>
       </div>
 
-
-{/* Reels */}
-
-<Reels/>
-
-<Digitalcreative/>
-
-
-
+      {/* Reels */}
+      <VideoSlider />
     </main>
   );
 };

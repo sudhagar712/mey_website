@@ -35,7 +35,7 @@ export default function Navbar() {
           </Link>
 
           {/* DESKTOP MENU */}
-          <div className="hidden md:flex gap-10 font-medium text-sm tracking-widest">
+          <div className="hidden md:flex gap-10 font-bold text-sm tracking-widest">
             {menuItems.map((item) => (
               <NavLink
                 key={item.name}
