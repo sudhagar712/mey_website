@@ -7,6 +7,7 @@ import CAPABILITIES from '../components/CAPABILITIES'
 import DIFFERENTIATOR from '../components/DIFFERENTIATOR'
 import ContactForm from '../components/ContactForm'
 import ContactSidebar from '../components/ContactSidebar'
+import Marquee from '../components/Marquee';
 
 const Home = () => {
   return (
@@ -17,11 +18,16 @@ const Home = () => {
       />
       <Hero />
       <SmartConversations />
+      <Marquee text=" || WE AUTOMATE THE ROUTINE - SO YOU CAN INNOVATE THE EXTRAORDINARY || " />
       <CAPABILITIES />
+      <Marquee text=" || WE AUTOMATE THE ROUTINE - SO YOU CAN INNOVATE THE EXTRAORDINARY || " />
       <DIFFERENTIATOR />
+
       <section className="bg-white py-24  md:px-12 lg:px-24">
         <div className="max-w-[1500px] mx-auto">
-          <h1 className='font-bold  text-3xl  md:text-6xl mb-10 text-center'>Let's  Connect</h1>
+          <h1 className="font-bold  text-3xl  md:text-6xl mb-10 text-center">
+            Let's Connect
+          </h1>
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-20 items-start">
             {/* Sidebar Column (Left) */}
             <div className="w-full order-2 lg:order-1">
