@@ -50,7 +50,6 @@ const SmartConversations = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="max-w-[1300px] mx-auto">
-        
         {/* Title */}
         <motion.h2
           className="text-center text-[22px] sm:text-2xl md:text-3xl lg:text-[32px] font-semibold text-gray-900 mb-8 md:mb-10"
@@ -70,7 +69,6 @@ const SmartConversations = () => {
           viewport={{ amount: 0.3 }} // ❗ re-trigger
           transition={{ duration: 0.65, ease: "easeOut" }}
         >
-          
           {/* 🎥 Video */}
           <div className="relative w-full pt-[56.25%] bg-black">
             <video
@@ -99,7 +97,7 @@ const SmartConversations = () => {
           {/* 📊 Stats */}
           <div className="bg-[#fbba00] py-8 sm:py-10 px-5 sm:px-6 md:px-10">
             <motion.div
-              className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-10 text-center"
+              className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-10 text-center"
               initial="hidden"
               whileInView="show"
               viewport={{ amount: 0.4 }} // ❗ re-trigger
@@ -108,7 +106,6 @@ const SmartConversations = () => {
                 show: { transition: { staggerChildren: 0.1 } },
               }}
             >
-              
               {/* Stat 1 */}
               <motion.div
                 variants={{
@@ -121,6 +118,21 @@ const SmartConversations = () => {
                 </div>
                 <div className="text-xs md:text-sm uppercase tracking-[0.2em] opacity-80">
                   Happy <br /> Customer
+                </div>
+              </motion.div>
+
+              {/* Stat 1.5 */}
+              <motion.div
+                variants={{
+                  hidden: { y: 10, opacity: 0 },
+                  show: { y: 0, opacity: 1 },
+                }}
+              >
+                <div className="text-2xl md:text-4xl font-semibold mb-1">
+                  <CountUp value={50} suffix="+" />
+                </div>
+                <div className="text-xs md:text-sm uppercase tracking-[0.2em] opacity-80">
+                  Courses<br />Offered
                 </div>
               </motion.div>
 
@@ -183,7 +195,6 @@ const SmartConversations = () => {
                   Increasing <br /> Engagement
                 </div>
               </motion.div>
-
             </motion.div>
           </div>
         </motion.div>

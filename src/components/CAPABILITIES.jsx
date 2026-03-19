@@ -1,42 +1,48 @@
 import React, { useEffect, useRef } from 'react';
 
 const capabilities = [
-    {
-        num: '01',
-        title: 'Brand Identity',
-        desc: 'Logo design, naming, visual systems and brand guidelines.',
-        imgUrl: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop', // Branding abstract
-    },
-    {
-        num: '02',
-        title: 'Social Media Management',
-        desc: 'Instagram, Facebook, LinkedIn and YouTube handled with structured monthly content.',
-        imgUrl: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=1000&auto=format&fit=crop', // Social Media icons
-    },
-    {
-        num: '03',
-        title: 'Website Design & Development',
-        desc: 'Fast, modern and conversion-focused websites.',
-        imgUrl: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000&auto=format&fit=crop', // Code/Laptop
-    },
-    {
-        num: '04',
-        title: 'Video Production',
-        desc: 'Corporate films, product shoots and reels.',
-        imgUrl: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1000&auto=format&fit=crop', // Camera/Film
-    },
-    {
-        num: '05',
-        title: 'Performance Marketing',
-        desc: 'Instagram ads, Facebook ads and Google ads for lead generation.',
-        imgUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop', // Charts/Analytics
-    },
-    {
-        num: '06',
-        title: 'Outdoor Advertising',
-        desc: 'Hoardings, bus stop branding and exhibition stall design.',
-        imgUrl: 'https://images.pexels.com/photos/2881223/pexels-photo-2881223.jpeg', // Billboard/Outdoor
-    },
+  {
+    num: "01",
+    title: "Brand Identity",
+    desc: "Logo design, naming, visual systems and brand guidelines.",
+    imgUrl:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400/1ba9d3215702323.67721dbc23ab9.jpg", // Branding abstract
+  },
+  {
+    num: "02",
+    title: "Social Media Management",
+    desc: "Instagram, Facebook, LinkedIn and YouTube handled with structured monthly content.",
+    imgUrl:
+      "https://i0.wp.com/famesolutely.com/wp-content/uploads/2024/04/2150063164-jpg.webp?resize=1000%2C667&ssl=1", // Social Media icons
+  },
+  {
+    num: "03",
+    title: "Website Design & Development",
+    desc: "Fast, modern and conversion-focused websites.",
+    imgUrl:
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000&auto=format&fit=crop", // Code/Laptop
+  },
+  {
+    num: "04",
+    title: "Video Production",
+    desc: "Corporate films, product shoots and reels.",
+    imgUrl:
+      "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1000&auto=format&fit=crop", // Camera/Film
+  },
+  {
+    num: "05",
+    title: "Performance Marketing",
+    desc: "Instagram ads, Facebook ads and Google ads for lead generation.",
+    imgUrl:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop", // Charts/Analytics
+  },
+  {
+    num: "06",
+    title: "Outdoor Advertising",
+    desc: "Hoardings, bus stop branding and exhibition stall design.",
+    imgUrl:
+      "https://images.pexels.com/photos/2881223/pexels-photo-2881223.jpeg", // Billboard/Outdoor
+  },
 ];
 
 const CAPABILITIES = () => {

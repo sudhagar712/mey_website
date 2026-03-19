@@ -225,7 +225,7 @@ const DIFFERENTIATOR = () => {
               alt="CTA Background"
               className="w-full h-full object-cover grayscale"
             />
-            <div className="absolute inset-0 bg-[#ffcc01]/60 mix-blend-multiply"></div>
+            <div className="absolute inset-0 bg-[#ffcc01] mix-blend-multiply"></div>
           </div>
 
           <div
@@ -249,7 +249,7 @@ const DIFFERENTIATOR = () => {
             <div className="flex flex-col sm:flex-row gap-6 justify-center w-full sm:w-auto">
               <Link
                 to="/contact"
-                className="group relative px-14 py-6 bg-black text-white text-[11px] md:text-xs font-bold tracking-[0.25em] uppercase w-full sm:w-auto transition-all duration-500 hover:text-black flex items-center justify-center gap-4 border-[1.5px] border-black overflow-hidden shadow-2xl shadow-black/20"
+                className="group relative px-14 py-6 bg-black text-white text-[11px] md:text-xs font-bold tracking-[0.25em] uppercase w-full sm:w-auto transition-all duration-500 hover:text-white flex items-center justify-center gap-4 border-[1.5px] border-black overflow-hidden shadow-2xl shadow-black/20"
                 style={{ fontFamily: "Poppins, sans-serif" }}
               >
                 <div className="absolute inset-0 w-full h-full bg-white translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500 -z-10 ease-out"></div>
@@ -271,7 +271,7 @@ const DIFFERENTIATOR = () => {
 
               <Link
                 to="/work"
-                className="group relative px-14 py-6 bg-transparent text-black text-[11px] md:text-xs font-bold tracking-[0.25em] uppercase w-full sm:w-auto transition-all duration-500 hover:text-white flex items-center justify-center gap-4 border-[1.5px] border-black overflow-hidden"
+                className="group relative px-14 py-6  text-black bg-white  text-[11px] md:text-xs font-bold tracking-[0.25em] uppercase w-full sm:w-auto transition-all duration-500 hover:text-black flex items-center justify-center gap-4 border-[1.5px] border-black overflow-hidden"
                 style={{ fontFamily: "Poppins, sans-serif" }}
               >
                 <div className="absolute inset-0 w-full h-full bg-black translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500 -z-10 ease-out"></div>
