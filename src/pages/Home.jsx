@@ -25,12 +25,9 @@ const Home = () => {
 
       <section className="bg-white py-24  md:px-12 lg:px-24">
         <div className="max-w-[1500px] mx-auto">
-          <h1 className="font-bold  text-3xl  md:text-6xl mb-10 text-center">
-            Let's Connect
-          </h1>
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-20 items-start">
             {/* Sidebar Column (Left) */}
-            <div className="w-full order-2 lg:order-1">
+            <div className="w-full order-2 lg:order-1 p-2">
               <ContactSidebar />
             </div>
 
@@ -61,7 +58,7 @@ const Home = () => {
           loading="lazy"
           title="MEY Location"
           referrerPolicy="no-referrer-when-downgrade"
-          className="filter p-10"
+          className="filter "
         ></iframe>
       </section>
     </div>

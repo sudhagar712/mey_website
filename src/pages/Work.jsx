@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Reels from '../components/Reels';
 import screen1 from "../assets/sreen.png"
 import Digitalcreative from '../components/Digitalcreative';
-import VideoSlider from '../components/VideoSlider';
+// import VideoSlider from '../components/VideoSlider';
 
 
 
@@ -83,8 +83,8 @@ const Work = () => {
         </div>
       </div>
 
-      {/* Reels */}
-      <VideoSlider />
+   
+      {/* <VideoSlider /> */}
     </main>
   );
 };

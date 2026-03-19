@@ -2,6 +2,17 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import imgg from "../assets/plan.jpeg"
+import client1 from "../assets/client/Aspire.png";
+import client2 from "../assets/client/BCG.png";
+import client3 from "../assets/client/Budanta.png";
+import client4 from "../assets/client/DIPR.png";
+import client5 from "../assets/client/Kauvery hospital.png";
+import client6 from "../assets/client/sweep.png";
+import client7 from "../assets/client/TNP.png";
+import client8 from "../assets/client/Gaja.png";
+
+
+
 
 const differentiators = [
     {
@@ -46,10 +57,35 @@ const differentiators = [
     },
 ];
 
+
+
+
 const clients = [
-    'Artisan Co.', 'BuildRight', 'Nova Ventures', 'ClearPath',
-    'Elevate Hub', 'Prism Group', 'Anchor Brands', 'Solis Tech'
+  { name: "Client 1", logo: client1 },
+  { name: "Client 2", logo: client2 },
+  { name: "Client 3", logo: client3 },
+  { name: "Client 4", logo: client4 },
+  { name: "Client 5", logo: client5 },
+  { name: "Client 6", logo: client6 },
+
+  { name: "Client 7", logo: client7 },
+  { name: "Client 8", logo: client8 },
 ];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const DIFFERENTIATOR = () => {
     const sectionRefs = useRef([]);
@@ -166,20 +202,14 @@ const DIFFERENTIATOR = () => {
 
               {/* RIGHT SIDE */}
               <div className="relative flex justify-center">
-                <img
-                  src={imgg}
-                  alt="Strategy"
-                  className=" drop-shadow-2xl"
-                />
-
-              
+                <img src={imgg} alt="Strategy" className=" drop-shadow-2xl" />
               </div>
             </div>
           </div>
         </section>
 
         {/* 2. SELECT CLIENTS Section */}
-        <section className="bg-black py-32 md:py-40 px-6 md:px-12 lg:px-24">
+        <section className="bg-black py-32 md:py-40 px-2 md:px-12 lg:px-24">
           <div className="max-w-[1500px] mx-auto">
             <div className="mb-24 text-center scroll-fade-up" ref={addToRefs}>
               <h4
@@ -199,17 +229,14 @@ const DIFFERENTIATOR = () => {
             >
               {clients.map((client) => (
                 <div
-                  key={client}
+                  key={client.name}
                   className="relative flex items-center justify-center p-12 md:p-16 border-b border-r border-[#ffffff10] last:border-r-0 lg:[&:nth-child(4n)]:border-r-0 hover:opacity-80 transition-opacity duration-300"
                 >
                   <img
-                    src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+                    src={client.logo}
                     alt={`Branding clients in Chennai and India - ${client}`}
-                    className="absolute inset-0 w-full h-full opacity-0"
+                    className="max-h-20 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300"
                   />
-                  <span className="font-premium-serif text-2xl md:text-3xl font-bold italic tracking-wider text-center z-10">
-                    {client}
-                  </span>
                 </div>
               ))}
             </div>
