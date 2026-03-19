@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 pb-20 border-b border-white/10">
           {/* Brand */}
           <div className="space-y-6">
-               <img src={logol} alt="" className="w-[300px]" />
+               <img src={logol} alt="" className=" w-[230px] md:w-[300px]" />
 
             <p className="text-sm uppercase tracking-[0.3em] ">
               Chennai, India

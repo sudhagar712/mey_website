@@ -13,27 +13,7 @@ import img9 from "../assets/DigitalCreative/cp 1.jpg";
 import img10 from "../assets/DigitalCreative/cultural fest 2.jpg";
 import img11 from "../assets/DigitalCreative/Davos Series 12.jpg";
 import img12 from "../assets/DigitalCreative/Davos Series 5.jpg";
-import img13 from "../assets/DigitalCreative/Davos Series 7.jpg";
-import img14 from "../assets/DigitalCreative/Davos Series 8.jpg";
-import img15 from "../assets/DigitalCreative/Davos Series 9.jpg";
-import img16 from "../assets/DigitalCreative/Dr Medway Camp.jpeg";
-import img17 from "../assets/DigitalCreative/Euro vs Rupees.jpg";
-import img18 from "../assets/DigitalCreative/fireless cooking.jpg";
-import img19 from "../assets/DigitalCreative/food festival 1.jpg";
-import img20 from "../assets/DigitalCreative/Food security.jpg";
-import img21 from "../assets/DigitalCreative/KH Google display creative 6.jpg";
-import img22 from "../assets/DigitalCreative/KH Google display creative.jpg";
-import img23 from "../assets/DigitalCreative/Luxus Camp.jpeg";
-import img24 from "../assets/DigitalCreative/Manpaanai.jpg";
-import img25 from "../assets/DigitalCreative/Medway Camp 3.jpeg";
-import img26 from "../assets/DigitalCreative/Medway Camp.jpeg";
-import img27 from "../assets/DigitalCreative/Meet potential Investors.jpg";
-import img28 from "../assets/DigitalCreative/Meet Successful IT Entrepreneurs.jpg";
-import img29 from "../assets/DigitalCreative/Oil and gas poster.jpg";
-import img30 from "../assets/DigitalCreative/Power & Imagination.jpg";
-import img31 from "../assets/DigitalCreative/Register card 2.jpg";
-import img32 from "../assets/DigitalCreative/Technology entrepreneurs.jpg";
-import img33 from "../assets/DigitalCreative/Vision and Ideas.jpg";
+
 
 
 const images = [
@@ -49,27 +29,7 @@ const images = [
   img10,
   img11,
   img12,
-  img13,
-  img14,
-  img15,
-  img16,
-  img17,
-  img18,
-  img19,
-  img20,
-  img21,
-  img22,
-  img23,
-  img24,
-  img25,
-  img26,
-  img27,
-  img28,
-  img29,
-  img30,
-  img31,
-  img32,
-  img33,
+
 ];
 
 const Digitalcreative = () => {
@@ -99,7 +59,7 @@ const Digitalcreative = () => {
       </h1>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 px-2 md:px-10 md:py-5">
         {images.map((img, index) => (
           <div
             key={index}

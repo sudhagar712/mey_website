@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import logol  from "../assets/logol.png"
 
 
@@ -37,9 +37,19 @@ export default function Navbar() {
           {/* DESKTOP MENU */}
           <div className="hidden md:flex gap-10 font-medium text-sm tracking-widest">
             {menuItems.map((item) => (
-              <Link key={item.name} to={item.path} className=" text-gray-700  transition ">
+              <NavLink
+                key={item.name}
+                to={item.path}
+                className={({ isActive }) =>
+                  `transition ${
+                    isActive
+                      ? "text-white border-b-2 border-white pb-1"
+                      : "text-gray-700"
+                  }`
+                }
+              >
                 {item.name}
-              </Link>
+              </NavLink>
             ))}
           </div>
 
@@ -85,13 +95,19 @@ export default function Navbar() {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <Link
+                  <NavLink
                     to={item.path}
                     onClick={() => setOpen(false)}
-                    className="text-white text-[36px] md:text-[60px] font-semibold tracking-wide hover:text-gray-400 transition"
+                    className={({ isActive }) =>
+                      `text-[30px] md:text-[60px] font-semibold tracking-wide transition ${
+                        isActive
+                          ? "text-yellow-500 underline"
+                          : "text-gray-400 hover:text-white"
+                      }`
+                    }
                   >
                     {item.name}
-                  </Link>
+                  </NavLink>
                 </motion.div>
               ))}
             </div>
@@ -99,7 +115,7 @@ export default function Navbar() {
             {/* RIGHT INFO PANEL */}
             <div className="flex-1 border-t md:border-t-0 md:border-l border-white/10 flex flex-col justify-center px-10 md:px-24 py-16 md:py-0 space-y-10 text-gray-300">
               <div>
-                <p className="text-xs tracking-widest text-gray-500 mb-3">
+                <p className="text-xs tracking-widest text-yellow-500 font-bold mb-3">
                   HEADQUARTERS
                 </p>
                 <p className="text-sm md:text-lg">
@@ -110,7 +126,7 @@ export default function Navbar() {
               </div>
 
               <div>
-                <p className="text-xs tracking-widest text-gray-500 mb-3">
+                <p className="text-xs tracking-widest text-yellow-500 font-bold mb-3">
                   CONTACT
                 </p>
                 <p className="hover:text-white cursor-pointer">
@@ -125,7 +141,7 @@ export default function Navbar() {
             {/* CLOSE BUTTON */}
             <button
               onClick={() => setOpen(false)}
-              className="absolute top-8 right-8 w-12 h-12 border border-white/20 rounded-full flex items-center justify-center text-white text-xl hover:bg-white/10 transition"
+              className="absolute top-8 right-8 w-12 h-12 border border-white/20 rounded-full flex items-center justify-center text-yellow-500 text-xl hover:bg-white/10 transition"
             >
               ✕
             </button>

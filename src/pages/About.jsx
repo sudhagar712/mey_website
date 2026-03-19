@@ -75,17 +75,17 @@ const About = () => {
         <AboutMey />
 
         {/* 2. Philosophy & Mission (Dark Premium Container) */}
-        <section className="  bg-white lg:pt-40 pb-40 px-6 md:px-12 lg:px-24  relative">
+        <section className="  bg-white lg:pt-40 pb-40 px-3 md:px-12 lg:px-24  relative">
           <div className="">
             {/* Philosophy */}
             <section className="py-28  lg:px-1">
               <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
                 {/* Left Image */}
-                <div className="relative group overflow-hidden rounded-2xl">
+                <div className="relative group overflow-hidden rounded-2xl order-2 lg:order-1">
                   <img
                     src={about2}
                     alt="MEY Philosophy"
-                    className="w-full h-[420px] lg:h-[560px] object-cover transition duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transition duration-700 group-hover:scale-105"
                   />
 
                   {/* Overlay */}
@@ -93,12 +93,12 @@ const About = () => {
                 </div>
 
                 {/* Right Content */}
-                <div>
-                  <h2 className="text-[10px] md:text-xs tracking-[0.4em] uppercase font-bold  mb-6">
+                <div className="order-1 lg:order-2">
+                  <h2 className="text-[10px] md:text-xs tracking-[0.4em] uppercase font-bold   mb-6">
                     Our Philosophy
                   </h2>
 
-                  <h3 className=" text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[5rem]  font-bold tracking-tighter leading-none  mb-10">
+                  <h3 className=" text-[3.5rem] sm:text-[3rem] md:text-[4rem] lg:text-[5rem]  font-bold tracking-tighter leading-none  mb-10">
                     Truth Before <br />
                     <span className="">Business.</span>
                   </h3>
@@ -106,16 +106,15 @@ const About = () => {
                   {/* Points */}
                   <ul className="flex flex-col  gap-6 md:gap-8 text-lg md:text-xl lg:text-2xl font-light tracking-wide mb-12">
                     <li className="flex items-center gap-6  transition">
-                     ✅ Before campaigns.
+                      ✅ Before campaigns.
                     </li>
 
                     <li className="flex items-center gap-6  transition">
-                     ✅ Before content.
+                      ✅ Before content.
                     </li>
 
                     <li className="flex items-center gap-6  transition">
-                     ✅ Before advertising
-                      budgets.
+                      ✅ Before advertising budgets.
                     </li>
                   </ul>
 
@@ -148,9 +147,7 @@ const About = () => {
                       </h2>
 
                       <p className="font-premium-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light leading-[1.3] text-white tracking-tight">
-                        <span className="text-white">
-                          To help businesses
-                        </span>{" "}
+                        <span className="text-white">To help businesses</span>{" "}
                         present themselves with clarity, confidence{" "}
                         <span className="text-black ">
                           and measurable impact.
