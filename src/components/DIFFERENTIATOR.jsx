@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import imgg from "../assets/herobanner.png"
+import imgg from "../assets/plan.jpeg"
 
 const differentiators = [
     {
@@ -127,7 +127,7 @@ const DIFFERENTIATOR = () => {
         </style>
 
         {/* 1. WHY MEY Section */}
-        <section className="bg-[#fcfcfc] py-24 md:py-32 px-6 md:px-12 lg:px-24">
+        <section className="bg-[#fcfcfc] py-24 md:py-32 px-2 md:px-12 lg:px-24">
           <div className="max-w-[1400px] mx-auto">
             {/* Heading */}
             <div className="mb-16">
@@ -172,10 +172,7 @@ const DIFFERENTIATOR = () => {
                   className=" drop-shadow-2xl"
                 />
 
-                {/* floating badge */}
-                <div className="absolute -bottom-6 bg-white shadow-xl rounded-2xl px-6 py-4 text-sm">
-                  <p className="font-medium">Truth-First Strategy</p>
-                </div>
+              
               </div>
             </div>
           </div>
@@ -228,7 +225,7 @@ const DIFFERENTIATOR = () => {
               alt="CTA Background"
               className="w-full h-full object-cover grayscale"
             />
-            <div className="absolute inset-0 bg-[#ffcc01]/90 mix-blend-multiply"></div>
+            <div className="absolute inset-0 bg-[#ffcc01]/60 mix-blend-multiply"></div>
           </div>
 
           <div

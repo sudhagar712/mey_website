@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import about from "../assets/aboutt.png"
 
 const AboutMey = () => {
     return (
@@ -65,13 +66,12 @@ const AboutMey = () => {
             className="absolute inset-0 w-full h-full"
           >
             <img
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+              src={about}
               alt="About MEY Agency"
               className="w-full h-full object-cover filter grayscale-[20%] group-hover:scale-105 transition-transform duration-[1.5s] ease-[cubic-bezier(0.25,1,0.5,1)] origin-center"
             />
 
-            {/* Gradient overlay to seamlessly blend the split edge on Desktop */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent w-[30%] lg:w-[25%] h-full pointer-events-none hidden lg:block z-10"></div>
+          
           </motion.div>
         </div>
       </section>

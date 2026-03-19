@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import logol  from "../assets/logol.png"
 
 
 const menuItems = [
@@ -24,19 +25,19 @@ export default function Navbar() {
     <>
       {/* NAVBAR */}
       <div className="fixed top-0 left-0 w-full z-50  flex justify-center ">
-        <div className="w-full  flex items-center justify-between bg-[#fbba00]  border-2 border-white px-10 md:px-20 py-4">
+        <div className="w-full  flex items-center justify-between bg-[#fbba00]  border border-white px-10 md:px-20 py-4">
           {/* LOGO */}
           <Link
             to="/"
             className="text-black text-5xl md:text-5xl font-extrabold tracking-wider"
           >
-            MEY
+            <img src={logol} alt="" className="w-[100px]" />
           </Link>
 
           {/* DESKTOP MENU */}
-          <div className="hidden md:flex gap-10  font-bold text-sm tracking-widest">
+          <div className="hidden md:flex gap-10 font-medium text-sm tracking-widest">
             {menuItems.map((item) => (
-              <Link key={item.name} to={item.path} className=" transition ">
+              <Link key={item.name} to={item.path} className=" text-gray-700  transition ">
                 {item.name}
               </Link>
             ))}

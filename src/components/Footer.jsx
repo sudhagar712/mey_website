@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaInstagram, FaLinkedinIn, FaTwitter, FaFacebookF } from "react-icons/fa";
+import logol from "../assets/logol.png"
 
 const Footer = () => {
   return (
@@ -13,11 +14,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 pb-20 border-b border-white/10">
           {/* Brand */}
           <div className="space-y-6">
-            <h2 className="text-5xl md:text-8xl font-extrabold tracking-tight">
-              MEY
-            </h2>
-
-            <p className="text-lg">Truth Before Business.</p>
+               <img src={logol} alt="" className="w-[300px]" />
 
             <p className="text-sm uppercase tracking-[0.3em] ">
               Chennai, India

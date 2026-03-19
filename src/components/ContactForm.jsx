@@ -138,7 +138,7 @@ const ContactForm = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
               onSubmit={handleSubmit}
-              className="w-full bg-black px-5 py-8 md:p-12 lg:p-16 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-gray-100 relative group"
+              className="w-full bg-black  px-5 py-8 md:p-12 lg:p-16 shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-gray-100 relative group"
             >
               {/* Subtle decorative accent */}
               <div className="absolute top-0 left-0 w-full h-2 rounded-t-[2.5rem]"></div>

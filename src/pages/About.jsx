@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import SEO from '../components/SEO';
-import PageBanner from '../components/PageBanner';
+// import PageBanner from '../components/PageBanner';
 import AboutMey from '../components/AboutMey';
+import about2 from "../assets/about2.png"
 
 const About = () => {
   useEffect(() => {
@@ -69,7 +70,7 @@ const About = () => {
       </style>
 
       <main className=" min-h-screen text-black w-full overflow-hidden">
-        <PageBanner title="About us" breadcrumb="About us" />
+        {/* <PageBanner title="About us" breadcrumb="About us" /> */}
 
         <AboutMey />
 
@@ -82,7 +83,7 @@ const About = () => {
                 {/* Left Image */}
                 <div className="relative group overflow-hidden rounded-2xl">
                   <img
-                    src="https://i.pinimg.com/736x/bf/be/42/bfbe424d3b58313bdb88f632fa7c4f4e.jpg"
+                    src={about2}
                     alt="MEY Philosophy"
                     className="w-full h-[420px] lg:h-[560px] object-cover transition duration-700 group-hover:scale-105"
                   />
@@ -105,15 +106,15 @@ const About = () => {
                   {/* Points */}
                   <ul className="flex flex-col  gap-6 md:gap-8 text-lg md:text-xl lg:text-2xl font-light tracking-wide mb-12">
                     <li className="flex items-center gap-6  transition">
-                      <span className="w-12  "></span>✅ Before campaigns.
+                     ✅ Before campaigns.
                     </li>
 
                     <li className="flex items-center gap-6  transition">
-                      <span className="w-12 "></span>✅ Before content.
+                     ✅ Before content.
                     </li>
 
                     <li className="flex items-center gap-6  transition">
-                      <span className="w-12  "></span>✅ Before advertising
+                     ✅ Before advertising
                       budgets.
                     </li>
                   </ul>

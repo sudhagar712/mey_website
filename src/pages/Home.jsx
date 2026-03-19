@@ -21,14 +21,15 @@ const Home = () => {
       <DIFFERENTIATOR />
       <section className="bg-white py-24  md:px-12 lg:px-24">
         <div className="max-w-[1500px] mx-auto">
+          <h1 className='font-bold  text-3xl  md:text-6xl mb-10 text-center'>Let's  Connect</h1>
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-20 items-start">
             {/* Sidebar Column (Left) */}
-            <div className="w-full">
+            <div className="w-full order-2 lg:order-1">
               <ContactSidebar />
             </div>
 
             {/* Form Column (Right) */}
-            <div className="w-full">
+            <div className="w-full lg:order-2 order-1 p-3 md:p-0">
               <Element name="contact">
                 <ContactForm />
               </Element>
