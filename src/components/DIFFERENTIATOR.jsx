@@ -7,9 +7,20 @@ import client2 from "../assets/client/BCG.png";
 import client3 from "../assets/client/Budanta.png";
 import client4 from "../assets/client/DIPR.png";
 import client5 from "../assets/client/Kauvery hospital.png";
-import client6 from "../assets/client/sweep.png";
+import client6 from "../assets/client/Sweep.png";
 import client7 from "../assets/client/TNP.png";
 import client8 from "../assets/client/Gaja.png";
+import client9 from "../assets/client/EXOplain.png";
+import client10 from "../assets/client/Forge.png";
+import client11 from "../assets/client/Group 2.png";
+import client12 from "../assets/client/Group 3.png";
+import client13 from "../assets/client/Group 4.png";
+import client14 from "../assets/client/Leela.jpg";
+import client15 from "../assets/client/TUTR.png";
+import client16 from "../assets/client/TN Seivangai.png";
+
+
+
 
 
 
@@ -70,6 +81,16 @@ const clients = [
 
   { name: "Client 7", logo: client7 },
   { name: "Client 8", logo: client8 },
+  { name: "Client 9", logo: client9 },
+
+  { name: "Client 10", logo: client10 },
+  { name: "Client 11", logo: client11 },
+  { name: "Client 12", logo: client12 },
+  { name: "Client 13", logo: client13 },
+  { name: "Client 14", logo: client14 },
+  { name: "Client 15", logo: client15 },
+  { name: "Client 16", logo: client16 },
+
 ];
 
 
