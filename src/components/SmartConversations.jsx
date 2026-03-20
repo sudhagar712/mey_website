@@ -6,7 +6,7 @@ import {
   useTransform,
   animate,
 } from "framer-motion";
-import brandVideo from "../assets/brandvideo1.mp4";
+import brandVideo from "../assets/brandvideo.mp4";
 
 /* 🔥 CountUp Component (RE-TRIGGER VERSION) */
 const CountUp = ({ value, suffix = "", duration = 2 }) => {
@@ -95,7 +95,7 @@ const SmartConversations = () => {
           </div>
 
           {/* 📊 Stats */}
-          <div className="bg-[#fbba00] py-8 sm:py-10 px-5 sm:px-6 md:px-10">
+          <div className="bg-black text-white py-8 sm:py-10 px-5 sm:px-6 md:px-10">
             <motion.div
               className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-10 text-center"
               initial="hidden"

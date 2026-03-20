@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link as ScrollLink } from "react-scroll";
 import { Link } from 'react-router-dom';
-import logo from "../assets/bannerright.png"
+// import logo from "../assets/bannerright.png"
 
 const Hero = () => {
     return (
@@ -27,7 +27,7 @@ const Hero = () => {
             {/* Giant Logo with Overlay Text */}
             <div className="relative mb-24 bg-[#fbba00] rounded-md p-8 md:p-10 w-full mt-10  flex flex-col items-center justify-center">
               <motion.h1
-                className="text-[150px] sm:text-[240px] text-gray-700 md:text-[290px] lg:text-[300px] leading-[0.75]  font-extrabold tracking-tighter  select-none z-0"
+                className="text-[150px] sm:text-[240px] text-black md:text-[290px] lg:text-[300px] leading-[0.75]  font-extrabold tracking-tighter  select-none z-0"
                 initial={{ y: 18, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
@@ -149,7 +149,7 @@ const Hero = () => {
 
         {/* image section */}
 
-        <motion.div
+        {/* <motion.div
           className="flex justify-center items-center bg-white"
           initial={{ opacity: 0, y: 80 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -164,7 +164,7 @@ const Hero = () => {
             whileInView={{ scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           />
-        </motion.div>
+        </motion.div> */}
       </>
     );
 };

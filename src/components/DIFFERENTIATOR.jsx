@@ -319,10 +319,10 @@ const DIFFERENTIATOR = () => {
 
               <Link
                 to="/work"
-                className="group relative px-14 py-6  text-black bg-white  text-[11px] md:text-xs font-bold tracking-[0.25em] uppercase w-full sm:w-auto transition-all duration-500 hover:text-black flex items-center justify-center gap-4 border-[1.5px] border-black overflow-hidden"
+                className="group relative px-14 py-6 bg-transparent cursor-pointer text-black text-[11px] md:text-xs font-bold tracking-[0.25em] uppercase w-full sm:w-auto transition-all duration-500 hover:text-white flex items-center justify-center gap-4 rounded-none border-[1.5px]  overflow-hidden"
                 style={{ fontFamily: "Poppins, sans-serif" }}
               >
-                <div className="absolute inset-0 w-full h-full bg-black translate-y-[100%] group-hover:translate-y-0 transition-transform duration-500 -z-10 ease-out"></div>
+                <div className="absolute inset-0 w-full h-full bg-black  translate-y-full group-hover:translate-y-0 transition-transform duration-500 -z-10 ease-out"></div>
                 View Work
                 <svg
                   className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-2"

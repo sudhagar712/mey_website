@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import img1 from "../assets/DigitalCreative/01 trauma.jpg";
 import img2 from "../assets/DigitalCreative/1.jpg";
@@ -14,97 +14,97 @@ import img10 from "../assets/DigitalCreative/cultural fest 2.jpg";
 import img11 from "../assets/DigitalCreative/Davos Series 12.jpg";
 import img12 from "../assets/DigitalCreative/Davos Series 5.jpg";
 
-
-
 const images = [
-  img1,
-  img2,
-  img3,
-  img4,
-  img5,
-  img6,
-  img7,
-  img8,
-  img9,
-  img10,
-  img11,
-  img12,
-
+  img1, img2, img3, img4, img5, img6,
+  img7, img8, img9, img10, img11, img12,
 ];
 
 const Digitalcreative = () => {
-  const [selectedIndex, setSelectedIndex] = useState(null);
-
-  const openModal = (index) => {
-    setSelectedIndex(index);
-  };
-
-  const closeModal = () => {
-    setSelectedIndex(null);
-  };
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const prevSlide = () => {
-    setSelectedIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    setActiveIndex((prev) =>
+      prev === 0 ? images.length - 1 : prev - 1
+    );
   };
 
   const nextSlide = () => {
-    setSelectedIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    setActiveIndex((prev) =>
+      prev === images.length - 1 ? 0 : prev + 1
+    );
   };
 
   return (
-    <div className="min-h-screen py-12 px-4 md:px-10">
+    <section className="w-full min-h-screen bg-[#f5f5f5] flex flex-col items-center justify-center py-10 md:py-16 overflow-hidden">
+
       {/* Title */}
-      <h1 className="text-3xl md:text-5xl font-bold text-center mb-10">
+      <h1 className="text-3xl md:text-5xl font-bold mb-10 md:mb-16 text-center">
         Digital Gallery
       </h1>
 
-      {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-10 px-2 md:px-10 md:py-5">
-        {images.map((img, index) => (
-          <div
-            key={index}
-            onClick={() => openModal(index)}
-            className="overflow-hidden rounded-xl group cursor-pointer"
-          >
+      {/* Arrows */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-3 md:left-16 bg-white rounded-full p-2 md:p-3 shadow-lg hover:scale-110 transition z-50"
+      >
+        <ChevronLeft size={24} />
+      </button>
+
+      <button
+        onClick={nextSlide}
+        className="absolute right-3 md:right-16 bg-white rounded-full p-2 md:p-3 shadow-lg hover:scale-110 transition z-50"
+      >
+        <ChevronRight size={24} />
+      </button>
+
+      {/* Slider */}
+      <div className="relative w-full max-w-7xl h-[300px] sm:h-[400px] md:h-[600px] lg:h-[750px] flex items-center justify-center">
+
+        {images.map((img, index) => {
+          const isActive = index === activeIndex;
+          const isLeft =
+            index === (activeIndex - 1 + images.length) % images.length;
+          const isRight =
+            index === (activeIndex + 1) % images.length;
+
+          return (
             <img
+              key={index}
               src={img}
-              alt="gallery"
-              className="w-full h-[300px] object-cover transform group-hover:scale-110 transition duration-500"
+              alt=""
+              className={`absolute transition-all duration-700 ease-in-out rounded-2xl shadow-xl bg-white p-2
+              
+              ${isActive ? "w-[90%] h-full object-contain scale-100 z-30 opacity-100" : ""}
+              
+              ${isLeft ? "w-[60%] h-[80%] object-contain -translate-x-[110%] scale-90 opacity-30 blur-sm z-20" : ""}
+              
+              ${isRight ? "w-[60%] h-[80%] object-contain translate-x-[110%] scale-90 opacity-30 blur-sm z-20" : ""}
+              
+              ${
+                !isActive && !isLeft && !isRight
+                  ? "opacity-0 scale-75"
+                  : ""
+              }
+              `}
             />
-          </div>
-        ))}
+          );
+        })}
       </div>
 
-      {/* 🔥 Modal */}
-      {selectedIndex !== null && (
-        <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-50">
-          {/* Close Button */}
-          <button
-            onClick={closeModal}
-            className="absolute top-5 right-5 text-white"
-          >
-            <X size={32} />
-          </button>
-
-          {/* Prev Button */}
-          <button onClick={prevSlide} className="absolute left-5 text-white">
-            <ChevronLeft size={40} />
-          </button>
-
-          {/* Image */}
-          <img
-            src={images[selectedIndex]}
-            alt="preview"
-            className="max-h-[90vh] max-w-[90vw] object-contain rounded-xl"
+      {/* Dots */}
+      <div className="mt-6 md:mt-10 flex gap-2">
+        {images.map((_, i) => (
+          <div
+            key={i}
+            className={`h-2 rounded-full transition-all ${
+              i === activeIndex
+                ? "w-6 bg-yellow-500"
+                : "w-2 bg-gray-400"
+            }`}
           />
-
-          {/* Next Button */}
-          <button onClick={nextSlide} className="absolute right-5 text-white">
-            <ChevronRight size={40} />
-          </button>
-        </div>
-      )}
-    </div>
+        ))}
+      </div>
+    </section>
   );
 };
 
