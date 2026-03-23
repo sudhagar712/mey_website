@@ -35,10 +35,9 @@ const Digitalcreative = () => {
   };
 
   return (
-    <section className="w-full min-h-screen bg-[#f5f5f5] flex flex-col items-center justify-center py-10 md:py-16 overflow-hidden">
-
+    <section className="w-full   bg-[#fbba00]/60 flex flex-col items-center justify-center py-10 md:py-16 overflow-hidden">
       {/* Title */}
-      <h1 className="text-3xl md:text-5xl font-bold mb-10 md:mb-16 text-center">
+      <h1 className="text-4xl md:text-6xl font-bold mb-10  ">
         Digital Gallery
       </h1>
 
@@ -59,20 +58,18 @@ const Digitalcreative = () => {
 
       {/* Slider */}
       <div className="relative w-full max-w-7xl h-[300px] sm:h-[400px] md:h-[600px] lg:h-[750px] flex items-center justify-center">
-
         {images.map((img, index) => {
           const isActive = index === activeIndex;
           const isLeft =
             index === (activeIndex - 1 + images.length) % images.length;
-          const isRight =
-            index === (activeIndex + 1) % images.length;
+          const isRight = index === (activeIndex + 1) % images.length;
 
           return (
             <img
               key={index}
               src={img}
               alt=""
-              className={`absolute transition-all duration-700 ease-in-out rounded-2xl shadow-xl bg-white p-2
+              className={`absolute transition-all duration-700 ease-in-out rounded-2xl shadow-xl bg-transparent p-3  
               
               ${isActive ? "w-[90%] h-full object-contain scale-100 z-30 opacity-100" : ""}
               
@@ -80,11 +77,7 @@ const Digitalcreative = () => {
               
               ${isRight ? "w-[60%] h-[80%] object-contain translate-x-[110%] scale-90 opacity-30 blur-sm z-20" : ""}
               
-              ${
-                !isActive && !isLeft && !isRight
-                  ? "opacity-0 scale-75"
-                  : ""
-              }
+              ${!isActive && !isLeft && !isRight ? "opacity-0 scale-75" : ""}
               `}
             />
           );
@@ -96,10 +89,8 @@ const Digitalcreative = () => {
         {images.map((_, i) => (
           <div
             key={i}
-            className={`h-2 rounded-full transition-all ${
-              i === activeIndex
-                ? "w-6 bg-yellow-500"
-                : "w-2 bg-gray-400"
+            className={`h-1 rounded-full transition-all ${
+              i === activeIndex ? "w-6 bg-yellow-500" : "w-2 bg-white"
             }`}
           />
         ))}

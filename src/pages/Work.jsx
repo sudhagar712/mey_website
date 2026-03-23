@@ -5,6 +5,9 @@ import { motion } from "framer-motion";
 import Reels from '../components/Reels';
 import screen1 from "../assets/sreen.png"
 import Digitalcreative from '../components/Digitalcreative';
+import PdfPreview from '../components/PdfPreview';
+import Motionposter from '../components/Motionposter';
+import Printcreative from '../components/Printcreative';
 // import VideoSlider from '../components/VideoSlider';
 
 
@@ -36,8 +39,13 @@ const Work = () => {
       />
 
       <Reels />
+      <Printcreative/>
 
       <Digitalcreative />
+
+      <PdfPreview/>
+
+      <Motionposter/>
 
       <div className="min-h-screen  py-20 px-6 md:px-40">
         <h2 className="text-3xl md:text-6xl font-bold mb-12 ">Projects</h2>
@@ -56,7 +64,7 @@ const Work = () => {
               className="group relative rounded-3xl overflow-hidden bg-black border border-white/10"
             >
               {/* IMAGE */}
-              <div className="h-[250px] overflow-hidden">
+              <div className=" overflow-hidden">
                 <img
                   src={`${project.image}?auto=format&fit=crop&w=800&q=80`}
                   alt={project.title}
