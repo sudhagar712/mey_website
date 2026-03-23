@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import imgg from "../assets/whymey.png"
 import client1 from "../assets/client/Aspire.png";
 import client2 from "../assets/client/BCG.png";
@@ -211,35 +210,50 @@ useEffect(() => {
               </h2>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-20 items-center">
-              {/* LEFT SIDE */}
-              <div className="space-y-10">
-                {differentiators.map((item, i) => (
-                  <div key={i} className="flex items-start gap-6 group">
-                    {/* Icon */}
-                    <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-[#f7d83c] flex items-center justify-center text-black group-hover:scale-110 transition">
-                      {item.icon}
-                    </div>
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+  
+  {/* LEFT SIDE */}
+  <div className="space-y-10">
+    {differentiators.map((item, i) => (
+      <div
+        key={i}
+        data-aos="fade-right"
+        data-aos-delay={i * 150}
+        className="flex items-start gap-6 group"
+      >
+        {/* Icon */}
+        <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-[#f7d83c] flex items-center justify-center text-black group-hover:scale-110 transition">
+          {item.icon}
+        </div>
 
-                    {/* Content */}
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">
-                        {item.title}
-                      </h3>
+        {/* Content */}
+        <div>
+          <h3 className="text-xl font-semibold mb-2">
+            {item.title}
+          </h3>
 
-                      <p className="text-gray-600 text-sm leading-relaxed">
-                        {item.desc}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+          <p className="text-gray-600 text-sm leading-relaxed">
+            {item.desc}
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
 
-              {/* RIGHT SIDE */}
-              <div className="relative flex justify-center">
-                <img src={imgg} alt="Strategy" className=" drop-shadow-2xl" />
-              </div>
-            </div>
+  {/* RIGHT SIDE */}
+  <div
+    className="relative flex justify-center"
+    data-aos="zoom-in"
+    data-aos-delay="300"
+  >
+    <img
+      src={imgg}
+      alt="Strategy"
+      className="drop-shadow-2xl"
+    />
+  </div>
+
+</div>
           </div>
         </section>
 
