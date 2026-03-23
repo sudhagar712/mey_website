@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const cards = [
   {
@@ -31,10 +31,19 @@ const cards = [
 const ExpandingCards = () => {
   const [active, setActive] = useState(0);
 
+  // 🔥 AUTO CHANGE LOGIC
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActive((prev) => (prev + 1) % cards.length);
+    }, 2000); // 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
       {/* Desktop Layout */}
-      <div className="hidden md:flex w-full h-[500px] md:h-[700px] gap-4 overflow-hidden">
+      <div className="hidden md:flex w-full h-[500px] md:h-[600px] gap-4 px-0 md:px-20 overflow-hidden">
         {cards.map((card, index) => (
           <div
             key={index}

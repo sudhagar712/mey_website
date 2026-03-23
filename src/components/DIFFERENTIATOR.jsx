@@ -1,13 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import imgg from "../assets/plan.jpeg"
+import imgg from "../assets/whymey.png"
 import client1 from "../assets/client/Aspire.png";
 import client2 from "../assets/client/BCG.png";
 import client3 from "../assets/client/Budanta.png";
 import client4 from "../assets/client/DIPR.png";
-import client5 from "../assets/client/Kauvery hospital.png";
-import client6 from "../assets/client/Sweep.png";
+import client5 from "../assets/client/Sweep.png";
+import client6 from "../assets/client/Kauvery hospital.png";
 import client7 from "../assets/client/TNP.png";
 import client8 from "../assets/client/Gaja.png";
 import client9 from "../assets/client/EXOplain.png";
@@ -18,6 +18,8 @@ import client13 from "../assets/client/Group 4.png";
 import client14 from "../assets/client/Leela.jpg";
 import client15 from "../assets/client/TUTR.png";
 import client16 from "../assets/client/TN Seivangai.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 
 
@@ -141,6 +143,18 @@ const DIFFERENTIATOR = () => {
         }
     };
 
+
+
+useEffect(() => {
+  AOS.init({
+    duration: 900,
+    once: false,
+  });
+}, []);
+
+
+
+
     return (
       <>
         <style>
@@ -234,29 +248,31 @@ const DIFFERENTIATOR = () => {
           <div className="max-w-[1500px] mx-auto">
             <div className="mb-24 text-center scroll-fade-up" ref={addToRefs}>
               <h4
-                className="text-[10px] md:text-xs tracking-[0.4em] uppercase font-bold text-white/50 mb-6"
+                className="text-[10px] text-white md:text-xs tracking-[0.4em] uppercase font-bold mb-6"
                 style={{ fontFamily: "Poppins, sans-serif" }}
               >
                 Select Clients
               </h4>
-              <h2 className="font-premium-serif text-5xl md:text-7xl font-bold text-white tracking-tighter">
+              <h2 className="font-premium-serif text-5xl text-white md:text-7xl font-bold tracking-tighter">
                 Trusted By
               </h2>
             </div>
 
             <div
-              className="client-grid-container grid grid-cols-2 lg:grid-cols-4 border border-white/10 rounded-3xl overflow-hidden scroll-fade-up"
+              className="client-grid-container grid grid-cols-2 lg:grid-cols-4 border-3 border-black rounded-4xl overflow-hidden scroll-fade-up"
               ref={addToRefs}
             >
-              {clients.map((client) => (
+              {clients.map((client, index) => (
                 <div
                   key={client.name}
+                  data-aos="flip-up"
+                  data-aos-delay={index * 100}
                   className="relative flex items-center justify-center p-12 md:p-16 border-b border-r border-[#ffffff10] last:border-r-0 lg:[&:nth-child(4n)]:border-r-0 hover:opacity-80 transition-opacity duration-300"
                 >
                   <img
                     src={client.logo}
-                    alt={`Branding clients in Chennai and India - ${client}`}
-                    className="max-h-20 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition duration-300"
+                    alt={`Branding clients in Chennai and India - ${client.name}`}
+                    className="max-h-40 object-contain transition duration-500 hover:scale-110"
                   />
                 </div>
               ))}
