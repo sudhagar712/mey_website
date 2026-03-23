@@ -40,7 +40,7 @@ const Contact = () => {
 
         {/* Main Contact Section */}
         <section className=" pt-15 pb-28 bg-white">
-          <div className="container md:px-10 ">
+          <div className="md:px-10 ">
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-20 items-start">
               {/* Sidebar Column (Left) */}
               <div className="w-full p-2 order-2 lg:order-1">
