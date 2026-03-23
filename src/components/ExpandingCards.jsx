@@ -31,11 +31,11 @@ const cards = [
 const ExpandingCards = () => {
   const [active, setActive] = useState(0);
 
-  // 🔥 AUTO CHANGE LOGIC
+  // 🔥 AUTO CHANGE
   useEffect(() => {
     const interval = setInterval(() => {
       setActive((prev) => (prev + 1) % cards.length);
-    }, 2000); // 3 seconds
+    }, 2000);
 
     return () => clearInterval(interval);
   }, []);
@@ -57,7 +57,6 @@ const ExpandingCards = () => {
               alt={card.title}
               className="absolute w-full h-full object-cover"
             />
-
             <div className="absolute inset-0 bg-black/40"></div>
 
             <div
@@ -71,26 +70,35 @@ const ExpandingCards = () => {
         ))}
       </div>
 
-      {/* Mobile Layout */}
-      <div className="flex md:hidden gap-4 overflow-x-auto pb-4">
-        {cards.map((card, index) => (
-          <div
-            key={index}
-            className="min-w-[260px] h-[320px] rounded-2xl overflow-hidden relative flex items-end"
-          >
-            <img
-              src={card.image}
-              alt={card.title}
-              className="absolute w-full h-full object-cover"
-            />
+      {/* 🔥 Mobile Auto Slider */}
+      <div className="md:hidden overflow-hidden w-full">
+        <div
+          className="flex transition-transform duration-700 ease-in-out"
+          style={{
+            transform: `translateX(-${active * 100}%)`,
+          }}
+        >
+          {cards.map((card, index) => (
+            <div
+              key={index}
+              className="min-w-full h-[320px] px-4 flex-shrink-0"
+            >
+              <div className="w-full h-full rounded-2xl overflow-hidden relative flex items-end">
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  className="absolute w-full h-full object-cover"
+                />
 
-            <div className="absolute inset-0 bg-black/40"></div>
+                <div className="absolute inset-0 bg-black/50"></div>
 
-            <div className="relative z-10 text-white p-5">
-              <h3 className="text-lg font-semibold">{card.title}</h3>
+                <div className="relative z-10 text-white p-5">
+                  <h3 className="text-lg font-semibold">{card.title}</h3>
+                </div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </>
   );
