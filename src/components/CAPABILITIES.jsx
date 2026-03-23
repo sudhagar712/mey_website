@@ -6,7 +6,7 @@ const capabilities = [
     title: "Brand Identity",
     desc: "Logo design, naming, visual systems and brand guidelines.",
     imgUrl:
-      "https://mir-s3-cdn-cf.behance.net/project_modules/1400/1ba9d3215702323.67721dbc23ab9.jpg", // Branding abstract
+      "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Branding abstract
   },
   {
     num: "02",

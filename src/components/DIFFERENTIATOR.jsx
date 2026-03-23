@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, {useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import imgg from "../assets/whymey.png"
 import client1 from "../assets/client/Aspire.png";
@@ -71,35 +71,51 @@ const differentiators = [
 
 
 
-
 const clients = [
-  { name: "Client 1", logo: client1 },
-  { name: "Client 2", logo: client2 },
-  { name: "Client 3", logo: client3 },
-  { name: "Client 4", logo: client4 },
-  { name: "Client 5", logo: client5 },
-  { name: "Client 6", logo: client6 },
-
-  { name: "Client 7", logo: client7 },
-  { name: "Client 8", logo: client8 },
-  { name: "Client 9", logo: client9 },
-
-  { name: "Client 10", logo: client10 },
-  { name: "Client 11", logo: client11 },
-  { name: "Client 12", logo: client12 },
-  { name: "Client 13", logo: client13 },
-  { name: "Client 14", logo: client14 },
-  { name: "Client 15", logo: client15 },
-  { name: "Client 16", logo: client16 },
-
+  { name: "Client 1", logos: [client1, client2] },
+  { name: "Client 2", logos: [client2, client3] },
+  { name: "Client 3", logos: [client3, client4] },
+  { name: "Client 4", logos: [client4, client5] },
+  { name: "Client 5", logos: [client5, client6] },
+  { name: "Client 6", logos: [client6, client7] },
+  { name: "Client 7", logos: [client7, client8] },
+  { name: "Client 8", logos: [client8, client9] },
+  { name: "Client 9", logos: [client9, client10] },
+  { name: "Client 10", logos: [client10, client11] },
+  { name: "Client 11", logos: [client11, client12] },
+  { name: "Client 12", logos: [client12, client13] },
+  { name: "Client 13", logos: [client13, client14] },
+  { name: "Client 14", logos: [client14, client15] },
+  { name: "Client 15", logos: [client15, client16] },
+  { name: "Client 16", logos: [client16, client1] },
 ];
 
+/* 🔥 Card Component */
+const ClientCard = ({ logos, delay }) => {
+  const [index, setIndex] = useState(0);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % logos.length);
+    }, 2000);
 
+    return () => clearInterval(interval);
+  }, [logos]);
 
-
-
-
+  return (
+    <div
+      className="relative flex items-center justify-center p-5 md:p-10 border-b border-r border-[#ffffff10] transition-all duration-500"
+      style={{ animationDelay: `${delay}ms` }}
+    >
+      <img
+        key={index}
+        src={logos[index]}
+        alt="client"
+        className="h-full object-contain transition-all duration-700 ease-in-out"
+      />
+    </div>
+  );
+};
 
 
 
@@ -210,85 +226,69 @@ useEffect(() => {
               </h2>
             </div>
 
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-  
-  {/* LEFT SIDE */}
-  <div className="space-y-10">
-    {differentiators.map((item, i) => (
-      <div
-        key={i}
-        data-aos="fade-right"
-        data-aos-delay={i * 150}
-        className="flex items-start gap-6 group"
-      >
-        {/* Icon */}
-        <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-[#f7d83c] flex items-center justify-center text-black group-hover:scale-110 transition">
-          {item.icon}
-        </div>
+            <div className="grid lg:grid-cols-2 gap-20 items-center">
+              {/* LEFT SIDE */}
+              <div className="space-y-10">
+                {differentiators.map((item, i) => (
+                  <div
+                    key={i}
+                    data-aos="fade-right"
+                    data-aos-delay={i * 150}
+                    className="flex items-start gap-6 group"
+                  >
+                    {/* Icon */}
+                    <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-[#f7d83c] flex items-center justify-center text-black group-hover:scale-110 transition">
+                      {item.icon}
+                    </div>
 
-        {/* Content */}
-        <div>
-          <h3 className="text-xl font-semibold mb-2">
-            {item.title}
-          </h3>
+                    {/* Content */}
+                    <div>
+                      <h3 className="text-xl font-semibold mb-2">
+                        {item.title}
+                      </h3>
 
-          <p className="text-gray-600 text-sm leading-relaxed">
-            {item.desc}
-          </p>
-        </div>
-      </div>
-    ))}
-  </div>
+                      <p className="text-gray-600 text-sm leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
 
-  {/* RIGHT SIDE */}
-  <div
-    className="relative flex justify-center"
-    data-aos="zoom-in"
-    data-aos-delay="300"
-  >
-    <img
-      src={imgg}
-      alt="Strategy"
-      className="drop-shadow-2xl"
-    />
-  </div>
-
-</div>
+              {/* RIGHT SIDE */}
+              <div
+                className="relative flex justify-center"
+                data-aos="zoom-in"
+                data-aos-delay="300"
+              >
+                <img src={imgg} alt="Strategy" className="drop-shadow-2xl" />
+              </div>
+            </div>
           </div>
         </section>
 
         {/* 2. SELECT CLIENTS Section */}
         <section className="bg-black py-32 md:py-40 px-2 md:px-12 lg:px-24">
           <div className="max-w-[1500px] mx-auto">
-            <div className="mb-24 text-center scroll-fade-up" ref={addToRefs}>
-              <h4
-                className="text-[10px] text-white md:text-xs tracking-[0.4em] uppercase font-bold mb-6"
-                style={{ fontFamily: "Poppins, sans-serif" }}
-              >
+            {/* Heading */}
+            <div className="mb-24 text-center">
+              <h4 className="text-[10px] text-white md:text-xs tracking-[0.4em] uppercase font-bold mb-6">
                 Select Clients
               </h4>
-              <h2 className="font-premium-serif text-5xl text-white md:text-7xl font-bold tracking-tighter">
+
+              <h2 className="text-5xl text-white md:text-7xl font-bold">
                 Trusted By
               </h2>
             </div>
 
-            <div
-              className="client-grid-container grid grid-cols-2 lg:grid-cols-4 border-3 border-black rounded-4xl overflow-hidden scroll-fade-up"
-              ref={addToRefs}
-            >
+            {/* 🔥 GRID */}
+            <div className="grid client-grid-container grid-cols-2 lg:grid-cols-4 overflow-hidden rounded-4xl">
               {clients.map((client, index) => (
-                <div
+                <ClientCard
                   key={client.name}
-                  data-aos="flip-up"
-                  data-aos-delay={index * 100}
-                  className="relative flex items-center justify-center p-12 md:p-16 border-b border-r border-[#ffffff10] last:border-r-0 lg:[&:nth-child(4n)]:border-r-0 hover:opacity-80 transition-opacity duration-300"
-                >
-                  <img
-                    src={client.logo}
-                    alt={`Branding clients in Chennai and India - ${client.name}`}
-                    className="max-h-40 object-contain transition duration-500 hover:scale-110"
-                  />
-                </div>
+                  logos={client.logos}
+                  delay={index * 200} // 🔥 wave delay
+                />
               ))}
             </div>
           </div>
