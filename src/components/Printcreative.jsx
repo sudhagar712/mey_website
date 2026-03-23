@@ -10,7 +10,7 @@ const images = [p1, p2, p3, p4];
 
 const Printcreative = () => {
   return (
-    <div className=" bg-black/10 py-16 px-4 md:px-30">
+    <div className=" bg-black/40 py-16 px-4 md:px-30">
 
       <h2 className="text-3xl md:text-7xl font-bold mb-10 ">
         Print Creatives

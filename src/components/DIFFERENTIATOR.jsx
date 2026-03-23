@@ -6,7 +6,7 @@ import client2 from "../assets/client/BCG.png";
 import client3 from "../assets/client/Budanta.png";
 import client4 from "../assets/client/DIPR.png";
 import client5 from "../assets/client/Sweep.png";
-import client6 from "../assets/client/Kauvery hospital.png";
+import client6 from "../assets/client/TNPC.png";
 import client7 from "../assets/client/TNP.png";
 import client8 from "../assets/client/Gaja.png";
 import client9 from "../assets/client/EXOplain.png";

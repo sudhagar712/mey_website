@@ -64,12 +64,7 @@ const Motionposter = () => {
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
 
-                {/* Title */}
-                <div className="absolute bottom-6 left-6 text-white">
-                  <h3 className="text-xl md:text-2xl font-bold">
-                    {video.title}
-                  </h3>
-                </div>
+               
 
               </div>
             </div>

@@ -3,12 +3,12 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import img1 from "../assets/DigitalCreative/01 trauma.jpg";
 import img2 from "../assets/DigitalCreative/1.jpg";
-import img3 from "../assets/DigitalCreative/1200x628.png";
+import img3 from "../assets/DigitalCreative/Luxus Camp.jpeg";
 import img4 from "../assets/DigitalCreative/3M car care.jpg";
 import img5 from "../assets/DigitalCreative/Alain Dehaze.jpg";
 import img6 from "../assets/DigitalCreative/Boosting Exports & Imports.jpg";
 import img7 from "../assets/DigitalCreative/bull show 2.jpg";
-import img8 from "../assets/DigitalCreative/CK sir Woman day wishes-03.jpg";
+import img8 from "../assets/DigitalCreative/Davos Series 8.jpg";
 import img9 from "../assets/DigitalCreative/cp 1.jpg";
 import img10 from "../assets/DigitalCreative/cultural fest 2.jpg";
 import img11 from "../assets/DigitalCreative/Davos Series 12.jpg";
@@ -35,7 +35,7 @@ const Digitalcreative = () => {
   };
 
   return (
-    <section className="w-full   bg-[#fbba00]/60 flex flex-col items-center justify-center py-10 md:py-16 overflow-hidden">
+    <section className="w-full   bg-[#fbba00]/40 flex flex-col items-center justify-center py-10 md:py-16 overflow-hidden">
       {/* Title */}
       <h1 className="text-4xl md:text-6xl font-bold mb-10  ">
         Digital Gallery
@@ -71,11 +71,11 @@ const Digitalcreative = () => {
               alt=""
               className={`absolute transition-all duration-700 ease-in-out rounded-2xl shadow-xl bg-transparent p-3  
               
-              ${isActive ? "w-[90%] h-full object-contain scale-100 z-30 opacity-100" : ""}
+              ${isActive ? "w-[85%] h-full object-contain scale-100 z-30 opacity-100" : ""}
               
-              ${isLeft ? "w-[60%] h-[80%] object-contain -translate-x-[110%] scale-90 opacity-30 blur-sm z-20" : ""}
+              ${isLeft ? "w-[60%] h-[80%] object-contain -translate-x-[110%] scale-90 opacity-60 blur-sm z-20" : ""}
               
-              ${isRight ? "w-[60%] h-[80%] object-contain translate-x-[110%] scale-90 opacity-30 blur-sm z-20" : ""}
+              ${isRight ? "w-[60%] h-[80%] object-contain translate-x-[110%] scale-90 opacity-60 blur-sm z-20" : ""}
               
               ${!isActive && !isLeft && !isRight ? "opacity-0 scale-75" : ""}
               `}
