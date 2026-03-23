@@ -8,13 +8,15 @@ const Footer = () => {
     <footer className="relative py-24 px-6 md:px-12 lg:px-24 overflow-hidden bg-[#FBBA00]">
       {/* Glow Background */}
       <div className="absolute -top-40 left-1/3 w-[600px] h-[600px] bg-yellow-400 opacity-10 blur-[180px] rounded-full pointer-events-none"></div>
-
+<div className="absolute inset-0 opacity-[0.05] pointer-events-none">
+  <div className="w-full h-full bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:40px_40px]" />
+</div>
       <div className="max-w-[1400px] mx-auto relative z-10">
         {/* Top Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 pb-20 border-b border-white/10">
           {/* Brand */}
           <div className="space-y-6">
-               <img src={logol} alt="" className=" w-[230px] md:w-[300px]" />
+               <img src={logol} alt="" className=" w-[230px] md:w-[280px]" />
 
             <p className="text-sm uppercase tracking-[0.3em] ">
               Chennai, India
@@ -47,7 +49,7 @@ const Footer = () => {
 
           {/* Social */}
           <div>
-            <h4 className="text-xs tracking-[0.35em] uppercase mb-8">
+            <h4 className="text-xs font-bold tracking-[0.35em] uppercase mb-8">
               Connect
             </h4>
 
@@ -61,7 +63,7 @@ const Footer = () => {
                 <a
                   key={idx}
                   href={social.href}
-                  className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:text-black hover:bg-yellow-400 hover:border-yellow-400 transition-all duration-300 hover:scale-110"
+                  className="w-12 h-12 rounded-full border bg-black text-white border-white/20 flex items-center justify-center hover:text-black hover:bg-yellow-400 hover:border-yellow-400 transition-all duration-300 hover:scale-110"
                 >
                   {social.icon}
                 </a>

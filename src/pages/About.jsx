@@ -3,6 +3,7 @@ import SEO from '../components/SEO';
 import PageBanner from '../components/PageBanner';
 import AboutMey from '../components/AboutMey';
 import about2 from "../assets/about2.png"
+import { Link } from 'react-router-dom';
 
 const About = () => {
   useEffect(() => {
@@ -164,6 +165,52 @@ const About = () => {
             </section>
           </div>
         </section>
+
+        {/*  */}
+
+        <div>
+          <section className="relative w-full overflow-hidden">
+            {/* Background Image */}
+            <div className="absolute inset-0">
+              <img
+                src="https://images.unsplash.com/photo-1556761175-4b46a572b786"
+                alt="background"
+                className="w-full h-full object-cover opacity-80"
+              />
+            </div>
+
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-[#fbba00]/70"></div>
+
+            {/* Content */}
+            <div className="relative max-w-6xl mx-auto px-6 py-16 md:py-24 text-center">
+              {/* Heading */}
+              <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold leading-tight">
+                Need Advice for your Social Media Marketing?
+              </h2>
+
+              {/* Paragraph */}
+              <p className="mt-6 text-sm sm:text-base md:text-lg text-black max-w-3xl mx-auto leading-relaxed">
+                Book a consultation with our social media marketing experts at
+                Mey today! Our team specializes in crafting personalized
+                strategies to elevate your brand’s visibility, engagement, and
+                ROI across all major social media platforms. During your
+                consultation, we’ll dive deep into your brand identity, target
+                audience, and business objectives to develop a tailored roadmap
+                for social media success.
+              </p>
+
+              {/* Button */}
+              <div className="mt-10">
+                <Link to="/contact">
+                  <button className="bg-[#000000] border-2 border-white  transition-all duration-300 px-8 py-4  text-white text-sm md:text-base font-medium shadow-lg">
+                    Contact Us
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </section>
+        </div>
       </main>
     </>
   );
