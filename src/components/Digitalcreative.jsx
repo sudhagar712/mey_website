@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import React from "react";
 
 import img1 from "../assets/DigitalCreative/01 trauma.jpg";
 import img2 from "../assets/DigitalCreative/1.jpg";
@@ -13,90 +12,67 @@ import img9 from "../assets/DigitalCreative/cp 1.jpg";
 import img10 from "../assets/DigitalCreative/cultural fest 2.jpg";
 import img11 from "../assets/DigitalCreative/Davos Series 12.jpg";
 import img12 from "../assets/DigitalCreative/Davos Series 5.jpg";
+import img13 from "../assets/DigitalCreative/Vision and Ideas.jpg";
+import img14 from "../assets/DigitalCreative/Meet Successful IT Entrepreneurs.jpg";
 
-const images = [
-  img1, img2, img3, img4, img5, img6,
-  img7, img8, img9, img10, img11, img12,
+const gallery = [
+  { img: img1, span: "col-span-2 row-span-2" },
+  { img: img2, span: "col-span-1 row-span-1" },
+  { img: img3, span: "col-span-1 row-span-2" },
+  { img: img4, span: "col-span-2 row-span-1" },
+
+  { img: img5, span: "col-span-1 row-span-1" },
+  { img: img6, span: "col-span-2 row-span-2" },
+  { img: img7, span: "col-span-1 row-span-1" },
+
+  { img: img8, span: "col-span-2 row-span-1" },
+  { img: img9, span: "col-span-1 row-span-2" },
+  { img: img10, span: "col-span-1 row-span-1" },
+
+  { img: img11, span: "col-span-2 row-span-2" },
+  { img: img12, span: "col-span-1 row-span-1" },
+  { img: img13, span: "col-span-1 row-span-1" },
+
+  { img: img14, span: "col-span-2 row-span-2" },
 ];
 
-const Digitalcreative = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const prevSlide = () => {
-    setActiveIndex((prev) =>
-      prev === 0 ? images.length - 1 : prev - 1
-    );
-  };
-
-  const nextSlide = () => {
-    setActiveIndex((prev) =>
-      prev === images.length - 1 ? 0 : prev + 1
-    );
-  };
-
+const DigitalCreativeGrid = () => {
   return (
-    <section className="w-full   bg-[#fbba00]/40 flex flex-col items-center justify-center py-10 md:py-16 overflow-hidden">
+    <section className="w-full py-12 md:py-20 px-4 md:px-20 ">
+
       {/* Title */}
-      <h1 className="text-4xl md:text-6xl font-bold mb-10  ">
+      <h1 className="text-3xl md:text-5xl font-bold text-center mb-12">
         Digital Gallery
       </h1>
 
-      {/* Arrows */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-3 md:left-16 bg-white rounded-full p-2 md:p-3 shadow-lg hover:scale-110 transition z-50"
-      >
-        <ChevronLeft size={24} />
-      </button>
+      {/* Grid */}
+      <div className="grid grid-cols-2 md:grid-cols-6 auto-rows-[120px] md:auto-rows-[260px] gap-5">
 
-      <button
-        onClick={nextSlide}
-        className="absolute right-3 md:right-16 bg-white rounded-full p-2 md:p-3 shadow-lg hover:scale-110 transition z-50"
-      >
-        <ChevronRight size={24} />
-      </button>
-
-      {/* Slider */}
-      <div className="relative w-full max-w-7xl h-[300px] sm:h-[400px] md:h-[600px] lg:h-[750px] flex items-center justify-center">
-        {images.map((img, index) => {
-          const isActive = index === activeIndex;
-          const isLeft =
-            index === (activeIndex - 1 + images.length) % images.length;
-          const isRight = index === (activeIndex + 1) % images.length;
-
-          return (
-            <img
-              key={index}
-              src={img}
-              alt=""
-              className={`absolute transition-all duration-700 ease-in-out rounded-2xl shadow-xl bg-transparent p-3  
-              
-              ${isActive ? "w-[85%] h-full object-contain scale-100 z-30 opacity-100" : ""}
-              
-              ${isLeft ? "w-[60%] h-[80%] object-contain -translate-x-[110%] scale-90 opacity-60 blur-sm z-20" : ""}
-              
-              ${isRight ? "w-[60%] h-[80%] object-contain translate-x-[110%] scale-90 opacity-60 blur-sm z-20" : ""}
-              
-              ${!isActive && !isLeft && !isRight ? "opacity-0 scale-75" : ""}
-              `}
-            />
-          );
-        })}
-      </div>
-
-      {/* Dots */}
-      <div className="mt-6 md:mt-10 flex gap-2">
-        {images.map((_, i) => (
+        {gallery.map((item, index) => (
           <div
-            key={i}
-            className={`h-1 rounded-full transition-all ${
-              i === activeIndex ? "w-6 bg-yellow-500" : "w-2 bg-white"
-            }`}
-          />
+            key={index}
+            className={`group relative  transition-all duration-500 overflow-hidden ${item.span}`}
+          >
+            {/* Image */}
+            <div className="w-full h-full p-4 flex items-center justify-center">
+              <img
+                src={item.img}
+                alt=""
+                className="max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-110"
+              />
+            </div>
+
+            {/* Premium overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+
+            {/* Glow border */}
+            <div className="absolute inset-0 rounded-3xl ring-0 group-hover:ring-2 ring-yellow-400/60 transition-all duration-500"></div>
+          </div>
         ))}
+
       </div>
     </section>
   );
 };
 
-export default Digitalcreative;
+export default DigitalCreativeGrid;

@@ -47,7 +47,7 @@ const Work = () => {
 
       <Motionposter/>
 
-      <div className="min-h-screen  py-20 px-6 md:px-40">
+      <div className="  py-20 px-6 md:px-40">
         <h2 className="text-3xl md:text-6xl font-bold mb-12 ">Projects</h2>
 
         <div className="grid md:grid-cols-2 gap-10">
