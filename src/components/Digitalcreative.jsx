@@ -38,10 +38,10 @@ const gallery = [
 
 const DigitalCreativeGrid = () => {
   return (
-    <section className="w-full py-12 md:py-20 px-4 md:px-20 ">
+    <section className="w-full bg-black  ">
 
       {/* Title */}
-      <h1 className="text-3xl md:text-5xl font-bold text-center mb-12">
+      <h1 className="text-3xl md:text-6xl text-white p-5 md:p-10   font-bold mb-12">
         Digital Gallery
       </h1>
 
@@ -54,7 +54,7 @@ const DigitalCreativeGrid = () => {
             className={`group relative  transition-all duration-500 overflow-hidden ${item.span}`}
           >
             {/* Image */}
-            <div className="w-full h-full p-4 flex items-center justify-center">
+            <div className="w-full h-full md:p-5 flex items-center justify-center">
               <img
                 src={item.img}
                 alt=""

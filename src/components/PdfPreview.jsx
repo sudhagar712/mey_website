@@ -3,8 +3,8 @@ import pdf from "../assets/Ilayaraaja.pdf";
 
 const PdfPreview = () => {
   return (
-    <div className="min-h-screen  flex items-center justify-center p-2  ">
-      <div className="w-full max-w-6xl bg-white rounded-3xl mt-10 mb-10 shadow-2xl overflow-hidden">
+    <div className="  flex items-center justify-center p-2  ">
+      <div className="w-full max-w-4xl md:px-10 bg-white rounded-3xl mt-10 mb-10 shadow-2xl overflow-hidden">
         {/* Header */}
         <div className="flex justify-between items-center px-6 py-4 border-b">
           <h2 className="font-bold text-lg">Ilayaraaja PDF</h2>

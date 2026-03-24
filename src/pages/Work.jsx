@@ -47,8 +47,8 @@ const Work = () => {
 
       <Motionposter/>
 
-      <div className="  py-20 px-6 md:px-40">
-        <h2 className="text-3xl md:text-6xl font-bold mb-12 ">Projects</h2>
+      <div className=" bg-black  py-20 px-6 md:px-40">
+        <h2 className="text-3xl md:text-6xl text-white font-bold mb-12 ">Projects</h2>
 
         <div className="grid md:grid-cols-2 gap-10">
           {projects.map((project, index) => (
