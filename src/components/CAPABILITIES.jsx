@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
 
 const capabilities = [
   {
@@ -6,160 +6,154 @@ const capabilities = [
     title: "Brand Identity",
     desc: "Logo design, naming, visual systems and brand guidelines.",
     imgUrl:
-      "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Branding abstract
+      "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1074&auto=format&fit=crop",
   },
   {
     num: "02",
     title: "Social Media Management",
     desc: "Instagram, Facebook, LinkedIn and YouTube handled with structured monthly content.",
     imgUrl:
-      "https://i0.wp.com/famesolutely.com/wp-content/uploads/2024/04/2150063164-jpg.webp?resize=1000%2C667&ssl=1", // Social Media icons
+      "https://i0.wp.com/famesolutely.com/wp-content/uploads/2024/04/2150063164-jpg.webp?resize=1000%2C667&ssl=1",
   },
   {
     num: "03",
     title: "Website Design & Development",
     desc: "Fast, modern and conversion-focused websites.",
     imgUrl:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000&auto=format&fit=crop", // Code/Laptop
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000&auto=format&fit=crop",
   },
   {
     num: "04",
     title: "Video Production",
     desc: "Corporate films, product shoots and reels.",
     imgUrl:
-      "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1000&auto=format&fit=crop", // Camera/Film
+      "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1000&auto=format&fit=crop",
   },
   {
     num: "05",
     title: "Performance Marketing",
     desc: "Instagram ads, Facebook ads and Google ads for lead generation.",
     imgUrl:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop", // Charts/Analytics
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
   },
   {
     num: "06",
     title: "Outdoor Advertising",
     desc: "Hoardings, bus stop branding and exhibition stall design.",
     imgUrl:
-      "https://images.pexels.com/photos/2881223/pexels-photo-2881223.jpeg", // Billboard/Outdoor
+      "https://images.pexels.com/photos/2881223/pexels-photo-2881223.jpeg",
   },
 ];
 
 const CAPABILITIES = () => {
-    const sectionRef = useRef(null);
+  const sectionRef = useRef(null);
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                    }
-                });
-            },
-            { threshold: 0.1 }
-        );
+  // Scroll animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
 
-        const elements = sectionRef.current?.querySelectorAll('.scroll-reveal');
-        elements?.forEach((el) => observer.observe(el));
+    const elements = sectionRef.current?.querySelectorAll(".scroll-reveal");
+    elements?.forEach((el) => observer.observe(el));
 
-        return () => observer.disconnect();
-    }, []);
+    return () => observer.disconnect();
+  }, []);
 
-    return (
-      <section
-        ref={sectionRef}
-        className="bg-white py-32 px-2 md:px-12 lg:px-24"
-      >
-        <style>
-          {`
+  return (
+    <section
+      ref={sectionRef}
+      className="bg-white py-24 px-4 md:px-12 lg:px-24"
+    >
+      {/* Scroll animation styles */}
+      <style>
+        {`
           .scroll-reveal {
             opacity: 0;
             transform: translateY(40px);
-            transition: all 1s cubic-bezier(0.25, 1, 0.5, 1);
+            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
           }
           .scroll-reveal.is-visible {
             opacity: 1;
             transform: translateY(0);
           }
         `}
-        </style>
+      </style>
 
-        <div className="max-w-[1500px] mx-auto">
-          {/* Header Section */}
-          <div className="mb-20 scroll-reveal">
-            <h4
-              className="text-[10px] md:text-xs tracking-[0.4em] uppercase font-bold text-black/60 mb-6"
-              style={{ fontFamily: "Poppins, sans-serif" }}
-            >
-              Our Capabilities
-            </h4>
+      <div className="max-w-[1400px] mx-auto">
 
-            <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-10 items-end border-b-2 border-black pb-12">
-              <h2 className="font-premium-serif text-5xl sm:text-6xl md:text-[5.5rem] font-bold text-black tracking-tighter leading-[1.05]">
-                Complete Brand & <br className="hidden md:block" /> Marketing
-                Solutions
-              </h2>
+        {/* HEADER */}
+        <div className="mb-16 scroll-reveal">
+          <h4 className="text-xs tracking-[0.4em] uppercase font-bold text-black/60 mb-4">
+            Our Capabilities
+          </h4>
 
-              <p
-                className="text-xl md:text-2xl text-black/70 font-medium leading-relaxed"
-                style={{ fontFamily: "Montserrat, sans-serif" }}
-              >
-                Everything your brand needs — structured under one direction.
-              </p>
-            </div>
-          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-end border-b pb-10">
+            <h2 className="text-4xl md:text-6xl font-bold leading-tight">
+              Complete Brand & <br /> Marketing Solutions
+            </h2>
 
-          {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {capabilities.map((cap, i) => (
-              <div
-                key={cap.num}
-                className="scroll-reveal relative overflow-hidden bg-[#0f0f0f] text-white rounded-[2rem] p-10 md:p-12 flex flex-col justify-between group hover:-translate-y-3 transition-transform duration-500 ease-out shadow-2xl shadow-black/10 min-h-[320px]"
-                style={{ transitionDelay: `${i * 0.1}s` }}
-              >
-                {/* Background Image (Absolute positioned behind content) */}
-                <div className="absolute inset-0 z-0 opacity-50">
-                  <img
-                    src={cap.imgUrl}
-                    alt={cap.title}
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                  {/* Gradient Overlay to ensure text remains readable */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20"></div>
-                </div>
-
-                {/* Card Content (Relative positioned above image) */}
-                <div className="relative z-10 h-full flex flex-col justify-between">
-                  <div>
-                    <span
-                      className="text-xs font-bold uppercase tracking-[0.2em] text-[#ffff00] block mb-12 drop-shadow-md"
-                      style={{ fontFamily: "Poppins, sans-serif" }}
-                    >
-                      {cap.num} /
-                    </span>
-
-                    <h3
-                      className="text-[1.75rem] md:text-[2rem] font-bold tracking-tight mb-4 text-white drop-shadow-lg"
-                      style={{ fontFamily: "Montserrat, sans-serif" }}
-                    >
-                      {cap.title}.
-                    </h3>
-                  </div>
-
-                  <p
-                    className="text-base md:text-lg text-white/90 leading-relaxed font-light mt-12 drop-shadow-md"
-                    style={{ fontFamily: "Montserrat, sans-serif" }}
-                  >
-                    {cap.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
+            <p className="text-lg md:text-xl text-black/70">
+              Everything your brand needs — structured under one direction.
+            </p>
           </div>
         </div>
-      </section>
-    );
+
+        {/* GRID */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          {capabilities.map((cap, i) => (
+            <div
+              key={cap.num}
+              className="scroll-reveal group relative overflow-hidden rounded-[2rem] min-h-[340px] cursor-pointer"
+              style={{ transitionDelay: `${i * 0.1}s` }}
+            >
+              {/* IMAGE */}
+              <img
+                src={cap.imgUrl}
+                alt={cap.title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+
+              {/* DARK OVERLAY */}
+              <div className="absolute inset-0 bg-black/50 group-hover:bg-black/70 transition duration-500"></div>
+
+              {/* GRADIENT GLOW */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-t from-yellow-400/20 via-transparent to-transparent"></div>
+
+              {/* CONTENT */}
+              <div className="relative z-10 h-full flex flex-col justify-end p-8">
+
+                {/* NUMBER */}
+                <span className="text-xs tracking-[0.3em] text-yellow-400 mb-3">
+                  {cap.num} /
+                </span>
+
+                {/* TITLE */}
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                  {cap.title}
+                </h3>
+
+                {/* DESCRIPTION (HOVER REVEAL) */}
+                <p className="text-sm md:text-base text-white/80 translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                  {cap.desc}
+                </p>
+
+              </div>
+            </div>
+          ))}
+
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default CAPABILITIES;
