@@ -50,7 +50,7 @@ const BeliefSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl lg:text-7xl font-serif leading-tight"
+            className="text-3xl md:text-5xl  leading-tight"
           >
             When built on <span className="text-[#f1bd40] font-bold ">truth</span>, a
             brand earns attention.

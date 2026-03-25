@@ -9,7 +9,7 @@ const Hero = () => {
     return (
       <>
         <motion.section
-          className="relative  bg-[#fbba00] h-[490px] p-5  flex flex-col items-center justify-center  overflow-hidden"
+          className="relative  bg-[#fbba00] h-[350px] md:h-[800px] lg:h-[500px] p-5  flex flex-col items-center justify-center  overflow-hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -37,7 +37,11 @@ const Hero = () => {
                 MEY
               </motion.h1> */}
 
-              <img src={logol} alt=""  className='w-[700px] h-[150px] md:h-[290px] md:mt-20'/>
+              <img
+                src={logol}
+                alt=""
+                className="w-[700px] h-[150px] md:h-[290px] md:mt-20"
+              />
 
               {/* Glassmorphism Strip Overlay */}
               <motion.div
@@ -53,8 +57,6 @@ const Hero = () => {
                 </div>
               </motion.div>
             </div>
-
-           
           </div>
 
           <style
@@ -70,91 +72,87 @@ const Hero = () => {
           />
         </motion.section>
 
+        {/* Content Box */}
+        <motion.div
+          className="flex flex-col  text-center  mt-10 px-5 items-center max-w-4xl mx-auto mb-5"
+          initial={{ y: 16, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <p className="text-2xl md:text-5xl  lg:text-4xl text-black/80 font-medium leading-[1.6] mb-10">
+            We build{" "}
+            <span className=" font-bold  border-b border-black/30 text-[#f1bd40] ">
+              clear
+            </span>
+            ,{" "}
+            <span className=" font-bold  text-[#f1bd40]  border-b border-black/30">
+              powerful
+            </span>{" "}
+            and{" "}
+            <span className=" font-bold text-[#f1bd40]  border-b border-black/30">
+              growth-focused
+            </span>{" "}
+            brands for startups and ambitious businesses.
+          </p>
 
- {/* Content Box */}
-            <motion.div
-              className="flex flex-col  mt-3 text-center  mt-10  items-center max-w-4xl mx-auto mb-5"
-              initial={{ y: 16, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true, amount: 0.4 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
+          <motion.div
+            className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto px-2"
+            initial={{ y: 10, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.6 }}
+            transition={{ duration: 0.55, ease: "easeOut", delay: 0.05 }}
+          >
+            {/* Premium Button 1 */}
+            <Link
+              to="/work"
+              className="group relative px-14 cursor-pointer py-6 bg-black text-white text-[11px] md:text-xs font-bold tracking-[0.25em] uppercase w-full sm:w-auto transition-all duration-500 hover:text-white flex items-center justify-center gap-4 rounded-none border-[1.5px]  overflow-hidden shadow-2xl shadow-black/20"
+              style={{ fontFamily: "Poppins, sans-serif" }}
             >
-              <p className="text-lg md:text-3xl  lg:text-3xl text-black/80 font-medium leading-[1.6] mb-10">
-                We build{" "}
-                <span className=" font-bold  border-b border-black/30">
-                  clear
-                </span>
-                ,{" "}
-                <span className=" font-bold  border-b border-black/30">
-                  powerful
-                </span>{" "}
-                and{" "}
-                <span className=" font-bold  border-b border-black/30">
-                  growth-focused
-                </span>{" "}
-                brands for startups and ambitious businesses.
-              </p>
-
-              <motion.div
-                className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto px-2"
-                initial={{ y: 10, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true, amount: 0.6 }}
-                transition={{ duration: 0.55, ease: "easeOut", delay: 0.05 }}
+              <div className="absolute inset-0 w-full h-full bg-black  translate-y-full group-hover:translate-y-0 transition-transform duration-500 -z-10 ease-out"></div>
+              View Work
+              <svg
+                className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
-                {/* Premium Button 1 */}
-                <Link
-                  to="/work"
-                  className="group relative px-14 cursor-pointer py-6 bg-black text-white text-[11px] md:text-xs font-bold tracking-[0.25em] uppercase w-full sm:w-auto transition-all duration-500 hover:text-white flex items-center justify-center gap-4 rounded-none border-[1.5px]  overflow-hidden shadow-2xl shadow-black/20"
-                  style={{ fontFamily: "Poppins, sans-serif" }}
-                >
-                  <div className="absolute inset-0 w-full h-full bg-black  translate-y-full group-hover:translate-y-0 transition-transform duration-500 -z-10 ease-out"></div>
-                  View Work
-                  <svg
-                    className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-2"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
-                </Link>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </Link>
 
-                {/* Premium Button 2 */}
-                <ScrollLink
-                  to="contact"
-                  smooth={true}
-                  duration={600}
-                  offset={-80}
-                  className="group relative px-14 py-6 bg-transparent cursor-pointer text-black text-[11px] md:text-xs font-bold tracking-[0.25em] uppercase w-full sm:w-auto transition-all duration-500 hover:text-white flex items-center justify-center gap-4 rounded-none border-[1.5px]  overflow-hidden"
-                  style={{ fontFamily: "Poppins, sans-serif" }}
-                >
-                  <div className="absolute inset-0 w-full h-full bg-black  translate-y-full group-hover:translate-y-0 transition-transform duration-500 -z-10 ease-out"></div>
-                  Start a Project
-                  <svg
-                    className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-2"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    />
-                  </svg>
-                </ScrollLink>
-              </motion.div>
-            </motion.div>
-
-
-
+            {/* Premium Button 2 */}
+            <ScrollLink
+              to="contact"
+              smooth={true}
+              duration={600}
+              offset={-80}
+              className="group relative px-14 py-6 bg-transparent cursor-pointer text-black text-[11px] md:text-xs font-bold tracking-[0.25em] uppercase w-full sm:w-auto transition-all duration-500 hover:text-white flex items-center justify-center gap-4 rounded-none border-[1.5px]  overflow-hidden"
+              style={{ fontFamily: "Poppins, sans-serif" }}
+            >
+              <div className="absolute inset-0 w-full h-full bg-black  translate-y-full group-hover:translate-y-0 transition-transform duration-500 -z-10 ease-out"></div>
+              Start a Project
+              <svg
+                className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.5}
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
+            </ScrollLink>
+          </motion.div>
+        </motion.div>
 
         {/* image section */}
 
