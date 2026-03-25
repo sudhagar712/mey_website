@@ -4,6 +4,10 @@ import PageBanner from '../components/PageBanner';
 import AboutMey from '../components/AboutMey';
 import about2 from "../assets/about2.png"
 import { Link } from 'react-router-dom';
+import ThreePerspective from '../components/ThreePerspective';
+import OutcomeSection from '../components/OutcomeSection';
+import BeliefSection from '../components/BeliefSection';
+import WorkWithSection from '../components/WorkWithSection';
 
 const About = () => {
   useEffect(() => {
@@ -78,6 +82,12 @@ const About = () => {
         />
 
         <AboutMey />
+        <BeliefSection/>
+
+
+        <ThreePerspective/>
+     <WorkWithSection/>
+        <OutcomeSection/>
 
         {/* 2. Philosophy & Mission (Dark Premium Container) */}
         <section className="  bg-white lg:pt-40 pb-40 px-3 md:px-12 lg:px-24  relative">

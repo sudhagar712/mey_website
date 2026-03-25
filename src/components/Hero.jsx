@@ -8,7 +8,7 @@ const Hero = () => {
     return (
       <>
         <motion.section
-          className="relative min-h-[90vh] bg-white  flex flex-col items-center justify-center   pb-16 px-6 md:px-12 overflow-hidden"
+          className="relative bg-[#f1bd40]  flex flex-col items-center justify-center   pb-16 px-6 md:px-12 overflow-hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -25,7 +25,7 @@ const Hero = () => {
 
           <div className="relative z-10 max-w-[1600px]  mt-20  w-full mx-auto flex flex-col items-center text-center">
             {/* Giant Logo with Overlay Text */}
-            <div className="relative mb-24 bg-[#fbba00] rounded-md p-8 md:p-10 w-full mt-10  flex flex-col items-center justify-center">
+            <div className="relative mb-24  rounded-md p-8 md:p-10 w-full mt-10  flex flex-col items-center justify-center">
               <motion.h1
                 className="text-[150px] sm:text-[240px] text-black md:text-[260px] lg:text-[270px] leading-[0.75]  font-thin tracking-tighter  select-none z-0"
                 initial={{ y: 18, opacity: 0 }}
@@ -61,15 +61,15 @@ const Hero = () => {
             >
               <p className="text-lg md:text-3xl  lg:text-2xl text-black/80 font-medium leading-[1.6] mb-10">
                 We build{" "}
-                <span className="text-[#fbba00] font-bold  border-b border-black/30">
+                <span className="text-white font-bold  border-b border-black/30">
                   clear
                 </span>
                 ,{" "}
-                <span className="text-[#fbba00] font-bold  border-b border-black/30">
+                <span className="text-white font-bold  border-b border-black/30">
                   powerful
                 </span>{" "}
                 and{" "}
-                <span className="text-[#fbba00] font-bold  border-b border-black/30">
+                <span className="text-white font-bold  border-b border-black/30">
                   growth-focused
                 </span>{" "}
                 brands for startups and ambitious businesses.
