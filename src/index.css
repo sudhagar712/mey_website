@@ -13,3 +13,15 @@ body {
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
+
+
+.swiper-pagination-bullet {
+  background: #ccc;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: black;
+  width: 20px;
+  border-radius: 10px;
+}

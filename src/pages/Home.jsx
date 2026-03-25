@@ -7,6 +7,7 @@ import CAPABILITIES from '../components/CAPABILITIES'
 import DIFFERENTIATOR from '../components/DIFFERENTIATOR'
 import ContactForm from '../components/ContactForm'
 import ContactSidebar from '../components/ContactSidebar'
+// import Mobileui from '../components/Mobileui';
 // import Marquee from '../components/Marquee';
 
 const Home = () => {
@@ -20,6 +21,8 @@ const Home = () => {
       <div className='px-3'>
  <SmartConversations />
       </div>
+
+      {/* <Mobileui/> */}
      
   
       <CAPABILITIES />
