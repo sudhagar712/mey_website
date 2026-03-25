@@ -18,16 +18,16 @@ const features = [
 
 const WorkWithSection = () => {
   return (
-    <section className="bg-black text-white py-20 md:py-28 px-6 md:px-12 lg:px-20 overflow-hidden">
+    <section className=" py-20 md:py-28 px-6 md:px-12 lg:px-20 overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* LEFT CONTENT */}
         <div>
           {/* Label */}
           <div className="flex items-center gap-4 mb-8">
-            <span className="text-xs tracking-[0.4em] text-[#c9a14a]">
+            <span className="text-xs tracking-[0.4em] text-[#f1bd40]">
               WHO WE WORK WITH
             </span>
-            <div className="h-[1px] w-16 bg-[#c9a14a]" />
+            <div className="h-[1px] w-16 bg-[#f1bd40]" />
           </div>
 
           {/* Heading */}
@@ -39,7 +39,7 @@ const WorkWithSection = () => {
             className="text-3xl md:text-5xl lg:text-6xl font-serif leading-tight"
           >
             Founders ready to build something{" "}
-            <span className="text-[#c9a14a] italic">lasting.</span>
+            <span className="text-[#f1bd40] ">lasting.</span>
           </motion.h2>
 
           {/* Features */}
@@ -54,14 +54,12 @@ const WorkWithSection = () => {
                 className="flex gap-4"
               >
                 <div className="w-6 mt-2">
-                  <div className="h-[1px] w-full bg-[#c9a14a]" />
+                  <div className="h-[1px] w-full bg-[#f1bd40]" />
                 </div>
 
                 <div>
-                  <h3 className="text-white font-medium text-lg">
-                    {item.title}
-                  </h3>
-                  <p className="text-white/60 mt-2 text-sm md:text-base leading-relaxed">
+                  <h3 className=" font-medium text-lg">{item.title}</h3>
+                  <p className=" mt-2 text-sm md:text-base leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
@@ -79,7 +77,7 @@ const WorkWithSection = () => {
           <div className="absolute w-[180px] md:w-[260px] h-[180px] md:h-[260px] border border-[#c9a14a]/20 rounded-full" />
 
           {/* Inner Circle */}
-          <div className="absolute w-[90px] md:w-[120px] h-[90px] md:h-[120px] border border-[#c9a14a] rounded-full flex items-center justify-center">
+          <div className="absolute w-[90px] md:w-[120px] h-[90px] md:h-[120px] border border-[#f1bd40] rounded-full flex items-center justify-center">
             <span className="text-[#c9a14a] text-sm tracking-[0.2em] rotate-12">
               MEY
             </span>
@@ -91,7 +89,7 @@ const WorkWithSection = () => {
             transition={{ repeat: Infinity, duration: 12, ease: "linear" }}
             className="absolute w-[280px] md:w-[380px] h-[280px] md:h-[380px]"
           >
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-[#c9a14a] rounded-full" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-[#f1bd40] rounded-full" />
           </motion.div>
 
           {/* Orbit Dot 2 */}
@@ -100,7 +98,7 @@ const WorkWithSection = () => {
             transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
             className="absolute w-[180px] md:w-[260px] h-[180px] md:h-[260px]"
           >
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-[#c9a14a] rounded-full" />
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-[#f1bd40] rounded-full" />
           </motion.div>
         </div>
       </div>

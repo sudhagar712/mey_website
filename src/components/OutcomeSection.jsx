@@ -1,10 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const OutcomeSection = () => {
   return (
     <section className="relative bg-black text-white py-24 md:py-32 px-6 overflow-hidden">
-      
       {/* Background Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,215,0,0.08),transparent_60%)]" />
 
@@ -19,7 +19,6 @@ const OutcomeSection = () => {
       </motion.h1>
 
       <div className="relative max-w-4xl mx-auto text-center">
-        
         {/* Top Label */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -27,10 +26,10 @@ const OutcomeSection = () => {
           transition={{ duration: 0.6 }}
           className="flex items-center justify-center gap-4 mb-8"
         >
-          <span className="text-xs tracking-[0.4em] text-[#c9a14a]">
+          <span className="text-xs tracking-[0.4em] text-[#f1bd40]">
             THE OUTCOME
           </span>
-          <div className="h-[1px] w-16 bg-[#c9a14a]" />
+          <div className="h-[1px] w-16 bg-[#f1bd40]" />
         </motion.div>
 
         {/* Heading */}
@@ -48,7 +47,7 @@ const OutcomeSection = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="text-[#c9a14a] italic text-2xl md:text-5xl mt-4"
+          className="text-[#f1bd40] text-2xl md:text-5xl mt-4"
         >
           Impossible to ignore.
         </motion.p>
@@ -80,15 +79,16 @@ const OutcomeSection = () => {
           transition={{ duration: 1.6, delay: 0.8 }}
           className="mt-10"
         >
-          <button className="relative px-8 py-4 border border-[#c9a14a] text-[#c9a14a] tracking-[0.2em] text-sm overflow-hidden group">
-            
+          <button className="relative px-8 py-4 border border-[#f1bd40] text-[#f1bd40] tracking-[0.2em] text-sm overflow-hidden group">
             {/* Hover Fill */}
-            <span className="absolute inset-0 bg-[#c9a14a] translate-y-full group-hover:translate-y-0 transition duration-500 ease-in-out" />
+            <span className="absolute inset-0 bg-[#f1bd40] translate-y-full group-hover:translate-y-0 transition duration-500 ease-in-out" />
 
             {/* Text */}
-            <span className="relative z-10 group-hover:text-black transition duration-500">
-              START THE CONVERSATION
-            </span>
+            <Link to="/contact">
+              <span className="relative z-10 group-hover:text-black transition duration-500">
+                START THE CONVERSATION
+              </span>
+            </Link>
           </button>
         </motion.div>
       </div>

@@ -20,50 +20,47 @@ const perspectives = [
 
 const ThreePerspective = () => {
   return (
-    <section className="bg-black text-white py-16 md:py-24 px-6 md:px-12 lg:px-20">
-      
+    <section className=" py-16 md:py-24 px-6 md:px-12 lg:px-20">
       {/* Top Small Label */}
       <div className="flex items-center gap-4 mb-8">
-        <span className="text-xs tracking-[0.4em] text-[#c9a14a]">
+        <span className="text-xs tracking-[0.4em] text-[#f1bd40]">
           WHERE IT BEGAN
         </span>
-        <div className="h-[1px] w-16 bg-[#c9a14a]" />
+        <div className="h-[1px] w-16 bg-[#f1bd40]" />
       </div>
 
       {/* Heading */}
       <div className="text-center mb-14">
-        <h2 className="text-3xl md:text-5xl font-serif">
-          Three perspectives.
-        </h2>
-        <p className="text-[#c9a14a] text-xl md:text-3xl italic mt-2">
+        <h2 className="text-3xl md:text-5xl font-serif">Three perspectives.</h2>
+        <p className="text-[#f1bd40] text-xl md:text-3xl  mt-2">
           One realisation.
         </p>
       </div>
 
       {/* Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border border-[#ffffff10]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 border border-[#ffffff10]">
         {perspectives.map((item, index) => (
           <div
             key={index}
-            className={`p-8 md:p-10 border-[#ffffff10] 
-            ${index !== 2 ? "lg:border-r" : ""}
-            ${index === 0 ? "md:border-r" : ""}
-            ${index < 2 ? "border-b lg:border-b-0" : ""}
-            
-            hover:bg-[#ffffff05] transition duration-300`}
+            className={`group p-8 md:p-10 border-[#ffffff10] 
+      ${index !== 2 ? "lg:border-r" : ""}
+      ${index === 0 ? "md:border-r" : ""}
+      ${index < 2 ? "border-b lg:border-b-0" : ""}
+      bg-black
+      hover:bg-[#f1bd40] transition duration-300`}
           >
             {/* Number */}
-            <h3 className="text-5xl text-white/10 mb-6 font-light">
+            <h3 className="text-5xl text-white mb-6 transition duration-300 group-hover:text-black">
               {item.id}
             </h3>
 
             {/* Title */}
-            <p className="text-xs tracking-[0.3em] text-[#c9a14a] mb-4">
+            <p className="text-xs tracking-[0.3em] text-[#f1bd40] mb-4 transition duration-300 group-hover:text-black">
               {item.title}
             </p>
 
             {/* Description */}
-            <p className="text-white/70 leading-relaxed text-sm md:text-base">
+            <p className="leading-relaxed text-sm md:text-base text-white transition duration-300 group-hover:text-black">
               {item.desc}
             </p>
           </div>
