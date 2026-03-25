@@ -29,14 +29,14 @@ const BeliefSection = () => {
           </motion.div>
         </div>
 
-        <div className="order-1 lg:order-2">
+        <div className="order-1 lg:order-2 px-5">
           {/* Label */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="flex items-center gap-4 mb-8"
+            className="flex items-center gap-4 mb-8 px-5"
           >
             <span className="text-xs tracking-[0.4em] font-bold">
               OUR BELIEF

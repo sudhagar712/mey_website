@@ -4,7 +4,7 @@ import about from "../assets/aboutt.png"
 
 const AboutMey = () => {
     return (
-      <section className="relative bg-white w-full flex flex-col lg:flex-row min-h-[80vh] overflow-hidden">
+      <section className="relative bg-white w-full flex flex-col lg:flex-row min-h-[80vh]  overflow-hidden">
         {/* Left Side: Content (Black Background) */}
         <div className="w-full lg:w-1/2 flex items-center justify-center   relative z-10">
           <motion.div
@@ -12,7 +12,7 @@ const AboutMey = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="max-w-xl w-full flex flex-col items-start"
+            className="max-w-xl w-full flex flex-col items-start px-5"
           >
             <div className="flex items-center gap-4 mb-8 mt-10">
               <div className="w-12 h-[2px] bg-[#000000f1]"></div>

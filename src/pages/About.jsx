@@ -88,7 +88,7 @@ const About = () => {
         <WorkWithSection />
 
         {/* 2. Philosophy & Mission (Dark Premium Container) */}
-        <section className="  bg-white  pb-20   relative">
+        <section className="  bg-white  pb-20    relative">
           <div className="">
             {/* Philosophy */}
             <section className="py-28  lg:px-1">
@@ -106,7 +106,7 @@ const About = () => {
                 </div>
 
                 {/* Right Content */}
-                <div className="order-1 lg:order-2">
+                <div className="order-1 lg:order-2 px-5">
                   <h2 className="text-[10px] md:text-xs tracking-[0.4em] uppercase font-bold   mb-6">
                     Our Philosophy
                   </h2>
@@ -146,7 +146,7 @@ const About = () => {
             </section>
 
             {/* Mission */}
-            <section className="lg:px-16">
+            <section className="lg:px-16 px-3">
               <div className="max-w-6xl mx-auto">
                 <div className="relative overflow-hidden rounded-3xl bg-[#fbba00] border border-white/10 shadow-[0_30px_80px_rgba(0,0,0,0.6)]">
                   <div>
