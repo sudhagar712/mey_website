@@ -9,7 +9,7 @@ const Hero = () => {
     return (
       <>
         <motion.section
-          className="relative min-h-[100vh] bg-[#fbba00]  flex flex-col items-center justify-center   pb-14 px-2 md:px-12 overflow-hidden"
+          className="relative  bg-[#fbba00] h-[450px] flex flex-col items-center justify-center  md:px-12 overflow-hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -37,7 +37,7 @@ const Hero = () => {
                 MEY
               </motion.h1> */}
 
-              <img src={logol} alt=""  className='w-[700px] h-[200px] md:h-[320px] md:mt-10'/>
+              <img src={logol} alt=""  className='w-[700px] h-[150px] md:h-[290px] md:mt-20'/>
 
               {/* Glassmorphism Strip Overlay */}
               <motion.div
@@ -54,32 +54,49 @@ const Hero = () => {
               </motion.div>
             </div>
 
-            {/* Content Box */}
+           
+          </div>
+
+          <style
+            dangerouslySetInnerHTML={{
+              __html: `
+          @keyframes slideDown {
+            0% { transform: translateY(-100%); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(200%); opacity: 0; }
+          }
+        `,
+            }}
+          />
+        </motion.section>
+
+
+ {/* Content Box */}
             <motion.div
-              className="flex flex-col   items-center max-w-4xl mx-auto"
+              className="flex flex-col  mt-3 text-center  mt-10  items-center max-w-4xl mx-auto mb-5"
               initial={{ y: 16, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true, amount: 0.4 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <p className="text-lg md:text-3xl  lg:text-2xl text-black/80 font-medium leading-[1.6] mb-10">
+              <p className="text-lg md:text-3xl  lg:text-3xl text-black/80 font-medium leading-[1.6] mb-10">
                 We build{" "}
-                <span className="text-white font-bold  border-b border-black/30">
+                <span className=" font-bold  border-b border-black/30">
                   clear
                 </span>
                 ,{" "}
-                <span className="text-white font-bold  border-b border-black/30">
+                <span className=" font-bold  border-b border-black/30">
                   powerful
                 </span>{" "}
                 and{" "}
-                <span className="text-white font-bold  border-b border-black/30">
+                <span className=" font-bold  border-b border-black/30">
                   growth-focused
                 </span>{" "}
                 brands for startups and ambitious businesses.
               </p>
 
               <motion.div
-                className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto"
+                className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto px-2"
                 initial={{ y: 10, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true, amount: 0.6 }}
@@ -135,20 +152,9 @@ const Hero = () => {
                 </ScrollLink>
               </motion.div>
             </motion.div>
-          </div>
 
-          <style
-            dangerouslySetInnerHTML={{
-              __html: `
-          @keyframes slideDown {
-            0% { transform: translateY(-100%); opacity: 0; }
-            50% { opacity: 1; }
-            100% { transform: translateY(200%); opacity: 0; }
-          }
-        `,
-            }}
-          />
-        </motion.section>
+
+
 
         {/* image section */}
 
