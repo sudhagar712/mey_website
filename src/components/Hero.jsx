@@ -9,7 +9,7 @@ const Hero = () => {
     return (
       <>
         <motion.section
-          className="relative  bg-[#fbba00] h-[490px] p-5  flex flex-col items-center justify-center  md:px-12 overflow-hidden"
+          className="relative  bg-[#fbba00] h-[490px] p-5  flex flex-col items-center justify-center  overflow-hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}

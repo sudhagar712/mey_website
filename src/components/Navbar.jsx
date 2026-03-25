@@ -24,7 +24,7 @@ export default function Navbar() {
   return (
     <>
       {/* NAVBAR */}
-      <div className="fixed top-0 left-0 w-full z-50 px-2  flex justify-center ">
+      <div className="fixed top-0 left-0 w-full z-50  flex justify-center ">
         <div className="w-full  flex items-center justify-between bg-[#fbba00]  px-10 md:px-20 py-4">
           {/* LOGO */}
           <Link

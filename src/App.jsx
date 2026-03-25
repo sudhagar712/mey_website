@@ -58,7 +58,7 @@ const MetaUpdater = () => {
 };
 
 const Layout = ({ children }) => (
-  <div className='px-2'>
+  <div className=''>
     <Navbar />
     {children}
     <Footer />
