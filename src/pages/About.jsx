@@ -8,6 +8,8 @@ import ThreePerspective from '../components/ThreePerspective';
 import OutcomeSection from '../components/OutcomeSection';
 import BeliefSection from '../components/BeliefSection';
 import WorkWithSection from '../components/WorkWithSection';
+import ProblemSection from '../components/ProblemSection';
+import StandardsSection from '../components/StandardsSection';
 
 const About = () => {
   useEffect(() => {
@@ -85,6 +87,8 @@ const About = () => {
         <BeliefSection />
 
         <ThreePerspective />
+        <ProblemSection/>
+        <StandardsSection/>
         <WorkWithSection />
 
         {/* 2. Philosophy & Mission (Dark Premium Container) */}

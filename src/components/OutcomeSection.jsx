@@ -13,7 +13,7 @@ const OutcomeSection = () => {
         initial={{ opacity: 0, scale: 1.2 }}
         animate={{ opacity: 0.05, scale: 1 }}
         transition={{ duration: 1.5 }}
-        className="absolute text-[120px] md:text-[220px] font-serif text-white/10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none"
+        className="absolute text-[120px] md:text-[290px] font-serif text-white/50 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none"
       >
         TRUTH
       </motion.h1>
