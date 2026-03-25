@@ -58,12 +58,12 @@ const MetaUpdater = () => {
 };
 
 const Layout = ({ children }) => (
-  <>
+  <div className='px-2'>
     <Navbar />
     {children}
     <Footer />
     <FloatingButtons />
-  </>
+  </div>
 );
 
 const App = () => {

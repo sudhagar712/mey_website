@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const OutcomeSection = () => {
   return (
-    <section className="relative bg-black text-white py-24 md:py-32 px-6 overflow-hidden">
+    <section className="relative bg-black text-white py-24 md:py-32 px-6 overflow-hidden mb-3">
       {/* Background Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,215,0,0.08),transparent_60%)]" />
 

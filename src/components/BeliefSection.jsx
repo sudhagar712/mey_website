@@ -1,12 +1,35 @@
 import React from "react";
 import { motion } from "framer-motion";
+import mobile from "../assets/mobile.png"
 
 const BeliefSection = () => {
   return (
-    <section className="bg-white py-20 md:py-28 px-6 md:px-12 lg:px-20">
+    <section className="bg-white py-20   md:px-12 lg:px-20">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         {/* LEFT CONTENT */}
-        <div>
+
+        <div className="order-2 lg:order-1">
+          <img src={mobile} alt="" />
+
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="relative pl-6 md:pl-10 border-l border-[#c9a14a]/40"
+          >
+            <p className=" font-bold text-lg md:text-2xl leading-relaxed">
+              "A brand built on truth doesn’t need to chase attention. It earns
+              it."
+            </p>
+
+            <p className="text-[#f1bd40] font-bold mt-6 text-sm tracking-[0.2em]">
+              — THE MEY PRINCIPLE
+            </p>
+          </motion.div>
+        </div>
+
+        <div className="order-1 lg:order-2">
           {/* Label */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -15,10 +38,10 @@ const BeliefSection = () => {
             viewport={{ once: true }}
             className="flex items-center gap-4 mb-8"
           >
-            <span className="text-xs tracking-[0.4em] text-[#f1bd40]">
+            <span className="text-xs tracking-[0.4em] font-bold">
               OUR BELIEF
             </span>
-            <div className="h-[1px] w-16 bg-[#f1bd40]" />
+            <div className="h-[1px] w-16  bg-[#f1bd40]" />
           </motion.div>
 
           {/* Heading */}
@@ -27,9 +50,9 @@ const BeliefSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl lg:text-6xl font-serif leading-tight"
+            className="text-3xl md:text-5xl lg:text-7xl font-serif leading-tight"
           >
-            When built on <span className="text-[#f1bd40] ">truth</span>, a
+            When built on <span className="text-[#f1bd40] font-bold ">truth</span>, a
             brand earns attention.
           </motion.h2>
 
@@ -60,22 +83,6 @@ const BeliefSection = () => {
         </div>
 
         {/* RIGHT QUOTE */}
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="relative pl-6 md:pl-10 border-l border-[#c9a14a]/40"
-        >
-          <p className="text-[#f1bd40]  text-lg md:text-2xl leading-relaxed">
-            "A brand built on truth doesn’t need to chase attention. It earns
-            it."
-          </p>
-
-          <p className="text-[#f1bd40]/70 mt-6 text-sm tracking-[0.2em]">
-            — THE MEY PRINCIPLE
-          </p>
-        </motion.div>
       </div>
     </section>
   );

@@ -88,11 +88,11 @@ const About = () => {
         <WorkWithSection />
 
         {/* 2. Philosophy & Mission (Dark Premium Container) */}
-        <section className="  bg-white lg:pt-40 pb-40 px-3 md:px-12 lg:px-24  relative">
+        <section className="  bg-white  pb-20   relative">
           <div className="">
             {/* Philosophy */}
             <section className="py-28  lg:px-1">
-              <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+              <div className=" grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
                 {/* Left Image */}
                 <div className="relative group overflow-hidden rounded-2xl order-2 lg:order-1">
                   <img

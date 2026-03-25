@@ -1,4 +1,6 @@
-import React from "react";
+import  {React, useEffect} from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const perspectives = [
   {
@@ -19,11 +21,22 @@ const perspectives = [
 ];
 
 const ThreePerspective = () => {
+
+
+ useEffect(() => {
+   AOS.init({
+     duration: 1000, // animation speed
+     once: true, // scroll panna once dha run agum
+   });
+ }, []);
+
+
+
   return (
-    <section className=" py-16 md:py-24 px-6 md:px-12 lg:px-20">
+    <section className=" py-16 md:py-24  md:px-12 lg:px-20">
       {/* Top Small Label */}
-      <div className="flex items-center gap-4 mb-8">
-        <span className="text-xs tracking-[0.4em] text-[#f1bd40]">
+      <div className="flex items-center gap-4 px-3 mb-8">
+        <span className="text-xs tracking-[0.4em] font-bold">
           WHERE IT BEGAN
         </span>
         <div className="h-[1px] w-16 bg-[#f1bd40]" />
@@ -32,7 +45,7 @@ const ThreePerspective = () => {
       {/* Heading */}
       <div className="text-center mb-14">
         <h2 className="text-3xl md:text-5xl font-serif">Three perspectives.</h2>
-        <p className="text-[#f1bd40] text-xl md:text-3xl  mt-2">
+        <p className="text-[#f1bd40] text-xl md:text-3xl font-bold  mt-5">
           One realisation.
         </p>
       </div>
@@ -42,6 +55,7 @@ const ThreePerspective = () => {
         {perspectives.map((item, index) => (
           <div
             key={index}
+            data-aos="fade-up"
             className={`group p-8 md:p-10 border-[#ffffff10] 
       ${index !== 2 ? "lg:border-r" : ""}
       ${index === 0 ? "md:border-r" : ""}
