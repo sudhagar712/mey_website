@@ -3,12 +3,13 @@ import { motion } from 'framer-motion';
 import { Link as ScrollLink } from "react-scroll";
 import { Link } from 'react-router-dom';
 // import logo from "../assets/bannerright.png"
+import logol from "../assets/logol.png"
 
 const Hero = () => {
     return (
       <>
         <motion.section
-          className="relative min-h-[90vh] bg-[#fbba00]  flex flex-col items-center justify-center   pb-16 px-6 md:px-12 overflow-hidden"
+          className="relative min-h-[100vh] bg-[#fbba00]  flex flex-col items-center justify-center   pb-14 px-2 md:px-12 overflow-hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -23,18 +24,20 @@ const Hero = () => {
             }}
           />
 
-          <div className="relative z-10 max-w-[1600px]  mt-20  w-full mx-auto flex flex-col items-center text-center">
+          <div className="relative z-10   mt-20  w-full  flex flex-col items-center text-center">
             {/* Giant Logo with Overlay Text */}
             <div className="relative mb-24  rounded-md p-8 md:p-10 w-full mt-10  flex flex-col items-center justify-center">
-              <motion.h1
-                className="text-[150px] sm:text-[240px] text-black md:text-[260px] lg:text-[270px] leading-[0.75]  font-thin tracking-tighter  select-none z-0"
+              {/* <motion.h1
+                className="text-[150px] sm:text-[240px] text-black md:text-[290px] lg:text-[340px] leading-[0.75]  font-thin tracking-tighter  select-none z-0"
                 initial={{ y: 18, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
                 style={{ fontFamily: "Cinzel, serif" }}
               >
                 MEY
-              </motion.h1>
+              </motion.h1> */}
+
+              <img src={logol} alt=""  className='w-[700px] h-[200px] md:h-[320px] md:mt-10'/>
 
               {/* Glassmorphism Strip Overlay */}
               <motion.div
@@ -43,7 +46,7 @@ const Hero = () => {
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
               >
-                <div className="w-full h-[60px] md:h-[90px] bg-white/30 backdrop-blur-md flex items-center justify-center border-y border-black/10 transform shadow-2xl ">
+                <div className="w-full h-[50px] md:h-[90px] bg-white/20 backdrop-blur-md flex items-center justify-center border-y border-black/10 transform shadow-2xl ">
                   <p className=" text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white  tracking-wider whitespace-nowrap px-8 font-thin">
                     Truth Before Business
                   </p>
