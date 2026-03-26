@@ -1,6 +1,6 @@
 import React from 'react';
 import SEO from '../components/SEO';
-import PageBanner from '../components/PageBanner';
+// import PageBanner from '../components/PageBanner';
 import { motion } from "framer-motion";
 import Reels from '../components/Reels';
 import screen1 from "../assets/sreen.png"
@@ -27,16 +27,16 @@ const projects = [
 const Work = () => {
 
   return (
-    <main className="w-full min-h-screen bg-[#fcfcfc]">
+    <main className="w-full min-h-screen bg-[#fcfcfc] mt-20">
       <SEO
         title="Branding & Marketing Projects | MEY Chennai"
         description="Explore branding, social media, website and advertising projects delivered by MEY."
       />
-      <PageBanner
+      {/* <PageBanner
         title="Our Work"
         breadcrumb="Work"
         bgImage="https://www.myfitnesschat.com/wp-content/uploads/2019/03/pexels-photo-1509428.jpeg"
-      />
+      /> */}
 
       <Reels />
       <Printcreative/>

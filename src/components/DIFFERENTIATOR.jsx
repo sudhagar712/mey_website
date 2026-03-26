@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import imgg from "../assets/whymey.png"
+import imgg from "../assets/whymeynew.png"
 import client1 from "../assets/client/Aspire.png";
 import client2 from "../assets/client/BCG.png";
 import client3 from "../assets/client/Budanta.png";
@@ -213,22 +213,21 @@ useEffect(() => {
         </style>
 
         {/* 1. WHY MEY Section */}
-        <section className="bg-[#fcfcfc] py-24 md:py-32 px-2 md:px-12 lg:px-24">
+        <section className="bg-[#fcfcfc] py-2 md:py-32   md:px-20">
           <div className="max-w-[1400px] mx-auto">
-            {/* Heading */}
-            <div className="mb-16">
-              <h4 className="text-xs tracking-[0.4em] uppercase font-bold text-black/50 mb-4">
-                Our Approach
-              </h4>
-
-              <h2 className="text-4xl md:text-6xl font-bold tracking-tight">
-                Why MEY
-              </h2>
-            </div>
-
-            <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <div className="grid lg:grid-cols-2 gap-20 justify-center items-center">
               {/* LEFT SIDE */}
-              <div className="space-y-10">
+              <div className="space-y-10 px-10">
+                {/* Heading */}
+                <div className="mb-16">
+                  <h4 className="text-xs tracking-[0.4em] uppercase font-bold text-black/50 mb-4">
+                    Our Approach
+                  </h4>
+
+                  <h2 className="text-4xl md:text-6xl font-bold tracking-tight">
+                    Why MEY
+                  </h2>
+                </div>
                 {differentiators.map((item, i) => (
                   <div
                     key={i}

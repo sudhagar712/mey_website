@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import about from "../assets/aboutt.png"
+import about from "../assets/meyabout.png"
 
 const AboutMey = () => {
     return (
-      <section className="relative bg-white w-full flex flex-col lg:flex-row min-h-[80vh]  overflow-hidden">
+      <section className="relative bg-white w-full flex flex-col lg:flex-row min-h-[80vh] mt-20  overflow-hidden">
         {/* Left Side: Content (Black Background) */}
         <div className="w-full lg:w-1/2 flex items-center justify-center   relative z-10">
           <motion.div
@@ -24,9 +24,9 @@ const AboutMey = () => {
               </h2>
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-[5rem] leading-[1.1]   tracking-tighter mb-10">
+            <h1 className="text-5xl md:text-6xl lg:text-6xl leading-[1.1] font-bold   tracking-tighter mb-10">
               The Truth Behind
-              <span className=" text-yellow-500 mx-3">Brands</span>
+              <span className=" text-yellow-500 mx-3 bg-black ">Brands</span>
             </h1>
 
             <p
