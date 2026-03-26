@@ -27,7 +27,7 @@ const projects = [
 const Work = () => {
 
   return (
-    <main className="w-full min-h-screen bg-[#fcfcfc] mt-20">
+    <main className="w-full min-h-screen bg-[#fcfcfc] ">
       <SEO
         title="Branding & Marketing Projects | MEY Chennai"
         description="Explore branding, social media, website and advertising projects delivered by MEY."
@@ -38,17 +38,18 @@ const Work = () => {
         bgImage="https://www.myfitnesschat.com/wp-content/uploads/2019/03/pexels-photo-1509428.jpeg"
       /> */}
 
-      <Reels />
-      <Printcreative/>
+      <Printcreative />
 
       <Digitalcreative />
 
-      <PdfPreview/>
+      <PdfPreview />
 
-      <Motionposter/>
+      <Motionposter />
 
       <div className=" bg-black  py-20 px-6 md:px-40">
-        <h2 className="text-3xl md:text-6xl text-white font-bold mb-12 ">Projects</h2>
+        <h2 className="text-3xl md:text-6xl text-white font-bold mb-12 ">
+          Projects
+        </h2>
 
         <div className="grid md:grid-cols-2 gap-10">
           {projects.map((project, index) => (
@@ -90,8 +91,7 @@ const Work = () => {
           ))}
         </div>
       </div>
-
-   
+      <Reels />
       {/* <VideoSlider /> */}
     </main>
   );

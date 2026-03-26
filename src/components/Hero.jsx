@@ -80,17 +80,17 @@ const Hero = () => {
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <p className="text-2xl md:text-5xl  lg:text-4xl text-black/80 font-medium leading-[1.6] mb-10">
+          <p className="text-2xl md:text-5xl  lg:text-3xl text-black/80    leading-[1.6] mb-10">
             We build{" "}
-            <span className=" font-bold  border-b border-black/30 text-[#f1bd40] ">
+            <span className="   border-b border-black/30 text-[#f1bd40] ">
               clear
             </span>
             ,{" "}
-            <span className=" font-bold  text-[#f1bd40]  border-b border-black/30">
+            <span className="   text-[#f1bd40]  border-b border-black/30">
               powerful
             </span>{" "}
             and{" "}
-            <span className=" font-bold text-[#f1bd40]  border-b border-black/30">
+            <span className="  text-[#f1bd40]  border-b border-black/30">
               growth-focused
             </span>{" "}
             brands for startups and ambitious businesses.

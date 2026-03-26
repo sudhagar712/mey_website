@@ -1,93 +1,217 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const reelsData = [
   {
     title: "Reel 01",
-    videos:
+    video:
       "https://res.cloudinary.com/dgphjgzgt/video/upload/v1773929312/vv4_eptaeq.mp4",
   },
   {
     title: "Reel 02",
-    videos:
+    video:
       "https://res.cloudinary.com/dgphjgzgt/video/upload/v1773929318/vv1_acjmxd.mp4",
   },
   {
     title: "Reel 03",
-    videos:
+    video:
       "https://res.cloudinary.com/dgphjgzgt/video/upload/v1773929324/vv3_sczozq.mp4",
   },
   {
     title: "Reel 04",
-    videos:
+    video:
       "https://res.cloudinary.com/dgphjgzgt/video/upload/v1773929363/vv2_kad9ol.mp4",
   },
 ];
 
 const Reels = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [active, setActive] = useState(0);
+  const [isMuted, setIsMuted] = useState(true);
+  const [progress, setProgress] = useState(0);
+
+  const isScrolling = useRef(false);
+  const videoRefs = useRef([]);
+  const progressInterval = useRef(null);
+
+  const sectionRef = useRef(null);
+  const [isInView, setIsInView] = useState(false);
+
+  // 👁️ Detect if reels section visible
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsInView(entry.isIntersecting),
+      { threshold: 0.6 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => {
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
+    };
+  }, []);
+
+  // 🎯 Scroll control ONLY when visible
+  useEffect(() => {
+    const handleScroll = (e) => {
+      if (!isInView) return;
+
+      e.preventDefault();
+
+      if (isScrolling.current) return;
+      isScrolling.current = true;
+
+      if (e.deltaY > 0) {
+        setActive((prev) => Math.min(prev + 1, reelsData.length - 1));
+      } else {
+        setActive((prev) => Math.max(prev - 1, 0));
+      }
+
+      setTimeout(() => {
+        isScrolling.current = false;
+      }, 600);
+    };
+
+    window.addEventListener("wheel", handleScroll, { passive: false });
+
+    return () => window.removeEventListener("wheel", handleScroll);
+  }, [isInView]);
+
+  // 📱 Mobile swipe
+  useEffect(() => {
+    let startY = 0;
+
+    const start = (e) => (startY = e.touches[0].clientY);
+
+    const end = (e) => {
+      if (!isInView) return;
+
+      const endY = e.changedTouches[0].clientY;
+      if (Math.abs(startY - endY) < 50) return;
+
+      if (startY > endY) {
+        setActive((prev) => Math.min(prev + 1, reelsData.length - 1));
+      } else {
+        setActive((prev) => Math.max(prev - 1, 0));
+      }
+    };
+
+    window.addEventListener("touchstart", start);
+    window.addEventListener("touchend", end);
+
+    return () => {
+      window.removeEventListener("touchstart", start);
+      window.removeEventListener("touchend", end);
+    };
+  }, [isInView]);
+
+  // ▶️ Play video
+  useEffect(() => {
+    videoRefs.current.forEach((video, i) => {
+      if (!video) return;
+
+      if (i === active) {
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    });
+  }, [active]);
+
+  // ⏳ Progress auto next
+  useEffect(() => {
+    clearInterval(progressInterval.current);
+    setProgress(0);
+
+    progressInterval.current = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          clearInterval(progressInterval.current);
+          setActive((a) => Math.min(a + 1, reelsData.length - 1));
+          return 0;
+        }
+        return prev + 1;
+      });
+    }, 80);
+
+    return () => clearInterval(progressInterval.current);
+  }, [active]);
 
   return (
-    <section className="w-full py-12 md:py-16 px-4 md:px-16 bg-[#fafafa]">
+    <section
+      ref={sectionRef}
+      className="w-full h-screen bg-black text-white flex items-center justify-center overflow-hidden relative"
+    >
+      {/* Background Blur */}
+      <div className="absolute inset-0 z-0">
+        <video
+          src={reelsData[active].video}
+          autoPlay
+          muted
+          loop
+          className="w-full h-full object-cover blur-3xl scale-110 opacity-30"
+        />
+      </div>
 
-      {/* GRID LAYOUT */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      {/* Cards */}
+      <div className="relative z-10 flex items-center justify-center w-full h-full">
+        {reelsData.map((item, index) => {
+          const isActive = index === active;
+          const position = index - active;
 
-        {/* LEFT SIDE */}
-        <div className="flex flex-col gap-8">
+          return (
+            <div
+              key={index}
+              className="absolute transition-all duration-700 ease-out"
+              style={{
+                transform: `translateX(${position * 360}px) scale(${
+                  isActive ? 1 : 0.75
+                })`,
+                opacity: Math.abs(position) > 2 ? 0 : 1,
+                filter: isActive ? "blur(0px)" : "blur(6px)",
+                zIndex: isActive ? 10 : 1,
+              }}
+            >
+              <div className="relative w-[300px] md:w-[340px] aspect-[9/16] rounded-[2rem] overflow-hidden bg-black">
+                <video
+                  ref={(el) => (videoRefs.current[index] = el)}
+                  src={item.video}
+                  muted={isMuted}
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover"
+                />
 
-          {/* Heading */}
-          <div>
-            <h2 className="text-3xl md:text-5xl font-bold">
-              Reels Showcase
-            </h2>
-            <p className="text-gray-500 mt-3 text-sm md:text-lg">
-              Explore our latest video creations.
-            </p>
-          </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
 
-          {/* Tabs */}
-          <div className="flex lg:flex-col gap-4 overflow-x-auto lg:overflow-visible">
+                <div className="absolute bottom-6 left-4">
+                  <h3 className="text-lg font-semibold">{item.title}</h3>
+                </div>
 
-            {reelsData.map((item, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveIndex(index)}
-                className={`flex-shrink-0 lg:w-full text-left px-5 py-4 rounded-xl transition-all duration-300 border ${
-                  activeIndex === index
-                    ? "bg-black text-white shadow-md"
-                    : "bg-white hover:bg-gray-100 border-gray-200"
-                }`}
-              >
-                <p className="font-semibold">{item.title}</p>
-              </button>
-            ))}
+                {isActive && (
+                  <>
+                    <button
+                      onClick={() => setIsMuted(!isMuted)}
+                      className="absolute top-4 right-4 bg-white/10 px-3 py-2 rounded-full"
+                    >
+                      {isMuted ? "🔇" : "🔊"}
+                    </button>
 
-          </div>
+                    <div className="absolute top-0 left-0 w-full h-[3px] bg-white/20">
+                      <div
+                        className="h-full bg-white"
+                        style={{ width: `${progress}%` }}
+                      />
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
 
-        </div>
-
-        {/* RIGHT SIDE - VIDEO */}
-        <div className="flex justify-center lg:justify-end">
-
-          <div className="relative w-full max-w-[320px] sm:max-w-[380px] md:max-w-[420px] aspect-[9/16] rounded-[2rem] overflow-hidden bg-black shadow-2xl">
-
-            <video
-              key={activeIndex}
-              src={reelsData[activeIndex].videos}
-              autoPlay
-              muted
-              loop
-              playsInline
-              controls
-              className="w-full h-full object-cover"
-            />
-
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-          </div>
-
-        </div>
-
+      <div className="absolute bottom-6 text-gray-400 text-sm">
+        Scroll / Swipe ↓
       </div>
     </section>
   );
