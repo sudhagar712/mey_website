@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import img1 from "../assets/DigitalCreative/01 trauma.jpg";
 import img2 from "../assets/DigitalCreative/1.jpg";
@@ -16,60 +17,67 @@ import img13 from "../assets/DigitalCreative/Vision and Ideas.jpg";
 import img14 from "../assets/DigitalCreative/Meet Successful IT Entrepreneurs.jpg";
 
 const gallery = [
-  { img: img1, span: "col-span-2 row-span-2" },
-  { img: img2, span: "col-span-1 row-span-1" },
-  { img: img3, span: "col-span-1 row-span-2" },
-  { img: img4, span: "col-span-2 row-span-1" },
-
-  { img: img5, span: "col-span-1 row-span-1" },
-  { img: img6, span: "col-span-2 row-span-2" },
-  { img: img7, span: "col-span-1 row-span-1" },
-
-  { img: img8, span: "col-span-2 row-span-1" },
-  { img: img9, span: "col-span-1 row-span-2" },
-  { img: img10, span: "col-span-1 row-span-1" },
-
-  { img: img11, span: "col-span-2 row-span-2" },
-  { img: img12, span: "col-span-1 row-span-1" },
-  { img: img13, span: "col-span-1 row-span-1" },
-
-  { img: img14, span: "col-span-2 row-span-2" },
+  { img: img1, title: "Trauma Care Campaign" },
+  { img: img2, title: "Brand Social Post" },
+  { img: img3, title: "Luxury Camp Branding" },
+  { img: img4, title: "3M Car Care Creative" },
+  { img: img5, title: "Corporate Leader Series" },
+  { img: img6, title: "Exports & Imports Campaign" },
+  { img: img7, title: "Event Promotion" },
+  { img: img8, title: "Davos Series Creative" },
+  { img: img9, title: "Corporate Post" },
+  { img: img10, title: "Cultural Fest Poster" },
+  { img: img11, title: "Davos Campaign" },
+  { img: img12, title: "Brand Identity Visual" },
+  { img: img13, title: "Vision Campaign" },
+  { img: img14, title: "Entrepreneurs Event" },
 ];
 
 const DigitalCreativeGrid = () => {
   return (
-    <section className="w-full bg-black  ">
+    <section className="w-full px-6 md:px-16 py-20 bg-white">
+      {/* 🔥 Title */}
+      <div className="mb-16">
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+          Digital Gallery
+        </h1>
+        <p className="text-gray-500 mt-3">
+          A curated collection of our digital creative works
+        </p>
+      </div>
 
-      {/* Title */}
-      <h1 className="text-3xl md:text-6xl text-white p-5 md:p-10   font-bold mb-12">
-        Digital Gallery
-      </h1>
-
-      {/* Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-6 auto-rows-[120px] md:auto-rows-[260px] gap-5">
-
+      {/* 🔥 Masonry Grid */}
+      <div className="columns-2 md:columns-3 gap-6 space-y-6">
         {gallery.map((item, index) => (
-          <div
+          <motion.div
             key={index}
-            className={`group relative  transition-all duration-500 overflow-hidden ${item.span}`}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.05 }}
+            viewport={{ once: true }}
+            className="group relative overflow-hidden rounded-3xl cursor-pointer"
           >
             {/* Image */}
-            <div className="w-full h-full md:p-5 flex items-center justify-center">
-              <img
-                src={item.img}
-                alt=""
-                className="max-w-full max-h-full object-contain transition-transform duration-500 group-hover:scale-110"
-              />
+            <img
+              src={item.img}
+              alt={item.title}
+              className="w-full object-cover rounded-3xl transition duration-700 group-hover:scale-110"
+            />
+
+            {/* 🔥 Overlay */}
+            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500" />
+
+            {/* 🔥 Content */}
+            <div className="absolute bottom-0 left-0 p-5 translate-y-10 group-hover:translate-y-0 transition duration-500">
+              <h3 className="text-white text-lg font-semibold">
+                {item.title}
+              </h3>
             </div>
 
-            {/* Premium overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
-
-            {/* Glow border */}
-            <div className="absolute inset-0 rounded-3xl ring-0 group-hover:ring-2 ring-yellow-400/60 transition-all duration-500"></div>
-          </div>
+            {/* 🔥 Glow border */}
+            <div className="absolute inset-0 rounded-3xl ring-0 group-hover:ring-2 ring-white/40 transition duration-500" />
+          </motion.div>
         ))}
-
       </div>
     </section>
   );

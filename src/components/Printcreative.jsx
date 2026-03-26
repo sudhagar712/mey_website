@@ -27,17 +27,16 @@ const Printcreative = () => {
           {images.map((img, index) => (
             <div
               key={index}
-              className="relative group p-10  overflow-hidden   shadow-lg hover:shadow-2xl transition duration-500"
+              className="relative group   overflow-hidden    transition duration-500"
             >
               {/* Image */}
               <img
                 src={img}
                 alt="creative"
-                className="w-full h-full p-10 object-cover transition duration-500 group-hover:scale-110"
+                className="w-full h-full  object-cover transition duration-500 group-hover:scale-110"
               />
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition duration-500"></div>
+             
 
               {/* Glow border */}
               <div className="absolute inset-0 rounded-2xl ring-0 group-hover:ring-2 ring-yellow-400/60 transition-all duration-500"></div>
