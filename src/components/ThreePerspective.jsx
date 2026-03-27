@@ -6,17 +6,17 @@ const perspectives = [
   {
     id: "01",
     title: "STRATEGY",
-    desc: `Constantly analysing positioning, market gaps, and the invisible forces that influence choice. Understanding the architecture of why brands get chosen.`,
+    desc: `One approached brands through strategy, constantly analysing positioning, market gaps, and the invisible forces that influence choice. `,
   },
   {
     id: "02",
     title: "CREATIVITY",
-    desc: `Understanding how design, storytelling, and visual memory shape perception. The language between a brand and the people who encounter it.`,
+    desc: `Another saw brands through creativity, understanding how design, storytelling, and visual memory shape perception.`,
   },
   {
     id: "03",
     title: "BUSINESS",
-    desc: `Recognising that a brand is not just identity, but a system that either drives growth or silently limits it. Brand as an engine, not ornament.`,
+    desc: `The third came from a business lens, recognising that a brand is not just identity, but a system that either drives growth or silently limits it.`,
   },
 ];
 
@@ -45,9 +45,12 @@ const ThreePerspective = () => {
       {/* Heading */}
       <div className="text-center mb-14">
         <h2 className="text-3xl md:text-5xl font-serif">Three perspectives.</h2>
-        <p className="text-[#f1bd40] text-xl md:text-3xl font-bold  mt-5">
-          One realisation.
-        </p>
+
+        <h2 className="text-md md:text-xl    mt-5">
+          MEY began with three friends from completely different worlds, brought
+          together by a shared discomfort they couldn’t ignore.
+        </h2>
+       
       </div>
 
       {/* Cards */}

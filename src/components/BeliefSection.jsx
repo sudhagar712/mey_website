@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import mobile from "../assets/mobile.png"
+// import mobile from "../assets/mobile.png"
 
 const BeliefSection = () => {
   return (
@@ -8,7 +8,7 @@ const BeliefSection = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         {/* LEFT CONTENT */}
 
-        <div className="order-2 lg:order-1">
+        {/* <div className="order-2 lg:order-1">
           <img src={mobile} alt="" />
 
           <motion.div
@@ -27,7 +27,7 @@ const BeliefSection = () => {
               — THE MEY PRINCIPLE
             </p>
           </motion.div>
-        </div>
+        </div> */}
 
         <div className="order-1 lg:order-2 px-5">
           {/* Label */}

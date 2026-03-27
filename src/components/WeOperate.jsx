@@ -1,0 +1,66 @@
+import React from "react";
+import { motion } from "framer-motion";
+
+const WeOperate = () => {
+  return (
+    <section className="bg-white text-black py-20 px-6 md:px-16">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
+        {/* LEFT SIDE */}
+        <motion.div
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          className="space-y-6"
+        >
+          <h2 className="text-3xl md:text-5xl font-semibold leading-tight">
+            How We Operate
+          </h2>
+
+          {/* LINE */}
+          <div className="w-16 h-[2px] bg-black"></div>
+
+          <p className="text-gray-500 text-lg leading-relaxed">
+            Our role is not to observe from the outside, but to engage from
+            within.
+          </p>
+        </motion.div>
+
+        {/* RIGHT SIDE */}
+        <motion.div
+          initial={{ opacity: 0, x: 60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          className="space-y-10"
+        >
+          {/* BLOCK 1 */}
+          <div>
+            <p className="text-xl md:text-2xl leading-relaxed font-medium">
+              We question assumptions, remove what weakens the brand, and build
+              what strengthens it.
+            </p>
+          </div>
+
+          {/* DIVIDER */}
+          <div className="w-full h-[1px] bg-gray-200"></div>
+
+          {/* BLOCK 2 */}
+          <div>
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+              From early-stage ventures finding direction to established
+              businesses redefining their position, our focus remains
+              consistent.
+            </p>
+          </div>
+
+          {/* HIGHLIGHT */}
+          <div className="border-l-4 border-black pl-6">
+            <p className="text-xl md:text-2xl font-semibold leading-relaxed">
+              Ensuring that branding decisions directly contribute to business
+              outcomes.
+            </p>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default WeOperate;

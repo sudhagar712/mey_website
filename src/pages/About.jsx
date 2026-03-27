@@ -4,10 +4,11 @@ import SEO from '../components/SEO';
 import AboutMey from '../components/AboutMey';
 import ThreePerspective from '../components/ThreePerspective';
 import OutcomeSection from '../components/OutcomeSection';
-import BeliefSection from '../components/BeliefSection';
 import WorkWithSection from '../components/WorkWithSection';
 import ProblemSection from '../components/ProblemSection';
 import StandardsSection from '../components/StandardsSection';
+import WeOperate from '../components/WeOperate';
+
 
 const About = () => {
   useEffect(() => {
@@ -33,9 +34,7 @@ const About = () => {
       />
       <style>
         {`
-                  
-                    
-        
+                
                     /* Entry Animations */
                     .animate-reveal {
                         animation: revealLine 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
@@ -82,10 +81,11 @@ const About = () => {
         /> */}
 
         <AboutMey />
-        <BeliefSection />
+    
 
         <ThreePerspective />
         <ProblemSection/>
+        <WeOperate/>
         <StandardsSection/>
         <WorkWithSection />
 

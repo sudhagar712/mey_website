@@ -20,7 +20,7 @@ const ProblemSection = () => {
           className="flex items-center justify-center gap-4 mb-10"
         >
           <span className="text-xs tracking-[0.4em] text-[#f1bd40] uppercase">
-            The Problem
+            The problem was foundation
           </span>
           <div className="w-12 h-[1px] bg-[#f1bd40]"></div>
         </motion.div>

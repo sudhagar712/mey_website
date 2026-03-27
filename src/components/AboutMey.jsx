@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import about from "../assets/meyabout.png"
+// import about from "../assets/meyabout.png"
 
 const AboutMey = () => {
     return (
-      <section className="relative bg-white w-full flex flex-col lg:flex-row min-h-[80vh] mt-20  overflow-hidden">
+      <section className="relative bg-white w-full flex flex-col lg:flex-row  mt-20  overflow-hidden">
         {/* Left Side: Content (Black Background) */}
         <div className="w-full lg:w-1/2 flex items-center justify-center   relative z-10">
           <motion.div
@@ -29,22 +29,31 @@ const AboutMey = () => {
               <span className=" text-yellow-500 mx-3 bg-black ">Brands</span>
             </h1>
 
-            <p
-              className="text-lg md:text-md lg:text-xl  leading-[1.6] mb-8"
-            
-            >
-              Most brands don't fail because of poor design. They fail because they are built on assumptions, imitation, and noise. MEY exists to change that.
-             
+            <p className="text-lg md:text-md lg:text-xl  leading-[1.6] mb-8">
+              Most brands don't fail because of poor design. They fail because
+              they are built on assumptions, imitation, and noise.
             </p>
 
-            
+            <p className="text-lg md:text-md lg:text-xl  leading-[1.6] mb-8">
+              They look right. They sound right. But over time, they become
+              forgettable, replaceable, and dependent on constant marketing to
+              survive.
+            </p>
 
-           
+            <p className="text-lg md:text-md lg:text-xl  leading-[1.6] mb-8">
+              MEY exists to change that.
+            </p>
+
+            <p className="text-lg md:text-md lg:text-xl  leading-[1.6] mb-8">
+              We are a branding firm that believes when a brand is built on
+              truth, it doesn’t need to chase attention. It earns it. It holds
+              it. And it scales with clarity instead of confusion.
+            </p>
           </motion.div>
         </div>
 
         {/* Right Side: Image spanning full height/width of its half */}
-        <div className="w-full lg:w-1/2 relative min-h-[50vh] lg:min-h-[80vh] overflow-hidden group">
+        {/* <div className="w-full lg:w-1/2 relative min-h-[50vh] lg:min-h-[80vh] overflow-hidden group">
           <motion.div
             initial={{ opacity: 0, scale: 1.05 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -58,7 +67,7 @@ const AboutMey = () => {
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s] ease-[cubic-bezier(0.25,1,0.5,1)] origin-center"
             />
           </motion.div>
-        </div>
+        </div> */}
       </section>
     );
 };
