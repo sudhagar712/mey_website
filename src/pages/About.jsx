@@ -81,15 +81,12 @@ const About = () => {
         /> */}
 
         <AboutMey />
-    
 
         <ThreePerspective />
-        <ProblemSection/>
-        <WeOperate/>
-        <StandardsSection/>
+        <ProblemSection />
+        <WeOperate />
         <WorkWithSection />
-
-      
+        <StandardsSection />
 
         <OutcomeSection />
       </main>

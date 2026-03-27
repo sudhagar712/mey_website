@@ -47,7 +47,7 @@ const DigitalCreativeGrid = () => {
       </div>
 
       {/* 🔥 Masonry Grid */}
-      <div className="columns-2 md:columns-3 gap-6 space-y-6">
+      <div className="columns-2 md:columns-2 gap-10 space-y-6">
         {gallery.map((item, index) => (
           <motion.div
             key={index}
@@ -55,13 +55,13 @@ const DigitalCreativeGrid = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.05 }}
             viewport={{ once: true }}
-            className="group relative overflow-hidden rounded-3xl cursor-pointer"
+            className="group relative overflow-hidden  cursor-pointer"
           >
             {/* Image */}
             <img
               src={item.img}
               alt={item.title}
-              className="w-full object-cover rounded-3xl transition duration-700 group-hover:scale-110"
+              className="w-full object-cover  transition duration-700 group-hover:scale-110"
             />
 
             {/* 🔥 Overlay */}

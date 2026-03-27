@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const WeOperate = () => {
   return (
-    <section className="bg-white text-black py-20 px-6 md:px-16">
+    <section className="bg-[#fbba00]  text-black py-20 px-6 md:px-16">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
         {/* LEFT SIDE */}
         <motion.div
@@ -18,7 +18,7 @@ const WeOperate = () => {
           {/* LINE */}
           <div className="w-16 h-[2px] bg-black"></div>
 
-          <p className="text-gray-500 text-lg leading-relaxed">
+          <p className=" text-lg leading-relaxed">
             Our role is not to observe from the outside, but to engage from
             within.
           </p>
@@ -28,7 +28,7 @@ const WeOperate = () => {
         <motion.div
           initial={{ opacity: 0, x: 60 }}
           whileInView={{ opacity: 1, x: 0 }}
-          className="space-y-10"
+          className="space-y-10 "
         >
           {/* BLOCK 1 */}
           <div>
