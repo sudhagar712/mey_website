@@ -14,6 +14,10 @@ const videos = [
     id: 3,
     src: "https://res.cloudinary.com/dgphjgzgt/video/upload/v1774858181/Cauvery_Rice_Correction_1_aqfzf3.mp4",
   },
+    {
+    id: 4,
+    src: "https://res.cloudinary.com/dgphjgzgt/video/upload/v1774858932/6bd12d62-4664-464f-ae50-67b24dc5afcd_wiftsq.mp4",
+  },
 ];
 
 const CoperateBanner = () => {
