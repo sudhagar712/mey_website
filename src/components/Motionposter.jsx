@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const videos = [
   {
@@ -22,75 +23,97 @@ const Motionposter = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setActive((prev) => (prev + 1) % videos.length);
-    }, 4000);
+    }, 4500);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="py-16 bg-[#fff8e6] overflow-hidden">
+    <section className="py-24 relative overflow-hidden">
+      {/* Glow Background */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-yellow-500/10 blur-[150px] rounded-full pointer-events-none"></div>
 
-      {/* Title */}
-      <h2 className="text-3xl md:text-5xl font-bold text-center mb-16">
-        Motion Posters
-      </h2>
-
-      {/* Carousel Wrapper */}
-      <div className="relative flex justify-center items-center">
-
-        <div className="relative w-full max-w-6xl h-[260px] md:h-[450px]">
-
-          {videos.map((video, index) => {
-            const offset = index - active;
-
-            return (
-              <div
-                key={index}
-                className="absolute top-1/2 left-1/2 transition-all duration-700 ease-in-out"
-                style={{
-                  transform: `
-                    translate(-50%, -50%)
-                    translateX(${offset * 220}px)
-                    scale(${offset === 0 ? 1 : 0.7})
-                  `,
-                  opacity: offset === 0 ? 1 : 0.4,
-                  zIndex: offset === 0 ? 20 : 10,
-                }}
-              >
-                {/* Circle */}
-                <div className="w-[300px] h-[300px] md:w-[350px] md:h-[350px]  overflow-hidden shadow-2xl border-4 border-white">
-
-                  <video
-                    src={video.url}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                {/* Glow */}
-                {offset === 0 && (
-                  <div className="absolute inset-0 rounded-full blur-3xl bg-yellow-300/40 -z-10"></div>
-                )}
-              </div>
-            );
-          })}
-
+      {/* Title Area */}
+      <div className="relative z-10 text-center mb-16 px-4">
+        <div className="flex items-center justify-center gap-4 mb-5">
+          <div className="h-[1px] w-8 md:w-16 bg-yellow-500"></div>
+          <span className="text-xs md:text-sm tracking-[0.4em] uppercase font-bold text-yellow-500">
+            Showcase
+          </span>
+          <div className="h-[1px] w-8 md:w-16 bg-yellow-500"></div>
         </div>
+        <h2 className="text-4xl md:text-6xl font-bold  tracking-tight">
+          Motion Posters
+        </h2>
       </div>
 
-      {/* Dots */}
-      <div className="flex justify-center mt-10 gap-3">
+      {/* Carousel Wrapper */}
+      <div
+        className="relative flex justify-center items-center h-[450px] sm:h-[550px] md:h-[650px] w-full max-w-7xl mx-auto"
+        style={{ perspective: "1500px" }}
+      >
+        <AnimatePresence>
+          {videos.map((video, index) => {
+            // Calculating circular offset
+            let offset = index - active;
+            if (offset < -1) offset += videos.length;
+            if (offset > 1) offset -= videos.length;
+
+            const isActive = offset === 0;
+
+            return (
+              <motion.div
+                key={index}
+                initial={false}
+                animate={{
+                  x: `calc(-50% + ${offset * 110}%)`,
+                  scale: isActive ? 1 : 0.85,
+                  rotateY: offset * -25, // Negative rotation gives the 3D 'look-in' effect
+                  opacity: isActive ? 1 : 0.3,
+                  zIndex: isActive ? 20 : 10,
+                }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                className="absolute top-1/2 left-1/2 -translate-y-1/2 w-[260px] h-[380px] sm:w-[320px] sm:h-[480px] md:w-[380px] md:h-[560px] rounded-[2rem] overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.8)] cursor-pointer"
+                onClick={() => setActive(index)}
+              >
+                {/* Premium Border for active element */}
+                <div
+                  className={`absolute inset-0 border-[1.5px] rounded-[2rem] transition-colors duration-500 pointer-events-none z-20 ${isActive ? 'border-yellow-500/40' : 'border-white/10'
+                    }`}
+                />
+
+                {/* Gradient overlay to ensure text is highly readable */}
+                <div
+                  className={`absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent z-10 transition-opacity duration-700 ${isActive ? 'opacity-100' : 'opacity-0'
+                    }`}
+                />
+
+                {/* Video Component */}
+                <video
+                  src={video.url}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover bg-black"
+                />
+
+               
+              </motion.div>
+            );
+          })}
+        </AnimatePresence>
+      </div>
+
+      {/* Indicator Dots */}
+      <div className="flex justify-center mt-12 md:mt-16 gap-3 relative z-10">
         {videos.map((_, i) => (
           <div
             key={i}
             onClick={() => setActive(i)}
-            className={`w-3 h-3 rounded-full cursor-pointer transition ${
-              active === i
-                ? "bg-yellow-500 scale-125"
-                : "bg-gray-400"
-            }`}
+            className={`h-2 rounded-full cursor-pointer transition-all duration-500 ease-out ${active === i
+                ? "w-12 bg-yellow-500"
+                : "w-3 bg-white/20 hover:bg-white/40"
+              }`}
           />
         ))}
       </div>

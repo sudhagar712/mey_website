@@ -34,9 +34,12 @@ useEffect(() => {
   };
 
   return (
-    <div className="w-full  bg-gray-100 flex items-center justify-center  mb-4 px-4">
+    <div className="w-full bg-black  p-3 mb-4 px-4">
+      <div className="mt-10 ml-10 text-center mb-10">
+        <h1 className="text-2xl md:text-4xl text-white font-bold">Pitch Decks</h1>
+      </div>
       {/* SLIDER */}
-      <div className="relative w-full max-w-5xl h-[300px] md:h-[500px] lg:h-[600px] overflow-hidden rounded-2xl shadow-2xl">
+      <div className="relative mx-auto w-full max-w-5xl h-[300px] md:h-[500px] lg:h-[600px] overflow-hidden rounded-2xl shadow-2xl">
         {/* IMAGE */}
         <AnimatePresence mode="wait">
           <motion.div
