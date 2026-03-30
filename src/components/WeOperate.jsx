@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const WeOperate = () => {
   return (
-    <section className="bg-[#fbba00]  text-black py-20 px-6 md:px-16">
+    <section className="py-20 px-6 md:px-16">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
         {/* LEFT SIDE */}
         <motion.div
@@ -28,11 +28,11 @@ const WeOperate = () => {
         <motion.div
           initial={{ opacity: 0, x: 60 }}
           whileInView={{ opacity: 1, x: 0 }}
-          className="space-y-10 "
+          className="space-y-10  bg-black p-10 text-white"
         >
           {/* BLOCK 1 */}
           <div>
-            <p className="text-xl md:text-2xl leading-relaxed font-medium">
+            <p className="text-xl md:text-2xl text-yellow-500 leading-relaxed font-medium">
               We question assumptions, remove what weakens the brand, and build
               what strengthens it.
             </p>
@@ -43,7 +43,7 @@ const WeOperate = () => {
 
           {/* BLOCK 2 */}
           <div>
-            <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+            <p className="text-lg md:text-xl  leading-relaxed">
               From early-stage ventures finding direction to established
               businesses redefining their position, our focus remains
               consistent.
@@ -51,7 +51,7 @@ const WeOperate = () => {
           </div>
 
           {/* HIGHLIGHT */}
-          <div className="border-l-4 border-black pl-6">
+          <div className="border-l-4 border-yellow-500 pl-6">
             <p className="text-xl md:text-2xl font-semibold leading-relaxed">
               Ensuring that branding decisions directly contribute to business
               outcomes.

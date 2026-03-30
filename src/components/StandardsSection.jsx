@@ -71,7 +71,7 @@ const StandardsSection = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
         >
           {data.map((itemData, index) => (
             <motion.div
@@ -89,7 +89,7 @@ const StandardsSection = () => {
               </h3>
 
               {/* Description */}
-              <p className="text-sm md:text-md mt-10 text-gray-600 leading-relaxed">
+              <p className="text-sm md:text-md mt-10 text-white leading-relaxed">
                 {itemData.desc}
               </p>
             </motion.div>
