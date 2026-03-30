@@ -1,10 +1,13 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const capabilities = [
   {
     num: "01",
     title: "Brand Identity",
     desc: "Logo design, naming, visual systems and brand guidelines.",
+    details: "Your brand is more than just a logo. It is the visual and emotional foundation of your business. Our comprehensive brand identity solutions ensure your brand communicates clearly, looks spectacular, and builds lasting trust with your ideal audience.",
+    features: ["Logo & Mark Design", "Brand Guidelines", "Typography & Color", "Naming & Tone of Voice"],
     imgUrl:
       "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1074&auto=format&fit=crop",
   },
@@ -12,6 +15,8 @@ const capabilities = [
     num: "02",
     title: "Social Media Management",
     desc: "Instagram, Facebook, LinkedIn and YouTube handled with structured monthly content.",
+    details: "In today's fast-paced digital landscape, consistency and quality are paramount. We manage your presence across all major platforms with carefully curated, engaging content designed to spark conversations and build a loyal community.",
+    features: ["Content Strategy", "Grid & Feed Design", "Community Management", "Analytics & Reporting"],
     imgUrl:
       "https://i0.wp.com/famesolutely.com/wp-content/uploads/2024/04/2150063164-jpg.webp?resize=1000%2C667&ssl=1",
   },
@@ -19,6 +24,8 @@ const capabilities = [
     num: "03",
     title: "Website Design & Development",
     desc: "Fast, modern and conversion-focused websites.",
+    details: "Your website is your ultimate 24/7 digital storefront. We build lightning-fast, fully responsive, and SEO-optimized web experiences that are meticulously designed to convert visitors into loyal customers.",
+    features: ["UI/UX Design", "Custom Web Development", "E-Commerce Solutions", "SEO Optimization"],
     imgUrl:
       "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000&auto=format&fit=crop",
   },
@@ -26,6 +33,8 @@ const capabilities = [
     num: "04",
     title: "Video Production",
     desc: "Corporate films, product shoots and reels.",
+    details: "Video is the most powerful and engaging medium available today. Our dedicated production team crafts visually stunning narratives that capture attention, evoke emotion, and drive your brand's message home.",
+    features: ["Corporate Storytelling", "Reels & Short-Form", "Product Commercials", "Post-Production"],
     imgUrl:
       "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1000&auto=format&fit=crop",
   },
@@ -33,6 +42,8 @@ const capabilities = [
     num: "05",
     title: "Performance Marketing",
     desc: "Instagram ads, Facebook ads and Google ads for lead generation.",
+    details: "Turn clicks into highly qualified leads and revenue. Our performance marketing strategies are intensely data-driven, leveraging precise targeting and continuous optimization to maximize your return on ad spend.",
+    features: ["Google Ads & PPC", "Meta Advertising", "Conversion Optimization", "Retargeting Campaigns"],
     imgUrl:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop",
   },
@@ -40,6 +51,8 @@ const capabilities = [
     num: "06",
     title: "Outdoor Advertising",
     desc: "Hoardings, bus stop branding and exhibition stall design.",
+    details: "Physical presence still carries undeniable weight. We design high-impact outdoor advertising setups that capture attention in the real world, turning public spaces into powerful branding opportunities.",
+    features: ["Billboard & Hoardings", "Transit Advertising", "Exhibition Stalls", "OOH Strategy"],
     imgUrl:
       "https://images.pexels.com/photos/2881223/pexels-photo-2881223.jpeg",
   },
@@ -47,6 +60,7 @@ const capabilities = [
 
 const CAPABILITIES = () => {
   const sectionRef = useRef(null);
+  const [selectedCap, setSelectedCap] = useState(null);
 
   // Scroll animation
   useEffect(() => {
@@ -66,6 +80,8 @@ const CAPABILITIES = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  const closeModal = () => setSelectedCap(null);
 
   return (
     <section
@@ -108,10 +124,10 @@ const CAPABILITIES = () => {
 
         {/* GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
           {capabilities.map((cap, i) => (
             <div
               key={cap.num}
+              onClick={() => setSelectedCap(cap)}
               className="scroll-reveal group relative overflow-hidden rounded-[2rem] min-h-[340px] cursor-pointer"
               style={{ transitionDelay: `${i * 0.1}s` }}
             >
@@ -130,9 +146,8 @@ const CAPABILITIES = () => {
 
               {/* CONTENT */}
               <div className="relative z-10 h-full flex flex-col justify-end p-8">
-
                 {/* NUMBER */}
-                <span className="text-xs tracking-[0.3em] text-yellow-400 mb-3">
+                <span className="text-xs tracking-[0.3em] text-yellow-400 mb-3 block">
                   {cap.num} /
                 </span>
 
@@ -145,13 +160,96 @@ const CAPABILITIES = () => {
                 <p className="text-sm md:text-base text-white/80 translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                   {cap.desc}
                 </p>
-
               </div>
             </div>
           ))}
-
         </div>
       </div>
+
+      {/* PREMIUM CAPABILITY MODAL */}
+      <AnimatePresence>
+        {selectedCap && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6 lg:p-12 bg-black/80 backdrop-blur-md"
+            onClick={closeModal}
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 30, scale: 0.95 }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="relative w-full max-w-5xl max-h-[95vh] overflow-y-auto bg-[#0a0a0a] text-white rounded-3xl shadow-[0_0_50px_rgba(0,0,0,0.5)] flex flex-col md:flex-row overflow-hidden border border-white/10"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <button
+                onClick={closeModal}
+                className="absolute top-4 right-4 md:top-6 md:right-6 z-20 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full backdrop-blur-md transition-colors border border-white/10"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M18 6 6 18" />
+                  <path d="m6 6 12 12" />
+                </svg>
+              </button>
+
+              {/* Left Side: Image */}
+              <div className="w-full md:w-2/5 h-[280px] md:h-auto relative">
+                <img
+                  src={selectedCap.imgUrl}
+                  alt={selectedCap.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:to-[#0a0a0a]"></div>
+              </div>
+
+              {/* Right Side: Content */}
+              <div className="w-full md:w-3/5 p-8 md:p-12 lg:p-16 flex flex-col justify-center">
+                <div className="flex items-center gap-4 mb-6">
+                  <span className="text-yellow-400 font-bold tracking-[0.2em] text-lg">
+                    {selectedCap.num}
+                  </span>
+                  <div className="h-[1px] w-12 bg-yellow-400/50"></div>
+                </div>
+
+                <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+                  {selectedCap.title}
+                </h2>
+
+                <p className="text-xl text-white/90 font-medium mb-6">
+                  {selectedCap.desc}
+                </p>
+
+                <p className="text-white/60 leading-relaxed mb-10 text-justify">
+                  {selectedCap.details}
+                </p>
+
+                <div>
+                  <h4 className="text-sm tracking-[0.2em] uppercase text-white/40 mb-5 font-semibold">
+                    Core Offerings
+                  </h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {selectedCap.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center gap-3">
+                        <div className="w-2 h-2 rounded-full bg-yellow-400" />
+                        <span className="text-white/80">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mt-12">
+                  <button onClick={closeModal} className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-sm hover:bg-yellow-400 transition-colors duration-300 rounded-none">
+                    Close
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

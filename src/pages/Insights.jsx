@@ -1,6 +1,7 @@
-import React from "react";
-import mk from "../assets/mk.jpg"
+import React, { useState } from "react";
+import mk from "../assets/mk.jpg";
 import PageBanner from "../components/PageBanner";
+import { motion, AnimatePresence } from "framer-motion";
 
 const articles = [
   {
@@ -65,6 +66,11 @@ const Insights = () => {
   const featured = articles.find((a) => a.featured);
   const regular = articles.filter((a) => !a.featured);
 
+  const [selectedArticle, setSelectedArticle] = useState(null);
+
+  // Close modal functionality
+  const closeModal = () => setSelectedArticle(null);
+
   return (
     <main>
       <PageBanner
@@ -73,11 +79,14 @@ const Insights = () => {
         bgImage="https://peekage.com/blog/wp-content/uploads/2024/04/consumer-insights.jpg"
       />
 
-      <section className="bg-white py-20 pb-32 px-6 lg:px-16">
+      <section className="bg-white py-20 pb-32 px-6 lg:px-16 text-black">
         <div className="max-w-7xl mx-auto">
           {/* Featured Article */}
           {featured && (
-            <div className="group block mb-24">
+            <div
+              className="group block mb-24 cursor-pointer"
+              onClick={() => setSelectedArticle(featured)}
+            >
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 {/* Image */}
                 <div className="overflow-hidden rounded-2xl">
@@ -90,23 +99,19 @@ const Insights = () => {
 
                 {/* Content */}
                 <div>
-                  <div className="flex items-center gap-4 mb-5 text-xs uppercase tracking-wider">
-                    <span className=" font-semibold">{featured.category}</span>
-
-                    <span className="">•</span>
-
-                    <span className="">{featured.readTime}</span>
-
-                    <span className="">•</span>
-
-                    <span className="">{featured.date}</span>
+                  <div className="flex items-center gap-4 mb-5 text-xs uppercase tracking-wider text-gray-500">
+                    <span className="font-semibold">{featured.category}</span>
+                    <span>•</span>
+                    <span>{featured.readTime}</span>
+                    <span>•</span>
+                    <span>{featured.date}</span>
                   </div>
 
-                  <h2 className="text-3xl md:text-4xl font-bol mb-5  transition">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-5 transition text-black group-hover:text-yellow-600">
                     {featured.title}
                   </h2>
 
-                  <p className=" text-lg mb-6">{featured.excerpt}</p>
+                  <p className="text-lg mb-6 text-gray-700">{featured.excerpt}</p>
                 </div>
               </div>
             </div>
@@ -117,7 +122,8 @@ const Insights = () => {
             {regular.map((article) => (
               <div
                 key={article.id}
-                className="group block  border border-white/10 rounded-xl overflow-hidden hover:bg-white/10 transition"
+                onClick={() => setSelectedArticle(article)}
+                className="group block bg-gray-50 border border-gray-100 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer"
               >
                 {/*  Image */}
                 <div className="h-48 overflow-hidden">
@@ -129,23 +135,114 @@ const Insights = () => {
                 </div>
 
                 <div className="p-6 flex flex-col h-full">
-                  <div className="flex justify-between items-center mb-4 text-xs uppercase tracking-wider">
-                    <span className=" font-semibold">{article.category}</span>
-
-                    <span className="text-white/40">{article.date}</span>
+                  <div className="flex justify-between items-center mb-4 text-xs uppercase tracking-wider text-gray-400">
+                    <span className="font-semibold text-yellow-600">{article.category}</span>
+                    <span>{article.date}</span>
                   </div>
 
-                  <h3 className="text-lg font-bold mb-3 transition">
+                  <h3 className="text-lg font-bold mb-3 transition text-black group-hover:text-yellow-600">
                     {article.title}
                   </h3>
 
-                  <p className=" text-sm mb-6 flex-grow">{article.excerpt}</p>
+                  <p className="text-sm mb-6 flex-grow text-gray-600">{article.excerpt}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Article Detail Modal */}
+      <AnimatePresence>
+        {selectedArticle && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-10 bg-black/80 backdrop-blur-sm"
+            onClick={closeModal}
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 30, scale: 0.95 }}
+              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-white text-black rounded-3xl shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <button
+                onClick={closeModal}
+                className="absolute top-4 right-4 md:top-6 md:right-6 z-10 p-3 bg-black/40 hover:bg-black/60 text-white rounded-full backdrop-blur-md transition-colors"
+                aria-label="Close modal"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M18 6 6 18" />
+                  <path d="m6 6 12 12" />
+                </svg>
+              </button>
+
+              <div className="w-full h-[250px] md:h-[450px]">
+                <img
+                  src={selectedArticle.id === "branding-vs-marketing-agency" ? mk : selectedArticle.image}
+                  alt={selectedArticle.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              <div className="p-8 md:p-14 lg:px-20">
+                <div className="flex items-center gap-3 text-xs md:text-sm font-semibold text-yellow-600 mb-6 uppercase tracking-widest">
+                  <span>{selectedArticle.category}</span>
+                  <span>•</span>
+                  <span>{selectedArticle.readTime}</span>
+                  <span>•</span>
+                  <span>{selectedArticle.date}</span>
+                </div>
+
+                <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-[1.2] tracking-tight">
+                  {selectedArticle.title}
+                </h2>
+
+                <div className="prose prose-lg md:prose-xl max-w-none text-gray-700 leading-relaxed font-serif">
+                  <p className="text-xl font-medium mb-8 text-black font-sans">
+                    {selectedArticle.excerpt}
+                  </p>
+
+                  <p className="mb-6">
+                    Understanding the core principles of <strong>{selectedArticle.category.toLowerCase()}</strong> is crucial for modern businesses looking to establish a dominant market position. In today's hyper-competitive landscape, making incremental changes is rarely enough.
+                  </p>
+
+                  <h3 className="text-2xl font-bold text-black font-sans mt-10 mb-4">The Strategic Advantage</h3>
+
+                  <p className="mb-6">
+                    Many founders and marketing executives spend too much time focusing on the tactical execution without building a solid strategic foundation first. This approach inevitably leads to scattered efforts, inconsistent messaging, and inefficiently deployed budgets.
+                  </p>
+
+                  <ul className="list-disc pl-6 mb-6 space-y-2 text-gray-700">
+                    <li>Focus on long-term value creation over short-term vanity metrics.</li>
+                    <li>Align your internal culture with your external brand promise.</li>
+                    <li>Invest in foundational clarity before scaling your advertising efforts.</li>
+                  </ul>
+
+                  <p>
+                    Instead, we advocate for a structured, deeply thoughtful approach to building lasting brand value. It requires discipline, research, and the willingness to make difficult choices about what your brand will—and will not—stand for.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </main>
   );
 };
