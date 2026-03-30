@@ -50,8 +50,8 @@ const Hero = () => {
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
               >
-                <div className="w-full h-[50px] md:h-[90px] bg-white/20 backdrop-blur-md flex items-center justify-center border-y border-black/10 transform shadow-2xl ">
-                  <p className=" text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white  tracking-wider whitespace-nowrap px-8 font-thin">
+                <div className="w-full h-[50px] md:h-[100px] bg-white/20  mt-2 md:mt-20 backdrop-blur-md flex items-center justify-center border-y border-black/10 transform shadow-2xl ">
+                  <p className=" text-3xl sm:text-5xl md:text-7xl lg:text-8xl text-white  tracking-wider whitespace-nowrap px-8 font-thin">
                     Truth Before Business
                   </p>
                 </div>

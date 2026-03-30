@@ -8,6 +8,7 @@ import Digitalcreative from '../components/Digitalcreative';
 import PdfPreview from '../components/PdfPreview';
 import Motionposter from '../components/Motionposter';
 import Printcreative from '../components/Printcreative';
+import CoperateBanner from '../components/CoperateBanner';
 // import VideoSlider from '../components/VideoSlider';
 
 
@@ -38,6 +39,8 @@ const Work = () => {
         bgImage="https://www.myfitnesschat.com/wp-content/uploads/2019/03/pexels-photo-1509428.jpeg"
       /> */}
 
+
+<CoperateBanner  />  
       <Printcreative />
 
       <Digitalcreative />
