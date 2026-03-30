@@ -52,13 +52,13 @@ const AboutMey = () => {
               survive.
             </p>
 
-            <p className="text-white font-medium">
+            <p className="text-white font-medium ">
               MEY exists to change that.
             </p>
 
             <p>
               We believe when a brand is built on truth, it doesn’t chase
-              attention — it earns it, holds it, and scales with clarity.
+              attention - it earns it, holds it, and scales with clarity.
             </p>
           </div>
 

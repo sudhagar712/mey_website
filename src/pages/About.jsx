@@ -77,7 +77,7 @@ const About = () => {
         <PageBanner
           title="About us"
           breadcrumb="About us"
-          bgImage="https://miro.medium.com/1*0E_dXPMBMN_mlpXlVC3vqA.jpeg"
+          bgImage="https://cdn.mos.cms.futurecdn.net/XXzWLdqVL7V6dP4UkUJ6bK.jpg"
         />
 
         <AboutMey />

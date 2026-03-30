@@ -4,13 +4,13 @@ import { motion } from 'framer-motion';
 
 const PageBanner = ({ title, breadcrumb, bgImage }) => {
   return (
-    <section className="relative w-full h-[300px] md:h-[550px] flex items-center justify-center overflow-hidden">
+    <section className="relative w-full h-[300px] md:h-[670px] flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
           src={bgImage}
           alt="MEY Office"
-          className="w-full h-full object-cover grayscale opacity-20"
+          className="w-full h-full object-cover grayscale opacity-70"
         />
         {/* Light yellow gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#fbba00]  mix-blend-multiply"></div>
@@ -23,7 +23,7 @@ const PageBanner = ({ title, breadcrumb, bgImage }) => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
-          className="text-5xl md:text-7xl lg:text-[6rem] font-bold text-black"
+          className="text-5xl md:text-7xl lg:text-[6rem] font-bold text-gray-900"
         >
           {title}
         </motion.h1>

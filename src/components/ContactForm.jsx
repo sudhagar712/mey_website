@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Replace with your business WhatsApp number (country code + number, no + or spaces)
-const WHATSAPP_NUMBER = "9163834 34705";
+const WHATSAPP_NUMBER = "918939009966";
 
 const serviceOptions = [
     'Brand Identity Design',

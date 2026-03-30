@@ -44,7 +44,7 @@ const ThreePerspective = () => {
 
       {/* Heading */}
       <div className="text-center mb-14">
-        <h2 className="text-3xl md:text-5xl font-serif">Three perspectives.</h2>
+       
 
         <h2 className="text-md md:text-xl    mt-5">
           MEY began with three friends from completely different worlds, brought

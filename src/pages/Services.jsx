@@ -17,7 +17,7 @@ const Services = () => {
       <PageBanner
         title="Our Services"
         breadcrumb="services"
-        bgImage="https://www.mlcqehs.com/images/vindus_clients_images/ser-1.png"
+        bgImage="https://stl.tech/wp-content/uploads/2023/02/Network-services-scaled.webp"
       />
       <div className="p-3 md:px-5 md:p-10">
         <ExpandingCards />
@@ -50,7 +50,7 @@ const Services = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ y: -10 }}
-                  className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
+                  className="group bg-black rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
                 >
                   <div className="h-80 overflow-hidden">
                     <img
@@ -63,11 +63,11 @@ const Services = () => {
                   <div className="p-8">
                     <h3 className="text-xl font-bold mb-3">{service.title}</h3>
 
-                    <p className="text-gray-600 mb-5 text-sm">
+                    <p className="text-white mb-5 text-sm">
                       {service.description}
                     </p>
 
-                    <ul className="text-sm text-gray-500 space-y-1 mb-6">
+                    <ul className="text-yellow-400 text-sm space-y-1 mb-6">
                       {service.points.slice(0, 3).map((p, i) => (
                         <li key={i}>• {p}</li>
                       ))}

@@ -31,7 +31,7 @@ const pageMeta = {
     description: "Learn about MEY, a branding and digital marketing agency in Chennai built on the principle Truth Before Business.",
   },
   '/insights': {
-    title: 'Branding & Digital Marketing Insights | MEY Chennai',
+    title: 'ThinkLab | MEY Chennai',
     description: 'Structured thinking on branding, marketing and digital growth from the MEY team in Chennai.',
   },
   '/contact': {

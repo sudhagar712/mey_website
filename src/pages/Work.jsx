@@ -36,7 +36,7 @@ const Work = () => {
       <PageBanner
         title="Our Work"
         breadcrumb="Work"
-        bgImage="https://www.myfitnesschat.com/wp-content/uploads/2019/03/pexels-photo-1509428.jpeg"
+        bgImage="https://hbr.org/resources/images/article_assets/2023/09/A_Sep23_26_Work-school_1439778346.jpg"
       />
 
 

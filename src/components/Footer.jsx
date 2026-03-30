@@ -57,7 +57,6 @@ const Footer = () => {
               {[
                 { icon: <FaInstagram />, href: "#" },
                 { icon: <FaLinkedinIn />, href: "#" },
-                { icon: <FaTwitter />, href: "#" },
                 { icon: <FaFacebookF />, href: "#" },
               ].map((social, idx) => (
                 <a

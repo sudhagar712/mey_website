@@ -74,9 +74,9 @@ const Insights = () => {
   return (
     <main>
       <PageBanner
-        title="Recharge"
+        title="ThinkLab"
         breadcrumb="Insights"
-        bgImage="https://peekage.com/blog/wp-content/uploads/2024/04/consumer-insights.jpg"
+        bgImage="https://nicholasrossis.me/wp-content/uploads/2017/04/BLOG01.jpg"
       />
 
       <section className="bg-white py-20 pb-32 px-6 lg:px-16 text-black">

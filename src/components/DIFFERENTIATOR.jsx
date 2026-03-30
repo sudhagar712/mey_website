@@ -291,7 +291,8 @@ const DIFFERENTIATOR = () => {
       </section>
 
       {/* 2. SELECT CLIENTS Section */}
-      <section className="bg-black py-32 md:py-40 px-2 md:px-12 lg:px-24">
+      <section className="bg-black py-32 md:py-40 px-2 md:px-12 lg:px-24 relative">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
         <div className="max-w-[1500px] mx-auto">
           {/* Heading */}
           <div className="mb-24 text-center">

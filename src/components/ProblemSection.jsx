@@ -69,8 +69,7 @@ const ProblemSection = () => {
             borrowed ideas
             <span className="absolute left-0 bottom-0 w-full h-[2px] bg-[#f1bd40] scale-x-0 group-hover:scale-x-100 transition"></span>
           </span>
-          , temporary trends, and surface-level thinking. Designed to look good
-          — but not to stand strong.
+          , temporary trends, and surface-level thinking. Designed to look good - but not to stand strong.
         </motion.p>
 
         {/* Bottom Quote */}
