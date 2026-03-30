@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import SEO from '../components/SEO';
-// import PageBanner from '../components/PageBanner';
+import PageBanner from '../components/PageBanner';
 import AboutMey from '../components/AboutMey';
 import ThreePerspective from '../components/ThreePerspective';
 import OutcomeSection from '../components/OutcomeSection';
@@ -74,11 +74,11 @@ const About = () => {
       </style>
 
       <main className=" min-h-screen text-black w-full overflow-hidden">
-        {/* <PageBanner
+        <PageBanner
           title="About us"
           breadcrumb="About us"
-          bgImage="https://www.hexacell.in/images/aboutus_banner.jpg"
-        /> */}
+          bgImage="https://miro.medium.com/1*0E_dXPMBMN_mlpXlVC3vqA.jpeg"
+        />
 
         <AboutMey />
 
