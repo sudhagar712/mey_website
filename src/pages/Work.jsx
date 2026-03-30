@@ -9,7 +9,7 @@ import PdfPreview from '../components/PdfPreview';
 import Motionposter from '../components/Motionposter';
 import Printcreative from '../components/Printcreative';
 import CoperateBanner from '../components/CoperateBanner';
-// import VideoSlider from '../components/VideoSlider';
+import VideoSlider from '../components/VideoSlider';
 
 
 
@@ -41,8 +41,9 @@ const Work = () => {
 
 
 <CoperateBanner  />  
-      <Printcreative />
 
+      <Printcreative />
+     <VideoSlider />
       <Digitalcreative />
 
       <PdfPreview />
@@ -95,7 +96,7 @@ const Work = () => {
         </div>
       </div>
       <Reels />
-      {/* <VideoSlider /> */}
+ 
     </main>
   );
 };
