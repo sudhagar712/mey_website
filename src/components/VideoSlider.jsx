@@ -6,7 +6,7 @@ const videoSrc =
 
 const VideoSlider = () => {
   return (
-    <div className="w-full min-h-screen bg-white flex items-center justify-center px-4 md:px-10 py-10">
+    <div className="w-full  bg-white flex items-center justify-center px-4 md:px-10 py-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-7xl w-full">
         {/* LEFT CONTENT */}
         <motion.div
