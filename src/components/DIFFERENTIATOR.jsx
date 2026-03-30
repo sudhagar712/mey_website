@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import imgg from "../assets/whymeynew.png"
+import imgg from "../assets/whymey.png"
 import client1 from "../assets/client/Aspire.png";
 import client2 from "../assets/client/BCG.png";
 import client3 from "../assets/client/Budanta.png";
