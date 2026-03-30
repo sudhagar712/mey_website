@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 const videos = [
@@ -14,42 +14,67 @@ const videos = [
     id: 3,
     src: "https://res.cloudinary.com/dgphjgzgt/video/upload/v1774858181/Cauvery_Rice_Correction_1_aqfzf3.mp4",
   },
-    {
+  {
     id: 4,
     src: "https://res.cloudinary.com/dgphjgzgt/video/upload/v1774858932/6bd12d62-4664-464f-ae50-67b24dc5afcd_wiftsq.mp4",
   },
 ];
 
 const CoperateBanner = () => {
+  const videoRefs = useRef([]);
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const handlePlayWithSound = (index) => {
+    // mute all first
+    videoRefs.current.forEach((vid) => {
+      if (vid) vid.muted = true;
+    });
+
+    // unmute selected
+    const video = videoRefs.current[index];
+    if (video) {
+      video.muted = false;
+      video.play();
+      setActiveIndex(index);
+    }
+  };
+
   return (
-    <div className="w-full min-h-screen bg-black overflow-hidden ">
-        <div className="flex items-center justify-center">
- <h1 className="text-3xl md:text-6xl text-white font-bold mt-10">
-    Corporate Videos
+    <div className="w-full min-h-screen overflow-hidden">
+      <div className="ml-10">
+        <h1 className="text-3xl md:text-5xl font-bold mt-10 text-black">
+          Corporate Videos
         </h1>
-        </div>
-       
+      </div>
+
       {/* Grid Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-2 mt-10 px-3 md:px-4 mb-20  gap-5 h-screen">
+      <div className="grid grid-cols-1 md:grid-cols-2 mt-10 px-3 md:px-4 mb-20 gap-5">
         {videos.map((video, index) => (
           <motion.div
             key={video.id}
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: index * 0.2 }}
-            className="relative group overflow-hidden"
+            className="relative group overflow-hidden cursor-pointer"
+            onClick={() => handlePlayWithSound(index)}
           >
             {/* Video */}
             <video
+              ref={(el) => (videoRefs.current[index] = el)}
               src={video.src}
               autoPlay
               muted
               loop
-              className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+              className="w-full h-[300px] md:h-[400px] object-cover group-hover:scale-110 transition duration-700"
             />
 
-            {/* Dark Overlay */}
+            {/* Overlay */}
             <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition" />
+
+            {/* Sound Indicator */}
+            <div className="absolute top-3 right-3 text-white text-sm bg-black/60 px-3 py-1 rounded-full backdrop-blur">
+              {activeIndex === index ? "🔊 Sound On" : "🔇 Tap for Sound"}
+            </div>
 
             {/* Glow Effect */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
