@@ -25,28 +25,7 @@ const ProblemSection = () => {
           <div className="w-12 h-[1px] bg-[#f1bd40]"></div>
         </motion.div>
 
-        {/* Animated Heading */}
-        <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-relaxed md:leading-snug text-[#eaeaea] flex flex-wrap justify-center gap-2">
-          {words.map((word, i) => (
-            <motion.span
-              key={i}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: i * 0.05,
-                duration: 0.5,
-              }}
-              viewport={{ once: true }}
-              className={`${
-                word.includes("indistinguishable.")
-                  ? "italic text-[#f1bd40] drop-shadow-[0_0_8px_rgba(201,163,106,0.6)]"
-                  : ""
-              }`}
-            >
-              {word}
-            </motion.span>
-          ))}
-        </h1>
+       
 
         {/* Sub Text */}
         <motion.p
