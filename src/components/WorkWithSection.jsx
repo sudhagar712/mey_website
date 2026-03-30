@@ -70,47 +70,47 @@ const WorkWithSection = () => {
 
         {/* RIGHT ORBIT DESIGN */}
         <div className="relative flex justify-center items-center h-[350px] md:h-[450px]">
+          {/* Outermost Circle */}
+          <div className="absolute w-[330px] md:w-[450px] h-[330px] md:h-[450px] border border-[#c9a14a]/10 rounded-full" />
+
           {/* Outer Circle */}
-          <div className="absolute w-[280px] md:w-[380px] h-[280px] md:h-[380px] border border-[#c9a14a]/20 rounded-full" />
+          <div className="absolute w-[250px] md:w-[350px] h-[250px] md:h-[350px] border border-[#c9a14a]/20 rounded-full" />
 
           {/* Middle Circle */}
-          <div className="absolute w-[180px] md:w-[260px] h-[180px] md:h-[260px] border border-[#c9a14a]/20 rounded-full" />
-
-          {/* New Circle */}
-          <div className="absolute w-[320px] md:w-[440px] h-[320px] md:h-[440px] border border-[#c9a14a]/10 rounded-full" />
+          <div className="absolute w-[170px] md:w-[250px] h-[170px] md:h-[250px] border border-[#c9a14a]/20 rounded-full" />
 
           {/* Inner Circle */}
           <div className="absolute w-[90px] md:w-[150px] h-[90px] md:h-[150px] border border-[#f1bd40] rounded-full flex items-center justify-center">
-            <span className="text-[#f1bd40 ] text-xl font-bold tracking-[0.2em] rotate-12">
+            <span className="text-[#f1bd40] text-xl font-bold tracking-[0.2em] rotate-12">
               MEY
             </span>
           </div>
 
-          {/* Orbit Dot 1 */}
+          {/* Orbit Dot for Outer Circle */}
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ repeat: Infinity, duration: 12, ease: "linear" }}
-            className="absolute w-[280px] md:w-[380px] h-[280px] md:h-[380px]"
+            className="absolute w-[250px] md:w-[350px] h-[250px] md:h-[350px]"
           >
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-[#f1bd40] rounded-full  shadow-[0_0_10px_#f1bd40]" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-[#f1bd40] rounded-full shadow-[0_0_10px_#f1bd40]" />
           </motion.div>
 
-          {/* Orbit Dot 2 */}
+          {/* Orbit Dot for Middle Circle */}
           <motion.div
             animate={{ rotate: -360 }}
             transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
-            className="absolute w-[180px] md:w-[260px] h-[180px] md:h-[260px]"
+            className="absolute w-[170px] md:w-[250px] h-[170px] md:h-[250px]"
           >
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-[#f1bd40] rounded-full shadow-[0_0_10px_#f1bd40]" />
           </motion.div>
 
-          {/* Orbit Dot 3 */}
+          {/* Orbit Dot for Outermost Circle */}
           <motion.div
-            animate={{ rotate: 360 }}
+            animate={{ rotate: -360 }}
             transition={{ repeat: Infinity, duration: 18, ease: "linear" }}
-            className="absolute w-[320px] md:w-[440px] h-[320px] md:h-[440px]"
+            className="absolute w-[330px] md:w-[450px] h-[330px] md:h-[450px]"
           >
-            <div className="absolute top-1/2 right-0 -translate-y-1/2 w-2 h-2 bg-[#f1bd40] rounded-full  shadow-[0_0_10px_#f1bd40]" />
+            <div className="absolute top-1/2 right-0 -translate-y-1/2 w-2 h-2 bg-[#f1bd40] rounded-full shadow-[0_0_10px_#f1bd40]" />
           </motion.div>
         </div>
       </div>

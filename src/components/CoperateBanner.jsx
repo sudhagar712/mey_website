@@ -41,14 +41,14 @@ const CoperateBanner = () => {
   };
 
   return (
-    <div className="w-full min-h-screen overflow-hidden">
-      <div className="ml-3">
-        <h1 className="text-3xl md:text-5xl font-bold mt-10 text-black">
+    <div className="w-full bg-black  min-h-screen overflow-hidden">
+      <div className="ml-10">
+        <h1 className="text-3xl md:text-5xl text-white font-bold mt-10 ">
           Corporate Videos
         </h1>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 mt-10 px-3 md:px-4 mb-20 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 mt-10 px-3 md:px-10 mb-20 gap-5">
         {videos.map((video, index) => (
           <motion.div
             key={video.id}
@@ -67,7 +67,9 @@ const CoperateBanner = () => {
               className="w-full h-[300px] md:h-[400px] object-cover"
             />
 
-            <div className="absolute inset-0 bg-black/30" />
+         
+
+            <div className="absolute inset-0 bg-black/40" />
 
             <button
               onClick={() => toggleMute(index)}
