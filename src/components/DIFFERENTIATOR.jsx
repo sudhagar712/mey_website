@@ -254,19 +254,19 @@ const DIFFERENTIATOR = () => {
                   key={i}
                   data-aos="fade-up"
                   data-aos-delay={i * 100}
-                  className="group relative bg-white border border-gray-100 rounded-[1.5rem] p-8 hover:shadow-[0_15px_35px_-10px_rgba(0,0,0,0.05)] transition-all duration-500 overflow-hidden"
+                  className="group relative bg-[#fbba00] border border-gray-100 rounded-[1.5rem] p-8 hover:shadow-[0_15px_35px_-10px_rgba(0,0,0,0.05)] transition-all duration-500 overflow-hidden"
                 >
                   {/* Hover Glow */}
                   <div className="absolute top-0 right-0 w-48 h-48 bg-[#f7d83c]/5 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2 group-hover:bg-[#f7d83c]/15 transition-colors duration-700 pointer-events-none"></div>
 
                   {/* Large Background Number */}
-                  <div className="absolute -bottom-4 -right-4 text-[7rem] font-bold text-gray-50 group-hover:text-gray-100 transition-colors duration-700 pointer-events-none select-none leading-none">
+                  <div className="absolute bottom-35 right-6 md:-bottom-1 md:-right-0 text-[4rem] md:text-[7rem] font-bold text-gray-50 group-hover:text-gray-900 transition-colors duration-700 pointer-events-none select-none leading-none">
                     0{i + 1}
                   </div>
 
                   <div className="relative z-10 flex flex-col md:flex-row items-start gap-6">
                     {/* Icon */}
-                    <div className="flex-shrink-0 w-14 h-14 rounded-[1rem] bg-gray-50 border border-gray-100 flex items-center justify-center text-black group-hover:bg-[#f7d83c] group-hover:border-[#f7d83c] group-hover:-translate-y-1 transition-all duration-500 shadow-sm">
+                    <div className="flex-shrink-0 w-14 h-14 rounded-[1rem] bg-gray-50 border border-gray-100 flex items-center justify-center text-black  group-hover:border-black group-hover:-translate-y-1 transition-all duration-500 shadow-sm">
                       <div className="scale-75">
                         {item.icon}
                       </div>
@@ -277,7 +277,7 @@ const DIFFERENTIATOR = () => {
                       <h3 className="text-lg md:text-xl font-bold mb-2 text-gray-900 group-hover:text-black transition-colors">
                         {item.title}
                       </h3>
-                      <p className="text-gray-500 text-[15px] leading-relaxed">
+                      <p className="text-gray-900 text-[14px] leading-relaxed">
                         {item.desc}
                       </p>
                     </div>
@@ -299,7 +299,7 @@ const DIFFERENTIATOR = () => {
               Select Clients
             </h4>
 
-            <h2 className="text-5xl text-white md:text-7xl font-bold">
+            <h2 className="text-5xl text-[#fbba00] md:text-7xl font-bold">
               Trusted By
             </h2>
           </div>
@@ -326,16 +326,16 @@ const DIFFERENTIATOR = () => {
             alt="CTA Background"
             className="w-full h-full object-cover grayscale"
           />
-          <div className="absolute inset-0 bg-[#ffcc01] mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-[#ffcc01]/60 mix-blend-multiply"></div>
         </div>
 
         <div
           className="relative z-10 max-w-4xl mx-auto scroll-fade-up"
           ref={addToRefs}
         >
-          <h2 className="font-premium-serif text-5xl sm:text-7xl md:text-[6rem] lg:text-[7.5rem] font-bold text-black tracking-tighter leading-[1.05] mb-6">
+          <h2 className=" text-5xl sm:text-7xl md:text-[6rem] lg:text-[7.5rem] font-bold text-black tracking-tighter leading-[1.05] mb-6">
             Ready to build <br />
-            <span className="italic font-light opacity-90">
+            <span className=" font-light opacity-90">
               with clarity?
             </span>
           </h2>
