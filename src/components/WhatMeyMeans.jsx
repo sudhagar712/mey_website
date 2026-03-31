@@ -35,6 +35,15 @@ const WhatMeyMeans = () => {
     return (
         <section className="relative w-full py-24 md:py-32 bg-white flex flex-col items-center justify-center overflow-hidden">
 
+            <div
+                className="absolute inset-0 pointer-events-none opacity-[0.05]"
+                style={{
+                    backgroundImage:
+                        "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000000ff 2px, transparent 1px)",
+                    backgroundSize: "4rem 4rem",
+                }}
+            />
+
             <div className="relative w-full max-w-[1000px] mx-auto px-4 md:px-0 flex justify-center items-center mt-10 md:mt-20 mb-20">
 
                 {/* Macbook Mockup CSS Component */}
