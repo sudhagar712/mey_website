@@ -8,6 +8,14 @@ const words = text.split(" ");
 const ProblemSection = () => {
   return (
     <section className="relative bg-black text-white px-6 md:px-12 lg:px-24 py-24 overflow-hidden">
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #fffbfbff 2px, transparent 1px)",
+          backgroundSize: "4rem 4rem",
+        }}
+      />
       {/* Background Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(201,163,106,0.12),transparent_60%)]"></div>
 
@@ -25,7 +33,13 @@ const ProblemSection = () => {
           <div className="w-12 h-[1px] bg-[#f1bd40]"></div>
         </motion.div>
 
-       
+        <div className="flex items-center justify-center mb-10">
+          <img
+            src="https://media.tenor.com/pd7K0X-zSGcAAAAM/mad-locked-in.gif"
+            alt="Focused"
+            className="w-32 h-32 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full object-cover shadow-[0_0_40px_rgba(241,189,64,0.3)] ring-2 ring-[#f1bd40]/50 transition-transform duration-500 hover:scale-105"
+          />
+        </div>
 
         {/* Sub Text */}
         <motion.p

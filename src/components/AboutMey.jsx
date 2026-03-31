@@ -5,6 +5,15 @@ import about from "../assets/aboutro.png";
 const AboutMey = () => {
   return (
     <section className="relative w-full bg-[#0b0b0b] text-white overflow-hidden py-20">
+      {/* Subtle Grid Background */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #fffbfbff 2px, transparent 1px)",
+          backgroundSize: "4rem 4rem",
+        }}
+      />
       
       {/* 🔥 Background Glow */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden">

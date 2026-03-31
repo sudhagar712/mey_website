@@ -3,7 +3,16 @@ import { motion } from "framer-motion";
 
 const WeOperate = () => {
   return (
-    <section className="py-20 px-6 md:px-16">
+    <section className="py-20 bg-yellow-500 px-6 md:px-16 relative">
+      {/* Subtle Grid Background */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 3px, transparent 1px)",
+          backgroundSize: "4rem 4rem",
+        }}
+      />
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
         {/* LEFT SIDE */}
         <motion.div

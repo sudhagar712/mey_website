@@ -66,6 +66,15 @@ const StandardsSection = () => {
 
   return (
     <section className="relative bg-white text-black py-24 md:py-32 overflow-hidden selection:bg-[#f1bd40] selection:text-white">
+      {/* Subtle Grid Background */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
+          backgroundSize: "4rem 4rem",
+        }}
+      />
       {/* Decorative background gradients for premium feel */}
       <div className="absolute top-0 right-0 -mr-40 -mt-40 w-96 h-96 bg-gray-100/60 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 -ml-40 -mb-40 w-96 h-96 bg-[#f1bd40]/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -89,7 +98,7 @@ const StandardsSection = () => {
 
               <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-gray-900 tracking-tight">
                 The standards we hold <br className="hidden lg:block" />
-                <span className="italic text-gray-400 relative inline-block mt-2 lg:mt-4">
+                <span className=" text-gray-800 relative inline-block mt-2 lg:mt-4">
                   non-negotiable.
                   {/* Subtle highlight line under the italic text */}
                   <motion.div
