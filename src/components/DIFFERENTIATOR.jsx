@@ -229,7 +229,7 @@ const DIFFERENTIATOR = () => {
                 </h4>
               </div>
 
-              <h2 className="text-4xl md:text-5xl lg:text-[4rem] text-[#fbba00] font-extrabold tracking-tight mb-6 x leading-[1.1]" data-aos="fade-up" data-aos-delay="100">
+              <h2 className="text-4xl md:text-5xl lg:text-[4rem] text-[#fec000] font-extrabold tracking-tight mb-6 x leading-[1.1]" data-aos="fade-up" data-aos-delay="100">
               Why MEY
                
               </h2>
@@ -254,7 +254,7 @@ const DIFFERENTIATOR = () => {
                   key={i}
                   data-aos="fade-up"
                   data-aos-delay={i * 100}
-                  className="group relative bg-[#fbba00] border border-gray-100 rounded-[1.5rem] p-8 hover:shadow-[0_15px_35px_-10px_rgba(0,0,0,0.05)] transition-all duration-500 overflow-hidden"
+                  className="group relative bg-[#fec000] border border-gray-100 rounded-[1.5rem] p-8 hover:shadow-[0_15px_35px_-10px_rgba(0,0,0,0.05)] transition-all duration-500 overflow-hidden"
                 >
                   {/* Hover Glow */}
                   <div className="absolute top-0 right-0 w-48 h-48 bg-[#f7d83c]/5 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2 group-hover:bg-[#f7d83c]/15 transition-colors duration-700 pointer-events-none"></div>
@@ -300,7 +300,7 @@ const DIFFERENTIATOR = () => {
               Select Clients
             </h4>
 
-            <h2 className="text-5xl text-[#fbba00] md:text-7xl font-bold">
+            <h2 className="text-5xl text-[#fec000] md:text-7xl font-bold">
               Trusted By
             </h2>
           </div>
@@ -327,7 +327,7 @@ const DIFFERENTIATOR = () => {
             alt="CTA Background"
             className="w-full h-full object-cover grayscale"
           />
-          <div className="absolute inset-0 bg-[#ffcc01]/60 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-[#fec000]/80 mix-blend-multiply"></div>
         </div>
 
         <div

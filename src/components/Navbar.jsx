@@ -25,7 +25,7 @@ export default function Navbar() {
     <>
       {/* NAVBAR */}
       <div className="fixed top-0 left-0 w-full z-50  flex justify-center ">
-        <div className="w-full  flex items-center justify-between bg-[#fbba00]  px-10 md:px-20 py-4">
+        <div className="w-full  flex items-center justify-between bg-[#fec000]  px-10 md:px-20 py-4">
           {/* LOGO */}
           <Link
             to="/"
@@ -115,7 +115,7 @@ export default function Navbar() {
             {/* RIGHT INFO PANEL */}
             <div className="flex-1 border-t md:border-t-0 md:border-l border-white/10 flex flex-col justify-center px-10 md:px-24 py-16 md:py-0 space-y-10 text-gray-300">
               <div>
-                <p className="text-xs tracking-widest text-yellow-500 font-bold mb-3">
+                <p className="text-xs tracking-widest text-[#fec000] font-bold mb-3">
                   HEADQUARTERS
                 </p>
                 <p className="text-sm md:text-lg">
@@ -126,7 +126,7 @@ export default function Navbar() {
               </div>
 
               <div>
-                <p className="text-xs tracking-widest text-yellow-500 font-bold mb-3">
+                <p className="text-xs tracking-widest text-[#fec000] font-bold mb-3">
                   CONTACT
                 </p>
                 <p className="hover:text-white cursor-pointer">

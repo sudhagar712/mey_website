@@ -9,7 +9,7 @@ const Hero = () => {
     return (
       <>
         <motion.section
-          className="relative  bg-[#fbba00] h-[350px] md:h-[800px] lg:h-[500px] p-5  flex flex-col items-center justify-center  overflow-hidden"
+          className="relative  bg-[#fec000] h-[350px] md:h-[800px] lg:h-[500px] p-5  flex flex-col items-center justify-center  overflow-hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -82,15 +82,15 @@ const Hero = () => {
         >
           <p className="text-2xl md:text-5xl  lg:text-3xl text-black/80    leading-[1.6] mb-10">
             We build{" "}
-            <span className="   border-b border-black/30 text-[#f1bd40] ">
+            <span className="   border-b border-black/30 text-[#fec000] ">
               clear
             </span>
             ,{" "}
-            <span className="   text-[#f1bd40]  border-b border-black/30">
+            <span className="   text-[#fec000]  border-b border-black/30">
               powerful
             </span>{" "}
             and{" "}
-            <span className="  text-[#f1bd40]  border-b border-black/30">
+            <span className="  text-[#fec000]  border-b border-black/30">
               growth-focused
             </span>{" "}
             brands for startups and ambitious businesses.

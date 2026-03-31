@@ -71,7 +71,7 @@ const WorkWithSection = () => {
         {/* RIGHT ORBIT DESIGN */}
         <div className="relative flex justify-center items-center h-[350px] md:h-[450px]">
           {/* Outermost Circle */}
-          <div className="absolute w-[330px] md:w-[450px] h-[330px] md:h-[450px] border border-[#c9a14a]/10 rounded-full" />
+          <div className="absolute w-[330px] md:w-[450px] h-[330px] md:h-[450px] border border-[#c9a14a]/20 rounded-full" />
 
           {/* Outer Circle */}
           <div className="absolute w-[250px] md:w-[350px] h-[250px] md:h-[350px] border border-[#c9a14a]/20 rounded-full" />

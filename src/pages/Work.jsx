@@ -39,11 +39,12 @@ const Work = () => {
         bgImage="https://hbr.org/resources/images/article_assets/2023/09/A_Sep23_26_Work-school_1439778346.jpg"
       />
 
+  <Reels />
+    <VideoSlider />
 
-<CoperateBanner  />  
 
       <Printcreative />
-     <VideoSlider />
+   
       <Digitalcreative />
 
       <PdfPreview />
@@ -95,7 +96,7 @@ const Work = () => {
           ))}
         </div>
       </div>
-      <Reels />
+    <CoperateBanner  />  
  
     </main>
   );
