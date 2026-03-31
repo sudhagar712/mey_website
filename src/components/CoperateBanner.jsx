@@ -41,9 +41,9 @@ const CoperateBanner = () => {
   };
 
   return (
-    <div className="w-full bg-black  min-h-screen overflow-hidden">
+    <div className="w-full bg-white mb-10 overflow-hidden">
       <div className="ml-10">
-        <h1 className="text-3xl md:text-5xl text-white font-bold mt-10 ">
+        <h1 className="text-3xl md:text-5xl text-black font-bold mt-10 ">
           Corporate Videos
         </h1>
       </div>

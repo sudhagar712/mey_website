@@ -47,7 +47,7 @@ const Work = () => {
    
       <Digitalcreative />
 
-      <PdfPreview />
+   
 
       <Motionposter />
 
@@ -96,6 +96,8 @@ const Work = () => {
           ))}
         </div>
       </div>
+
+         <PdfPreview />
     <CoperateBanner  />  
  
     </main>

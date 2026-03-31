@@ -97,7 +97,7 @@ const Reels = () => {
   const prevSlide = () => setActive((prev) => Math.max(prev - 1, 0));
 
   return (
-    <section className="w-full min-h-screen bg-[#fafafa] font-sans py-24 flex flex-col justify-center overflow-hidden">
+    <section className="w-full bg-[#fafafa]  mt-10 flex flex-col justify-center overflow-hidden">
       <div className="max-w-[1400px] w-full mx-auto px-4 md:px-10">
 
         {/* Header Section styled after the reference image */}
@@ -135,7 +135,7 @@ const Reels = () => {
         </div>
 
         {/* Mobile Controls */}
-        <div className="flex justify-center gap-6 mb-8 md:hidden">
+        <div className="flex justify-center gap-10 md:hidden">
           <button
             onClick={prevSlide}
             disabled={active === 0}

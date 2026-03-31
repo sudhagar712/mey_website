@@ -6,8 +6,8 @@ const videoSrc =
 
 const VideoSlider = () => {
   return (
-    <div className="w-full bg-white flex items-center justify-center px-4 md:px-10 py-10">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-7xl w-full">
+    <div className="w-full bg-black mt-10 flex flex-col items-center justify-center px-4 md:px-10 py-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-7xl w-full">
         {/* LEFT CONTENT */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -17,11 +17,11 @@ const VideoSlider = () => {
         >
           <div className="absolute -left-6 top-0 w-2 h-full bg-black rounded-full hidden md:block" />
 
-          <h1 className="text-3xl md:text-6xl font-bold leading-tight">
+          <h1 className="text-3xl md:text-6xl font-bold  text-yellow-500 leading-tight">
             Event Showcase
           </h1>
 
-          <p className="mt-6 text-gray-600 text-base md:text-lg max-w-md">
+          <p className="mt-6 text-gray-600 text-white md:text-lg max-w-md">
             Experience our events through immersive visuals and storytelling.
             Every frame captures energy, emotion, and unforgettable moments.
           </p>
@@ -37,7 +37,7 @@ const VideoSlider = () => {
           className="relative"
         >
           {/* Creative cut shape */}
-          <div className="absolute -inset-2 bg-gradient-to-tr from-black to-gray-500 rounded-[30px] blur-xl opacity-30" />
+          <div className="absolute -inset-2 bg-black rounded-[30px] blur-xl opacity-30" />
 
           <div className="relative overflow-hidden rounded-[30px] clip-path-custom">
             <video
@@ -48,6 +48,57 @@ const VideoSlider = () => {
           </div>
         </motion.div>
       </div>
+
+
+
+
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mt-30 max-w-7xl w-full">
+      
+
+        {/* RIGHT VIDEO */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="relative"
+        >
+          {/* Creative cut shape */}
+          <div className="absolute -inset-2 bg-black rounded-[30px] blur-xl opacity-30" />
+
+          <div className="relative overflow-hidden rounded-[30px] clip-path-custom">
+            <video
+              src={videoSrc}
+              controls
+              className="w-full h-[250px] md:h-[500px] object-cover"
+            />
+          </div>
+        </motion.div>
+
+
+
+          {/* LEFT CONTENT */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="relative"
+        >
+          <div className="absolute -left-6 top-0 w-2 h-full bg-black rounded-full hidden md:block" />
+
+          <h1 className="text-3xl md:text-6xl font-bold  text-yellow-500 leading-tight">
+            Event Showcase
+          </h1>
+
+          <p className="mt-6 text-gray-600 text-white md:text-lg max-w-md">
+            Experience our events through immersive visuals and storytelling.
+            Every frame captures energy, emotion, and unforgettable moments.
+          </p>
+
+        
+        </motion.div>
+      </div>
+      
 
       {/* Custom Clip Path */}
       <style>
