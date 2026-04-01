@@ -41,37 +41,45 @@ const Reels = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // ▶️ Play video
+  // ▶️ Play video, track progress, and auto-next when finished
   useEffect(() => {
+    let animationFrame;
+
+    const updateProgress = () => {
+      const activeVideo = videoRefs.current[active];
+      if (activeVideo && activeVideo.duration) {
+        const percent = (activeVideo.currentTime / activeVideo.duration) * 100;
+        setProgress(percent || 0);
+      }
+      animationFrame = requestAnimationFrame(updateProgress);
+    };
+
+    setProgress(0); // Reset progress on slide change
+
     videoRefs.current.forEach((video, i) => {
       if (!video) return;
+
+      // Clear previous ended listeners
+      video.onended = null;
 
       if (i === active) {
         video.currentTime = 0;
         video.play().catch(() => { });
+
+        // When the video ends, automatically go to the next slide (or loop to the first)
+        video.onended = () => {
+          setActive((prev) => (prev === reelsData.length - 1 ? 0 : prev + 1));
+        };
+
+        animationFrame = requestAnimationFrame(updateProgress);
       } else {
         video.pause();
       }
     });
-  }, [active]);
 
-  // ⏳ Progress auto next
-  useEffect(() => {
-    clearInterval(progressInterval.current);
-    setProgress(0);
-
-    progressInterval.current = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(progressInterval.current);
-          setActive((a) => Math.min(a + 1, reelsData.length - 1));
-          return 0;
-        }
-        return prev + 1;
-      });
-    }, 80);
-
-    return () => clearInterval(progressInterval.current);
+    return () => {
+      cancelAnimationFrame(animationFrame);
+    };
   }, [active]);
 
   const handleTouchStart = (e) => {
@@ -86,18 +94,26 @@ const Reels = () => {
 
     if (diff > 0) {
       // swipe left (go next)
-      setActive((prev) => Math.min(prev + 1, reelsData.length - 1));
+      setActive((prev) => (prev === reelsData.length - 1 ? 0 : prev + 1));
     } else {
       // swipe right (go prev)
-      setActive((prev) => Math.max(prev - 1, 0));
+      setActive((prev) => (prev === 0 ? reelsData.length - 1 : prev - 1));
     }
   };
 
-  const nextSlide = () => setActive((prev) => Math.min(prev + 1, reelsData.length - 1));
-  const prevSlide = () => setActive((prev) => Math.max(prev - 1, 0));
+  const nextSlide = () => setActive((prev) => (prev === reelsData.length - 1 ? 0 : prev + 1));
+  const prevSlide = () => setActive((prev) => (prev === 0 ? reelsData.length - 1 : prev - 1));
 
   return (
-    <section className="w-full bg-[#fafafa]  mt-10 flex flex-col justify-center overflow-hidden">
+    <section className="w-full bg-[#fafafa] mt-10  flex flex-col justify-center overflow-hidden relative">
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
+          backgroundSize: "4rem 4rem",
+        }}
+      />
       <div className="max-w-[1400px] w-full mx-auto px-4 md:px-10">
 
         {/* Header Section styled after the reference image */}
@@ -105,10 +121,8 @@ const Reels = () => {
           {/* Left Arrow (Hidden on Mobile, matching reference edge alignment) */}
           <button
             onClick={prevSlide}
-            disabled={active === 0}
             aria-label="Previous Slide"
-            className={`hidden md:flex w-14 h-14 rounded-full items-center justify-center bg-[#2d2d2d] text-white transition-all duration-300 ${active === 0 ? "opacity-30 cursor-not-allowed" : "cursor-pointer hover:bg-black shadow-lg hover:scale-105"
-              }`}
+            className="hidden md:flex w-14 h-14 rounded-full items-center justify-center bg-[#2d2d2d] text-white transition-all duration-300 cursor-pointer hover:bg-black shadow-lg hover:scale-105"
           >
             <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M19 12H5" /><path d="M12 19l-7-7 7-7" />
@@ -123,10 +137,8 @@ const Reels = () => {
           {/* Right Arrow */}
           <button
             onClick={nextSlide}
-            disabled={active === reelsData.length - 1}
             aria-label="Next Slide"
-            className={`hidden md:flex w-14 h-14 rounded-full items-center justify-center bg-[#2d2d2d] text-white transition-all duration-300 ${active === reelsData.length - 1 ? "opacity-30 cursor-not-allowed" : "cursor-pointer hover:bg-black shadow-lg hover:scale-105"
-              }`}
+            className="hidden md:flex w-14 h-14 rounded-full items-center justify-center bg-[#2d2d2d] text-white transition-all duration-300 cursor-pointer hover:bg-black shadow-lg hover:scale-105"
           >
             <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14" /><path d="M12 5l7 7-7 7" />
@@ -135,12 +147,11 @@ const Reels = () => {
         </div>
 
         {/* Mobile Controls */}
-        <div className="flex justify-center gap-10 md:hidden">
+        <div className="flex justify-center mb-10 gap-10 md:hidden">
           <button
             onClick={prevSlide}
-            disabled={active === 0}
             aria-label="Previous Slide"
-            className="w-12 h-12 rounded-full bg-[#2d2d2d] text-white flex items-center justify-center disabled:opacity-30 transition-opacity"
+            className="w-12 h-12 rounded-full bg-[#2d2d2d] text-white flex items-center justify-center transition-opacity hover:opacity-80 active:scale-95"
           >
             <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M19 12H5" /><path d="M12 19l-7-7 7-7" />
@@ -148,9 +159,8 @@ const Reels = () => {
           </button>
           <button
             onClick={nextSlide}
-            disabled={active === reelsData.length - 1}
             aria-label="Next Slide"
-            className="w-12 h-12 rounded-full bg-[#2d2d2d] text-white flex items-center justify-center disabled:opacity-30 transition-opacity"
+            className="w-12 h-12 rounded-full bg-[#2d2d2d] text-white flex items-center justify-center transition-opacity hover:opacity-80 active:scale-95"
           >
             <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14" /><path d="M12 5l7 7-7 7" />
@@ -160,7 +170,7 @@ const Reels = () => {
 
         {/* 3D Coverflow Carousel Container */}
         <div
-          className="relative w-full h-[450px] sm:h-[600px] flex justify-center items-center select-none mt-4 md:mt-10"
+          className="relative w-full h-[450px] sm:h-[600px] mb-10 flex justify-center items-center select-none mt-4 md:mt-10"
           style={{ perspective: "1200px" }}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
@@ -171,26 +181,27 @@ const Reels = () => {
             const absPos = Math.abs(position);
             const sign = Math.sign(position);
 
-            // Responsive 3D Math Coordinates
-            const rotateY = sign * -45;
-            const translateZ = absPos === 0 ? 0 : -350;
-            const translateX = position * (isMobile ? 160 : 350);
+            // Premium 3D Carousel Math
+            const translateX = position * (isMobile ? 180 : 380);
+            const translateZ = absPos === 0 ? 50 : -200;
+            const rotateY = sign * -10; // Very subtle angled rotation
+            const scale = absPos === 0 ? 1 : 0.8;
 
-            // Visibility bounds
-            const isVisible = absPos <= 2;
+            // Visibility bounds - show only immediate left and right
+            const isVisible = absPos <= 1;
             const zIndex = 100 - absPos;
 
             return (
               <div
                 key={index}
                 onClick={() => !isActive && setActive(index)}
-                className={`absolute top-1/2 left-1/2 w-[240px] sm:w-[320px] aspect-[9/16] rounded-[2rem] overflow-hidden bg-black shadow-2xl transition-all duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] ${!isActive ? 'cursor-pointer' : ''
+                className={`absolute top-1/2 left-1/2 w-[260px] sm:w-[340px] aspect-[9/16] rounded-[2rem] overflow-hidden bg-black shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] border border-white/10 ${!isActive ? 'cursor-pointer hover:brightness-75' : 'ring-2 ring-yellow-400/50 shadow-[0_0_40px_rgba(250,204,21,0.2)]'
                   }`}
                 style={{
-                  transform: `translate(-50%, -50%) translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg)`,
+                  transform: `translate(-50%, -50%) translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`,
                   zIndex,
-                  opacity: isVisible ? (absPos === 2 ? 0.3 : 1) : 0,
-                  filter: isActive ? "blur(0px) brightness(1.1)" : "blur(5px) brightness(0.6)",
+                  opacity: isVisible ? (absPos === 1 ? 0.5 : 1) : 0,
+                  filter: isActive ? "blur(0px) brightness(1.05)" : "blur(4px) brightness(0.4) grayscale(50%)",
                   pointerEvents: isVisible ? "auto" : "none",
                 }}
               >
@@ -198,7 +209,6 @@ const Reels = () => {
                   ref={(el) => (videoRefs.current[index] = el)}
                   src={item.video}
                   muted={isMuted}
-                  loop
                   playsInline
                   className="w-full h-full object-cover rounded-[2rem] transform scale-105" // scale prevents edge lines
                 />
