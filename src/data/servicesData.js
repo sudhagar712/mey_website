@@ -19,9 +19,9 @@ export const services = [
       "Profile optimisation",
     ],
     gallery: [
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0Twr6XdQZ3ovRAYFIoL-r6yXKcBziCObQ6Q&s",
-      "https://images.unsplash.com/photo-1616469829941-c7200edec809?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1563986768494-4dee2763ff0f?q=80&w=2070&auto=format&fit=crop"
+      "https://images.pexels.com/photos/267399/pexels-photo-267399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/5053846/pexels-photo-5053846.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     ]
   },
 
@@ -40,9 +40,9 @@ export const services = [
       "Event coverage",
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1589330694653-0ec8cb61ebaf?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1542282088-fe8426682b8f?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1598550476439-6847785fcea6?q=80&w=2070&auto=format&fit=crop"
+      "https://images.pexels.com/photos/2510428/pexels-photo-2510428.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/2873486/pexels-photo-2873486.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/3379934/pexels-photo-3379934.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     ]
   },
 
@@ -62,9 +62,9 @@ export const services = [
       "Business stationery",
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1626785773579-c108fc47ceb4?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=2070&auto=format&fit=crop"
+      "https://img.freepik.com/premium-vector/beauty-face-logo-design-template-inspiration-vector-illustration_556641-2882.jpg",
+      "https://miro.medium.com/v2/resize:fit:1400/1*5K2dewsYhBfZMuh4RxZnHw.png",
+      "https://www.getmarvia.com/hubfs/AnyTime%20Fitness%20Brand%20Guidelines.webp"
     ]
   },
 
@@ -82,9 +82,9 @@ export const services = [
       "Event videography",
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1505236858219-8359eb29e329?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop"
+      "https://alphaomegavideo.com.au/wp-content/uploads/2021/04/events-conference-video-media-message.jpg",
+      "https://freelanceservicesindia.com/wp-content/uploads/2023/02/Videography-Services-in-Delhi-India.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrTUxkQRUTPPxTB5RbTntIG5-QR_t_zIb5Yg&s"
     ]
   },
 
@@ -103,9 +103,9 @@ export const services = [
       "Maintenance support",
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop"
+      "https://images.pexels.com/photos/1939485/pexels-photo-1939485.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     ]
   },
 
@@ -125,9 +125,9 @@ export const services = [
       "Lead generation campaigns",
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+      "https://zyda.com/hubfs/Screen%20Shot%202022-12-07%20at%201.00.35%20PM.png",
+      "https://bs-uploads.toptal.io/blackfish-uploads/components/blog_post_page/8251604/cover_image/regular_1708x683/Untitled-b91bdf8e478c7dbafa86afd20f3b519a.png",
+      "https://yt3.googleusercontent.com/ytc/AIdro_k7UlB1KrUyrLE7FjL9yFqGCUn_sRkcNiy_dH6O38JEtM_I=s900-c-k-c0x00ffffff-no-rj"
     ]
   },
 
@@ -144,9 +144,9 @@ export const services = [
       "Print advertisements",
     ],
     gallery: [
-      "https://images.unsplash.com/photo-1559828452-951ceab6d140?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1620021644781-c741e0b52ce7?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1520697830682-8fb1f9eb11c0?q=80&w=2070&auto=format&fit=crop"
+      "https://i.pinimg.com/736x/f1/e0/41/f1e0412363a8eda2739b85a76f645e7d.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVSURq4T__0nQ-omDwtMhBbQRF3774NIFlmw&s",
+      "https://webneel.com/daily/sites/default/files/images/daily/05-2016/21-print-advertising-hlunkur.jpg"
     ]
   },
 ];

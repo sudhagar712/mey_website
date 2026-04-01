@@ -54,7 +54,12 @@ const ExpandingCards = () => {
   }, [isPaused]);
 
   return (
-    <div className="w-full">
+    <div className="w-full md:px-20">
+
+      <div className="text-center mb-10">
+        <h1 className="text-4xl md:text-6xl font-bold text-yellow-500 mb-4">Our Services</h1>
+        <p className="text-white">We offer a range of services to help businesses grow and succeed.</p>
+      </div>
       {/* Desktop Layout */}
       <div
         className="hidden  md:flex w-full h-[500px] lg:h-[650px] gap-3 lg:gap-4 overflow-hidden"
@@ -62,7 +67,7 @@ const ExpandingCards = () => {
         onMouseLeave={() => setIsPaused(false)}
       >
 
-
+       
 
 
 
