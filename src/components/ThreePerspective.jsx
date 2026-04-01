@@ -63,7 +63,7 @@ const ThreePerspective = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-            className="text-3xl md:text-5xl font-light leading-snug md:leading-[1.2] text-gray-900 mb-12 tracking-tight"
+            className="text-3xl md:text-4xl text-gray-900 mb-12"
           >
             MEY began with three friends from completely different worlds, brought together by a shared discomfort they couldn’t ignore.
           </motion.h2>

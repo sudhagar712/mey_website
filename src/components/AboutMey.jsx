@@ -10,11 +10,11 @@ const AboutMey = () => {
         className="absolute inset-0 pointer-events-none opacity-[0.05]"
         style={{
           backgroundImage:
-            "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #fffbfbff 2px, transparent 1px)",
+            "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #fffbfbff 1px, transparent 1px)",
           backgroundSize: "4rem 4rem",
         }}
       />
-      
+
       {/* 🔥 Background Glow */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
         <div className="absolute w-[500px] h-[500px] bg-yellow-500/10 blur-[120px] rounded-full top-[-100px] left-[-100px]" />

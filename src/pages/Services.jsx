@@ -9,7 +9,7 @@ import ExpandingCards from "../components/ExpandingCards";
 
 const Services = () => {
   return (
-    <div className="bg-black ">
+    <div className="bg-black">  
       <SEO
         title="Branding, Social Media & Website Design Services in Chennai | MEY"
         description="Explore MEY’s branding, social media marketing, website development, video production and advertising services in Chennai."
