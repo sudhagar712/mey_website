@@ -28,14 +28,13 @@ const projects = [
 const Work = () => {
 
   return (
-    <main className="w-full min-h-screen bg-[#fcfcfc] mt-15 ">
+    <main className="w-full min-h-screen bg-[#fcfcfc] ">
       <SEO
         title="Branding & Marketing Projects | MEY Chennai"
         description="Explore branding, social media, website and advertising projects delivered by MEY."
       />
       <PageBanner
         title="Our Work"
-        breadcrumb="Work"
         bgImage="https://hbr.org/resources/images/article_assets/2023/09/A_Sep23_26_Work-school_1439778346.jpg"
       />
 

@@ -16,7 +16,6 @@ const Services = () => {
       />
       <PageBanner
         title="Our Services"
-        breadcrumb="services"
         bgImage="https://stl.tech/wp-content/uploads/2023/02/Network-services-scaled.webp"
       />
       <div className="p-3 md:px-5 md:p-10">
@@ -61,7 +60,7 @@ const Services = () => {
                   </div>
 
                   <div className="p-8">
-                    <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+                    <h3 className="text-3xl text-yellow-500 font-bold mb-3">{service.title}</h3>
 
                     <p className="text-white mb-5 text-sm">
                       {service.description}
