@@ -50,8 +50,16 @@ const Work = () => {
 
       <Motionposter />
 
-      <div className=" bg-black  py-20 px-6 md:px-40">
-        <h2 className="text-3xl md:text-6xl text-white font-bold mb-12 ">
+      <div className=" bg-black  py-20 px-6 md:px-40 relative">
+        <div
+          className="absolute inset-0 pointer-events-none opacity-[0.05]"
+          style={{
+            backgroundImage:
+              "linear-gradient(#faf8f8ff 1px, transparent 1px), linear-gradient(90deg, #faf8f8ff 1px, transparent 1px)",
+            backgroundSize: "4rem 4rem",
+          }}
+        />
+        <h2 className="text-3xl md:text-6xl text-yellow-500 font-bold mb-12 ">
           Projects
         </h2>
 
@@ -78,11 +86,11 @@ const Work = () => {
               </div>
 
               {/* CONTENT */}
-              <div className="p-6">
-                <h3 className="text-white text-xl font-semibold mb-2">
+              <div className="p-6 bg-yellow-500">
+                <h3 className="text-xl font-semibold mb-2">
                   {project.title}
                 </h3>
-                <p className="text-gray-400 text-sm">{project.description}</p>
+                <p className=" text-sm">{project.description}</p>
               </div>
 
               {/* HOVER OVERLAY */}

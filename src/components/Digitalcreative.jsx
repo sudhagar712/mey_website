@@ -40,7 +40,7 @@ const metroStyles = [
   { span: "col-span-1 row-span-1", color: "bg-[#603cba]", tintClass: "opacity-70 mix-blend-luminosity" }, // 3. Small Box
   { span: "col-span-2 row-span-2", color: "bg-black", tintClass: "" }, // 4. Big Square (Diego Montes photo)
   { span: "col-span-2 row-span-2", color: "bg-[#d24726]", tintClass: "opacity-80 mix-blend-multiply" }, // 5. Red Office App Tile
-  { span: "col-span-2 row-span-1 md:col-span-4 md:row-span-1", color: "bg-[#008a00]", tintClass: "opacity-80 mix-blend-overlay" }, // 6. Long Green Xbox
+  { span: "col-span-2 row-span-1 md:col-span-4 md:row-span-1", color: "bg-[#fbba00]/50", tintClass: "opacity-80 mix-blend-overlay" }, // 6. Long Green Xbox
   { span: "col-span-1 row-span-1", color: "bg-[#2d89ef]", tintClass: "opacity-70 mix-blend-hard-light" }, // 7. Blue Skype
   { span: "col-span-1 row-span-1", color: "bg-[#e51400]", tintClass: "opacity-70 mix-blend-luminosity" }, // 8. Red Camera
   { span: "col-span-2 row-span-1", color: "bg-[#0050ef]", tintClass: "opacity-70 mix-blend-overlay" }, // 9. Blue Internet Explorer
@@ -126,11 +126,7 @@ const DigitalCreativeGrid = () => {
                   </h3>
                 </div>
 
-                {/* Decorative Elements replicating the accurate Reference Phone UI */}
-                {index === 0 && <div className="absolute top-2 left-2 z-20 text-white font-medium text-sm md:text-lg drop-shadow-md">Me</div>}
-                {index === 1 && <div className="absolute bottom-3 right-3 z-20 text-white font-bold text-lg md:text-xl drop-shadow-md">7</div>}
-                {index === 4 && <div className="absolute top-2 left-3 z-20 text-white font-medium text-sm md:text-base drop-shadow-md">Director</div>}
-                {index === 6 && <div className="absolute bottom-2 right-3 z-20 text-white font-medium text-sm md:text-lg flex items-center gap-2 drop-shadow-md"><span className="text-2xl">📞</span> 5</div>}
+
               </motion.div>
             );
           })}

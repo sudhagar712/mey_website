@@ -1,9 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
+import im1 from "../assets/1imm.png"
+import im2 from "../assets/2imm.png"
+import im3 from "../assets/3imm.png"
 
 const ThreePerspective = () => {
   return (
-    <section className="relative w-full py-24 md:py-32 bg-white text-black overflow-hidden flex flex-col justify-center">
+    <section className="relative w-full py-24 md:py-32 bg-[#FCFCFC] text-black overflow-hidden flex flex-col justify-center">
       {/* Background Subtle Texture */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.03]"
@@ -13,39 +16,13 @@ const ThreePerspective = () => {
         }}
       />
 
-      <div className="max-w-[1300px] mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 relative z-10">
-
-        {/* Left Side: Editorial Image & Caption */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="lg:col-span-5 flex flex-col justify-center"
-        >
-          <div className="relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-gray-900/5 group">
-            {/* Team/Friends Image. Grayscale by default to look highly aesthetic, reveals color on hover */}
-            <img
-              src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg"
-              alt="Three Founders Background"
-              className="absolute inset-0 w-full h-full object-cover grayscale transition-all duration-[2s] ease-out group-hover:grayscale-0 group-hover:scale-110"
-            />
-
-            {/* Vignette styling for a smooth text caption */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent pointer-events-none transition-opacity duration-1000 group-hover:opacity-40" />
-            <div className="absolute inset-x-0 bottom-0 p-8 pb-10">
-              <p className="text-white font-serif italic text-2xl drop-shadow-lg">The shared discomfort.</p>
-              <div className="w-10 h-1 bg-yellow-500 mt-4"></div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Right Side: The Story */}
-        <div className="lg:col-span-7 flex flex-col justify-center lg:py-4">
+      <div className="max-w-[1300px] mx-auto px-6 md:px-12 w-full relative z-10">
+        {/* Main Content Container */}
+        <div className="flex flex-col justify-center lg:py-4">
 
           {/* Header label */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
@@ -63,40 +40,86 @@ const ThreePerspective = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-            className="text-3xl md:text-4xl text-gray-900 mb-12"
+            className="text-3xl md:text-5xl lg:text-5xl text-gray-900 font-bold mb-16 md:w-4/5 leading-tight"
           >
             MEY began with three friends from completely different worlds, brought together by a shared discomfort they couldn’t ignore.
           </motion.h2>
 
-          {/* The Three Pillars Text Box */}
-          <div className="space-y-8 pl-6 border-l-[3px] border-yellow-500/40">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
+          {/* The Three Pillars Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-14 w-full mt-4">
+
+            {/* Strategy */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-              className="text-lg md:text-xl text-gray-600 leading-relaxed font-light"
+              className="flex flex-col group"
             >
-              <span className="text-[#111] font-bold">One approached brands through strategy,</span> constantly analysing positioning, market gaps, and the invisible forces that influence choice.
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
-              className="text-lg md:text-xl text-gray-600 leading-relaxed font-light"
-            >
-              <span className="text-[#111] font-bold">Another saw brands through creativity,</span> understanding how design, storytelling, and visual memory shape perception.
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              <div className="overflow-hidden rounded-2xl mb-8 aspect-[4/5] relative bg-gray-100 shadow-sm">
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
+                <img
+                  src={im1}
+                  alt="Strategy Perspective"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 border-b border-gray-200 pb-3 mb-4 uppercase tracking-widest text-xs">
+                01. Strategy
+              </h3>
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed font-light">
+                <span className="text-gray-900 font-semibold">One approached brands through strategy,</span> constantly analysing positioning, market gaps, and the invisible forces that influence choice.
+              </p>
+            </motion.div>
+
+            {/* Creativity */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
-              className="text-lg md:text-xl text-gray-600 leading-relaxed font-light"
+              className="flex flex-col group"
             >
-              <span className="text-[#111] font-bold">The third came from a business lens,</span> recognising that a brand is not just identity, but a system that either drives growth or silently limits it.
-            </motion.p>
+              <div className="overflow-hidden rounded-2xl mb-8 aspect-[4/5] relative bg-gray-100 shadow-sm">
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
+                <img
+                  src={im2}
+                  alt="Creativity Perspective"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 border-b border-gray-200 pb-3 mb-4 uppercase tracking-widest text-xs">
+                02. Creativity
+              </h3>
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed font-light">
+                <span className="text-gray-900 font-semibold">Another saw brands through creativity,</span> understanding how design, storytelling, and visual memory shape perception.
+              </p>
+            </motion.div>
+
+            {/* Business */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
+              className="flex flex-col group"
+            >
+              <div className="overflow-hidden rounded-2xl mb-8 aspect-[4/5] relative bg-gray-100 shadow-sm">
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
+                <img
+                  src={im3}
+                  alt="Business Perspective"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 border-b border-gray-200 pb-3 mb-4 uppercase tracking-widest text-xs">
+                03. Business
+              </h3>
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed font-light">
+                <span className="text-gray-900 font-semibold">The third came from a business lens,</span> recognising that a brand is not just identity, but a system that either drives growth or silently limits it.
+              </p>
+            </motion.div>
+
           </div>
 
           {/* Conclusion Statement */}
@@ -104,14 +127,14 @@ const ThreePerspective = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.7 }}
-            className="mt-12 pt-10 border-t border-gray-200"
+            transition={{ duration: 0.8, ease: "easeOut", delay: 1.0 }}
+            className="mt-20 pt-12 border-t border-gray-200 md:max-w-4xl max-w-full"
           >
             <p className="text-2xl md:text-3xl font-semibold text-gray-900 mb-6 italic font-serif">
               Despite their differences, they kept arriving at the same realisation.
             </p>
-            <p className="text-lg text-gray-700 leading-relaxed font-medium">
-              Across industries, businesses were investing more into branding and marketing than ever before, yet becoming increasingly indistinguishable. <span className="text-[#111] font-bold bg-yellow-500/20 px-1 py-0.5">The problem wasn’t effort. It wasn’t talent. It wasn’t even execution.</span>
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-medium">
+              Across industries, businesses were investing more into branding and marketing than ever before, yet becoming increasingly indistinguishable. <br className="hidden md:block" /> <span className="text-black font-bold bg-yellow-500/20 px-2 py-1 inline-block mt-3">The problem wasn’t effort. It wasn’t talent. It wasn’t even execution.</span>
             </p>
           </motion.div>
 
