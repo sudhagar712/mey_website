@@ -18,6 +18,11 @@ export const services = [
       "Caption writing",
       "Profile optimisation",
     ],
+    gallery: [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0Twr6XdQZ3ovRAYFIoL-r6yXKcBziCObQ6Q&s",
+      "https://images.unsplash.com/photo-1616469829941-c7200edec809?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1563986768494-4dee2763ff0f?q=80&w=2070&auto=format&fit=crop"
+    ]
   },
 
 
@@ -34,6 +39,11 @@ export const services = [
       "Short-form reels",
       "Event coverage",
     ],
+    gallery: [
+      "https://images.unsplash.com/photo-1589330694653-0ec8cb61ebaf?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1542282088-fe8426682b8f?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1598550476439-6847785fcea6?q=80&w=2070&auto=format&fit=crop"
+    ]
   },
 
 
@@ -51,6 +61,11 @@ export const services = [
       "Brand guidelines",
       "Business stationery",
     ],
+    gallery: [
+      "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1626785773579-c108fc47ceb4?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=2070&auto=format&fit=crop"
+    ]
   },
 
 
@@ -66,15 +81,12 @@ export const services = [
       "Event photography",
       "Event videography",
     ],
+    gallery: [
+      "https://images.unsplash.com/photo-1505236858219-8359eb29e329?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop"
+    ]
   },
-
-
-
-
-
-
-
-
 
   {
     slug: "website-design-development",
@@ -90,6 +102,11 @@ export const services = [
       "SEO setup",
       "Maintenance support",
     ],
+    gallery: [
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop"
+    ]
   },
 
 
@@ -107,6 +124,11 @@ export const services = [
       "Google ads",
       "Lead generation campaigns",
     ],
+    gallery: [
+      "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+    ]
   },
 
   {
@@ -121,5 +143,10 @@ export const services = [
       "Exhibition stall design",
       "Print advertisements",
     ],
+    gallery: [
+      "https://images.unsplash.com/photo-1559828452-951ceab6d140?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1620021644781-c741e0b52ce7?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1520697830682-8fb1f9eb11c0?q=80&w=2070&auto=format&fit=crop"
+    ]
   },
 ];

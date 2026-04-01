@@ -10,7 +10,7 @@ const cards = [
   {
     title: "Social Media Marketing",
     image:
-      "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop",
+      "https://landingi.com/wp-content/uploads/2025/02/What-Is-Social-Media-Marketing-post-cover-optimized.webp",
   },
   {
     title: "Video Editing",
@@ -30,12 +30,12 @@ const cards = [
   {
     title: "Digital Marketing",
     image:
-      "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=2074&auto=format&fit=crop",
+      "https://ad2brand.com/wp-content/uploads/2025/10/digital-marketing.png",
   },
   {
     title: "Outdoor Advertising",
     image:
-      "https://images.unsplash.com/photo-1559406041-c7d2b2e98690?q=80&w=2070&auto=format&fit=crop",
+      "https://acmeadvertiser.com/wp-content/uploads/2025/02/eb8199203681641.669b5f5801f02-1024x614.jpg",
   },
 ];
 
@@ -57,10 +57,15 @@ const ExpandingCards = () => {
     <div className="w-full">
       {/* Desktop Layout */}
       <div
-        className="hidden md:flex w-full h-[500px] lg:h-[650px] gap-3 lg:gap-4 overflow-hidden"
+        className="hidden  md:flex w-full h-[500px] lg:h-[650px] gap-3 lg:gap-4 overflow-hidden"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
+
+
+
+
+
         {cards.map((card, index) => {
           const isActive = active === index;
           return (
