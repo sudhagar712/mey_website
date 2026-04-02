@@ -116,7 +116,7 @@ const About = () => {
               <span className="w-8 md:w-16 h-[1px] bg-gray-300 ml-4 md:ml-6"></span>
             </h4>
 
-            <h2 className="text-3xl md:text-4xl text-yellow-500 lg:text-5xl font-bold leading-snug md:leading-[1.3] text-[#111] tracking-tight mb-8">
+            <h2 className="text-3xl md:text-4xl  lg:text-5xl font-bold leading-snug md:leading-[1.3] text-[#111] tracking-tight mb-8">
               If a brand feels unclear, inconsistent, or replaceable, the issue is rarely effort or visibility.
             </h2>
 
