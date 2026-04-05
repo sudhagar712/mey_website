@@ -4,25 +4,11 @@ import about from "../assets/aboutro.png";
 
 const AboutMey = () => {
   return (
-    <section className="relative w-full bg-[#0b0b0b] text-white overflow-hidden py-20">
-      {/* Subtle Grid Background */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.05]"
-        style={{
-          backgroundImage:
-            "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #fffbfbff 1px, transparent 1px)",
-          backgroundSize: "4rem 4rem",
-        }}
-      />
-
-      {/* 🔥 Background Glow */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-        <div className="absolute w-[500px] h-[500px] bg-yellow-500/10 blur-[120px] rounded-full top-[-100px] left-[-100px]" />
-        <div className="absolute w-[400px] h-[400px] bg-white/5 blur-[100px] rounded-full bottom-[-100px] right-[-100px]" />
-      </div>
+    <section className="relative w-full bg-black text-white overflow-hidden py-20">
+      {/* Background subtle lines */}
+      <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:60px_60px]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-16">
-
         {/* LEFT CONTENT */}
         <motion.div
           initial={{ opacity: 0, x: -80 }}
@@ -70,7 +56,6 @@ const AboutMey = () => {
               attention - it earns it, holds it, and scales with clarity.
             </p>
           </div>
-
         </motion.div>
 
         {/* RIGHT IMAGE */}
@@ -82,7 +67,6 @@ const AboutMey = () => {
           className="w-full lg:w-1/2 flex justify-center"
         >
           <div className="relative w-[300px] sm:w-[350px] lg:w-[450px] aspect-square">
-
             {/* Glass Circle */}
             <div className="absolute inset-0 rounded-full bg-white/5 backdrop-blur-xl border border-white/10"></div>
 

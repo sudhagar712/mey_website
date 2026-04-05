@@ -8,17 +8,8 @@ const words = text.split(" ");
 const ProblemSection = () => {
   return (
     <section className="relative bg-black text-white px-6 md:px-12 lg:px-24 py-24 overflow-hidden">
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.05]"
-        style={{
-          backgroundImage:
-            "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #fffbfbff 2px, transparent 1px)",
-          backgroundSize: "4rem 4rem",
-        }}
-      />
-      {/* Background Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(201,163,106,0.12),transparent_60%)]"></div>
-
+      <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:60px_60px]" />
+     
       <div className="max-w-5xl mx-auto text-center relative z-10">
         {/* Top Label */}
         <motion.div
@@ -62,7 +53,8 @@ const ProblemSection = () => {
             borrowed ideas
             <span className="absolute left-0 bottom-0 w-full h-[2px] bg-[#f1bd40] scale-x-0 group-hover:scale-x-100 transition"></span>
           </span>
-          , temporary trends, and surface-level thinking. Designed to look good - but not to stand strong.
+          , temporary trends, and surface-level thinking. Designed to look good
+          - but not to stand strong.
         </motion.p>
 
         {/* Bottom Quote */}

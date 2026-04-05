@@ -79,7 +79,15 @@ const Insights = () => {
         bgImage="https://nicholasrossis.me/wp-content/uploads/2017/04/BLOG01.jpg"
       />
 
-      <section className="bg-white py-20 pb-32 px-6 lg:px-16 text-black">
+      <section className="bg-white py-20 pb-32 px-6 lg:px-16 text-black relative">
+        <div
+          className="absolute inset-0 pointer-events-none opacity-[0.05]"
+          style={{
+            backgroundImage:
+              "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
+            backgroundSize: "4rem 4rem",
+          }}
+        />
         <div className="max-w-7xl mx-auto">
           {/* Featured Article */}
           {featured && (
@@ -111,7 +119,9 @@ const Insights = () => {
                     {featured.title}
                   </h2>
 
-                  <p className="text-lg mb-6 text-gray-700">{featured.excerpt}</p>
+                  <p className="text-lg mb-6 text-gray-700">
+                    {featured.excerpt}
+                  </p>
                 </div>
               </div>
             </div>
@@ -136,7 +146,9 @@ const Insights = () => {
 
                 <div className="p-6 flex flex-col h-full">
                   <div className="flex justify-between items-center mb-4 text-xs uppercase tracking-wider text-gray-400">
-                    <span className="font-semibold text-yellow-600">{article.category}</span>
+                    <span className="font-semibold text-yellow-600">
+                      {article.category}
+                    </span>
                     <span>{article.date}</span>
                   </div>
 
@@ -144,7 +156,9 @@ const Insights = () => {
                     {article.title}
                   </h3>
 
-                  <p className="text-sm mb-6 flex-grow text-gray-600">{article.excerpt}</p>
+                  <p className="text-sm mb-6 flex-grow text-gray-600">
+                    {article.excerpt}
+                  </p>
                 </div>
               </div>
             ))}
@@ -194,7 +208,11 @@ const Insights = () => {
 
               <div className="w-full h-[250px] md:h-[450px]">
                 <img
-                  src={selectedArticle.id === "branding-vs-marketing-agency" ? mk : selectedArticle.image}
+                  src={
+                    selectedArticle.id === "branding-vs-marketing-agency"
+                      ? mk
+                      : selectedArticle.image
+                  }
                   alt={selectedArticle.title}
                   className="w-full h-full object-cover"
                 />
@@ -219,23 +237,45 @@ const Insights = () => {
                   </p>
 
                   <p className="mb-6">
-                    Understanding the core principles of <strong>{selectedArticle.category.toLowerCase()}</strong> is crucial for modern businesses looking to establish a dominant market position. In today's hyper-competitive landscape, making incremental changes is rarely enough.
+                    Understanding the core principles of{" "}
+                    <strong>{selectedArticle.category.toLowerCase()}</strong> is
+                    crucial for modern businesses looking to establish a
+                    dominant market position. In today's hyper-competitive
+                    landscape, making incremental changes is rarely enough.
                   </p>
 
-                  <h3 className="text-2xl font-bold text-black font-sans mt-10 mb-4">The Strategic Advantage</h3>
+                  <h3 className="text-2xl font-bold text-black font-sans mt-10 mb-4">
+                    The Strategic Advantage
+                  </h3>
 
                   <p className="mb-6">
-                    Many founders and marketing executives spend too much time focusing on the tactical execution without building a solid strategic foundation first. This approach inevitably leads to scattered efforts, inconsistent messaging, and inefficiently deployed budgets.
+                    Many founders and marketing executives spend too much time
+                    focusing on the tactical execution without building a solid
+                    strategic foundation first. This approach inevitably leads
+                    to scattered efforts, inconsistent messaging, and
+                    inefficiently deployed budgets.
                   </p>
 
                   <ul className="list-disc pl-6 mb-6 space-y-2 text-gray-700">
-                    <li>Focus on long-term value creation over short-term vanity metrics.</li>
-                    <li>Align your internal culture with your external brand promise.</li>
-                    <li>Invest in foundational clarity before scaling your advertising efforts.</li>
+                    <li>
+                      Focus on long-term value creation over short-term vanity
+                      metrics.
+                    </li>
+                    <li>
+                      Align your internal culture with your external brand
+                      promise.
+                    </li>
+                    <li>
+                      Invest in foundational clarity before scaling your
+                      advertising efforts.
+                    </li>
                   </ul>
 
                   <p>
-                    Instead, we advocate for a structured, deeply thoughtful approach to building lasting brand value. It requires discipline, research, and the willingness to make difficult choices about what your brand will—and will not—stand for.
+                    Instead, we advocate for a structured, deeply thoughtful
+                    approach to building lasting brand value. It requires
+                    discipline, research, and the willingness to make difficult
+                    choices about what your brand will—and will not—stand for.
                   </p>
                 </div>
               </div>
