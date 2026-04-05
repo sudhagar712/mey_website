@@ -86,8 +86,17 @@ const CAPABILITIES = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-white py-24 px-4 md:px-12 lg:px-24"
+      className="bg-white py-24 px-4 md:px-12 relative lg:px-24"
     >
+       {/* Subtle Grid Background */}
+            <div
+              className="absolute inset-0 pointer-events-none opacity-[0.05]"
+              style={{
+                backgroundImage:
+                  "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
+                backgroundSize: "4rem 4rem",
+              }}
+            />
       {/* Scroll animation styles */}
       <style>
         {`

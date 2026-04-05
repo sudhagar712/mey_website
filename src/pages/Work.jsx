@@ -35,18 +35,15 @@ const Work = () => {
       />
       <PageBanner
         title="Our Work"
-        bgImage="https://hbr.org/resources/images/article_assets/2023/09/A_Sep23_26_Work-school_1439778346.jpg"
+        bgImage="https://i.pinimg.com/1200x/ef/d6/2a/efd62afb5d06985893371345c2c5a368.jpg"
       />
 
-  <Reels />
-    <VideoSlider />
-
+      <Reels />
+      <VideoSlider />
 
       <Printcreative />
-   
-      <Digitalcreative />
 
-   
+      <Digitalcreative />
 
       <Motionposter />
 
@@ -87,9 +84,7 @@ const Work = () => {
 
               {/* CONTENT */}
               <div className="p-6 bg-yellow-500">
-                <h3 className="text-xl font-semibold mb-2">
-                  {project.title}
-                </h3>
+                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                 <p className=" text-sm">{project.description}</p>
               </div>
 
@@ -104,9 +99,8 @@ const Work = () => {
         </div>
       </div>
 
-         <PdfPreview />
-    <CoperateBanner  />  
- 
+      <PdfPreview />
+      <CoperateBanner />
     </main>
   );
 };

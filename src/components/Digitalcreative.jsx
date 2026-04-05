@@ -64,12 +64,25 @@ const DigitalCreativeGrid = () => {
   };
 
   return (
-    <section className="w-full min-h-screen bg-black py-20 px-4 md:px-12 flex flex-col justify-center overflow-hidden font-sans">
+    <section className="w-full relative min-h-screen bg-black py-20 px-4 md:px-12 flex flex-col justify-center overflow-hidden font-sans">
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
+          backgroundSize: "4rem 4rem",
+        }}
+      />
+
       <div className="max-w-[1200px] mx-auto w-full">
         {/* 🔥 Metro UI Style Header */}
         <div className="mb-12 pl-2">
-          <h1 className="text-5xl md:text-7xl font-extralight tracking-tighter text-white">Digital Creative</h1>
-          <p className="text-[#1ba1e2] mt-2 text-sm md:text-base tracking-widest uppercase ml-1 font-semibold">Featured Projects</p>
+          <h1 className="text-5xl md:text-7xl font-extralight tracking-tighter text-white">
+            Digital Creative
+          </h1>
+          <p className="text-[#1ba1e2] mt-2 text-sm md:text-base tracking-widest uppercase ml-1 font-semibold">
+            Featured Projects
+          </p>
         </div>
 
         {/* 🔥 Metro Live Tiles Masonry Grid */}
@@ -81,8 +94,8 @@ const DigitalCreativeGrid = () => {
             hidden: { opacity: 0 },
             show: {
               opacity: 1,
-              transition: { staggerChildren: 0.08 }
-            }
+              transition: { staggerChildren: 0.08 },
+            },
           }}
           className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 auto-rows-[130px] md:auto-rows-[160px] gap-2 grid-flow-row-dense relative"
         >
@@ -94,17 +107,27 @@ const DigitalCreativeGrid = () => {
                 key={index}
                 onClick={() => setSelectedIndex(index)}
                 variants={{
-                  hidden: { opacity: 0, rotateX: -60, y: 50, transformPerspective: 1200 },
+                  hidden: {
+                    opacity: 0,
+                    rotateX: -60,
+                    y: 50,
+                    transformPerspective: 1200,
+                  },
                   show: {
                     opacity: 1,
                     rotateX: 0,
                     y: 0,
                     transformPerspective: 1200,
-                    transition: { type: "spring", stiffness: 150, damping: 20 }
-                  }
+                    transition: { type: "spring", stiffness: 150, damping: 20 },
+                  },
                 }}
                 // Pop the tile outward beautifully on hover so they can clearly inspect it
-                whileHover={{ scale: 1.03, filter: "brightness(1.1)", zIndex: 10, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)" }}
+                whileHover={{
+                  scale: 1.03,
+                  filter: "brightness(1.1)",
+                  zIndex: 10,
+                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)",
+                }}
                 whileTap={{ scale: 0.95 }}
                 className={`group relative overflow-hidden cursor-pointer shadow-lg ease-out ${style.color} ${style.span}`}
               >
@@ -117,7 +140,9 @@ const DigitalCreativeGrid = () => {
                 />
 
                 {/* Shading for untinted raw images to keep text totally readable, fading on hover */}
-                {!style.tintClass && <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-40" />}
+                {!style.tintClass && (
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-40" />
+                )}
 
                 {/* Metro Corner Typography */}
                 <div className="absolute bottom-2 left-2 md:bottom-3 md:left-3 z-20 pointer-events-none transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1">
@@ -125,8 +150,6 @@ const DigitalCreativeGrid = () => {
                     {item.title}
                   </h3>
                 </div>
-
-
               </motion.div>
             );
           })}
@@ -146,10 +169,25 @@ const DigitalCreativeGrid = () => {
             {/* Close button */}
             <button
               className="absolute top-6 right-4 md:right-8 w-12 h-12 bg-white/10 hover:bg-white/30 rounded-full flex items-center justify-center text-white transition-colors z-[110]"
-              onClick={(e) => { e.stopPropagation(); setSelectedIndex(null); }}
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedIndex(null);
+              }}
               aria-label="Close full view"
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
             </button>
 
             {/* Left Carousel Control */}
@@ -158,7 +196,17 @@ const DigitalCreativeGrid = () => {
               onClick={prevSlide}
               title="Previous"
             >
-              <svg className="w-6 h-6 md:w-8 md:h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6" /></svg>
+              <svg
+                className="w-6 h-6 md:w-8 md:h-8"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
             </button>
 
             {/* Right Carousel Control */}
@@ -167,7 +215,17 @@ const DigitalCreativeGrid = () => {
               onClick={nextSlide}
               title="Next"
             >
-              <svg className="w-6 h-6 md:w-8 md:h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6" /></svg>
+              <svg
+                className="w-6 h-6 md:w-8 md:h-8"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M9 18l6-6-6-6" />
+              </svg>
             </button>
 
             {/* Current Active Image sliding wrap */}
@@ -187,16 +245,18 @@ const DigitalCreativeGrid = () => {
                   className="max-w-full max-h-[75vh] object-contain rounded-xl shadow-[0_0_50px_rgba(0,0,0,0.5)] ring-1 ring-white/10 select-none pointer-events-none"
                 />
                 <div className="mt-8 text-center px-4">
-                  <h3 className="text-white text-2xl md:text-3xl font-light tracking-wide drop-shadow-lg">{gallery[selectedIndex].title}</h3>
-                  <p className="text-[#1ba1e2] mt-2 tracking-widest uppercase text-xs md:text-sm font-semibold">{selectedIndex + 1} / {gallery.length}</p>
+                  <h3 className="text-white text-2xl md:text-3xl font-light tracking-wide drop-shadow-lg">
+                    {gallery[selectedIndex].title}
+                  </h3>
+                  <p className="text-[#1ba1e2] mt-2 tracking-widest uppercase text-xs md:text-sm font-semibold">
+                    {selectedIndex + 1} / {gallery.length}
+                  </p>
                 </div>
               </motion.div>
             </AnimatePresence>
-
           </motion.div>
         )}
       </AnimatePresence>
-
     </section>
   );
 };

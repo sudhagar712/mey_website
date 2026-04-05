@@ -43,16 +43,26 @@ const CountUp = ({ value, suffix = "", duration = 2 }) => {
 const SmartConversations = () => {
   return (
     <motion.section
-      className="py-16 bg-white"
+      className="py-16 bg-white relative"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ amount: 0.25 }} // ❗ removed once:true
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
+      {/* Subtle Grid Background */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
+          backgroundSize: "4rem 4rem",
+        }}
+      />
+
       <div className="max-w-[1300px] mx-auto">
         {/* Title */}
         <motion.h2
-          className="text-center text-[22px] sm:text-2xl md:text-3xl lg:text-[32px] font-semibold text-gray-900 mb-8 md:mb-10"
+          className="text-center text-[25px] sm:text-2xl md:text-3xl lg:text-[40px]  text-gray-900 mb-8 md:mb-10"
           initial={{ y: 14, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ amount: 0.6 }} // ❗ re-trigger
@@ -132,7 +142,9 @@ const SmartConversations = () => {
                   <CountUp value={50} suffix="+" />
                 </div>
                 <div className="text-xs md:text-sm uppercase tracking-[0.2em] opacity-80">
-                  Courses<br />Offered
+                  Courses
+                  <br />
+                  Offered
                 </div>
               </motion.div>
 

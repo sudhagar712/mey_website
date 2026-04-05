@@ -224,17 +224,17 @@ const DIFFERENTIATOR = () => {
             <div className="lg:col-span-5 lg:sticky lg:top-32">
               <div className="inline-flex items-center gap-4 mb-6" data-aos="fade-up">
                 <span className="w-8 h-[2px] bg-[#f7d83c]"></span>
-                <h4 className="text-xs tracking-[0.3em] uppercase font-bold text-gray-600">
+                <h4 className="text-xs tracking-[0.3em] uppercase font-bold text-white">
                   Our Approach
                 </h4>
               </div>
 
-              <h2 className="text-4xl md:text-5xl lg:text-[4rem] text-[#fec000] font-extrabold tracking-tight mb-6 x leading-[1.1]" data-aos="fade-up" data-aos-delay="100">
+              <h2 className="text-4xl md:text-6xl lg:text-[4.5rem] text-[#fec000] font-extrabold tracking-tight mb-6 x leading-[1.1]" data-aos="fade-up" data-aos-delay="100">
               Why MEY
                
               </h2>
 
-              <p className="text-gray-500 text-sm md:text-base font-medium leading-relaxed max-w-[22rem] mb-10" data-aos="fade-up" data-aos-delay="200">
+              <p className="text-white text-sm md:text-base font-medium leading-relaxed max-w-[22rem] mb-10" data-aos="fade-up" data-aos-delay="200">
                 We don't rely on templates or safe choices. We engineer bespoke, scalable solutions built on solid first principles.
               </p>
 
@@ -260,7 +260,7 @@ const DIFFERENTIATOR = () => {
                   <div className="absolute top-0 right-0 w-48 h-48 bg-[#f7d83c]/5 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2 group-hover:bg-[#f7d83c]/15 transition-colors duration-700 pointer-events-none"></div>
 
                   {/* Large Background Number */}
-                  <div className="absolute bottom-35 right-6 md:-bottom-1 md:-right-0 text-[4rem] md:text-[7rem] font-bold text-gray-50 group-hover:text-gray-900 transition-colors duration-700 pointer-events-none select-none leading-none">
+                  <div className="absolute bottom-35 right-6 md:-bottom-1 md:-right-0 text-[4rem] md:text-[7rem] font-bold text-gray-700 group-hover:text-gray-900 transition-colors duration-700 pointer-events-none select-none leading-none">
                     0{i + 1}
                   </div>
 
@@ -306,7 +306,7 @@ const DIFFERENTIATOR = () => {
           </div>
 
           {/* 🔥 GRID */}
-          <div className="grid client-grid-container grid-cols-2 lg:grid-cols-4 overflow-hidden rounded-4xl">
+          <div className="grid client-grid-container md:px-20 grid-cols-2 md:grid-cols-3 lg:grid-cols-6 overflow-hidden ">
             {clients.map((client, index) => (
               <ClientCard
                 key={client.name}

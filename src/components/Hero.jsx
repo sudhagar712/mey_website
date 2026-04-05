@@ -74,12 +74,21 @@ const Hero = () => {
 
         {/* Content Box */}
         <motion.div
-          className="flex flex-col  text-center  mt-10 px-5 items-center max-w-4xl mx-auto mb-5"
+          className="flex flex-col  text-center   mt-10 px-5 items-center max-w-4xl mx-auto mb-5"
           initial={{ y: 16, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
+          {/* Subtle Grid Background */}
+          <div
+            className="absolute inset-0 pointer-events-none opacity-[0.05]"
+            style={{
+              backgroundImage:
+                "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
+              backgroundSize: "4rem 4rem",
+            }}
+          />
           <p className="text-2xl md:text-5xl  lg:text-3xl text-black/80    leading-[1.6] mb-10">
             We build{" "}
             <span className="   border-b border-black/30 text-[#fec000] ">

@@ -145,7 +145,7 @@ const ContactForm = () => {
 
               <div className="mb-12">
                 <h3
-                  className="text-4xl md:text-5xl text-white font-bold tracking-tighter mb-3"
+                  className="text-4xl md:text-5xl text-yellow-500 font-bold tracking-tighter mb-3"
                   style={{ fontFamily: "Montserrat, sans-serif" }}
                 >
                   Start a Conversation
@@ -160,7 +160,7 @@ const ContactForm = () => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-8 mb-8">
                 <div className="flex flex-col relative group/input">
-                  <label className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-white mb-3 transition-colors group-focus-within/input:text-black">
+                  <label className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-yellow-500 mb-3 transition-colors group-focus-within/input:text-black">
                     Your Name *
                   </label>
                   <input
@@ -183,7 +183,7 @@ const ContactForm = () => {
                   )}
                 </div>
                 <div className="flex flex-col relative group/input">
-                  <label className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-white mb-3 transition-colors group-focus-within/input:text-black">
+                  <label className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-yellow-500 mb-3 transition-colors group-focus-within/input:text-black">
                     Company
                   </label>
                   <input
@@ -199,7 +199,7 @@ const ContactForm = () => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8">
                 <div className="flex flex-col relative group/input">
-                  <label className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-white mb-3 transition-colors group-focus-within/input:text-black">
+                  <label className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-yellow-500 mb-3 transition-colors group-focus-within/input:text-black">
                     Phone *
                   </label>
                   <input
@@ -222,7 +222,7 @@ const ContactForm = () => {
                   )}
                 </div>
                 <div className="flex flex-col relative group/input">
-                  <label className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-white mb-3 transition-colors group-focus-within/input:text-black">
+                  <label className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-yellow-500 mb-3 transition-colors group-focus-within/input:text-black">
                     Email *
                   </label>
                   <input
@@ -248,7 +248,7 @@ const ContactForm = () => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-10">
                 <div className="flex flex-col relative group/input">
-                  <label className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-white mb-3 transition-colors group-focus-within/input:text-black">
+                  <label className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-yellow-500 mb-3 transition-colors group-focus-within/input:text-black">
                     Service Required
                   </label>
                   <div className="relative">
@@ -285,7 +285,7 @@ const ContactForm = () => {
                   </div>
                 </div>
                 <div className="flex flex-col relative group/input">
-                  <label className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-white mb-3 transition-colors group-focus-within/input:text-black">
+                  <label className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-yellow-500 mb-3 transition-colors group-focus-within/input:text-black">
                     Budget Range
                   </label>
                   <div className="relative">
@@ -324,7 +324,7 @@ const ContactForm = () => {
               </div>
 
               <div className="flex flex-col relative group/input mb-12">
-                <label className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-white mb-3 transition-colors group-focus-within/input:text-black">
+                <label className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-yellow-500 mb-3 transition-colors group-focus-within/input:text-black">
                   Project Details
                 </label>
                 <textarea
@@ -342,7 +342,7 @@ const ContactForm = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   type="submit"
-                  className="bg-[#fbba00] text-white font-bold uppercase tracking-[0.2em] text-xs md:text-sm w-full sm:w-auto px-8 py-4 rounded-full  hover:text-black transition-all duration-300 flex items-center justify-center gap-4 shadow-xl shadow-black/10"
+                  className="bg-[#fbba00] text-gray-800 font-bold uppercase tracking-[0.2em] text-xs md:text-sm w-full sm:w-auto px-8 py-4 rounded-full  hover:text-black transition-all duration-300 flex items-center justify-center gap-4 shadow-xl shadow-black/10"
                 >
                   Send Brief
                   <svg

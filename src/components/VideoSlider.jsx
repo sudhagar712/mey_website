@@ -6,7 +6,15 @@ const videoSrc =
 
 const VideoSlider = () => {
   return (
-    <div className="w-full mt-10 flex flex-col items-center justify-center px-4 md:px-10 py-10">
+    <div className="w-full mt-10 flex flex-col items-center justify-center px-4 md:px-10 py-10 relative">
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
+          backgroundSize: "4rem 4rem",
+        }}
+      />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center max-w-7xl w-full">
         {/* LEFT CONTENT */}
         <motion.div
@@ -25,8 +33,6 @@ const VideoSlider = () => {
             Experience our events through immersive visuals and storytelling.
             Every frame captures energy, emotion, and unforgettable moments.
           </p>
-
-        
         </motion.div>
 
         {/* RIGHT VIDEO */}
@@ -48,13 +54,6 @@ const VideoSlider = () => {
           </div>
         </motion.div>
       </div>
-
-
-
-
-
-
-      
 
       {/* Custom Clip Path */}
       <style>
