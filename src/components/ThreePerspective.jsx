@@ -24,15 +24,15 @@ const sections = [
 
 const ThreePerspective = () => {
   return (
-    <section className="relative w-full bg-white py-32 overflow-hidden">
+    <section className="relative w-full bg-black py-32 overflow-hidden">
       {/* subtle grid */}
-      <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:60px_60px]" />
+      <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:60px_60px]" />
 
       <div className="max-w-[1100px] mx-auto px-6 relative z-10">
         {/* Title */}
         <div className="flex items-center gap-4 mb-6">
           <div className="w-10 h-[2px] bg-yellow-500"></div>
-          <h2 className="text-xs tracking-[0.4em] text-gray-400 uppercase">
+          <h2 className="text-xs tracking-[0.4em] text-gray-200 uppercase">
             Where It Began
           </h2>
         </div>
@@ -42,7 +42,7 @@ const ThreePerspective = () => {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-4xl font-bold leading-tight mb-20"
+          className="text-4xl font-bold text-white leading-tight mb-20"
         >
           MEY began with three friends from completely different worlds,
           brought together by a shared discomfort they couldn’t ignore.
@@ -92,12 +92,12 @@ const ThreePerspective = () => {
           transition={{ duration: 1 }}
           className="mt-32 text-center"
         >
-          <p className="text-3xl md:text-5xl font-bold leading-tight">
+          <p className="text-3xl md:text-5xl text-gray-600 font-bold leading-tight">
             Despite their differences, they kept arriving at the same
             realisation.
           </p>
 
-          <p className="text-xl md:text-2xl text-[#fec000] mt-4">
+          <p className="text-xl md:text-2xl text-white mt-5">
             Across industries, businesses were investing more into branding and
             marketing than ever before, yet becoming increasingly
             indistinguishable.

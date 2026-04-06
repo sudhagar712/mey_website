@@ -4,9 +4,9 @@ import about from "../assets/aboutro.png";
 
 const AboutMey = () => {
   return (
-    <section className="relative w-full bg-black text-white overflow-hidden py-20">
+    <section className="relative w-full overflow-hidden py-20">
       {/* Background subtle lines */}
-      <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:60px_60px]" />
+      <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:60px_60px]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-16">
         {/* LEFT CONTENT */}
@@ -20,7 +20,7 @@ const AboutMey = () => {
           {/* SMALL TITLE */}
           <div className="flex items-center gap-4 mb-6">
             <div className="w-10 h-[2px] bg-yellow-500"></div>
-            <h2 className="text-xs tracking-[0.4em] text-gray-400 uppercase">
+            <h2 className="text-xs tracking-[0.4em] text-gray-900 uppercase">
               About MEY
             </h2>
           </div>
@@ -30,12 +30,12 @@ const AboutMey = () => {
             The Truth Behind{" "}
             <span className="text-yellow-400 relative">
               Brands
-              <span className="absolute left-0 bottom-1 w-full h-[6px] bg-yellow-500/20 -z-10"></span>
+            
             </span>
           </h1>
 
           {/* CONTENT */}
-          <div className="space-y-6 text-gray-300 text-base sm:text-lg leading-relaxed">
+          <div className="space-y-6 text-gray-900 text-base sm:text-lg leading-relaxed">
             <p>
               Most brands don't fail because of poor design. They fail because
               they are built on assumptions, imitation, and noise.
@@ -47,7 +47,7 @@ const AboutMey = () => {
               survive.
             </p>
 
-            <p className="text-white font-medium ">
+            <p className="text-yellow-500 font-medium ">
               MEY exists to change that.
             </p>
 
@@ -68,7 +68,7 @@ const AboutMey = () => {
         >
           <div className="relative w-[300px] sm:w-[350px] lg:w-[450px] aspect-square">
             {/* Glass Circle */}
-            <div className="absolute inset-0 rounded-full bg-white/5 backdrop-blur-xl border border-white/10"></div>
+            <div className="absolute inset-0 rounded-full bg-yellow-50 backdrop-blur-xl border border-white/10"></div>
 
             {/* Rotating Image */}
             <motion.img
