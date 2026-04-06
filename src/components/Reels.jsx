@@ -119,54 +119,18 @@ const Reels = () => {
         {/* Header Section styled after the reference image */}
         <div className="relative mb-16 flex items-center justify-between">
           {/* Left Arrow (Hidden on Mobile, matching reference edge alignment) */}
-          <button
-            onClick={prevSlide}
-            aria-label="Previous Slide"
-            className="hidden md:flex w-14 h-14 rounded-full items-center justify-center bg-[#2d2d2d] text-white transition-all duration-300 cursor-pointer hover:bg-black shadow-lg hover:scale-105"
-          >
-            <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M19 12H5" /><path d="M12 19l-7-7 7-7" />
-            </svg>
-          </button>
+       
 
           <div className="text-center flex-1 max-w-4xl mx-auto px-4">
             <h2 className="text-4xl md:text-5xl  tracking-tight text-[#111]">Reels</h2>
 
           </div>
 
-          {/* Right Arrow */}
-          <button
-            onClick={nextSlide}
-            aria-label="Next Slide"
-            className="hidden md:flex w-14 h-14 rounded-full items-center justify-center bg-[#2d2d2d] text-white transition-all duration-300 cursor-pointer hover:bg-black shadow-lg hover:scale-105"
-          >
-            <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14" /><path d="M12 5l7 7-7 7" />
-            </svg>
-          </button>
+        
         </div>
 
         {/* Mobile Controls */}
-        <div className="flex justify-center mb-10 gap-10 md:hidden">
-          <button
-            onClick={prevSlide}
-            aria-label="Previous Slide"
-            className="w-12 h-12 rounded-full bg-[#2d2d2d] text-white flex items-center justify-center transition-opacity hover:opacity-80 active:scale-95"
-          >
-            <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M19 12H5" /><path d="M12 19l-7-7 7-7" />
-            </svg>
-          </button>
-          <button
-            onClick={nextSlide}
-            aria-label="Next Slide"
-            className="w-12 h-12 rounded-full bg-[#2d2d2d] text-white flex items-center justify-center transition-opacity hover:opacity-80 active:scale-95"
-          >
-            <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14" /><path d="M12 5l7 7-7 7" />
-            </svg>
-          </button>
-        </div>
+    
 
         {/* 3D Coverflow Carousel Container */}
         <div

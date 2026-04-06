@@ -47,53 +47,83 @@ const Work = () => {
 
       <Motionposter />
 
-      <div className=" bg-black  py-20 px-6 md:px-40 relative">
+      <div className="bg-black py-20 md:py-32 px-6 md:px-20 relative overflow-hidden">
+        {/* GRID BACKGROUND */}
         <div
-          className="absolute inset-0 pointer-events-none opacity-[0.05]"
+          className="absolute inset-0 opacity-[0.05]"
           style={{
             backgroundImage:
-              "linear-gradient(#faf8f8ff 1px, transparent 1px), linear-gradient(90deg, #faf8f8ff 1px, transparent 1px)",
+              "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
             backgroundSize: "4rem 4rem",
           }}
         />
-        <h2 className="text-3xl md:text-6xl text-yellow-500 font-bold mb-12 ">
-          Projects
-        </h2>
 
-        <div className="grid md:grid-cols-2 gap-10">
+        {/* GLOW */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#fec000]/10 blur-[120px]" />
+
+        {/* TITLE */}
+        <div className="max-w-7xl mx-auto mb-16 md:mb-24">
+          <p className="text-xs tracking-[0.4em] text-gray-500 uppercase mb-4">
+            Selected Work
+          </p>
+
+          <h2 className="text-4xl md:text-6xl font-bold text-white">
+            Projects that <span className="text-[#fec000]">define impact</span>
+          </h2>
+        </div>
+
+        {/* GRID */}
+        <div className="max-w-7xl mx-auto grid sm:grid-cols-2 gap-6 md:gap-10">
           {projects.map((project, index) => (
             <motion.a
               key={index}
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ scale: 1.07 }}
-              className="group relative rounded-3xl overflow-hidden bg-black border border-white/10"
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              className="group relative rounded-3xl overflow-hidden"
             >
               {/* IMAGE */}
-              <div className=" overflow-hidden">
+              <div className="relative h-[280px] sm:h-[350px] md:h-[420px] overflow-hidden">
                 <img
-                  src={`${project.image}?auto=format&fit=crop&w=800&q=80`}
+                  src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                  className="w-full h-full object-fit transition duration-700 group-hover:scale-110"
                 />
+
+                {/* DARK OVERLAY */}
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-500" />
+
+                {/* GRADIENT */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
               </div>
 
-              {/* CONTENT */}
-              <div className="p-6 bg-yellow-500">
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className=" text-sm">{project.description}</p>
+              {/* CONTENT FLOAT (GLASS STYLE) */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                <div className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl p-5 md:p-6 transition-all duration-500 group-hover:bg-white/20">
+                  <h3 className="text-lg md:text-2xl font-semibold text-white">
+                    {project.title}
+                  </h3>
+
+                  <p className="text-sm md:text-base text-gray-300 mt-2">
+                    {project.description}
+                  </p>
+
+                  {/* CTA */}
+                  <div className="mt-4 inline-flex items-center gap-2 text-[#fec000] text-sm">
+                    View Project
+                    <span className="group-hover:translate-x-1 transition">
+                      →
+                    </span>
+                  </div>
+                </div>
               </div>
 
-              {/* HOVER OVERLAY */}
-              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                <span className="text-white border border-white px-4 py-2 rounded-full">
-                  View Project →
-                </span>
-              </div>
+              {/* BORDER GLOW */}
+              <div className="absolute inset-0 rounded-3xl border border-white/10 group-hover:border-[#fec000]/40 transition duration-500 pointer-events-none" />
             </motion.a>
           ))}
         </div>

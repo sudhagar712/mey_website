@@ -41,10 +41,15 @@ const WeOperate = () => {
             </h2>
 
             <div className="border-l-2 border-yellow-500/50 pl-6 lg:pl-8 mt-8">
-              <p className="text-2xl md:text-3xl font-light text-neutral-300 leading-snug">
+              <p className="text-2xl md:text-2xl font-light text-neutral-300 leading-snug">
                 Our role is not to observe from the outside, but to <span className="font-semibold text-white">engage from within.</span>
               </p>
             </div>
+
+
+
+
+            
           </motion.div>
 
           {/* Right Column: Main Paragraph */}

@@ -1,93 +1,135 @@
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
-import i1 from "../assets/i1.png"
-import i2 from "../assets/i2.png"
+import i1 from "../assets/i1.png";
+import i2 from "../assets/i2.png";
 import i3 from "../assets/i3.png";
 import i4 from "../assets/i4.png";
 import i5 from "../assets/i1.png";
 
-
-
-const images = [
-  i1,i2,i3,i4,i5
-];
+const images = [i1, i2, i3, i4, i5];
 
 const PdfPreview = () => {
   const [index, setIndex] = useState(0);
 
-
-useEffect(() => {
-  const interval = setInterval(nextSlide, 3000);
-  return () => clearInterval(interval);
-}, []);
-
-
-
-
-  const prevSlide = () => {
-    setIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-  };
-
-  const nextSlide = () => {
-    setIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <div className="w-full bg-black  p-3 mb-4 px-4">
-      <div className="mt-10 ml-10 text-center mb-10">
-        <h1 className="text-2xl md:text-4xl text-white font-bold">Pitch Decks</h1>
-      </div>
-      {/* SLIDER */}
-      <div className="relative mx-auto w-full max-w-5xl h-[300px] md:h-[500px] lg:h-[600px] overflow-hidden rounded-2xl shadow-2xl">
-        {/* IMAGE */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.6 }}
-            className="absolute inset-0"
-          >
-            <img
+    <section className="bg-black py-20 md:py-32 px-4 md:px-30 relative overflow-hidden">
+      {/* GRID BACKGROUND */}
+      <div
+        className="absolute inset-0 opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
+          backgroundSize: "4rem 4rem",
+        }}
+      />
+
+      {/* GLOW */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#fec000]/10 blur-[120px]" />
+
+      <div className="max-w-7xl mx-auto">
+        {/* HEADER */}
+        <div className="mb-16 text-center">
+          <p className="text-xs tracking-[0.4em] text-gray-500 uppercase mb-4">
+            Presentation Work
+          </p>
+
+          <h2 className="text-4xl md:text-6xl font-bold text-white">
+            Pitch <span className="text-[#fec000]">Decks</span>
+          </h2>
+        </div>
+
+        {/* MAIN LAYOUT */}
+        <div className="grid md:grid-cols-[80px_1fr] gap-6 items-center">
+          {/* SIDE THUMBNAILS */}
+          <div className="hidden md:flex flex-col gap-4">
+            {images.map((img, i) => (
+              <div
+                key={i}
+                onClick={() => setIndex(i)}
+                className={`cursor-pointer rounded-xl overflow-hidden border ${
+                  i === index ? "border-[#fec000]" : "border-white/10"
+                }`}
+              >
+                <img src={img} className="w-full h-16 object-cover" />
+              </div>
+            ))}
+          </div>
+
+          {/* MAIN PREVIEW */}
+          <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl">
+            {/* IMAGE */}
+            <motion.img
+              key={index}
               src={images[index]}
-              alt="slider"
+              initial={{ opacity: 0, scale: 1.05 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7 }}
               className="w-full h-full object-cover"
             />
-          </motion.div>
-        </AnimatePresence>
 
-        {/* LEFT BUTTON */}
-        <button
-          onClick={prevSlide}
-          className="absolute top-1/2 left-4 -translate-y-1/2 bg-white/20 backdrop-blur-md p-3 rounded-full text-white hover:bg-white/40 transition"
-        >
-          ❮
-        </button>
+            {/* DARK OVERLAY */}
+            <div className="absolute inset-0 bg-black/40" />
 
-        {/* RIGHT BUTTON */}
-        <button
-          onClick={nextSlide}
-          className="absolute top-1/2 right-4 -translate-y-1/2 bg-white/20 backdrop-blur-md p-3 rounded-full text-white hover:bg-white/40 transition"
-        >
-          ❯
-        </button>
+            {/* PROGRESS BAR */}
+            <div className="absolute bottom-0 left-0 w-full h-[3px] bg-white/20">
+              <motion.div
+                key={index}
+                initial={{ width: 0 }}
+                animate={{ width: "100%" }}
+                transition={{ duration: 4, ease: "linear" }}
+                className="h-full bg-[#fec000]"
+              />
+            </div>
 
-        {/* DOTS */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+            {/* CONTROLS */}
+            <div className="absolute bottom-6 right-6 flex gap-3">
+              <button
+                onClick={() =>
+                  setIndex((prev) =>
+                    prev === 0 ? images.length - 1 : prev - 1,
+                  )
+                }
+                className="bg-white/10 backdrop-blur-md px-4 py-2 rounded-full text-white hover:bg-white/20"
+              >
+                ←
+              </button>
+
+              <button
+                onClick={() =>
+                  setIndex((prev) =>
+                    prev === images.length - 1 ? 0 : prev + 1,
+                  )
+                }
+                className="bg-[#fec000] text-black px-4 py-2 rounded-full font-medium"
+              >
+                →
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* MOBILE DOT NAV */}
+        <div className="flex justify-center mt-6 gap-2 md:hidden">
           {images.map((_, i) => (
             <div
               key={i}
               onClick={() => setIndex(i)}
-              className={`w-2.5 h-2.5 rounded-full cursor-pointer ${
-                i === index ? "bg-white" : "bg-white/40"
+              className={`h-2 rounded-full transition-all ${
+                i === index ? "w-6 bg-[#fec000]" : "w-2 bg-white/40"
               }`}
             />
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
