@@ -79,7 +79,7 @@ const About = () => {
         <PageBanner
           title="About us"
           breadcrumb="About us"
-          bgImage="https://cdn.mos.cms.futurecdn.net/XXzWLdqVL7V6dP4UkUJ6bK.jpg"
+          bgImage="https://assets.everspringpartners.com/2e/73/1d7a831b4814b8f9e7c86f743cd5/pl-what-is-international-business-1600x500.jpg"
         />
 
         <AboutMey />
@@ -117,7 +117,8 @@ const About = () => {
             </h4>
 
             <h2 className="text-3xl md:text-4xl  lg:text-5xl font-bold leading-snug md:leading-[1.3] text-[#111] tracking-tight mb-8">
-              If a brand feels unclear, inconsistent, or replaceable, the issue is rarely effort or visibility.
+              If a brand feels unclear, inconsistent, or replaceable, the issue
+              is rarely effort or visibility.
             </h2>
 
             <p className="text-2xl md:text-3xl font-medium text-gray-800 leading-snug mb-12">
