@@ -39,11 +39,11 @@ const Work = () => {
       />
 
       <Reels />
-      <VideoSlider />
 
       <Printcreative />
 
       <Digitalcreative />
+      <VideoSlider />
 
       <Motionposter />
 

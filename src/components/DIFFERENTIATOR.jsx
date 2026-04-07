@@ -17,6 +17,11 @@ import client13 from "../assets/client/Group 4.png";
 import client14 from "../assets/client/Leela.jpg";
 import client15 from "../assets/client/TUTR.png";
 import client16 from "../assets/client/TN Seivangai.png";
+import client17 from "../assets/client/Mahindra.png";
+import client18 from "../assets/client/MGM Healthcare.png";
+// import client19 from "../assets/client/Weddset GO.png";
+
+
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -28,44 +33,102 @@ import "aos/dist/aos.css";
 
 const differentiators = [
   {
-    title: 'Truth-First Strategy',
-    desc: 'We understand the real problem before designing the solution.',
+    title: "Truth-First Strategy",
+    desc: "We understand the real problem before designing the solution.",
     icon: (
-      <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <svg
+        className="w-10 h-10"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
         <circle cx="12" cy="12" r="9" strokeWidth="1" />
         <circle cx="12" cy="12" r="3" strokeWidth="1" fill="currentColor" />
       </svg>
     ),
+    image:
+      "https://cdn.prod.website-files.com/5a25950a9058c30001ce33a9/5d5d34f1da86c317ffff370d_jeshoots-com-fzOITuS1DIQ-unsplash.jpg",
   },
   {
-    title: 'Clarity Over Clutter',
-    desc: 'Every design decision must earn its place.',
+    title: "Clarity Over Clutter",
+    desc: "Every design decision must earn its place.",
     icon: (
-      <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="1" d="M4 4h16v16H4z" />
-        <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="1" d="M10 10h4v4h-4z" />
+      <svg
+        className="w-10 h-10"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="square"
+          strokeLinejoin="miter"
+          strokeWidth="1"
+          d="M4 4h16v16H4z"
+        />
+        <path
+          strokeLinecap="square"
+          strokeLinejoin="miter"
+          strokeWidth="1"
+          d="M10 10h4v4h-4z"
+        />
       </svg>
     ),
+    image:
+      "https://www.shutterstock.com/image-vector/messy-clean-computer-desks-top-600nw-2726301651.jpg",
   },
   {
-    title: 'First-Principles Thinking',
-    desc: 'No templates. Every project is built from scratch.',
+    title: "First-Principles Thinking",
+    desc: "No templates. Every project is built from scratch.",
     icon: (
-      <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="1" d="M12 2L2 12h3v8h14v-8h3L12 2z" />
+      <svg
+        className="w-10 h-10"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="square"
+          strokeLinejoin="miter"
+          strokeWidth="1"
+          d="M12 2L2 12h3v8h14v-8h3L12 2z"
+        />
       </svg>
     ),
+    image:
+      "https://i0.wp.com/muratbicak.com/wp-content/uploads/2019/10/muratbicak.com-First-Principles.jpg?fit=1200%2C675&ssl=1",
   },
   {
-    title: 'Built For Growth',
-    desc: 'We create brands that scale without losing identity.',
+    title: "Built For Growth",
+    desc: "We create brands that scale without losing identity.",
     icon: (
-      <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="1" d="M3 21h18" />
-        <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="1" d="M5 21v-8M12 21V9M19 21V4" />
-        <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth="1" d="M5 13l7-4 7-5" />
+      <svg
+        className="w-10 h-10"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="square"
+          strokeLinejoin="miter"
+          strokeWidth="1"
+          d="M3 21h18"
+        />
+        <path
+          strokeLinecap="square"
+          strokeLinejoin="miter"
+          strokeWidth="1"
+          d="M5 21v-8M12 21V9M19 21V4"
+        />
+        <path
+          strokeLinecap="square"
+          strokeLinejoin="miter"
+          strokeWidth="1"
+          d="M5 13l7-4 7-5"
+        />
       </svg>
     ),
+    image:
+      "https://m.economictimes.com/thumb/msid-57589484,width-1600,height-900,resizemode-4,imgsize-4240684/only-8-of-companies-manage-to-scale-heres-their-secret.jpg",
   },
 ];
 
@@ -88,6 +151,9 @@ const clients = [
   { name: "Client 14", logos: [client14, client15] },
   { name: "Client 15", logos: [client15, client16] },
   { name: "Client 16", logos: [client16, client1] },
+  { name: "Client 17", logos: [client17, client2] },
+  { name: "Client 18", logos: [client18, client3] },
+  // { name: "Client 19", logos: [client19, client4] },
 ];
 
 /* 🔥 Card Component */
@@ -213,37 +279,56 @@ const DIFFERENTIATOR = () => {
       </style>
 
       {/* 1. WHY MEY Section - Refined Proportions */}
-      <section className="bg-black py-20 md:py-32 px-4 md:px-8 lg:px-16 relative overflow-hidden">
+      <section className="bg-black py-20 md:py-32 px-4 md:px-8 lg:px-16 relative overflow-hidden ">
+        {/* Background subtle lines */}
+        <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:60px_60px]" />
+
         {/* Subtle Background Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
 
         <div className="max-w-[1250px] mx-auto relative z-10">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-
             {/* LEFT COLUMN - STICKY HEADINGS */}
             <div className="lg:col-span-5 lg:sticky lg:top-32">
-              <div className="inline-flex items-center gap-4 mb-6" data-aos="fade-up">
+              <div
+                className="inline-flex items-center gap-4 mb-6"
+                data-aos="fade-up"
+              >
                 <span className="w-8 h-[2px] bg-[#f7d83c]"></span>
                 <h4 className="text-xs tracking-[0.3em] uppercase font-bold text-white">
                   Our Approach
                 </h4>
               </div>
 
-              <h2 className="text-4xl md:text-6xl lg:text-[4.5rem] text-[#fec000] font-extrabold tracking-tight mb-6 x leading-[1.1]" data-aos="fade-up" data-aos-delay="100">
-              Why MEY
-               
+              <h2
+                className="text-4xl md:text-6xl lg:text-[4.5rem] text-[#fec000] font-extrabold tracking-tight mb-6 x leading-[1.1]"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                Why MEY
               </h2>
 
-              <p className="text-white text-sm md:text-base font-medium leading-relaxed max-w-[22rem] mb-10" data-aos="fade-up" data-aos-delay="200">
-                We don't rely on templates or safe choices. We engineer bespoke, scalable solutions built on solid first principles.
+              <p
+                className="text-white text-sm md:text-base font-medium leading-relaxed max-w-[22rem] mb-10"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                We don't rely on templates or safe choices. We engineer bespoke,
+                scalable solutions built on solid first principles.
               </p>
 
               {/* Animated Scroll Indicator */}
-              <div className="hidden lg:flex flex-col gap-3 items-start opacity-70" data-aos="fade-up" data-aos-delay="300">
+              <div
+                className="hidden lg:flex flex-col gap-3 items-start opacity-70"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
                 <div className="w-7 h-11 rounded-full border border-gray-300 flex justify-center p-1.5 relative">
                   <span className="w-1 h-2.5 bg-black rounded-full animate-bounce absolute top-1.5"></span>
                 </div>
-                <span className="text-[9px] tracking-[0.2em] font-bold text-gray-400 uppercase ml-0.5">Explore</span>
+                <span className="text-[9px] tracking-[0.2em] font-bold text-gray-400 uppercase ml-0.5">
+                  Explore
+                </span>
               </div>
             </div>
 
@@ -254,44 +339,59 @@ const DIFFERENTIATOR = () => {
                   key={i}
                   data-aos="fade-up"
                   data-aos-delay={i * 100}
-                  className="group relative bg-[#fec000] border border-gray-100 rounded-[1.5rem] p-8 hover:shadow-[0_15px_35px_-10px_rgba(0,0,0,0.05)] transition-all duration-500 overflow-hidden"
+                  className="group relative rounded-[1.5rem] overflow-hidden transition-all duration-500"
                 >
-                  {/* Hover Glow */}
-                  <div className="absolute top-0 right-0 w-48 h-48 bg-[#f7d83c]/5 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2 group-hover:bg-[#f7d83c]/15 transition-colors duration-700 pointer-events-none"></div>
+                  {/* Background Image */}
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
 
-                  {/* Large Background Number */}
-                  <div className="absolute bottom-35 right-6 md:-bottom-1 md:-right-0 text-[4rem] md:text-[7rem] font-bold text-gray-700 group-hover:text-gray-900 transition-colors duration-700 pointer-events-none select-none leading-none">
-                    0{i + 1}
-                  </div>
+                  {/* Yellow Overlay */}
+                  <div className="absolute inset-0 bg-[#fec000]/70 group-hover:bg-[#fec000]/80 transition-all duration-500"></div>
 
-                  <div className="relative z-10 flex flex-col md:flex-row items-start gap-6">
-                    {/* Icon */}
-                    <div className="flex-shrink-0 w-14 h-14 rounded-[1rem] bg-gray-50 border border-gray-100 flex items-center justify-center text-black  group-hover:border-black group-hover:-translate-y-1 transition-all duration-500 shadow-sm">
-                      <div className="scale-75">
-                        {item.icon}
-                      </div>
+                  {/* Gradient for readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+
+                  {/* Content */}
+                  <div className="relative z-10 p-8">
+                    {/* Glow */}
+                    <div className="absolute top-0 right-0 w-48 h-48 bg-white/10 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2 group-hover:bg-white/20 transition duration-700 pointer-events-none"></div>
+
+                    {/* Large Number */}
+                    <div className="absolute bottom-2 right-6 text-[4rem] md:text-[6rem] font-bold text-black/20 group-hover:text-black/30 transition duration-500 pointer-events-none select-none">
+                      0{i + 1}
                     </div>
 
-                    {/* Content */}
-                    <div className="pt-1">
-                      <h3 className="text-lg md:text-xl font-bold mb-2 text-gray-900 group-hover:text-black transition-colors">
-                        {item.title}
-                      </h3>
-                      <p className="text-gray-900 text-[14px] leading-relaxed">
-                        {item.desc}
-                      </p>
+                    <div className="flex flex-col md:flex-row items-start gap-6">
+                      {/* Icon */}
+                      <div className="w-14 h-14 rounded-xl bg-white/90 backdrop-blur border border-white/40 flex items-center justify-center text-black group-hover:-translate-y-1 transition duration-500 shadow-md">
+                        <div className="scale-75">{item.icon}</div>
+                      </div>
+
+                      {/* Text */}
+                      <div>
+                        <h3 className="text-lg md:text-xl font-bold mb-2 text-black">
+                          {item.title}
+                        </h3>
+                        <p className="text-black/90 text-[14px] leading-relaxed">
+                          {item.desc}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
-
           </div>
         </div>
       </section>
 
       {/* 2. SELECT CLIENTS Section */}
       <section className="bg-black py-32 md:py-40 px-2 md:px-12 lg:px-24 relative">
+        {/* Background subtle lines */}
+        <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:60px_60px]" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
         <div className="max-w-[1500px] mx-auto">
           {/* Heading */}
@@ -306,7 +406,7 @@ const DIFFERENTIATOR = () => {
           </div>
 
           {/* 🔥 GRID */}
-          <div className="grid client-grid-container md:px-20 grid-cols-2 md:grid-cols-3 lg:grid-cols-6 overflow-hidden ">
+          <div className="grid client-grid-container md:px-20 grid-cols-2 md:grid-cols-4 lg:grid-cols-6 overflow-hidden ">
             {clients.map((client, index) => (
               <ClientCard
                 key={client.name}
@@ -336,9 +436,7 @@ const DIFFERENTIATOR = () => {
         >
           <h2 className=" text-5xl sm:text-7xl md:text-[6rem] lg:text-[7.5rem] font-bold text-black tracking-tighter leading-[1.05] mb-6">
             Ready to build <br />
-            <span className=" font-light opacity-90">
-              with clarity?
-            </span>
+            <span className=" font-light opacity-90">with clarity?</span>
           </h2>
 
           <p
