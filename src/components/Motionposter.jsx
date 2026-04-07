@@ -20,10 +20,10 @@ const Motionposter = () => {
   const [active, setActive] = useState(null);
 
   return (
-    <section className="bg-white py-24 md:py-32 relative overflow-hidden">
+    <section className="bg-white py-24 md:py-32 relative overflow-hidden md:px-40">
       
       {/* Title */}
-      <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
+      <div className="max-w-7xl mx-auto px-3 mb-16 text-center">
         <p className="text-xs tracking-[0.4em] text-gray-400 uppercase mb-4">
           Visual Showcase
         </p>
@@ -34,11 +34,11 @@ const Motionposter = () => {
       </div>
 
       {/* GRID (STATIC HEIGHT → NO SHIFT) */}
-      <div className="max-w-9xl mx-auto px-5 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="max-w-9xl mx-auto px-5 grid grid-cols-1 md:grid-cols-1 gap-6">
         {videos.map((video, index) => (
           <div
             key={index}
-            className="relative h-[420px] md:h-[500px] rounded-3xl overflow-hidden cursor-pointer"
+            className="relative h-[420px] md:h-[600px] rounded-3xl overflow-hidden cursor-pointer"
             onClick={() => setActive(index)}
           >
             <video

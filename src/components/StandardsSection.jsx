@@ -1,205 +1,76 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 
-const icons = {
-  Clarity: (
-    <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 sm:w-8 sm:h-8">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z" />
-    </svg>
-  ),
-  Truth: (
-    <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 sm:w-8 sm:h-8">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
-    </svg>
-  ),
-  Design: (
-    <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 sm:w-8 sm:h-8">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M4.098 19.902a3.75 3.75 0 005.304 0l6.401-6.402M6.75 21A3.75 3.75 0 013 17.25V4.125C3 3.504 3.504 3 4.125 3h5.25c.621 0 1.125.504 1.125 1.125v4.072M6.75 21a3.75 3.75 0 003.75-3.75V8.197M6.75 21h13.125c.621 0 1.125-.504 1.125-1.125v-5.25c0-.621-.504-1.125-1.125-1.125h-4.072M10.5 8.197l2.88-2.88c.438-.439 1.15-.439 1.59 0l3.712 3.713c.44.44.44 1.152 0 1.59l-2.879 2.88M6.75 17.25h.008v.008H6.75v-.008z" />
-    </svg>
-  ),
-  Consistency: (
-    <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 sm:w-8 sm:h-8">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
-    </svg>
-  ),
-  Performance: (
-    <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 sm:w-8 sm:h-8">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
-    </svg>
-  )
-};
-
-const data = [
-  {
-    title: "Clarity is non-negotiable",
-    desc: "Complexity is often a sign of something unresolved. We strip it away until only truth remains.",
-    icon: icons.Clarity,
-  },
-  {
-    title: "Truth creates longevity",
-    desc: "Trends create dependency. A brand anchored in truth stands through every market shift.",
-    icon: icons.Truth,
-  },
-  {
-    title: "Design follows decisions",
-    desc: "Design is powerful only when it is guided by clear decisions. Aesthetics without strategy is decoration.",
-    icon: icons.Design,
-  },
-  {
-    title: "Consistency builds trust",
-    desc: "Recognition, trust, and recall are built through consistent identity over time — not campaigns.",
-    icon: icons.Consistency,
-  },
-  {
-    title: "A brand must ultimately perform",
-    desc: "If it does not contribute to growth, it does not work. Every branding decision must serve a business outcome.",
-    icon: icons.Performance,
-  },
+const drives = [
+  "Clarity is non-negotiable. Complexity is often a sign of something unresolved.",
+  "Truth creates longevity. Trends create dependency.",
+  "Design is powerful only when it is guided by clear decisions.",
+  "Consistency builds recognition, trust, and recall over time.",
+  "A brand must ultimately perform. If it does not contribute to growth, it does not work.",
 ];
 
-const StandardsSection = () => {
-  const [openIndex, setOpenIndex] = useState(0);
-
-  const toggleAccordion = (index) => {
-    setOpenIndex(openIndex === index ? -1 : index);
-  };
-
+const WhatDrivesUs = () => {
   return (
-    <section className="relative bg-white text-black py-24 md:py-32 overflow-hidden selection:bg-[#f1bd40] selection:text-white">
-      {/* Subtle Grid Background */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.05]"
-        style={{
-          backgroundImage:
-            "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
-          backgroundSize: "4rem 4rem",
-        }}
-      />
-      {/* Decorative background gradients for premium feel */}
-      <div className="absolute top-0 right-0 -mr-40 -mt-40 w-96 h-96 bg-gray-100/60 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 -ml-40 -mb-40 w-96 h-96 bg-[#f1bd40]/10 rounded-full blur-3xl pointer-events-none"></div>
+    <section className="relative w-full py-20 md:py-32 px-4 md:px-12 bg-black overflow-hidden">
+      {/* 🔥 Premium Ambient Glow */}
+      <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-[#fec000]/10 blur-[140px] -translate-x-1/2 -translate-y-1/2 opacity-40"></div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 grid lg:grid-cols-12 gap-16 lg:gap-24">
-        {/* Left Col: Sticky Header */}
-        <div className="lg:col-span-5 relative">
-          <div className="lg:sticky lg:top-40 self-start">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            >
-              <div className="flex items-center gap-4 mb-8">
-                <span className="text-xs tracking-[0.3em] font-bold uppercase text-gray-500">
-                  What Drives Us
-                </span>
-                <div className="w-12 h-[1px] bg-gray-300"></div>
-              </div>
+      {/* 🔲 Subtle Grid */}
+      <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:60px_60px]" />
 
-              <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl leading-[1.1] text-gray-900 tracking-tight">
-                The standards we hold <br className="hidden lg:block" />
-                <span className="text-gray-900 font-medium relative inline-block mt-2 lg:mt-4">
-                  non-negotiable.
-                  {/* Subtle highlight line */}
-                  <motion.div
-                    initial={{ scaleX: 0 }}
-                    whileInView={{ scaleX: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-                    className="absolute -bottom-2 left-0 right-0 h-[3px] bg-[#f1bd40] origin-left"
-                  ></motion.div>
-                </span>
-              </h2>
-
-              <p className="text-gray-500 max-w-md text-base sm:text-lg mt-10 leading-relaxed">
-                We believe in uncompromising quality. These principles guide every strategy we build and every pixel we push, ensuring lasting impact.
-              </p>
-            </motion.div>
-          </div>
+      <div className="relative z-10 max-w-5xl mx-auto">
+        {/* Title */}
+        <div className="text-center mb-24">
+          <h2 className="text-4xl md:text-6xl font-semibold text-white tracking-tight">
+            What Drives Us
+          </h2>
+          <p className="text-gray-400 mt-4 max-w-xl mx-auto text-lg">
+            Principles that define how we think, design, and build.
+          </p>
         </div>
 
-        {/* Right Col: Premium Black Accordion Items */}
-        <div className="lg:col-span-7 flex flex-col pt-8 lg:pt-0 gap-5 lg:gap-6">
-          {data.map((item, index) => {
-            const isOpen = openIndex === index;
+        <div className="relative">
+          {/* 🌟 Gradient Timeline */}
+          <div className="absolute left-4 md:left-1/2 md:-translate-x-1/2 top-0 w-[2px] h-full bg-gradient-to-b from-transparent via-[#fec000]/60 to-transparent" />
+
+          {drives.map((item, index) => {
+            const isLeft = index % 2 === 0;
 
             return (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-5%" }}
-                transition={{ duration: 0.7, delay: index * 0.1, ease: "easeOut" }}
-                className={`group relative overflow-hidden rounded-3xl transition-all duration-500 ease-in-out border-2 ${isOpen
-                    ? "bg-[#050505] border-[#f1bd40] shadow-[0_10px_40px_-10px_rgba(241,189,64,0.3)]"
-                    : "bg-[#0a0a0a] border-transparent hover:border-[#f1bd40]/30 hover:bg-[#111]"
-                  }`}
+                className="relative flex flex-col md:flex-row items-start md:items-center mb-20"
               >
-                {/* Subtle internal glow on active */}
+                {/* ✨ Glow Dot */}
+                <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 z-10">
+                  <div className="w-5 h-5 rounded-full bg-[#fec000] shadow-[0_0_20px_#fec000,0_0_40px_#fec000]"></div>
+                </div>
+
+                {/* Card */}
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br from-[#f1bd40]/10 to-transparent transition-opacity duration-500 pointer-events-none ${isOpen ? "opacity-100" : "opacity-0 group-hover:opacity-10"}`}
-                />
-
-                <button
-                  onClick={() => toggleAccordion(index)}
-                  className="w-full flex items-center justify-between text-left py-8 sm:py-9 px-6 sm:px-10 focus:outline-none cursor-pointer relative z-10"
+                  className={`w-full md:w-1/2 ${
+                    isLeft ? "md:pr-16 md:text-right" : "md:pl-16 md:ml-auto"
+                  } pl-10 md:pl-0`}
                 >
-                  <div className="flex items-center gap-6 sm:gap-8">
-                    {/* Premium Icon Container */}
-                    <div
-                      className={`flex-shrink-0 p-3 sm:p-4 rounded-2xl transition-all duration-500 ease-out border ${isOpen
-                          ? "bg-[#f1bd40]/10 border-[#f1bd40]/50 text-[#f1bd40] scale-110 shadow-[0_0_20px_rgba(241,189,64,0.2)]"
-                          : "bg-white/5 border-white/10 text-gray-500 group-hover:text-[#f1bd40] group-hover:border-[#f1bd40]/30 group-hover:bg-[#f1bd40]/5"
-                        }`}
-                    >
-                      {item.icon}
+                  <motion.div
+                    initial={{ opacity: 0, y: 60 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.15 }}
+                    viewport={{ once: true }}
+                    className="relative group"
+                  >
+                    {/* 💎 Glass Card */}
+                    <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:p-8 transition duration-500 group-hover:bg-white/10 group-hover:border-[#fec000]/40">
+                      {/* Glow Border */}
+                      <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 border border-[#fec000]/30 blur-[1px]" />
+
+                      <p className="text-gray-200 text-base md:text-lg leading-relaxed tracking-wide">
+                        {item}
+                      </p>
                     </div>
-
-                    {/* Title */}
-                    <h3
-                      className={`text-xl sm:text-2xl font-medium tracking-tight transition-all duration-500 ease-out ${isOpen
-                          ? "text-white translate-x-1 sm:translate-x-2"
-                          : "text-gray-400 group-hover:text-gray-200 group-hover:translate-x-1"
-                        }`}
-                    >
-                      {item.title}
-                    </h3>
-                  </div>
-
-                  {/* Plus/Cross Icon */}
-                  <div className="flex-shrink-0 ml-4 hidden sm:block">
-                    <motion.div
-                      animate={{ rotate: isOpen ? 45 : 0 }}
-                      transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
-                      className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center border transition-all duration-500 ease-out ${isOpen
-                          ? "border-[#f1bd40] text-[#f1bd40] bg-[#f1bd40]/10"
-                          : "border-gray-800 text-gray-600 group-hover:border-[#f1bd40]/50 group-hover:text-[#f1bd40]"
-                        }`}
-                    >
-                      <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                      </svg>
-                    </motion.div>
-                  </div>
-                </button>
-
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
-                    >
-                      <div className="pl-[5.5rem] sm:pl-[7.5rem] pr-8 sm:pr-12 pb-10 relative z-10">
-                        <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-2xl font-light">
-                          {item.desc}
-                        </p>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
+                  </motion.div>
+                </div>
+              </div>
             );
           })}
         </div>
@@ -208,5 +79,4 @@ const StandardsSection = () => {
   );
 };
 
-export default StandardsSection;
-
+export default WhatDrivesUs;

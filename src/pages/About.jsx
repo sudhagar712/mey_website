@@ -6,7 +6,7 @@ import ThreePerspective from '../components/ThreePerspective';
 import OutcomeSection from '../components/OutcomeSection';
 import WorkWithSection from '../components/WorkWithSection';
 import ProblemSection from '../components/ProblemSection';
-import StandardsSection from '../components/StandardsSection';
+import WhatDrivesUs from "../components/StandardsSection";
 import WeOperate from '../components/WeOperate';
 import HowWeThink from '../components/HowWeThink';
 import WhatMeyMeans from '../components/WhatMeyMeans';
@@ -92,7 +92,7 @@ const About = () => {
         <HowWeThink />
         <WeOperate />
 
-        <StandardsSection />
+        <WhatDrivesUs />
         <WorkWithSection />
         {/* Final Word Section */}
         <section className="w-full py-24 md:py-32 bg-[#fafafa] flex flex-col items-center justify-center px-4 md:px-12 border-t border-gray-200/50 relative overflow-hidden">

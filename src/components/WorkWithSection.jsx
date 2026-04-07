@@ -18,7 +18,9 @@ const features = [
 
 const WorkWithSection = () => {
   return (
-    <section className="bg-black text-white py-20 md:py-28 px-6 md:px-12 lg:px-20 overflow-hidden">
+    <section className="bg-black text-white py-20 md:py-28 px-6 md:px-12 lg:px-20 overflow-hidden relative">
+      {/* 🔲 Subtle Grid */}
+      <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:60px_60px]" />
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* LEFT CONTENT */}
         <div>

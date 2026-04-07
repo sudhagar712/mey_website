@@ -4,9 +4,9 @@ import about from "../assets/aboutro.png";
 
 const AboutMey = () => {
   return (
-    <section className="relative w-full overflow-hidden py-20">
+    <section className="relative w-full bg-black overflow-hidden py-20">
       {/* Background subtle lines */}
-      <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:60px_60px]" />
+      <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:60px_60px]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-16">
         {/* LEFT CONTENT */}
@@ -20,13 +20,13 @@ const AboutMey = () => {
           {/* SMALL TITLE */}
           <div className="flex items-center gap-4 mb-6">
             <div className="w-10 h-[2px] bg-yellow-500"></div>
-            <h2 className="text-xs tracking-[0.4em] text-gray-900 uppercase">
+            <h2 className="text-xs tracking-[0.4em] text-white uppercase">
               About MEY
             </h2>
           </div>
 
           {/* MAIN TITLE */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight mb-8">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white leading-tight mb-8">
             The Truth Behind{" "}
             <span className="text-yellow-400 relative">
               Brands
@@ -35,7 +35,7 @@ const AboutMey = () => {
           </h1>
 
           {/* CONTENT */}
-          <div className="space-y-6 text-gray-900 text-base sm:text-lg leading-relaxed">
+          <div className="space-y-6 text-white text-base sm:text-lg leading-relaxed">
             <p>
               Most brands don't fail because of poor design. They fail because
               they are built on assumptions, imitation, and noise.
@@ -68,7 +68,7 @@ const AboutMey = () => {
         >
           <div className="relative w-[300px] sm:w-[350px] lg:w-[450px] aspect-square">
             {/* Glass Circle */}
-            <div className="absolute inset-0 rounded-full bg-yellow-50 backdrop-blur-xl border border-white/10"></div>
+            <div className="absolute inset-0 rounded-full  backdrop-blur-xl border border-white/10"></div>
 
             {/* Rotating Image */}
             <motion.img
