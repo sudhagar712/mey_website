@@ -23,7 +23,7 @@ const PageBanner = ({ title, breadcrumb, bgImage }) => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
-          className="text-5xl md:text-7xl lg:text-[6rem] font-bold text-white "
+          className="text-5xl md:text-7xl lg:text-[6rem] font-bold text-black "
         >
           {title}
         </motion.h1>

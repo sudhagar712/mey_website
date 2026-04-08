@@ -5,10 +5,11 @@ const WhatMeyMeans = () => {
 
   const ScreenContent = ({ isMobile }) => (
     <div
-      className={`relative w-full h-full flex flex-col items-center justify-center text-center overflow-hidden
+      className={`relative w-full h-full flex flex-col items-center  justify-center text-center overflow-hidden
       ${isMobile ? "px-6 py-6" : "px-12 py-10 lg:px-20 lg:py-16"}
-      bg-gradient-to-br from-[#fbd415] via-[#ffe45e] to-[#fff3a3]`}
+      bg-gradient-to-br from-[#FEC000] via-[#FFD84D] to-[#FFF3A3]`}
     >
+ 
 
       {/* ✨ Shine Effect */}
       <div className="absolute inset-0 pointer-events-none">
@@ -19,34 +20,40 @@ const WhatMeyMeans = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
         className={`text-[#111] font-semibold tracking-[-0.02em]
         ${isMobile ? "text-2xl mb-8" : "text-4xl lg:text-5xl mb-12"}`}
       >
         What MEY Means
       </motion.h2>
 
-      <div className={`w-[70%] h-[1px] bg-black/10 ${isMobile ? "mb-8" : "mb-12"}`} />
+      <div className={`w-[90%] md:w-[70%] h-[1px] bg-black/10 mb-8 md:mb-12`} />
 
       <motion.h3
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.2 }}
+        viewport={{ once: true }}
         className={`font-semibold text-[#111] tracking-tight
         ${isMobile ? "text-[17px] mb-6" : "text-2xl lg:text-3xl mb-8"}`}
       >
         MEY stands for truth.
       </motion.h3>
 
-      <p className={`text-black/80 font-medium ${isMobile ? "text-[13px] mb-8" : "text-lg lg:text-xl mb-12"}`}>
+      <p
+        className={`text-black/80 font-medium ${isMobile ? "text-[13px] mb-8" : "text-lg lg:text-xl mb-12"}`}
+      >
         Not as a statement, but as a{" "}
         <span className="font-bold text-black border-b-[2px] border-black/80 pb-[1px]">
           standard.
         </span>
       </p>
 
-      <div className={`w-[70%] h-[1px] bg-black/10 ${isMobile ? "mb-8" : "mb-12"}`} />
+      <div className={`w-[90%] md:w-[70%] h-[1px] bg-black/10 mb-8 md:mb-12`} />
 
-      <p className={`text-black/90 font-medium ${isMobile ? "text-[12px] leading-[1.8]" : "text-[15px] lg:text-[18px] leading-[1.8] max-w-[85%]"}`}>
+      <p
+        className={`text-black/90 font-medium ${isMobile ? "text-[12px] leading-[1.8]" : "text-[15px] lg:text-[18px] leading-[1.8] max-w-[85%]"}`}
+      >
         At <span className="font-bold">MEY</span>, every brand we build
         {isMobile ? " " : <br />}
         or transform is anchored in one
@@ -60,9 +67,12 @@ const WhatMeyMeans = () => {
   );
 
   return (
-    <section className="relative w-full py-24 md:py-32 bg-white flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative w-full py-24 md:py-32 bg-black flex flex-col items-center justify-center overflow-hidden">
 
-      {/* 🌌 Premium Background Glow */}
+      {/* 🌟 Yellow Glow */}
+      <div className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-[#FEC000]/20 blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+
+      {/* 🌌 Subtle Background */}
       <div
         className="absolute inset-0 opacity-[0.4]"
         style={{
@@ -71,19 +81,15 @@ const WhatMeyMeans = () => {
         }}
       />
 
-      <div className="relative w-full max-w-[1000px] mx-auto px-4 md:px-0 flex justify-center items-center mt-10 md:mt-20 mb-20">
+      <div className="relative w-full max-w-[1100px] mx-auto px-4 md:px-0 flex justify-center items-center mt-10 md:mt-20 mb-20">
 
         {/* 💻 Laptop */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 30 }}
-          whileInView={{ opacity: 1, scale: 1, y: 0 }}
-          whileHover={{ scale: 1.03 }}
+          initial={{ opacity: 0, scale: 0.9, y: 80, rotateX: 15 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0, rotateX: 0 }}
+          transition={{ duration: 0.9, ease: "easeOut" }}
           animate={{ y: [0, -10, 0] }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
+          viewport={{ once: true }}
           className="relative w-full max-w-[800px] mx-auto z-10 hidden md:block"
         >
           <div className="relative w-full aspect-[16/10] bg-[#1a1a1a] rounded-[2rem] p-4 shadow-[0_40px_100px_rgba(0,0,0,0.25)]">
@@ -100,22 +106,18 @@ const WhatMeyMeans = () => {
           </div>
         </motion.div>
 
-        {/* 📱 Mobile */}
+        {/* 📱 Mobile (Same Feel) */}
         <motion.div
-          initial={{ opacity: 0, x: 50, y: 50 }}
-          whileInView={{ opacity: 1, x: 0, y: 0 }}
-          whileHover={{ scale: 1.05 }}
-          animate={{ y: [0, -8, 0], rotate: [0, 2, 0] }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 0.3
-          }}
-          className="md:absolute md:-right-8 lg:-right-16 md:-bottom-12 z-20 w-[280px] md:w-[320px] mx-auto"
+          initial={{ opacity: 0, y: 100, scale: 0.9 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          animate={{ y: [0, -6, 0] }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="md:absolute md:-right-8 lg:-right-16 md:-bottom-12 z-20 w-[85%] max-w-[320px] mx-auto"
         >
           <div className="relative w-full aspect-[9/19] bg-[#1a1a1a] rounded-[3rem] p-[14px] shadow-[0_30px_80px_rgba(0,0,0,0.35)] border-[4px] border-[#2A2A2A]">
 
+            {/* Notch */}
             <div className="absolute top-[14px] left-1/2 -translate-x-1/2 w-[45%] h-[28px] bg-[#1a1a1a] rounded-b-3xl z-30 flex justify-center items-center">
               <div className="w-12 h-[4px] bg-[#333] rounded-full mt-1"></div>
             </div>
@@ -133,7 +135,7 @@ const WhatMeyMeans = () => {
 
       </div>
 
-      {/* ✨ Shine Animation CSS */}
+      {/* ✨ Shine Animation */}
       <style>
         {`
           @keyframes shine {

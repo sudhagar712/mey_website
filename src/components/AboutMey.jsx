@@ -6,7 +6,7 @@ const AboutMey = () => {
   return (
     <section className="relative w-full bg-black overflow-hidden py-20">
       {/* Background subtle lines */}
-      <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:60px_60px]" />
+      <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,#fff_2px,transparent_1px),linear-gradient(to_bottom,#fff_2px,transparent_1px)] bg-[size:60px_60px]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-16">
         {/* LEFT CONTENT */}
@@ -20,7 +20,7 @@ const AboutMey = () => {
           {/* SMALL TITLE */}
           <div className="flex items-center gap-4 mb-6">
             <div className="w-10 h-[2px] bg-yellow-500"></div>
-            <h2 className="text-xs tracking-[0.4em] text-white uppercase">
+            <h2 className="text-md tracking-[0.4em] text-white uppercase">
               About MEY
             </h2>
           </div>
@@ -68,7 +68,7 @@ const AboutMey = () => {
         >
           <div className="relative w-[300px] sm:w-[350px] lg:w-[450px] aspect-square">
             {/* Glass Circle */}
-            <div className="absolute inset-0 rounded-full  backdrop-blur-xl border border-white/10"></div>
+            <div className="absolute inset-0 rounded-full  backdrop-blur-2xl border border-white/70"></div>
 
             {/* Rotating Image */}
             <motion.img
@@ -80,7 +80,7 @@ const AboutMey = () => {
             />
 
             {/* Outer Glow Ring */}
-            <div className="absolute inset-0 rounded-full border border-yellow-500/20 animate-pulse"></div>
+            <div className="absolute inset-0 rounded-full border border-yellow-500/40 animate-pulse"></div>
           </div>
         </motion.div>
       </div>

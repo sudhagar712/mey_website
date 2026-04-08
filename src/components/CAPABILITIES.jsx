@@ -88,15 +88,15 @@ const CAPABILITIES = () => {
       ref={sectionRef}
       className="bg-white py-24 px-4 md:px-12 relative lg:px-24"
     >
-       {/* Subtle Grid Background */}
-            <div
-              className="absolute inset-0 pointer-events-none opacity-[0.05]"
-              style={{
-                backgroundImage:
-                  "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
-                backgroundSize: "4rem 4rem",
-              }}
-            />
+      {/* Subtle Grid Background */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
+          backgroundSize: "4rem 4rem",
+        }}
+      />
       {/* Scroll animation styles */}
       <style>
         {`
@@ -113,10 +113,9 @@ const CAPABILITIES = () => {
       </style>
 
       <div className="max-w-[1400px] mx-auto">
-
         {/* HEADER */}
         <div className="mb-16 scroll-reveal">
-          <h4 className="text-xs tracking-[0.4em] uppercase font-bold text-black/60 mb-4">
+          <h4 className="text-md tracking-[0.4em] uppercase font-bold text-black/60 mb-4">
             Our Capabilities
           </h4>
 
@@ -198,7 +197,17 @@ const CAPABILITIES = () => {
                 onClick={closeModal}
                 className="absolute top-4 right-4 md:top-6 md:right-6 z-20 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full backdrop-blur-md transition-colors border border-white/10"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <path d="M18 6 6 18" />
                   <path d="m6 6 12 12" />
                 </svg>
@@ -250,7 +259,10 @@ const CAPABILITIES = () => {
                 </div>
 
                 <div className="mt-12">
-                  <button onClick={closeModal} className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-sm hover:bg-yellow-400 transition-colors duration-300 rounded-none">
+                  <button
+                    onClick={closeModal}
+                    className="px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-sm hover:bg-yellow-400 transition-colors duration-300 rounded-none"
+                  >
                     Close
                   </button>
                 </div>

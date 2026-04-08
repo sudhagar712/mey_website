@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-
+import { motion } from 'framer-motion';
 import client1 from "../assets/client/Aspire.png";
 import client2 from "../assets/client/BCG.png";
 import client3 from "../assets/client/Budanta.png";
@@ -19,7 +19,7 @@ import client15 from "../assets/client/TUTR.png";
 import client16 from "../assets/client/TN Seivangai.png";
 import client17 from "../assets/client/Mahindra.png";
 import client18 from "../assets/client/MGM Healthcare.png";
-// import client19 from "../assets/client/Weddset GO.png";
+import client19 from "../assets/client/Weddset GO.png";
 
 
 import AOS from "aos";
@@ -153,32 +153,50 @@ const clients = [
   { name: "Client 16", logos: [client16, client1] },
   { name: "Client 17", logos: [client17, client2] },
   { name: "Client 18", logos: [client18, client3] },
-  // { name: "Client 19", logos: [client19, client4] },
+  { name: "Client 19", logos: [client19, client4] },
 ];
 
-/* 🔥 Card Component */
+/* 🔥 COIN FLIP CARD */
 const ClientCard = ({ logos, delay }) => {
-  const [index, setIndex] = useState(0);
+  const [flipped, setFlipped] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % logos.length);
+      setFlipped((prev) => !prev);
     }, 2000);
 
     return () => clearInterval(interval);
-  }, [logos]);
+  }, []);
 
   return (
     <div
-      className="relative flex items-center justify-center p-5 md:p-10 border-b border-r border-[#ffffff10] transition-all duration-500"
+      className="relative flex items-center justify-center p-6 md:p-10 border-b border-r border-[#ffffff10] perspective group"
       style={{ animationDelay: `${delay}ms` }}
     >
-      <img
-        key={index}
-        src={logos[index]}
-        alt="client"
-        className="h-full object-contain transition-all duration-700 ease-in-out"
-      />
+      <motion.div
+        className="relative w-full h-full flex items-center justify-center p-10"
+        animate={{ rotateY: flipped ? 180 : 0 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        style={{ transformStyle: "preserve-3d" }}
+      >
+        {/* FRONT */}
+        <div className="absolute inset-0 flex items-center justify-center backface-hidden ">
+          <img
+            src={logos[0]}
+            alt="client"
+            className="h-12 md:h-20 object-contain transition duration-500 group-hover:scale-110"
+          />
+        </div>
+
+        {/* BACK */}
+        <div className="absolute inset-0 flex items-center justify-center backface-hidden rotate-y-180">
+          <img
+            src={logos[1]}
+            alt="client"
+            className="h-12 md:h-16 object-contain transition duration-500 group-hover:scale-110"
+          />
+        </div>
+      </motion.div>
     </div>
   );
 };
@@ -240,6 +258,41 @@ const DIFFERENTIATOR = () => {
     <>
       <style>
         {`
+
+
+                  .perspective {
+          perspective: 1000px;
+        }
+        .backface-hidden {
+          backface-visibility: hidden;
+        }
+        .rotate-y-180 {
+          transform: rotateY(180deg);
+        }
+
+        /* checkerboard */
+        .client-grid-container > div {
+          background-color: white;
+          color: black;
+        }
+
+        @media (min-width: 1024px) {
+          .client-grid-container > div:nth-child(8n + 2),
+          .client-grid-container > div:nth-child(8n + 4),
+          .client-grid-container > div:nth-child(8n + 5),
+          .client-grid-container > div:nth-child(8n + 7) {
+            background-color: #050505;
+            color: white;
+          }
+        }
+
+        @media (max-width: 1023px) {
+          .client-grid-container > div:nth-child(4n + 2),
+          .client-grid-container > div:nth-child(4n + 3) {
+            background-color: #050505;
+            color: white;
+          }
+        }
                 .scroll-fade-up {
                     opacity: 0;
                     transform: translateY(40px);
@@ -295,7 +348,7 @@ const DIFFERENTIATOR = () => {
                 data-aos="fade-up"
               >
                 <span className="w-8 h-[2px] bg-[#f7d83c]"></span>
-                <h4 className="text-xs tracking-[0.3em] uppercase font-bold text-white">
+                <h4 className="text-md tracking-[0.3em] uppercase font-bold text-white">
                   Our Approach
                 </h4>
               </div>
@@ -389,29 +442,26 @@ const DIFFERENTIATOR = () => {
       </section>
 
       {/* 2. SELECT CLIENTS Section */}
+      {/* 🔥 SELECT CLIENTS */}
       <section className="bg-black py-32 md:py-40 px-2 md:px-12 lg:px-24 relative">
-        {/* Background subtle lines */}
+        {/* background */}
         <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:60px_60px]" />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
+
         <div className="max-w-[1500px] mx-auto">
           {/* Heading */}
           <div className="mb-24 text-center">
-            <h4 className="text-[10px] text-white md:text-xs tracking-[0.4em] uppercase font-bold mb-6">
-              Select Clients
-            </h4>
-
             <h2 className="text-5xl text-[#fec000] md:text-7xl font-bold">
               Trusted By
             </h2>
           </div>
 
-          {/* 🔥 GRID */}
-          <div className="grid client-grid-container md:px-20 grid-cols-2 md:grid-cols-4 lg:grid-cols-6 overflow-hidden ">
+          {/* GRID */}
+          <div className="grid client-grid-container md:px-20 grid-cols-2 md:grid-cols-4  overflow-hidden">
             {clients.map((client, index) => (
               <ClientCard
                 key={client.name}
                 logos={client.logos}
-                delay={index * 200} // 🔥 wave delay
+                delay={index * 150}
               />
             ))}
           </div>

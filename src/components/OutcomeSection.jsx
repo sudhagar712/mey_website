@@ -4,7 +4,10 @@ import { Link } from "react-router-dom";
 
 const OutcomeSection = () => {
   return (
-    <section className="relative bg-black text-white py-24 md:py-32 px-6 overflow-hidden">
+    <section className="relative py-24 md:py-32 px-3 overflow-hidden">
+      {/* subtle grid */}
+      <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:60px_60px]" />
+
       {/* Background Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,215,0,0.08),transparent_60%)]" />
 
@@ -13,7 +16,7 @@ const OutcomeSection = () => {
         initial={{ opacity: 0, scale: 1.2 }}
         animate={{ opacity: 0.05, scale: 1 }}
         transition={{ duration: 1.5 }}
-        className="absolute text-[120px] md:text-[290px] font-serif text-white/50 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none"
+        className="absolute text-[120px] md:text-[300px] font-serif text-black left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none"
       >
         TRUTH
       </motion.h1>
@@ -26,51 +29,41 @@ const OutcomeSection = () => {
           transition={{ duration: 0.6 }}
           className="flex items-center justify-center gap-4 mb-8"
         >
-          <span className="text-xs tracking-[0.4em] text-[#f1bd40]">
+          {" "}
+          <div className="h-[4px] w-10 bg-[#f1bd40]" />
+          <span className="text-md tracking-[0.4em] font-bold text-black">
             THE OUTCOME
           </span>
-          <div className="h-[1px] w-16 bg-[#f1bd40]" />
         </motion.div>
 
         {/* Heading */}
-        <motion.h2
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-3xl md:text-6xl font-serif leading-tight"
-        >
-          Clearer. Stronger.
-        </motion.h2>
-
-        {/* Sub Heading */}
-        <motion.p
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="text-[#f1bd40] text-2xl md:text-5xl mt-4"
-        >
-          Impossible to ignore.
-        </motion.p>
 
         {/* Description */}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, delay: 0.4 }}
+          className=" text-2xl md:text-3xl mt-10   lg:text-6xl font-medium text-[#111] "
+        >
+          If a brand feels unclear, inconsistent, or replaceable, the issue is
+          rarely effort or visibility.
+        </motion.h1>
+
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.4 }}
-          className="text-white/60 mt-8 text-sm md:text-lg leading-relaxed max-w-2xl mx-auto"
+          className=" mt-8 text-sm md:text-lg leading-relaxed max-w-2xl mx-auto"
         >
-          If a brand feels unclear, inconsistent, or replaceable, the issue is
-          rarely effort or visibility. It is a lack of alignment at its core.
+          It is a lack of alignment at its core.
         </motion.p>
 
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.4, delay: 0.6 }}
-          className="text-white/50 mt-4"
-        >
-          That is where MEY begins.
-        </motion.p>
+        <div className="inline-block mt-4 md:mt-8">
+          <p className="text-lg md:text-xl font-extrabold text-[#111] uppercase tracking-[0.2em] relative">
+            That is where MEY begins
+            <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-12 h-[3px] bg-yellow-400"></span>
+          </p>
+        </div>
 
         {/* Button */}
         <motion.div
@@ -79,7 +72,7 @@ const OutcomeSection = () => {
           transition={{ duration: 1.6, delay: 0.8 }}
           className="mt-10"
         >
-          <button className="relative px-8 py-4 border border-[#f1bd40] text-[#f1bd40] tracking-[0.2em] text-sm overflow-hidden group">
+          <button className="relative px-8 py-4 border-3 border-[#f1bd40] text-[#f1bd40] font-bold tracking-[0.2em] text-sm overflow-hidden group">
             {/* Hover Fill */}
             <span className="absolute inset-0 bg-[#f1bd40] translate-y-full group-hover:translate-y-0 transition duration-500 ease-in-out" />
 

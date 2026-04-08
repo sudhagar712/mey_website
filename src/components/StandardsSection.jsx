@@ -11,60 +11,90 @@ const drives = [
 
 const WhatDrivesUs = () => {
   return (
-    <section className="relative w-full py-20 md:py-32 px-4 md:px-12 bg-black overflow-hidden">
-      {/* 🔥 Premium Ambient Glow */}
-      <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-[#fec000]/10 blur-[140px] -translate-x-1/2 -translate-y-1/2 opacity-40"></div>
+    <section className="relative w-full py-24 md:py-32 px-4 md:px-12 bg-[#fafafa] overflow-hidden">
+      {/* 🌤 Premium Ambient */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(254,192,0,0.15),transparent_10%)]"></div>
 
-      {/* 🔲 Subtle Grid */}
-      <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:60px_60px]" />
+      {/* 🔲 Grid */}
+      <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:60px_60px]" />
 
-      <div className="relative z-10 max-w-5xl mx-auto">
-        {/* Title */}
-        <div className="text-center mb-24">
-          <h2 className="text-4xl md:text-6xl font-semibold text-white tracking-tight">
+      <div className="relative z-10 max-w-6xl mx-auto">
+        {/* 🏆 Heading */}
+        <div className="text-center mb-16 md:mb-24">
+          <h2 className="text-4xl md:text-6xl font-semibold text-black tracking-tight">
             What Drives Us
           </h2>
-          <p className="text-gray-400 mt-4 max-w-xl mx-auto text-lg">
-            Principles that define how we think, design, and build.
+          <p className="text-yellow-500 mt-4 max-w-xl mx-auto text-base md:text-lg">
+            The principles behind everything we create.
           </p>
         </div>
 
-        <div className="relative">
-          {/* 🌟 Gradient Timeline */}
-          <div className="absolute left-4 md:left-1/2 md:-translate-x-1/2 top-0 w-[2px] h-full bg-gradient-to-b from-transparent via-[#fec000]/60 to-transparent" />
+        {/* 📱 MOBILE = STACKED CARDS */}
+        <div className="flex flex-col gap-6 md:hidden">
+          {drives.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 40, scale: 0.96 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="relative group"
+            >
+              <div className="bg-black rounded-2xl p-6 shadow-[0_10px_30px_rgba(0,0,0,0.06)] border-2 border-white">
+                {/* 🔢 Big Number */}
+                <div className="text-5xl font-bold text-[#fec000] mb-4">
+                  {String(index + 1).padStart(2, "0")}
+                </div>
+
+                {/* ✨ Accent */}
+                <div className="h-[3px] w-10 bg-[#fec000] mb-4 rounded-full"></div>
+
+                <p className="text-white  leading-relaxed text-base ">
+                  {item}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* 💻 DESKTOP TIMELINE */}
+        <div className="hidden md:block relative">
+          {/* Line */}
+          <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[2px] h-full bg-gradient-to-b from-transparent via-[#fec000] to-transparent" />
 
           {drives.map((item, index) => {
             const isLeft = index % 2 === 0;
 
             return (
-              <div
-                key={index}
-                className="relative flex flex-col md:flex-row items-start md:items-center mb-20"
-              >
-                {/* ✨ Glow Dot */}
-                <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 z-10">
-                  <div className="w-5 h-5 rounded-full bg-[#fec000] shadow-[0_0_20px_#fec000,0_0_40px_#fec000]"></div>
+              <div key={index} className="relative flex items-center mb-24">
+                {/* Dot */}
+                <div className="absolute left-1/2 -translate-x-1/2 z-10">
+                  <div className="w-4 h-4 bg-[#fec000] rounded-full shadow-[0_0_20px_rgba(254,192,0,0.6)]"></div>
                 </div>
 
-                {/* Card */}
+                {/* Content */}
                 <div
-                  className={`w-full md:w-1/2 ${
-                    isLeft ? "md:pr-16 md:text-right" : "md:pl-16 md:ml-auto"
-                  } pl-10 md:pl-0`}
+                  className={`w-1/2 ${
+                    isLeft ? "pr-16 text-right" : "pl-16 ml-auto"
+                  }`}
                 >
                   <motion.div
                     initial={{ opacity: 0, y: 60 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.15 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="relative group"
+                    className="group"
                   >
-                    {/* 💎 Glass Card */}
-                    <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 md:p-8 transition duration-500 group-hover:bg-white/10 group-hover:border-[#fec000]/40">
-                      {/* Glow Border */}
-                      <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 border border-[#fec000]/30 blur-[1px]" />
+                    <div className="relative bg-black p-8 rounded-2xl border border-gray-200 shadow-[0_10px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_25px_80px_rgba(0,0,0,0.12)] transition duration-500">
+                      {/* 🔢 Number */}
+                      <div className="absolute -top-6 text-6xl font-bold text-[#fec000]">
+                        {String(index + 1).padStart(2, "0")}
+                      </div>
 
-                      <p className="text-gray-200 text-base md:text-lg leading-relaxed tracking-wide">
+                      {/* Accent Line */}
+                      <div className="h-[3px] w-12 bg-[#fec000] mb-4 rounded-full"></div>
+
+                      <p className="text-white text-3xl font-bold leading-relaxed">
                         {item}
                       </p>
                     </div>

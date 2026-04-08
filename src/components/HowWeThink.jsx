@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import lol from "../assets/newpp.png"
 
 const HowWeThink = () => {
     return (
@@ -29,12 +30,12 @@ const HowWeThink = () => {
           >
             <div className="flex items-center gap-4 mb-8">
               <span className="w-12 h-[2px] bg-yellow-500"></span>
-              <h4 className="text-gray-500 font-bold tracking-[0.2em] uppercase text-sm md:text-base">
+              <h4 className="text-gray-800 font-bold tracking-[0.2em] uppercase text-md md:text-base">
                 How We Think
               </h4>
             </div>
 
-            <h2 className="text-4xl md:text-5xl lg:text-5xl font-light mb-8 leading-tight md:leading-[1.1] tracking-tight text-gray-900">
+            <h2 className="text-3xl md:text-5xl lg:text-5xl font-light mb-8 leading-tight md:leading-[1.1] tracking-tight text-gray-900">
               We don’t begin with design or marketing.{" "}
               <br className="hidden lg:block" />
               <span className="font-extrabold text-[#111] block mt-2 lg:mt-4">
@@ -44,12 +45,12 @@ const HowWeThink = () => {
 
             <div className="w-20 h-[2px] bg-gray-200 mb-8" />
 
-            <p className="text-gray-600 text-lg md:text-xl font-light leading-relaxed mb-6">
+            <p className="text-gray-600 text-md md:text-lg font-light leading-relaxed mb-6">
               We look at what the brand truly represents, what it can own in the
               market, and why it deserves to be chosen. This clarity becomes the
               foundation on which everything else is built.
             </p>
-            <p className="text-gray-800 text-lg md:text-xl font-medium leading-relaxed">
+            <p className="text-gray-800 text-md md:text-lg font-medium leading-relaxed">
               Across different industries and stages of growth, this approach
               has consistently shifted brands from being noticed to{" "}
               <span className="text-yellow-600 font-bold">
@@ -68,7 +69,7 @@ const HowWeThink = () => {
           >
             {/* Abstract Business / Strategy / Network video acting as GIF. Dark video elegantly contrasts White UI */}
             <img
-              src="https://switchthinking.net/wp-content/uploads/2024/03/thinkoutside-the-box.png.webp"
+              src={lol}
               alt=""
             />
 

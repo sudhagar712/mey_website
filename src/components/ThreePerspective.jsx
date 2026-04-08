@@ -1,103 +1,110 @@
 import React from "react";
 import { motion } from "framer-motion";
-
-const sections = [
-  {
-    title: "01",
-    text: "One approached brands through strategy, constantly analysing positioning, market gaps, and the invisible forces that influence choice.",
-    image:
-      "https://www.outsourceaccelerator.com/wp-content/uploads/2021/12/10-types-of-brand-strategy-that-will-help-your-business-succeed.png",
-  },
-  {
-    title: "02",
-    text: "Another saw brands through creativity, understanding how design, storytelling, and visual memory shape perception.",
-    image:
-      "https://media.licdn.com/dms/image/v2/D5612AQFIYDoCeowdSw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1714746366526?e=2147483647&v=beta&t=zVmONTCqRQkx2bEVCHIefwp6w_GI4Yn6efQ_tO0X4IA",
-  },
-  {
-    title: "03",
-    text: "The third came from a business lens, recognising that a brand is not just identity, but a system that either drives growth or silently limits it.",
-    image:
-      "https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1600",
-  },
-];
+import three from "../assets/threefnds2.jpg";
 
 const ThreePerspective = () => {
   return (
-    <section className="relative w-full  py-32 overflow-hidden">
-      {/* subtle grid */}
-      <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:60px_60px]" />
+    <section className="relative w-full py-24 md:py-32 bg-[#fafafa] overflow-hidden">
+      {/* 🌟 Ambient Glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(254,192,0,0.12),transparent_60%)]" />
 
-      <div className="max-w-[1100px] mx-auto px-6 relative z-10">
-        {/* Title */}
+      {/* 🔲 Grid */}
+      <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:60px_60px]" />
+
+      <div className="max-w-[1100px] mx-auto px-4 md:px-6 relative z-10">
+        {/* 🔖 Label */}
         <div className="flex items-center gap-4 mb-6">
-          <div className="w-10 h-[2px] bg-yellow-500"></div>
-          <h2 className="text-xs tracking-[0.4em]  uppercase">
+          <div className="w-16 h-[3px] bg-[#FEC000]"></div>
+          <h2 className="text-md tracking-[0.4em] font-semibold uppercase text-gray-600">
             Where It Began
           </h2>
         </div>
 
-        {/* Heading */}
+        {/* 🧠 Heading */}
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="text-3xl font-bold leading-tight mb-20"
+          transition={{ duration: 0.8 }}
+          className="text-2xl md:text-4xl font-semibold leading-tight mb-12 md:mb-16 text-gray-900 max-w-2xl"
         >
-          MEY began with three friends from completely different worlds,
-          brought together by a shared discomfort they couldn’t ignore.
+          MEY began with three friends from completely different worlds, brought
+          together by a shared discomfort they couldn’t ignore.
         </motion.h2>
 
-        {/* Cards */}
-        <div className="space-y-16">
-          {sections.map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 80 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="relative group rounded-3xl overflow-hidden shadow-xl"
-            >
-              {/* Image */}
-              <img
-                src={item.image}
-                alt="card"
-                className="w-full h-[400px] object-cover group-hover:scale-105 transition duration-700"
-              />
+        {/* 💎 MAIN LAYOUT */}
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+          {/* 🖼 IMAGE LEFT */}
+          <motion.div
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="relative w-full h-[260px] sm:h-[320px] md:h-[420px] lg:h-[480px] rounded-3xl overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.15)]"
+          >
+            <img
+              src={three}
+              alt="three friends"
+              className="w-full h-full object-cover object-center"
+            />
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition duration-500" />
+            {/* subtle overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+          </motion.div>
 
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+          {/* 📖 CONTENT RIGHT */}
+          <motion.div
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="relative bg-white/70 backdrop-blur-xl border border-white/50 rounded-3xl p-6 md:p-10 shadow-[0_10px_50px_rgba(0,0,0,0.08)]">
+              {/* ✨ Accent */}
+              <div className="h-[3px] w-12 bg-[#FEC000] mb-6 rounded-full"></div>
 
-              {/* Content */}
-              <div className="absolute bottom-0 p-8 text-white max-w-2xl">
-                <span className="text-5xl font-bold text-[#fec000]">
-                  {item.title}
-                </span>
+              {/* Story */}
+              <div className="space-y-6 text-gray-700 leading-relaxed text-[15px] md:text-lg">
+                <p>
+                  One approached brands through{" "}
+                  <span className="font-semibold text-gray-900">strategy</span>{" "}
+                  — constantly analysing positioning, market gaps, and the
+                  invisible forces that influence choice.
+                </p>
 
-                <p className="mt-4 text-lg md:text-xl leading-relaxed">
-                  {item.text}
+                <p>
+                  Another saw brands through{" "}
+                  <span className="font-semibold text-gray-900">
+                    creativity
+                  </span>{" "}
+                  — understanding how design, storytelling, and visual memory
+                  shape perception.
+                </p>
+
+                <p>
+                  And another focused on{" "}
+                  <span className="font-semibold text-gray-900">execution</span>{" "}
+                  — ensuring that ideas are not just imagined, but built with
+                  clarity, consistency, and impact.
                 </p>
               </div>
-            </motion.div>
-          ))}
+
+              {/* hover glow */}
+              <div className="absolute inset-0 rounded-3xl border border-transparent hover:border-[#FEC000]/40 transition duration-500"></div>
+            </div>
+          </motion.div>
         </div>
 
-        {/* Final Section */}
+        {/* 🎯 FINAL LINE */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1 }}
-          className="mt-32 text-center"
+          transition={{ duration: 0.8 }}
+          className="mt-16 md:mt-20 text-center"
         >
-          <p className="text-3xl md:text-5xl  font-bold leading-tight">
+          <p className="text-xl md:text-3xl font-semibold text-gray-900 leading-tight">
             Despite their differences, they kept arriving at the same
             realisation.
           </p>
 
-          <p className="text-xl md:text-xl  mt-5">
+          <p className="mt-5">
             Across industries, businesses were investing more into branding and
             marketing than ever before, yet becoming increasingly
             indistinguishable.

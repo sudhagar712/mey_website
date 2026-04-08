@@ -26,10 +26,10 @@ const WorkWithSection = () => {
         <div>
           {/* Label */}
           <div className="flex items-center gap-4 mb-8">
-            <span className="text-xs tracking-[0.4em] text-[#f1bd40]">
+            <div className="h-[1px] w-10 bg-[#f1bd40]" />
+            <span className="text-md font-bold tracking-[0.4em] text-[#f1bd40]">
               WHO WE WORK WITH
             </span>
-            <div className="h-[1px] w-16 bg-[#f1bd40]" />
           </div>
 
           {/* Heading */}
