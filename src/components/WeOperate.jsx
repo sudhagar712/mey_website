@@ -23,7 +23,7 @@ const WeOperate = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="lg:w-1/2 space-y-8"
+            className="lg:w-1/2 space-y-8 "
           >
             {/* Label */}
             <div className="flex items-center gap-4 mb-8">
@@ -33,7 +33,7 @@ const WeOperate = () => {
               </span>
             </div>
 
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight leading-[1.05]">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.05]">
               How We{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-600 block mt-2">
                 Operate
@@ -41,7 +41,7 @@ const WeOperate = () => {
             </h2>
 
             <div className="border-l-2 border-yellow-500/50 pl-6 lg:pl-8 mt-8">
-              <p className="text-2xl md:text-2xl font-light text-neutral-300 leading-snug">
+              <p className="text-2xl md:text-4xl font-light text-neutral-300 leading-snug">
                 Our role is not to observe from the outside, but to{" "}
                 <span className="font-semibold text-white">
                   engage from within.

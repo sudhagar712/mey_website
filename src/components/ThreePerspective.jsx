@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import three from "../assets/threefnds2.jpg";
+import three from "../assets/ff.png";
 
 const ThreePerspective = () => {
   return (
@@ -25,7 +25,7 @@ const ThreePerspective = () => {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-2xl md:text-4xl font-semibold leading-tight mb-12 md:mb-16 text-gray-900 max-w-2xl"
+          className="text-2xl md:text-5xl font-semibold leading-tight mb-12 md:mb-16 text-gray-900 max-w-9xl"
         >
           MEY began with three friends from completely different worlds, brought
           together by a shared discomfort they couldn’t ignore.
@@ -56,22 +56,31 @@ const ThreePerspective = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="relative bg-white/70 backdrop-blur-xl border border-white/50 rounded-3xl p-6 md:p-10 shadow-[0_10px_50px_rgba(0,0,0,0.08)]">
+            <div className="relative bg-black backdrop-blur-xl border border-white/50 rounded-3xl p-6 md:p-10 shadow-[0_10px_50px_rgba(0,0,0,0.08)]">
               {/* ✨ Accent */}
               <div className="h-[3px] w-12 bg-[#FEC000] mb-6 rounded-full"></div>
 
+              <svg
+                className="w-12 h-12 text-yellow-500/30 mb-8"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+              </svg>
               {/* Story */}
-              <div className="space-y-6 text-gray-700 leading-relaxed text-[15px] md:text-lg">
+              <div className="space-y-6 text-white leading-relaxed text-[15px] md:text-lg">
                 <p>
                   One approached brands through{" "}
-                  <span className="font-semibold text-gray-900">strategy</span>{" "}
+                  <span className="font-semibold text-yellow-500">
+                    strategy
+                  </span>{" "}
                   — constantly analysing positioning, market gaps, and the
                   invisible forces that influence choice.
                 </p>
 
                 <p>
                   Another saw brands through{" "}
-                  <span className="font-semibold text-gray-900">
+                  <span className="font-semibold text-yellow-500">
                     creativity
                   </span>{" "}
                   — understanding how design, storytelling, and visual memory
@@ -80,7 +89,9 @@ const ThreePerspective = () => {
 
                 <p>
                   And another focused on{" "}
-                  <span className="font-semibold text-gray-900">execution</span>{" "}
+                  <span className="font-semibold text-yellow-500">
+                    execution
+                  </span>{" "}
                   — ensuring that ideas are not just imagined, but built with
                   clarity, consistency, and impact.
                 </p>

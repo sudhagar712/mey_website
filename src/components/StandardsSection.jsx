@@ -12,7 +12,7 @@ const drives = [
 const WhatDrivesUs = () => {
   return (
     <section className="relative w-full py-24 md:py-32 px-4 md:px-12 bg-[#fafafa] overflow-hidden">
-      {/* 🌤 Premium Ambient */}
+      {/* 🌤 Ambient Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(254,192,0,0.15),transparent_10%)]"></div>
 
       {/* 🔲 Grid */}
@@ -29,32 +29,50 @@ const WhatDrivesUs = () => {
           </p>
         </div>
 
-        {/* 📱 MOBILE = STACKED CARDS */}
-        <div className="flex flex-col gap-6 md:hidden">
-          {drives.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40, scale: 0.96 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="relative group"
-            >
-              <div className="bg-black rounded-2xl p-6 shadow-[0_10px_30px_rgba(0,0,0,0.06)] border-2 border-white">
-                {/* 🔢 Big Number */}
-                <div className="text-5xl font-bold text-[#fec000] mb-4">
-                  {String(index + 1).padStart(2, "0")}
+        {/* 📱 MOBILE = PREMIUM TIMELINE */}
+        {/* 📱 MOBILE FIXED TIMELINE */}
+        <div className="md:hidden relative">
+          {/* Center Line */}
+          <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[2px] h-full bg-[#fec000] z-0" />
+
+          {drives.map((item, index) => {
+            const isLeft = index % 2 === 0;
+
+            return (
+              <div key={index} className="relative flex items-center mb-16">
+                {/* Dot */}
+                <div className="absolute top-[-30px] left-1/2 -translate-x-1/2 z-20">
+                  <div className="w-3 h-3 bg-[#fec000] rounded-full shadow-[0_0_12px_rgba(254,192,0,0.8)]"></div>
                 </div>
 
-                {/* ✨ Accent */}
-                <div className="h-[3px] w-10 bg-[#fec000] mb-4 rounded-full"></div>
+                {/* Card Wrapper */}
+                <div
+                  className={`w-[80%] ${
+                    isLeft ? "mr-auto pr-8" : "ml-auto pl-8"
+                  }`}
+                >
+                  <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="relative bg-gradient-to-br from-black via-[#111] to-[#FEC000] p-5 rounded-2xl shadow-lg">
+                      {/* Number */}
+                      <div className="absolute -top-5 left-3 text-xs font-bold bg-black px-3 py-1 rounded-full text-[#fec000]">
+                        {String(index + 1).padStart(2, "0")}
+                      </div>
 
-                <p className="text-white  leading-relaxed text-base ">
-                  {item}
-                </p>
+                      {/* Content */}
+                      <p className="text-white text-sm leading-relaxed">
+                        {item}
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
               </div>
-            </motion.div>
-          ))}
+            );
+          })}
         </div>
 
         {/* 💻 DESKTOP TIMELINE */}
@@ -85,18 +103,19 @@ const WhatDrivesUs = () => {
                     viewport={{ once: true }}
                     className="group"
                   >
-                    <div className="relative bg-black p-8 rounded-2xl border border-gray-200 shadow-[0_10px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_25px_80px_rgba(0,0,0,0.12)] transition duration-500">
-                      {/* 🔢 Number */}
-                      <div className="absolute -top-6 text-6xl font-bold text-[#fec000]">
+                    <div className="relative bg-gradient-to-br from-black via-[#111] to-[#FEC000] p-8 rounded-2xl border border-gray-200 shadow-[0_10px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_25px_80px_rgba(0,0,0,0.12)] transition duration-500">
+                      {/* Number */}
+                      <div className="absolute -top-10 text-4xl font-bold bg-black rounded-full px-4 py-2 text-[#fec000]">
                         {String(index + 1).padStart(2, "0")}
                       </div>
 
-                      {/* Accent Line */}
-                      <div className="h-[3px] w-12 bg-[#fec000] mb-4 rounded-full"></div>
-
-                      <p className="text-white text-3xl font-bold leading-relaxed">
+                      {/* Content */}
+                      <p className="text-white text-2xl font-bold leading-relaxed">
                         {item}
                       </p>
+
+                      {/* Glow */}
+                      <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 blur-2xl bg-[#fec000]/20"></div>
                     </div>
                   </motion.div>
                 </div>

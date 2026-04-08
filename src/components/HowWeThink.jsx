@@ -38,7 +38,7 @@ const HowWeThink = () => {
             <h2 className="text-3xl md:text-5xl lg:text-5xl font-light mb-8 leading-tight md:leading-[1.1] tracking-tight text-gray-900">
               We don’t begin with design or marketing.{" "}
               <br className="hidden lg:block" />
-              <span className="font-extrabold text-[#111] block mt-2 lg:mt-4">
+              <span className="font-extrabold text-yellow-500 block mt-2 lg:mt-4">
                 We begin with understanding.
               </span>
             </h2>
