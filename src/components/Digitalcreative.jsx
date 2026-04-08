@@ -80,9 +80,7 @@ const DigitalCreativeGrid = () => {
           <h1 className="text-5xl md:text-7xl font-extralight tracking-tighter text-white">
             Digital Creative
           </h1>
-          <p className="text-[#1ba1e2] mt-2 text-sm md:text-base tracking-widest uppercase ml-1 font-semibold">
-            Featured Projects
-          </p>
+         
         </div>
 
         {/* 🔥 Metro Live Tiles Masonry Grid */}

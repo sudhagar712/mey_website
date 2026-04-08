@@ -38,7 +38,7 @@ const WorkWithSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl lg:text-6xl font-serif leading-tight"
+            className="text-3xl md:text-5xl lg:text-4xl font-serif leading-tight"
           >
             Founders ready to build something{" "}
             <span className="text-[#f1bd40] ">lasting.</span>
@@ -71,7 +71,7 @@ const WorkWithSection = () => {
         </div>
 
         {/* RIGHT ORBIT DESIGN */}
-        <div className="relative flex justify-center items-center h-[350px] md:h-[450px]">
+        <div className="relative flex justify-center items-center mt-0 md:mt-40 h-[350px] md:h-[450px]">
           {/* Outermost Circle */}
           <div className="absolute w-[330px] md:w-[450px] h-[330px] md:h-[450px] border border-[#c9a14a]/20 rounded-full" />
 

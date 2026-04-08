@@ -37,9 +37,7 @@ const PdfPreview = () => {
       <div className="max-w-7xl mx-auto">
         {/* HEADER */}
         <div className="mb-16 text-center">
-          <p className="text-xs tracking-[0.4em] text-gray-500 uppercase mb-4">
-            Presentation Work
-          </p>
+         
 
           <h2 className="text-4xl md:text-6xl font-bold text-white">
             Pitch <span className="text-[#fec000]">Decks</span>

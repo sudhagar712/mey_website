@@ -27,8 +27,11 @@ const ThreePerspective = () => {
           transition={{ duration: 0.8 }}
           className="text-2xl md:text-5xl font-semibold leading-tight mb-12 md:mb-16 text-gray-900 max-w-9xl"
         >
-          MEY began with three friends from completely different worlds, brought
-          together by a shared discomfort they couldn’t ignore.
+          MEY{"  "}
+          <span className="text-xl md:text-3xl font-semibold text-gray-900 leading-tight">
+            began with three friends from completely different worlds, brought
+            together by a shared discomfort they couldn’t ignore.
+          </span>
         </motion.h2>
 
         {/* 💎 MAIN LAYOUT */}

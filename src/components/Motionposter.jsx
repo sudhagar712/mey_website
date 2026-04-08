@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const videos = [
   {
@@ -17,82 +17,89 @@ const videos = [
 ];
 
 const Motionposter = () => {
-  const [active, setActive] = useState(null);
+  const [index, setIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  // 🔥 AUTO SLIDE
+  useEffect(() => {
+    if (paused) return;
+
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % videos.length);
+    }, 3500);
+
+    return () => clearInterval(interval);
+  }, [paused]);
 
   return (
-    <section className="bg-white py-24 md:py-32 relative overflow-hidden md:px-40">
-      
-      {/* Title */}
-      <div className="max-w-7xl mx-auto px-3 mb-16 text-center">
-        <p className="text-xs tracking-[0.4em] text-gray-400 uppercase mb-4">
-          Visual Showcase
-        </p>
-
+    <section className="bg-white py-24 md:py-32 overflow-hidden">
+      {/* TITLE */}
+      <div className="text-center mb-16 px-4">
         <h2 className="text-4xl md:text-6xl font-bold">
           Motion <span className="text-[#fec000] italic">Posters</span>
         </h2>
       </div>
 
-      {/* GRID (STATIC HEIGHT → NO SHIFT) */}
-      <div className="max-w-9xl mx-auto px-5 grid grid-cols-1 md:grid-cols-1 gap-6">
-        {videos.map((video, index) => (
-          <div
-            key={index}
-            className="relative h-[420px] md:h-[600px] rounded-3xl overflow-hidden cursor-pointer"
-            onClick={() => setActive(index)}
-          >
-            <video
-              src={video.url}
-              autoPlay
-              loop
-              muted
-              className="w-full h-full object-cover"
-            />
+      {/* CAROUSEL */}
+      <div
+        className="flex justify-center items-center gap-6 md:gap-10 px-4"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+      >
+        {videos.map((video, i) => {
+          const position = (i - index + videos.length) % videos.length;
 
-            <div className="absolute inset-0 bg-black/40" />
+          const isCenter = position === 0;
+          const isLeft = position === videos.length - 1;
+          const isRight = position === 1;
 
-            <div className="absolute bottom-6 left-6 text-white">
-              <h3 className="text-xl font-semibold">{video.title}</h3>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* FULLSCREEN OVERLAY (NO LAYOUT BREAK) */}
-      <AnimatePresence>
-        {active !== null && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-xl flex items-center justify-center px-4"
-          >
-            {/* CLOSE */}
-            <button
-              onClick={() => setActive(null)}
-              className="absolute top-8 right-8 text-white text-3xl"
-            >
-              ✕
-            </button>
-
-            {/* VIDEO */}
+          return (
             <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              transition={{ duration: 0.4 }}
-              className="w-full max-w-5xl rounded-3xl overflow-hidden shadow-2xl"
+              key={i}
+              animate={{
+                scale: isCenter ? 1 : 0.75,
+                opacity: isCenter ? 1 : 0.4,
+                x: isLeft ? -60 : isRight ? 60 : 0,
+              }}
+              transition={{ duration: 0.6 }}
+              className="flex-shrink-0"
+              style={{
+                width: isCenter ? "320px" : "220px",
+              }}
             >
-              <video
-                src={videos[active].url}
-                autoPlay
-                controls
-                className="w-full h-full"
-              />
+              <div className="relative h-[420px] md:h-[520px] rounded-[28px] overflow-hidden shadow-xl">
+                
+                {/* VIDEO */}
+                <video
+                  src={video.url}
+                  autoPlay={isCenter}
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover"
+                />
+
+                {/* OVERLAY */}
+                <div className="absolute inset-0 bg-black/30" />
+
+                {/* TITLE */}
+                {isCenter && (
+                  <div className="absolute bottom-6 left-6 text-white">
+                    <h3 className="text-lg font-semibold">
+                      {video.title}
+                    </h3>
+                  </div>
+                )}
+
+                {/* GLOW */}
+                {isCenter && (
+                  <div className="absolute inset-0 border border-[#fec000]/60 rounded-[28px] shadow-[0_0_40px_rgba(254,192,0,0.4)]"></div>
+                )}
+              </div>
             </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          );
+        })}
+      </div>
     </section>
   );
 };

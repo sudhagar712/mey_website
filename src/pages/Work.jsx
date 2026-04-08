@@ -63,17 +63,15 @@ const Work = () => {
 
         {/* TITLE */}
         <div className="max-w-7xl mx-auto mb-16 md:mb-24">
-          <p className="text-xs tracking-[0.4em] text-gray-500 uppercase mb-4">
-            Selected Work
-          </p>
+         
 
           <h2 className="text-4xl md:text-6xl font-bold text-white">
-            Projects that <span className="text-[#fec000]">define impact</span>
+            Projects that <span className="text-[#fec000]">define Website</span>
           </h2>
         </div>
 
         {/* GRID */}
-        <div className="max-w-7xl mx-auto grid sm:grid-cols-2 gap-6 md:gap-10">
+        <div className=" grid sm:grid-cols-2 gap-6 md:gap-10">
           {projects.map((project, index) => (
             <motion.a
               key={index}
