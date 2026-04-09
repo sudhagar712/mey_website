@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Link as ScrollLink } from "react-scroll";
 import { Link } from 'react-router-dom';
 // import logo from "../assets/bannerright.png"
-import logol from "../assets/logol.png"
+import logol from "../assets/logol2.png"
 
 const Hero = () => {
     return (
