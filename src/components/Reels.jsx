@@ -28,12 +28,13 @@ const Reels = () => {
   const [isMuted, setIsMuted] = useState(true);
   const [progress, setProgress] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
   const videoRefs = useRef([]);
-  const progressInterval = useRef(null);
   const touchStartX = useRef(0);
+  const autoSlideRef = useRef(null);
 
-  // Responsive check
+  // Responsive
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
     handleResize();
@@ -41,188 +42,163 @@ const Reels = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // ▶️ Play video, track progress, and auto-next when finished
+  // 👉 AUTO SLIDE (5 sec)
+  useEffect(() => {
+    if (isPaused) return;
+
+    autoSlideRef.current = setInterval(() => {
+      setActive((prev) =>
+        prev === reelsData.length - 1 ? 0 : prev + 1
+      );
+    }, 3000);
+
+    return () => clearInterval(autoSlideRef.current);
+  }, [active, isPaused]);
+
+  // 👉 VIDEO + PROGRESS
   useEffect(() => {
     let animationFrame;
 
     const updateProgress = () => {
       const activeVideo = videoRefs.current[active];
       if (activeVideo && activeVideo.duration) {
-        const percent = (activeVideo.currentTime / activeVideo.duration) * 100;
+        const percent =
+          (activeVideo.currentTime / activeVideo.duration) * 100;
         setProgress(percent || 0);
       }
       animationFrame = requestAnimationFrame(updateProgress);
     };
 
-    setProgress(0); // Reset progress on slide change
+    setProgress(0);
 
     videoRefs.current.forEach((video, i) => {
       if (!video) return;
 
-      // Clear previous ended listeners
-      video.onended = null;
-
       if (i === active) {
         video.currentTime = 0;
-        video.play().catch(() => { });
-
-        // When the video ends, automatically go to the next slide (or loop to the first)
-        video.onended = () => {
-          setActive((prev) => (prev === reelsData.length - 1 ? 0 : prev + 1));
-        };
-
+        video.play().catch(() => {});
         animationFrame = requestAnimationFrame(updateProgress);
       } else {
         video.pause();
       }
     });
 
-    return () => {
-      cancelAnimationFrame(animationFrame);
-    };
+    return () => cancelAnimationFrame(animationFrame);
   }, [active]);
 
+  // 👉 Controls
+  const nextSlide = () => {
+    setActive((prev) =>
+      prev === reelsData.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const prevSlide = () => {
+    setActive((prev) =>
+      prev === 0 ? reelsData.length - 1 : prev - 1
+    );
+  };
+
+  // 👉 Swipe
   const handleTouchStart = (e) => {
     touchStartX.current = e.touches[0].clientX;
   };
 
   const handleTouchEnd = (e) => {
-    const touchEndX = e.changedTouches[0].clientX;
-    const diff = touchStartX.current - touchEndX;
+    const diff =
+      touchStartX.current - e.changedTouches[0].clientX;
 
     if (Math.abs(diff) < 50) return;
 
-    if (diff > 0) {
-      // swipe left (go next)
-      setActive((prev) => (prev === reelsData.length - 1 ? 0 : prev + 1));
-    } else {
-      // swipe right (go prev)
-      setActive((prev) => (prev === 0 ? reelsData.length - 1 : prev - 1));
-    }
+    diff > 0 ? nextSlide() : prevSlide();
   };
 
-  const nextSlide = () => setActive((prev) => (prev === reelsData.length - 1 ? 0 : prev + 1));
-  const prevSlide = () => setActive((prev) => (prev === 0 ? reelsData.length - 1 : prev - 1));
-
   return (
-    <section className="w-full bg-[#fafafa] mt-10  flex flex-col justify-center overflow-hidden relative">
+    <section
+      className="w-full bg-[#fafafa]  flex flex-col justify-center overflow-hidden relative"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+
+     
+
+
+
+      {/* HEADER */}
+      <div className="flex justify-between mt-10  items-center px-6 mb-10">
+        <button onClick={prevSlide} className="text-xl">←</button>
+        <h2 className=" text-3xl md:text-6xl font-bold">Reels</h2>
+        <button onClick={nextSlide} className="text-xl ">→</button>
+      </div>
+
+      {/* CAROUSEL */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.05]"
-        style={{
-          backgroundImage:
-            "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
-          backgroundSize: "4rem 4rem",
-        }}
-      />
-      <div className="max-w-[1400px] w-full mx-auto px-4 md:px-10">
+        className="relative w-full h-[500px] flex justify-center items-center"
+        style={{ perspective: "1200px" }}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
+        {reelsData.map((item, index) => {
+          let position = index - active;
 
-        {/* Header Section styled after the reference image */}
-        <div className="relative mb-16 flex items-center justify-between">
-          {/* Left Arrow (Hidden on Mobile, matching reference edge alignment) */}
-       
+          if (position > reelsData.length / 2) {
+            position -= reelsData.length;
+          }
+          if (position < -reelsData.length / 2) {
+            position += reelsData.length;
+          }
 
-          <div className="text-center flex-1 max-w-4xl mx-auto px-4">
-            <h2 className="text-4xl md:text-5xl  tracking-tight text-[#111]">Reels</h2>
+          const abs = Math.abs(position);
+          if (abs > 1) return null;
 
-          </div>
+          const isActive = position === 0;
 
-        
-        </div>
+          return (
+            <div
+              key={index}
+              className="absolute w-[300px] aspect-[9/16] border-2 border-yellow-500 rounded-3xl overflow-hidden"
+              style={{
+                transform: `
+                  translate(-50%, -50%)
+                  translateX(${position * 350}px)
+                  rotateY(${position * -15}deg)
+                  scale(${isActive ? 1 : 0.75})
+                `,
+                top: "50%",
+                left: "50%",
+                zIndex: 10 - abs,
+                opacity: abs === 1 ? 0.5 : 1,
+                transition: "all 0.9s cubic-bezier(0.22,1,0.36,1)",
+              }}
+            >
+              <video
+                ref={(el) => (videoRefs.current[index] = el)}
+                src={item.video}
+                muted={isMuted}
+                className="w-full h-full object-cover"
+              />
 
-        {/* Mobile Controls */}
-    
+              {isActive && (
+                <button
+                  onClick={() => setIsMuted(!isMuted)}
+                  className="absolute top-3 right-3 bg-white/20 px-2 py-1 rounded"
+                >
+                  {isMuted ? "🔇" : "🔊"}
+                </button>
+              )}
 
-        {/* 3D Coverflow Carousel Container */}
-        <div
-          className="relative w-full h-[450px] sm:h-[600px] mb-10 flex justify-center items-center select-none mt-4 md:mt-10"
-          style={{ perspective: "1200px" }}
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
-        >
-          {reelsData.map((item, index) => {
-            const isActive = index === active;
-            const position = index - active;
-            const absPos = Math.abs(position);
-            const sign = Math.sign(position);
-
-            // Premium 3D Carousel Math
-            const translateX = position * (isMobile ? 180 : 380);
-            const translateZ = absPos === 0 ? 50 : -200;
-            const rotateY = sign * -10; // Very subtle angled rotation
-            const scale = absPos === 0 ? 1 : 0.8;
-
-            // Visibility bounds - show only immediate left and right
-            const isVisible = absPos <= 1;
-            const zIndex = 100 - absPos;
-
-            return (
-              <div
-                key={index}
-                onClick={() => !isActive && setActive(index)}
-                className={`absolute top-1/2 left-1/2 w-[260px] sm:w-[340px] aspect-[9/16] rounded-[2rem] overflow-hidden bg-black shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)] border border-white/10 ${!isActive ? 'cursor-pointer hover:brightness-75' : 'ring-2 ring-yellow-400/50 shadow-[0_0_40px_rgba(250,204,21,0.2)]'
-                  }`}
-                style={{
-                  transform: `translate(-50%, -50%) translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`,
-                  zIndex,
-                  opacity: isVisible ? (absPos === 1 ? 0.5 : 1) : 0,
-                  filter: isActive ? "blur(0px) brightness(1.05)" : "blur(4px) brightness(0.4) grayscale(50%)",
-                  pointerEvents: isVisible ? "auto" : "none",
-                }}
-              >
-                <video
-                  ref={(el) => (videoRefs.current[index] = el)}
-                  src={item.video}
-                  muted={isMuted}
-                  playsInline
-                  className="w-full h-full object-cover rounded-[2rem] transform scale-105" // scale prevents edge lines
-                />
-
-                {/* Dark Vignette Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none rounded-[2rem]"></div>
-
-                <div className="absolute bottom-8 left-6 right-6 text-white pointer-events-none">
-                  <h3 className="text-2xl font-semibold mb-2 drop-shadow-lg">{item.title}</h3>
+              {/* Progress */}
+              {isActive && (
+                <div className="absolute bottom-0 left-0 w-full h-1 bg-white/30">
+                  <div
+                    className="h-full bg-yellow-400"
+                    style={{ width: `${progress}%` }}
+                  />
                 </div>
-
-                {isActive && (
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setIsMuted(!isMuted);
-                    }}
-                    aria-label={isMuted ? "Unmute" : "Mute"}
-                    className="absolute top-6 right-6 bg-white/20 hover:bg-white/40 backdrop-blur-md px-3 py-3 rounded-full text-white transition-all duration-300 shadow-lg z-50 text-sm"
-                  >
-                    {isMuted ? (
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
-                    ) : (
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
-                    )}
-                  </button>
-                )}
-
-                {isActive && (
-                  <div className="absolute bottom-0 left-0 w-full h-2 bg-white/30 rounded-b-[2rem]">
-                    <div
-                      className="h-full bg-yellow-400 rounded-bl-[2rem] transition-all duration-100 ease-linear"
-                      style={{ width: `${progress}%` }}
-                    />
-                  </div>
-                )}
-
-                {/* Play icon overlay for inactive slides to hint clicking */}
-                {!isActive && (
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-black/20 rounded-[2rem]">
-                    <div className="w-16 h-16 bg-white/30 backdrop-blur-md rounded-full flex items-center justify-center text-white shadow-xl">
-                      <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
-                    </div>
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
-
+              )}
+            </div>
+          );
+        })}
       </div>
     </section>
   );

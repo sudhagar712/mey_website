@@ -1,11 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import p1 from "../assets/p1.jpg";
-import p2 from "../assets/p2.jpg";
 import p3 from "../assets/p3.jpeg";
 import p4 from "../assets/p4.jpeg";
 
-const images = [p1, p2, p3, p4];
+const images = [p1,  p3, p4];
 
 const Printcreative = () => {
   const containerRef = useRef(null);
@@ -33,7 +32,14 @@ const Printcreative = () => {
   }, [paused]);
 
   return (
-    <section className="w-full py-16 md:py-24 bg-black overflow-hidden">
+    <section className="w-full py-16 md:py-24 md:px-5 md:p-10  overflow-hidden">
+      <div className="flex items-center gap-4 mb-6">
+        <div className="w-10 h-[2px] bg-yellow-500"></div>
+        <h2 className="text-md tracking-[0.4em] uppercase">
+          Print Creative
+        </h2>
+      </div>
+     
       <div
         ref={containerRef}
         className="flex gap-6 md:gap-10 px-6 md:px-20 overflow-x-scroll no-scrollbar"
@@ -46,7 +52,7 @@ const Printcreative = () => {
             whileHover={{ scale: 1.05 }}
             className="flex-shrink-0"
           >
-            <div className="relative w-[260px] md:w-[340px] h-[380px] md:h-[500px] rounded-[28px] overflow-hidden shadow-xl">
+            <div className="relative w-[260px] md:w-[340px] h-[380px] md:h-[500px]  overflow-hidden shadow-xl">
               {/* IMAGE */}
               <img
                 src={img}
