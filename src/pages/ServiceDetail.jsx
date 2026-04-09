@@ -70,9 +70,14 @@ const ServiceDetail = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Link to="/services" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-yellow-500 hover:text-black hover:border-yellow-500 hover:shadow-[0_0_20px_rgba(234,179,8,0.4)] transition-all duration-300 group mb-8">
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-yellow-500 hover:text-black hover:border-yellow-500 hover:shadow-[0_0_20px_rgba(234,179,8,0.4)] transition-all duration-300 group mb-8"
+            >
               <MdArrowBackIos className="transform translate-x-1 group-hover:translate-x-0 transition-transform text-sm" />
-              <span className="font-bold text-sm tracking-widest uppercase">Back to Services</span>
+              <span className="font-bold text-sm tracking-widest uppercase">
+                Back to Services
+              </span>
             </Link>
           </motion.div>
 
@@ -95,9 +100,7 @@ const ServiceDetail = () => {
         <div className="absolute top-20 left-[-10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-yellow-500/10 blur-[120px] rounded-full pointer-events-none" />
         <div className="absolute bottom-20 right-[-10%] w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-orange-600/10 blur-[150px] rounded-full pointer-events-none" />
 
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start relative z-10">
-
-          {/* Left Column: Details & Points */}
+        <div className="relative z-10">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -105,17 +108,129 @@ const ServiceDetail = () => {
             viewport={{ once: true, margin: "-100px" }}
             className="lg:col-span-7 space-y-10"
           >
-            <motion.div variants={fadeIn} className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 md:p-10 hover:border-white/20 transition-colors duration-500">
-              <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-white border-l-4 border-yellow-500 pl-4 tracking-tight">Overview</h2>
+            <motion.div
+              variants={fadeIn}
+              className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 md:p-10 hover:border-white/20 transition-colors duration-500"
+            >
+              <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-white border-l-4 border-yellow-500 pl-4 tracking-tight">
+                Overview
+              </h2>
               <p className="text-lg md:text-xl leading-relaxed text-neutral-300 font-light">
                 {service.description}
               </p>
             </motion.div>
 
-            <motion.div variants={fadeIn} className="bg-neutral-900/40 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 md:p-10 shadow-2xl relative overflow-hidden group">
+            <div className="lg:col-span-5 hidden md:block relative h-[600px] lg:h-[750px] mt-10 lg:mt-0 lg:sticky lg:top-32">
+              {/* Image 1: Main Large Floating Card */}
+              <motion.div
+                initial={{ opacity: 0, x: 50, y: 20 }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                whileHover={{ y: -10, scale: 1.02 }}
+                className="absolute top-0 right-0 lg:right-4 w-3/4 h-[400px] lg:h-[480px] rounded-[2.5rem] overflow-hidden border border-white/10 shadow-[0_30px_60px_rgba(0,0,0,0.8)] z-10 group"
+              >
+                <div className="absolute inset-0 bg-yellow-500/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10" />
+                <img
+                  src={images[0]}
+                  alt="Creative Process 1"
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000"
+                />
+              </motion.div>
+
+              {/* Image 2: Overlapping Bottom Left Card */}
+              <motion.div
+                initial={{ opacity: 0, x: -50, y: 30 }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                whileHover={{ y: -10, scale: 1.02, zIndex: 40 }}
+                className="absolute bottom-20 left-0 w-2/3 h-[300px] lg:h-[350px] rounded-[2rem] overflow-hidden border-4 border-[#050505] shadow-[0_20px_50px_rgba(0,0,0,0.9)] z-20 group"
+              >
+                <div className="absolute inset-0 bg-purple-500/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10" />
+                <img
+                  src={images[1]}
+                  alt="Creative Process 2"
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000"
+                />
+              </motion.div>
+
+              {/* Image 3: Small Floating Accent Image */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                className="absolute bottom-0 lg:bottom-10 right-10 w-2/5 h-[200px] lg:h-[240px] rounded-[1.5rem] z-30 group"
+              >
+                <motion.div
+                  animate={{ y: [0, -20, 0] }}
+                  transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="w-full h-full rounded-[1.5rem] overflow-hidden border border-white/20 shadow-[0_0_40px_rgba(234,179,8,0.3)] relative"
+                >
+                  <div className="absolute inset-0 bg-orange-500/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10" />
+                  <img
+                    src={images[2]}
+                    alt="Creative Process 3"
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000"
+                  />
+                </motion.div>
+              </motion.div>
+            </div>
+
+            {/* Mobile Only: Horizontal Carousel for colorful mobile design */}
+            <div
+              className="md:hidden flex overflow-x-auto gap-5 pb-10 snap-x -mx-6 px-6 relative w-[calc(100%+3rem)] mt-8"
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            >
+              <style>{`
+               div::-webkit-scrollbar {
+                 display: none;
+               }
+             `}</style>
+
+              {images.map((img, idx) => (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1, duration: 0.5 }}
+                  key={idx}
+                  className="shrink-0 w-[85vw] h-80 snap-center overflow-hidden rounded-[2.5rem] border border-white/10 relative shadow-[0_10px_30px_rgba(0,0,0,0.8)] group"
+                >
+                  {/* Vibrant Gradient Backgrounds for Mobile */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 pointer-events-none" />
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br mix-blend-overlay z-10 opacity-60 ${
+                      idx === 0
+                        ? "from-yellow-500 to-orange-500"
+                        : idx === 1
+                          ? "from-purple-500 to-blue-500"
+                          : "from-red-500 to-yellow-500"
+                    }`}
+                  />
+                  <img
+                    src={img}
+                    alt={`process-mobile-${idx}`}
+                    className="w-full h-full object-cover relative z-0"
+                  />
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.div
+              variants={fadeIn}
+              className="bg-neutral-900/40 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 md:p-10 shadow-2xl relative overflow-hidden group"
+            >
               <div className="absolute top-0 right-0 w-64 h-64 bg-yellow-500/5 rounded-full blur-[80px] group-hover:bg-yellow-500/10 transition-colors duration-700" />
 
-              <h3 className="text-2xl md:text-3xl font-bold mb-8 text-yellow-500 relative z-10">Key Offerings</h3>
+              <h3 className="text-2xl md:text-3xl font-bold mb-8 text-yellow-500 relative z-10">
+                Key Offerings
+              </h3>
               <ul className="space-y-6 relative z-10">
                 {service.points.map((p, i) => (
                   <motion.li
@@ -134,7 +249,10 @@ const ServiceDetail = () => {
               </ul>
             </motion.div>
 
-            <motion.div variants={fadeIn} className="pt-6 pb-10 flex text-center md:text-left justify-center md:justify-start">
+            <motion.div
+              variants={fadeIn}
+              className="pt-6 pb-10 flex text-center md:text-left justify-center md:justify-start"
+            >
               <a
                 href="/contact"
                 className="group relative inline-flex items-center justify-center px-10 py-5 w-full sm:w-auto text-base font-bold text-black uppercase tracking-widest bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(234,179,8,0.4)]"
@@ -142,90 +260,23 @@ const ServiceDetail = () => {
                 <div className="absolute inset-0 w-full h-full bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
                 <span className="relative z-10 flex items-center justify-center gap-3">
                   Start a Project
-                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  <svg
+                    className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2.5}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
                   </svg>
                 </span>
               </a>
             </motion.div>
           </motion.div>
-
-          {/* Right Column: Premium Staggered Image Gallery (Desktop & Tablet) */}
-          <div className="lg:col-span-5 hidden md:block relative h-[600px] lg:h-[750px] mt-10 lg:mt-0 lg:sticky lg:top-32">
-
-            {/* Image 1: Main Large Floating Card */}
-            <motion.div
-              initial={{ opacity: 0, x: 50, y: 20 }}
-              whileInView={{ opacity: 1, x: 0, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              whileHover={{ y: -10, scale: 1.02 }}
-              className="absolute top-0 right-0 lg:right-4 w-3/4 h-[400px] lg:h-[480px] rounded-[2.5rem] overflow-hidden border border-white/10 shadow-[0_30px_60px_rgba(0,0,0,0.8)] z-10 group"
-            >
-              <div className="absolute inset-0 bg-yellow-500/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10" />
-              <img src={images[0]} alt="Creative Process 1" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000" />
-            </motion.div>
-
-            {/* Image 2: Overlapping Bottom Left Card */}
-            <motion.div
-              initial={{ opacity: 0, x: -50, y: 30 }}
-              whileInView={{ opacity: 1, x: 0, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              whileHover={{ y: -10, scale: 1.02, zIndex: 40 }}
-              className="absolute bottom-20 left-0 w-2/3 h-[300px] lg:h-[350px] rounded-[2rem] overflow-hidden border-4 border-[#050505] shadow-[0_20px_50px_rgba(0,0,0,0.9)] z-20 group"
-            >
-              <div className="absolute inset-0 bg-purple-500/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10" />
-              <img src={images[1]} alt="Creative Process 2" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000" />
-            </motion.div>
-
-            {/* Image 3: Small Floating Accent Image */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-              className="absolute bottom-0 lg:bottom-10 right-10 w-2/5 h-[200px] lg:h-[240px] rounded-[1.5rem] z-30 group"
-            >
-              <motion.div
-                animate={{ y: [0, -20, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="w-full h-full rounded-[1.5rem] overflow-hidden border border-white/20 shadow-[0_0_40px_rgba(234,179,8,0.3)] relative"
-              >
-                <div className="absolute inset-0 bg-orange-500/20 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10" />
-                <img src={images[2]} alt="Creative Process 3" className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000" />
-              </motion.div>
-            </motion.div>
-          </div>
-
-          {/* Mobile Only: Horizontal Carousel for colorful mobile design */}
-          <div className="md:hidden flex overflow-x-auto gap-5 pb-10 snap-x -mx-6 px-6 relative w-[calc(100%+3rem)] mt-8" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-            <style>{`
-               div::-webkit-scrollbar {
-                 display: none;
-               }
-             `}</style>
-
-            {images.map((img, idx) => (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1, duration: 0.5 }}
-                key={idx}
-                className="shrink-0 w-[85vw] h-80 snap-center overflow-hidden rounded-[2.5rem] border border-white/10 relative shadow-[0_10px_30px_rgba(0,0,0,0.8)] group"
-              >
-                {/* Vibrant Gradient Backgrounds for Mobile */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 pointer-events-none" />
-                <div className={`absolute inset-0 bg-gradient-to-br mix-blend-overlay z-10 opacity-60 ${idx === 0 ? 'from-yellow-500 to-orange-500' :
-                    idx === 1 ? 'from-purple-500 to-blue-500' :
-                      'from-red-500 to-yellow-500'
-                  }`} />
-                <img src={img} alt={`process-mobile-${idx}`} className="w-full h-full object-cover relative z-0" />
-              </motion.div>
-            ))}
-          </div>
-
         </div>
       </section>
 

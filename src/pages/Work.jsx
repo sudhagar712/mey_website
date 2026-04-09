@@ -43,87 +43,85 @@ const Work = () => {
       <Printcreative />
 
       <Digitalcreative />
+        <Motionposter />
       <VideoSlider />
 
-      <Motionposter />
+    
 
-      <div className="bg-black py-20 md:py-32 px-6 md:px-20 relative overflow-hidden">
-        {/* GRID BACKGROUND */}
+      <div className="bg-[#fafafa] py-12 md:py-24 px-4 sm:px-6 relative overflow-hidden">
+        {/* GRID BACKGROUND SOFT */}
         <div
-          className="absolute inset-0 opacity-[0.05]"
+          className="absolute inset-0 opacity-[0.03]"
           style={{
             backgroundImage:
-              "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
-            backgroundSize: "4rem 4rem",
+              "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
+            backgroundSize: "3rem 3rem",
           }}
         />
 
-        {/* GLOW */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#fec000]/10 blur-[120px]" />
+        {/* WARM GLOW */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-[#fec000]/15 blur-[120px] pointer-events-none" />
 
-        {/* TITLE */}
-        <div className="max-w-7xl mx-auto mb-16 md:mb-24">
-         
+        <div className="max-w-6xl mx-auto w-full relative z-10 flex flex-col items-center">
+          {/* TITLE */}
+          <div className="mb-8 md:mb-16 text-center">
+            <h2 className="text-3xl md:text-5xl font-black text-gray-900 tracking-tight">
+              Projects that <span className="text-yellow-500">define Web</span>
+            </h2>
+          </div>
 
-          <h2 className="text-4xl md:text-6xl font-bold text-white">
-            Projects that <span className="text-[#fec000]">define Website</span>
-          </h2>
-        </div>
+          {/* DYNAMIC CENTERED FLEX CONTAINER */}
+          <div className="flex flex-wrap justify-center gap-6 sm:gap-8 w-full max-w-7xl mx-auto">
+            {projects.map((project, index) => (
+              <motion.a
+                key={index}
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="group block relative rounded-2xl md:rounded-[2rem] overflow-hidden bg-white border border-gray-200 hover:border-yellow-400/50 transition-all duration-500 shadow-lg sm:shadow-[0_15px_40px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_50px_rgba(250,204,21,0.15)] cursor-pointer w-full lg:w-[calc(50%-1rem)] max-w-[700px]"
+              >
+                {/* IMAGE CONTAINER (Native Height, No Cropping) */}
+                <div className="relative w-full overflow-hidden bg-gray-100 min-h-[200px]">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-auto block opacity-95 group-hover:opacity-100 transition-all duration-1000 ease-out group-hover:scale-[1.02] transform origin-top"
+                  />
 
-        {/* GRID */}
-        <div className=" grid sm:grid-cols-2 gap-6 md:gap-10">
-          {projects.map((project, index) => (
-            <motion.a
-              key={index}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="group relative rounded-3xl overflow-hidden"
-            >
-              {/* IMAGE */}
-              <div className="relative h-[280px] sm:h-[350px] md:h-[420px] overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-fit transition duration-700 group-hover:scale-110"
-                />
+                  {/* OVERLAY */}
+                  <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-all duration-500 pointer-events-none" />
 
-                {/* DARK OVERLAY */}
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-500" />
+                  {/* BOTTOM GRADIENT FOR TEXT (Takes up bottom half of image) */}
+                  <div className="absolute bottom-0 left-0 w-full h-[70%] sm:h-[60%] bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 transition-opacity duration-500 z-0 pointer-events-none" />
+                </div>
 
-                {/* GRADIENT */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
-              </div>
+                {/* CONTENT FLOAT (GLASS STYLE OVER IMAGE) */}
+                <div className="absolute bottom-3 left-3 right-3 sm:bottom-5 sm:left-5 sm:right-5 p-0 z-10 transition-transform duration-500 group-hover:-translate-y-1 sm:group-hover:-translate-y-2">
+                  <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-xl p-4 sm:p-5 shadow-2xl">
+                    <h3 className="text-base sm:text-xl md:text-2xl font-bold text-white drop-shadow-md truncate">
+                      {project.title}
+                    </h3>
 
-              {/* CONTENT FLOAT (GLASS STYLE) */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                <div className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-2xl p-5 md:p-6 transition-all duration-500 group-hover:bg-white/20">
-                  <h3 className="text-lg md:text-2xl font-semibold text-white">
-                    {project.title}
-                  </h3>
+                    <p className="text-[11px] sm:text-sm text-gray-200 mt-1 sm:mt-2 font-medium line-clamp-2 drop-shadow-md leading-relaxed">
+                      {project.description}
+                    </p>
 
-                  <p className="text-sm md:text-base text-gray-300 mt-2">
-                    {project.description}
-                  </p>
-
-                  {/* CTA */}
-                  <div className="mt-4 inline-flex items-center gap-2 text-[#fec000] text-sm">
-                    View Project
-                    <span className="group-hover:translate-x-1 transition">
-                      →
-                    </span>
+                    {/* CTA */}
+                    <div className="mt-2 sm:mt-4 inline-flex items-center gap-1.5 sm:gap-2 text-yellow-400 text-[10px] sm:text-xs font-bold uppercase tracking-widest pl-1">
+                      View Project
+                      <svg className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1.5 transition-transform stroke-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </div>
                   </div>
                 </div>
-              </div>
-
-              {/* BORDER GLOW */}
-              <div className="absolute inset-0 rounded-3xl border border-white/10 group-hover:border-[#fec000]/40 transition duration-500 pointer-events-none" />
-            </motion.a>
-          ))}
+              </motion.a>
+            ))}
+          </div>
         </div>
       </div>
 

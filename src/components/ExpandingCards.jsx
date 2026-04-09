@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Autoplay, Pagination } from "swiper/modules";
@@ -9,31 +10,37 @@ import "swiper/css/pagination";
 const cards = [
   {
     title: "Social Media Marketing",
+    slug: "social-media-marketing",
     image:
       "https://landingi.com/wp-content/uploads/2025/02/What-Is-Social-Media-Marketing-post-cover-optimized.webp",
   },
   {
     title: "Video Editing",
+    slug: "video-production",
     image:
       "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=2070&auto=format&fit=crop",
   },
   {
     title: "Events",
+    slug: "Events",
     image:
       "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2070&auto=format&fit=crop",
   },
   {
     title: "Website Design & Dev",
+    slug: "website-design-development",
     image:
       "https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=2064&auto=format&fit=crop",
   },
   {
     title: "Digital Marketing",
+    slug: "Digital Marketing",
     image:
       "https://ad2brand.com/wp-content/uploads/2025/10/digital-marketing.png",
   },
   {
     title: "Outdoor Advertising",
+    slug: "outdoor-advertising",
     image:
       "https://acmeadvertiser.com/wp-content/uploads/2025/02/eb8199203681641.669b5f5801f02-1024x614.jpg",
   },
@@ -42,6 +49,7 @@ const cards = [
 const ExpandingCards = () => {
   const [active, setActive] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const navigate = useNavigate();
 
   // Auto Slider for Desktop
   useEffect(() => {
@@ -57,27 +65,30 @@ const ExpandingCards = () => {
     <div className="w-full md:px-20">
 
       <div className="text-center mb-10">
-        <h1 className="text-4xl md:text-6xl font-bold text-yellow-500 mb-4">Our Services</h1>
-        <p className="text-white">We offer a range of services to help businesses grow and succeed.</p>
+        <h1 className="text-4xl md:text-6xl font-bold text-black mb-4">Our Services</h1>
+        <p className="text-yellow-600">We offer a range of services to help businesses grow and succeed.</p>
       </div>
       {/* Desktop Layout */}
       <div
-        className="hidden  md:flex w-full h-[500px] lg:h-[650px] gap-3 lg:gap-4 overflow-hidden"
+        className="hidden  md:flex w-full h-[500px] lg:h-[650px] gap-3 lg:gap-10  overflow-hidden"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
 
-       
-
-
-
+      
         {cards.map((card, index) => {
           const isActive = active === index;
           return (
             <motion.div
               layout
               key={index}
-              onClick={() => setActive(index)}
+              onClick={() => {
+                if (isActive) {
+                  navigate(`/services/${card.slug}`);
+                } else {
+                  setActive(index);
+                }
+              }}
               className={`relative group cursor-pointer rounded-2xl lg:rounded-[2rem] overflow-hidden flex items-end transition-all duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)]
               ${isActive ? "flex-[10] shadow-2xl" : "flex-[1]"}`}
               style={{ minWidth: isActive ? "0%" : "80px" }}
@@ -184,7 +195,14 @@ const ExpandingCards = () => {
           {cards.map((card, index) => (
             <SwiperSlide key={index} className="transition-transform duration-500">
               {({ isActive }) => (
-                <div className={`w-full aspect-[4/5] rounded-3xl overflow-hidden relative shadow-2xl transition-all duration-500 border border-white/10 ${isActive ? 'scale-100' : 'scale-[0.9] opacity-60'}`}>
+                <div 
+                  onClick={() => {
+                    if (isActive) {
+                      navigate(`/services/${card.slug}`);
+                    }
+                  }}
+                  className={`w-full aspect-[4/5] rounded-3xl overflow-hidden relative shadow-2xl transition-all duration-500 border border-white/10 ${isActive ? 'scale-100 cursor-pointer' : 'scale-[0.9] opacity-60'}`}
+                >
                   <img
                     src={card.image}
                     alt={card.title}

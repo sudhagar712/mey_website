@@ -9,22 +9,14 @@ import ExpandingCards from "../components/ExpandingCards";
 
 const Services = () => {
   return (
-    <div className="bg-black">
+    <div className="">
       <SEO
         title="Branding, Social Media & Website Design Services in Chennai | MEY"
         description="Explore MEY’s branding, social media marketing, website development, video production and advertising services in Chennai."
       />
       <PageBanner bgImage="https://stl.tech/wp-content/uploads/2023/02/Network-services-scaled.webp" />
-      <div className="p-3 md:px-20 md:p-10 bg-black relative">
-        {/* Subtle Grid Background */}
-        <div
-          className="absolute inset-0 pointer-events-none opacity-[0.05]"
-          style={{
-            backgroundImage:
-              "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
-            backgroundSize: "4rem 4rem",
-          }}
-        />
+      <div className="p-3 md:px-20 md:p-10  relative">
+      
         <ExpandingCards />
       </div>
 
