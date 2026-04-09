@@ -1,7 +1,52 @@
 import React from "react";
 import { motion } from "framer-motion";
+import logol from "../assets/logol.png"
 
 const WhatMeyMeans = () => {
+
+  const MobileScreenContent = () => (
+    <div className="relative w-full h-full flex flex-col justify-center items-center text-center px-5 py-8 bg-gradient-to-br from-[#FEC000] via-[#FFD84D] to-[#FFF3A3] overflow-hidden">
+      
+      {/* ✨ Shine Effect (From Laptop) */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute w-[200%] h-full bg-gradient-to-r from-transparent via-white/30 to-transparent rotate-12 animate-shine" />
+      </div>
+      
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="w-full h-full flex flex-col justify-center items-center text-center px-5 py-8 bg-gradient-to-br from-[#FEC000] via-[#FFD84D] to-[#FFF3A3] overflow-hidden"
+      >
+        
+        <img src={logol} alt="" />
+      
+      </motion.div>
+
+      <motion.div 
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.2 }}
+        className="w-12 h-1 bg-black/20 rounded-full mb-8 relative z-10 origin-center" 
+      />
+
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.3 }}
+        className="relative z-10 block p-[1px] rounded-[16px] bg-gradient-to-b from-black/5 to-transparent w-full"
+      >
+      
+      </motion.div>
+      
+      <div className="mt-auto relative z-10 w-full flex flex-col items-center">
+        <div className="text-[9px] text-[#111]/50 tracking-widest uppercase mb-3 font-bold">MEY Studios</div>
+        <div className="w-1/2 h-[1px] bg-gradient-to-r from-transparent via-black/10 to-transparent" />
+      </div>
+    </div>
+  );
 
   const ScreenContent = ({ isMobile }) => (
     <div
@@ -9,7 +54,7 @@ const WhatMeyMeans = () => {
       ${isMobile ? "px-6 py-6" : "px-12 py-10 lg:px-20 lg:py-16"}
       bg-gradient-to-br from-[#FEC000] via-[#FFD84D] to-[#FFF3A3]`}
     >
- 
+
 
       {/* ✨ Shine Effect */}
       <div className="absolute inset-0 pointer-events-none">
@@ -21,13 +66,13 @@ const WhatMeyMeans = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className={`text-[#111] font-semibold tracking-[-0.02em]
-        ${isMobile ? "text-2xl mb-8" : "text-4xl lg:text-5xl mb-12"}`}
+        className={`text-[#111] mt-10 font-semibold tracking-[-0.02em]
+        ${isMobile ? "text-2xl mb-8" : "text-4xl lg:text-5xl mb-5"}`}
       >
         What MEY Means
       </motion.h2>
 
-      <div className={`w-[90%] md:w-[70%] h-[1px] bg-black/10 mb-8 md:mb-12`} />
+      <div className={`w-[90%] md:w-[70%] h-[1px] bg-black/10 mb-8 md:mb-7`} />
 
       <motion.h3
         initial={{ opacity: 0 }}
@@ -69,6 +114,23 @@ const WhatMeyMeans = () => {
   return (
     <section className="relative w-full py-24 md:py-32 bg-black flex flex-col items-center justify-center overflow-hidden">
 
+
+      {/* Subtle Grid Background for light theme */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-[0.03]"
+          style={{
+            backgroundImage:
+              "linear-gradient(#fff 2px, transparent 2px), linear-gradient(90deg, #fff 2px, transparent 2px)",
+            backgroundSize: "4rem 4rem",
+          }}
+        />
+
+
+
+
+
+
+
       {/* 🌟 Yellow Glow */}
       <div className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-[#FEC000]/20 blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
 
@@ -93,7 +155,7 @@ const WhatMeyMeans = () => {
           className="relative w-full max-w-[800px] mx-auto z-10 hidden md:block"
         >
           <div className="relative w-full aspect-[16/10] bg-[#1a1a1a] rounded-[2rem] p-4 shadow-[0_40px_100px_rgba(0,0,0,0.25)]">
-            
+
             <div className="absolute top-2 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-black rounded-full" />
 
             <div className="w-full h-full rounded-[1rem] overflow-hidden">
@@ -106,7 +168,7 @@ const WhatMeyMeans = () => {
           </div>
         </motion.div>
 
-        {/* 📱 Mobile (Same Feel) */}
+        {/* 📱 Mobile (Distinct Feel) */}
         <motion.div
           initial={{ opacity: 0, y: 100, scale: 0.9 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -123,7 +185,7 @@ const WhatMeyMeans = () => {
             </div>
 
             <div className="w-full h-full rounded-[2.2rem] overflow-hidden">
-              <ScreenContent isMobile={true} />
+              <MobileScreenContent />
             </div>
 
             {/* Buttons */}
