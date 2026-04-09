@@ -41,10 +41,19 @@ const CoperateBanner = () => {
   };
 
   return (
-    <div className="w-full bg-white mb-10 overflow-hidden">
+    <div className="w-full bg-black  py-10 px-3 md:px-10 overflow-hidden relative">
+       {/* GRID BACKGROUND SOFT */}
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage:
+              "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
+            backgroundSize: "3rem 3rem",
+          }}
+        />
       <div className="ml-10">
-        <h1 className="text-3xl md:text-5xl text-black font-bold mt-10 ">
-          Corporate Videos
+        <h1 className="text-3xl md:text-5xl text-white font-bold mt-10 ">
+          Corporate <span className="text-yellow-500">Videos</span>
         </h1>
       </div>
 

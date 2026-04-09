@@ -10,6 +10,7 @@ import Motionposter from '../components/Motionposter';
 import Printcreative from '../components/Printcreative';
 import CoperateBanner from '../components/CoperateBanner';
 import VideoSlider from '../components/VideoSlider';
+import OutdoorBranding from '../components/OutdoorBranding';
 
 
 
@@ -41,20 +42,23 @@ const Work = () => {
       <Reels />
 
       <Printcreative />
-
+   <VideoSlider />
+      <OutdoorBranding /> 
       <Digitalcreative />
-        <Motionposter />
-      <VideoSlider />
+   
+   
+      <Motionposter />
+   
 
     
 
-      <div className="bg-[#fafafa] py-12 md:py-24 px-4 sm:px-6 relative overflow-hidden">
+      <div className="bg-black py-12 md:py-24 px-4 sm:px-6 relative overflow-hidden">
         {/* GRID BACKGROUND SOFT */}
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
             backgroundImage:
-              "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
+              "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
             backgroundSize: "3rem 3rem",
           }}
         />
@@ -65,8 +69,8 @@ const Work = () => {
         <div className="max-w-6xl mx-auto w-full relative z-10 flex flex-col items-center">
           {/* TITLE */}
           <div className="mb-8 md:mb-16 text-center">
-            <h2 className="text-3xl md:text-5xl font-black text-gray-900 tracking-tight">
-              Projects that <span className="text-yellow-500">define Web</span>
+            <h2 className="text-3xl md:text-5xl font-black text-yellow-500 tracking-tight">
+              Projects that <span className="text-white">define Websites</span>
             </h2>
           </div>
 

@@ -115,20 +115,27 @@ const Reels = () => {
 
   return (
     <section
-      className="w-full bg-black text-white py-20 pb-32 flex flex-col justify-center overflow-hidden relative"
+      className="w-full bg-black  py-20 pb-32 flex flex-col justify-center overflow-hidden relative"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Background Ambience */}
-      <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-black via-black/80 to-transparent z-10 pointer-events-none" />
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-black via-black/80 to-transparent z-10 pointer-events-none" />
-      <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-yellow-500/10 rounded-full blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none" />
+    {/* GRID BACKGROUND SOFT */}
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage:
+              "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
+            backgroundSize: "3rem 3rem",
+          }}
+        />
+
+      
+      
 
       {/* HEADER */}
       <div className="container mx-auto px-6 lg:px-20 mb-16 relative z-20 flex flex-col md:flex-row justify-between items-center md:items-center gap-8">
         <div className="flex-1">
-           <h2 className="text-5xl md:text-7xl font-black tracking-tight mb-4">
+           <h2 className="text-5xl text-yellow-500 md:text-7xl font-black tracking-tight mb-4">
              Reels <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600"></span>
            </h2>
         </div>
@@ -136,13 +143,13 @@ const Reels = () => {
         <div className="flex gap-4">
           <button 
             onClick={prevSlide} 
-            className="w-14 h-14 rounded-full flex items-center justify-center bg-white/5 border border-white/10 hover:bg-white/20 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-md group"
+            className="w-14 h-14 rounded-full flex items-center justify-center bg-yellow-500 border border-white/10 hover:bg-white/20 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-md group"
           >
             <svg className="w-6 h-6 text-white group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
           </button>
           <button 
             onClick={nextSlide} 
-            className="w-14 h-14 rounded-full flex items-center justify-center bg-white/5 border border-white/10 hover:bg-white/20 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-md group"
+            className="w-14 h-14 rounded-full flex items-center justify-center bg-yellow-500 border border-white/10 hover:bg-white/20 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-md group"
           >
             <svg className="w-6 h-6 text-white group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
           </button>

@@ -36,18 +36,73 @@ const Motionposter = () => {
   }, [isPaused]);
 
   return (
-    <div className="w-full md:px-30 px-5  py-10">
+    <div className="w-full px-4 md:px-10 lg:px-20 py-10 overflow-hidden">
       {/* Heading */}
-      <div className="text-center mb-10">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4">
+      <div className="text-center mb-8 md:mb-12">
+        <motion.h1 
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl md:text-5xl font-extrabold tracking-tight"
+        >
           Motion Poster
-        </h1>
-       
+        </motion.h1>
       </div>
 
-      {/* Desktop */}
+      {/* Mobile - Swiper Coverflow */}
+      <div className="block md:hidden w-full h-[60vh] min-h-[400px]">
+        <Swiper
+          effect={"coverflow"}
+          grabCursor={true}
+          centeredSlides={true}
+          slidesPerView={"auto"}
+          initialSlide={1}
+          coverflowEffect={{
+            rotate: 15,
+            stretch: 0,
+            depth: 150,
+            modifier: 1,
+            slideShadows: true,
+          }}
+          autoplay={{
+            delay: 3500,
+            disableOnInteraction: false,
+          }}
+          pagination={{ clickable: true, dynamicBullets: true }}
+          modules={[EffectCoverflow, Autoplay, Pagination]}
+          className="w-full h-full pb-14"
+        >
+          {cards.map((card, index) => (
+            <SwiperSlide 
+              key={index} 
+              className="w-[85%] max-w-[350px] h-[90%] rounded-3xl overflow-hidden relative shadow-[0_15px_40px_rgba(0,0,0,0.3)] mt-2"
+            >
+              <video
+                src={card.video}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              {/* Dark Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent pointer-events-none"></div>
+              
+              {/* Content */}
+              <div className="absolute bottom-0 left-0 w-full p-6 text-white pointer-events-none">
+                <h3 className="text-2xl font-bold tracking-wide drop-shadow-md">
+                  {card.title}
+                </h3>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
+      {/* Desktop - Expanding Cards */}
       <div
-        className="hidden md:flex w-full h-[500px] lg:h-[650px] gap-3 overflow-hidden"
+        className="hidden md:flex w-full h-[500px] lg:h-[650px] gap-4 overflow-hidden rounded-4xl"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
@@ -59,7 +114,7 @@ const Motionposter = () => {
               key={index}
               layout
               onClick={() => setActive(index)}
-              className={`relative cursor-pointer rounded-2xl overflow-hidden flex items-end transition-all duration-[800ms]
+              className={`relative cursor-pointer rounded-4xl overflow-hidden flex items-end transition-all duration-[800ms] ease-[0.25,1,0.5,1] shadow-2xl
               ${isActive ? "flex-[10]" : "flex-[1]"}`}
             >
               {/* 🎥 VIDEO */}
@@ -69,73 +124,32 @@ const Motionposter = () => {
                 loop
                 muted
                 playsInline
-                className="absolute w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover"
                 initial={false}
                 animate={{
-                  scale: isActive ? 1.05 : 1.2,
-                  filter: isActive ? "brightness(1)" : "brightness(0.5)",
+                   scale: isActive ? 1.05 : 1.25,
+                   filter: isActive ? "brightness(1) saturate(1.1)" : "brightness(0.3) saturate(0)",
                 }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 0.8, ease: "easeInOut" }}
               />
 
               {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
 
               {/* Content */}
-              <div className="relative z-10 p-8 text-white">
-                {isActive && (
-                  <>
-                    <h3 className="text-3xl lg:text-5xl font-bold">
-                      {card.title}
-                    </h3>
-                  </>
-                )}
+              <div className="relative z-10 p-8 text-white w-full pointer-events-none">
+                <motion.h3 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 20 }}
+                  transition={{ duration: 0.5, delay: isActive ? 0.3 : 0 }}
+                  className="text-3xl lg:text-5xl font-black drop-shadow-xl tracking-tight whitespace-nowrap"
+                >
+                  {card.title}
+                </motion.h3>
               </div>
             </motion.div>
           );
         })}
-      </div>
-
-      {/* Mobile */}
-      <div className="md:hidden w-full py-4">
-        <Swiper
-          effect={"coverflow"}
-          centeredSlides={true}
-          slidesPerView={1.2}
-          spaceBetween={20}
-          loop={true}
-          autoplay={{ delay: 3000 }}
-          pagination={{ clickable: true }}
-          modules={[EffectCoverflow, Autoplay, Pagination]}
-        >
-          {cards.map((card, index) => (
-            <SwiperSlide key={index}>
-              {({ isActive }) => (
-                <div
-                  className={`relative rounded-3xl overflow-hidden ${
-                    isActive ? "scale-100" : "scale-90 opacity-60"
-                  }`}
-                >
-                  {/* 🎥 VIDEO */}
-                  <video
-                    src={card.video}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-full object-cover"
-                  />
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-
-                  <div className="absolute bottom-0 p-6 text-white">
-                    <h3 className="text-xl font-bold">{card.title}</h3>
-                  </div>
-                </div>
-              )}
-            </SwiperSlide>
-          ))}
-        </Swiper>
       </div>
     </div>
   );

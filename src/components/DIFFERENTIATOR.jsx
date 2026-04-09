@@ -1,27 +1,26 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import client1 from "../assets/client/Aspire.png";
-import client2 from "../assets/client/BCG.png";
-import client3 from "../assets/client/Budanta.png";
-import client4 from "../assets/client/DIPR.png";
-import client5 from "../assets/client/Sweep.png";
-import client6 from "../assets/client/TNPC.png";
-import client7 from "../assets/client/TNP.png";
-import client8 from "../assets/client/Gaja.png";
-import client9 from "../assets/client/EXOplain.png";
-import client10 from "../assets/client/Forge.png";
-import client11 from "../assets/client/Group 2.png";
-import client12 from "../assets/client/Group 3.png";
-import client13 from "../assets/client/Group 4.png";
-import client14 from "../assets/client/Leela.jpg";
-import client15 from "../assets/client/TUTR.png";
-import client16 from "../assets/client/TN Seivangai.png";
-import client17 from "../assets/client/Mahindra.png";
-import client18 from "../assets/client/MGM Healthcare.png";
-import client19 from "../assets/client/Weddset GO.png";
-
-
+import client1 from "../assets/clientnew/AJ Dento Aesthetic care.png";
+import client2 from "../assets/clientnew/Aspire.png";
+import client3 from "../assets/clientnew/Budanta-logo-color.png";
+import client4 from "../assets/clientnew/CURI Hospital.png";
+import client5 from "../assets/clientnew/DMK sport wing.png";
+import client6 from "../assets/clientnew/EA.png";
+import client7 from "../assets/clientnew/Forge Innovation and ventures.png";
+import client8 from "../assets/clientnew/Group 2.png";
+import client9 from "../assets/clientnew/Group 3.png";
+import client10 from "../assets/clientnew/MGM Healthcare.png";
+import client11 from "../assets/clientnew/Mahindra Rise.png";
+import client12 from "../assets/clientnew/Nam Nadu.png";
+import client13 from "../assets/clientnew/Saravana Furnishing.png";
+import client14 from "../assets/clientnew/THE RISE LOGO.png";
+import client15 from "../assets/clientnew/Tamil Nadu Police.png";
+import client16 from "../assets/clientnew/Tamil Nadu Traffic Police.png";
+import client17 from "../assets/clientnew/W Fitness womens only gym.png";
+import client18 from "../assets/clientnew/deceler.png";
+import client19 from "../assets/clientnew/salem corporation logo.png";
+import client20 from "../assets/clientnew/trichy corporation logo.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -150,10 +149,11 @@ const clients = [
   { name: "Client 13", logos: [client13, client14] },
   { name: "Client 14", logos: [client14, client15] },
   { name: "Client 15", logos: [client15, client16] },
-  { name: "Client 16", logos: [client16, client1] },
-  { name: "Client 17", logos: [client17, client2] },
-  { name: "Client 18", logos: [client18, client3] },
-  { name: "Client 19", logos: [client19, client4] },
+  { name: "Client 16", logos: [client16, client17] },
+  { name: "Client 17", logos: [client17, client18] },
+  { name: "Client 18", logos: [client18, client19] },
+  { name: "Client 19", logos: [client19, client20] },
+  { name: "Client 20", logos: [client20, client1] },
 ];
 
 /* 🔥 COIN FLIP CARD */

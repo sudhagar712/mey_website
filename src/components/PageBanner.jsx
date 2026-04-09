@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const PageBanner = ({ title, breadcrumb, bgImage }) => {
   return (
-    <section className="relative w-full h-[400px] md:h-[600px] flex items-center justify-center overflow-hidden">
+    <section className="relative w-full h-[300px] md:h-[490px] flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img

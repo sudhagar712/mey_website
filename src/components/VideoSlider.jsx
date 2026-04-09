@@ -45,7 +45,7 @@ const VideoSlider = () => {
           className="flex flex-col items-center text-center max-w-3xl mx-auto mb-4 md:mb-0"
         >
         
-          <h2 className="text-5xl md:text-7xl lg:text-8xl font-black text-yellow-500 tracking-tight">
+          <h2 className="text-5xl md:text-6xl  font-black text-yellow-500 tracking-tight">
             Events <br className="hidden md:block"/>
           
           </h2>

@@ -20,13 +20,13 @@ const PdfPreview = () => {
   }, []);
 
   return (
-    <section className="bg-black py-20 md:py-32 px-4 md:px-30 relative overflow-hidden">
+    <section className=" py-20 md:py-32  md:px-50 relative overflow-hidden">
       {/* GRID BACKGROUND */}
       <div
         className="absolute inset-0 opacity-[0.05]"
         style={{
           backgroundImage:
-            "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
+            "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
           backgroundSize: "4rem 4rem",
         }}
       />
@@ -39,8 +39,8 @@ const PdfPreview = () => {
         <div className="mb-16 text-center">
          
 
-          <h2 className="text-4xl md:text-6xl font-bold text-white">
-            Pitch <span className="text-[#fec000]">Decks</span>
+          <h2 className="text-4xl md:text-6xl font-bold ">
+            Pitch <span className="">Decks</span>
           </h2>
         </div>
 

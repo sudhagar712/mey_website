@@ -32,7 +32,16 @@ const Printcreative = () => {
   }, [paused]);
 
   return (
-    <section className="w-full py-16 md:py-24 md:px-5 md:p-10  overflow-hidden">
+    <section className="w-full py-16 md:py-24 md:px-5 md:p-10  overflow-hidden relative">
+         {/* GRID BACKGROUND SOFT */}
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage:
+              "linear-gradient(#000 2px, transparent 1px), linear-gradient(90deg, #000 2px, transparent 1px)",
+            backgroundSize: "3rem 3rem",
+          }}
+        />
       <div className="flex items-center gap-4 mb-6">
         <div className="w-10 h-[2px] bg-yellow-500"></div>
         <h2 className="text-md tracking-[0.4em] uppercase">
