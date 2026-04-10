@@ -14,7 +14,7 @@ const Services = () => {
         title="Branding, Social Media & Website Design Services in Chennai | MEY"
         description="Explore MEY’s branding, social media marketing, website development, video production and advertising services in Chennai."
       />
-      <PageBanner bgImage="https://stl.tech/wp-content/uploads/2023/02/Network-services-scaled.webp" />
+      <PageBanner title="Services" />
       <div className="p-3 md:px-20 md:p-10  relative">
       
         <ExpandingCards />

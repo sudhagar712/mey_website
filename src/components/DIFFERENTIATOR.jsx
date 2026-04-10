@@ -331,10 +331,10 @@ const DIFFERENTIATOR = () => {
       {/* 1. WHY MEY Section - Refined Proportions */}
       <section className="bg-black py-20 md:py-32 px-4 md:px-8 lg:px-16 relative overflow-hidden ">
         {/* Background subtle lines */}
-        <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:60px_60px]" />
+        <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,#000_2px,transparent_2px),linear-gradient(to_bottom,#000_2px,transparent_2px)] bg-[size:60px_60px]" />
 
         {/* Subtle Background Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_2px,transparent_2px),linear-gradient(to_bottom,#8080800a_2px,transparent_2px)] bg-[size:40px_40px] pointer-events-none"></div>
 
         <div className="max-w-[1250px] mx-auto relative z-10">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">

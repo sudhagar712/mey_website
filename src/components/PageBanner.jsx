@@ -66,12 +66,12 @@ const PageBanner = ({ title, breadcrumb, bgImage }) => {
       style={{
         position: 'relative',
         width: '100%',
-        minHeight: 'clamp(260px, 38vw, 480px)',
+        minHeight: 'clamp(370px, 38vw, 560px)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         overflow: 'hidden',
-        background: 'linear-gradient(135deg, #0a0a0a 0%, #111010 40%, #1a1200 100%)',
+        background: 'linear-gradient(135deg, #000000ff 0%, #111010 40%, #1a1200 100%)',
       }}
     >
       {/* ── Ambient golden orbs ── */}
@@ -86,7 +86,7 @@ const PageBanner = ({ title, breadcrumb, bgImage }) => {
           left: orb.left, right: orb.right,
           top: orb.top, bottom: orb.bottom,
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(251,186,0,0.22) 0%, rgba(251,186,0,0.06) 55%, transparent 75%)',
+          background: 'radial-gradient(circle, rgba(251, 184, 0, 0.46) 0%, rgba(251, 184, 0, 0.13) 55%, transparent 75%)',
           animation: `floatOrb ${orb.dur} ease-in-out ${orb.delay} infinite, pulseGlow 4s ease-in-out ${orb.delay} infinite`,
           pointerEvents: 'none',
           zIndex: 1,

@@ -33,7 +33,7 @@ const Contact = () => {
         />
         {/* 1. Page Banner */}
         <PageBanner
-          breadcrumb="Contact"
+          title="Contact"
           bgImage="https://i.pinimg.com/1200x/da/a6/0a/daa60a6f17f98c28ed50f47b1c144b0c.jpg"
         />
 
