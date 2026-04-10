@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useRef, useState } from "react";
+import { motion, AnimatePresence, useMotionValue, useSpring, useTransform, useMotionTemplate } from "framer-motion";
 
 const capabilities = [
   {
@@ -58,36 +58,122 @@ const capabilities = [
   },
 ];
 
+const TiltCard = ({ cap, onClick, index }) => {
+  const ref = useRef(null);
+  
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  
+  const mouseXRaw = useMotionValue(50);
+  const mouseYRaw = useMotionValue(50);
+
+  const mouseXSpring = useSpring(x, { stiffness: 300, damping: 30 });
+  const mouseYSpring = useSpring(y, { stiffness: 300, damping: 30 });
+
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["12deg", "-12deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-12deg", "12deg"]);
+
+  const glareBackground = useMotionTemplate`radial-gradient(circle at ${mouseXRaw}% ${mouseYRaw}%, rgba(253, 224, 71, 0.15) 0%, transparent 60%)`;
+
+  const handleMouseMove = (e) => {
+    if (!ref.current) return;
+    const rect = ref.current.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    
+    // Mouse relative to the card
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    
+    const xPct = mouseX / width - 0.5;
+    const yPct = mouseY / height - 0.5;
+    x.set(xPct);
+    y.set(yPct);
+    
+    mouseXRaw.set((mouseX / width) * 100);
+    mouseYRaw.set((mouseY / height) * 100);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+    mouseXRaw.set(50);
+    mouseYRaw.set(50);
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1], delay: index * 0.1 }}
+      style={{ perspective: "1000px" }}
+      className="relative w-full"
+    >
+      <motion.div
+        ref={ref}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        onClick={() => onClick(cap)}
+        className="group relative cursor-pointer min-h-[360px] w-full h-full rounded-[2rem]"
+        style={{
+          rotateX,
+          rotateY,
+          transformStyle: "preserve-3d",
+        }}
+        whileHover={{ scale: 1.02 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
+      >
+        {/* BASE LAYER - image, overlay, border radius */}
+        <div 
+          className="absolute inset-0 rounded-[2rem] overflow-hidden bg-[#0a0a0a] ring-1 ring-black/5 shadow-lg group-hover:shadow-[0_30px_50px_rgba(0,0,0,0.2)] transition-shadow duration-500"
+        >
+          {/* IMAGE */}
+          <img
+            src={cap.imgUrl}
+            alt={cap.title}
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            loading="lazy"
+          />
+
+          {/* OVERLAYS */}
+          <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-500"></div>
+          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+          
+          {/* MOUSE GLARE */}
+          <motion.div 
+            className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-screen z-10"
+            style={{ background: glareBackground }}
+          />
+        </div>
+
+        {/* 3D CONTENT LAYER - Popped out using translateZ */}
+        <div 
+          className="absolute inset-0 flex flex-col justify-end p-8 pointer-events-none"
+          style={{ transform: "translateZ(80px)", transformStyle: "preserve-3d" }}
+        >
+          <span className="text-sm font-bold tracking-[0.3em] text-yellow-400 mb-3 block drop-shadow-md">
+            {cap.num} /
+          </span>
+          <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 drop-shadow-lg">
+            {cap.title}
+          </h3>
+          <p className="text-sm md:text-base text-white/80 translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out">
+            {cap.desc}
+          </p>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+};
+
 const CAPABILITIES = () => {
-  const sectionRef = useRef(null);
   const [selectedCap, setSelectedCap] = useState(null);
-
-  // Scroll animation
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const elements = sectionRef.current?.querySelectorAll(".scroll-reveal");
-    elements?.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
 
   const closeModal = () => setSelectedCap(null);
 
   return (
-    <section
-      ref={sectionRef}
-      className="bg-white py-24 px-4 md:px-12 relative lg:px-24"
-    >
+    <section className="bg-white py-24 px-4 md:px-12 relative lg:px-24">
       {/* Subtle Grid Background */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.05]"
@@ -97,29 +183,21 @@ const CAPABILITIES = () => {
           backgroundSize: "4rem 4rem",
         }}
       />
-      {/* Scroll animation styles */}
-      <style>
-        {`
-          .scroll-reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-          }
-          .scroll-reveal.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        `}
-      </style>
 
       <div className="max-w-[1400px] mx-auto">
         {/* HEADER */}
-        <div className="mb-16 scroll-reveal">
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
+          className="mb-16 relative z-10"
+        >
           <h4 className="text-md tracking-[0.4em] uppercase font-bold text-black/60 mb-4">
             Our Capabilities
           </h4>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-end border-b pb-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-end border-b pb-10 border-black/10">
             <h2 className="text-4xl md:text-6xl font-bold leading-tight">
               Complete Brand & <br /> Marketing Solutions
             </h2>
@@ -128,48 +206,17 @@ const CAPABILITIES = () => {
               Everything your brand needs — structured under one direction.
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
           {capabilities.map((cap, i) => (
-            <div
-              key={cap.num}
-              onClick={() => setSelectedCap(cap)}
-              className="scroll-reveal group relative overflow-hidden rounded-[2rem] min-h-[340px] cursor-pointer"
-              style={{ transitionDelay: `${i * 0.1}s` }}
-            >
-              {/* IMAGE */}
-              <img
-                src={cap.imgUrl}
-                alt={cap.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-
-              {/* DARK OVERLAY */}
-              <div className="absolute inset-0 bg-black/50 group-hover:bg-black/70 transition duration-500"></div>
-
-              {/* GRADIENT GLOW */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-t from-yellow-400/20 via-transparent to-transparent"></div>
-
-              {/* CONTENT */}
-              <div className="relative z-10 h-full flex flex-col justify-end p-8">
-                {/* NUMBER */}
-                <span className="text-xs tracking-[0.3em] text-yellow-400 mb-3 block">
-                  {cap.num} /
-                </span>
-
-                {/* TITLE */}
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                  {cap.title}
-                </h3>
-
-                {/* DESCRIPTION (HOVER REVEAL) */}
-                <p className="text-sm md:text-base text-white/80 translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                  {cap.desc}
-                </p>
-              </div>
-            </div>
+            <TiltCard 
+              key={cap.num} 
+              cap={cap} 
+              index={i} 
+              onClick={setSelectedCap} 
+            />
           ))}
         </div>
       </div>

@@ -133,9 +133,9 @@ const Reels = () => {
       
 
       {/* HEADER */}
-      <div className="container mx-auto px-6 lg:px-20 mb-16 relative z-20 flex flex-col md:flex-row justify-between items-center md:items-center gap-8">
+      <div className="container mx-auto px-6 lg:px-20 mb-16 relative z-20 flex flex-row justify-between items-center md:items-center gap-8">
         <div className="flex-1">
-           <h2 className="text-5xl text-yellow-500 md:text-7xl font-black tracking-tight mb-4">
+           <h2 className="text-3xl text-yellow-500 md:text-7xl font-black tracking-tight mb-4">
              Reels <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600"></span>
            </h2>
         </div>

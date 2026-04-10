@@ -18,11 +18,11 @@ const Home = () => {
         description="MEY is a premium branding and digital marketing agency in Chennai offering brand identity, social media management, website development, performance marketing and outdoor advertising."
       />
       <Hero />
-      <div className="px-3">
+      <div className="">
         <SmartConversations />
       </div>
-
-      {/* <Mobileui/> */}
+{/* 
+      <Mobileui/> */}
 
       <CAPABILITIES />
 

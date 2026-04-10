@@ -206,9 +206,6 @@ const ClientCard = ({ logos, delay }) => {
 
 
 
-
-
-
 const DIFFERENTIATOR = () => {
   const sectionRefs = useRef([]);
 
