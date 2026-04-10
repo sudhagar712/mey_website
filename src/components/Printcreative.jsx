@@ -3,8 +3,11 @@ import { motion } from "framer-motion";
 import p1 from "../assets/p1.jpg";
 import p3 from "../assets/p3.jpeg";
 import p4 from "../assets/p4.jpeg";
+import p5 from "../assets/newprint.png";
 
-const images = [p1,  p3, p4];
+
+
+const images = [p1,  p3, p4,p5];
 
 const Printcreative = () => {
   const containerRef = useRef(null);

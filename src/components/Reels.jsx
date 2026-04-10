@@ -21,6 +21,30 @@ const reelsData = [
     video:
       "https://res.cloudinary.com/dgphjgzgt/video/upload/v1773929363/vv2_kad9ol.mp4",
   },
+
+
+    {
+    title: "Reel 05",
+    video:
+      "https://res.cloudinary.com/dgphjgzgt/video/upload/v1775836079/Euro_Kids_uabzfv.mp4",
+  },
+
+     {
+    title: "Reel 06",
+    video:
+      "https://res.cloudinary.com/dgphjgzgt/video/upload/v1775836398/Bake___arts_REEL_2_FINAL_2_1_mypnwf.mp4",
+  },
+
+     {
+    title: "Reel 07",
+    video:
+      "https://res.cloudinary.com/dgphjgzgt/video/upload/v1775836416/Kalour_FINAL_Reels_2_1_kbxriz.mp4",
+  },
+
+
+
+
+
 ];
 
 const Reels = () => {
