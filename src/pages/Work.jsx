@@ -31,8 +31,9 @@ const Work = () => {
   return (
     <main className="w-full min-h-screen bg-[#fcfcfc] ">
       <SEO
-        title="Branding & Marketing Projects | MEY Chennai"
-        description="Explore branding, social media, website and advertising projects delivered by MEY."
+        title="Branding & Marketing Work | Portfolio Projects | MEY Chennai"
+        description="Browse MEY's portfolio — branding, social media, website and advertising projects delivered for clients across Chennai and India. Real work. Real results."
+        keywords="MEY work, MEY portfolio, branding projects Chennai, digital marketing portfolio, website design portfolio MEY, social media campaigns Chennai"
       />
       <PageBanner
         title="Our Work"

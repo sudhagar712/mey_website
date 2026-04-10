@@ -14,8 +14,9 @@ const Home = () => {
   return (
     <div className="">
       <SEO
-        title="MEY | Branding & Digital Marketing Agency in Chennai"
-        description="MEY is a premium branding and digital marketing agency in Chennai offering brand identity, social media management, website development, performance marketing and outdoor advertising."
+        title="MEY | Best Branding & Digital Marketing Agency in Chennai"
+        description="MEY is Chennai's #1 branding and digital marketing agency. We offer brand identity design, social media marketing, website development, performance marketing, video production and outdoor advertising. Call +91 8939009966."
+        keywords="MEY, MEY digital marketing, MEY branding, digital marketing agency Chennai, branding agency Chennai, social media marketing Chennai, website design Chennai, performance marketing Chennai, best marketing agency Chennai"
       />
       <Hero />
       <div className="">

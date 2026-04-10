@@ -12,7 +12,8 @@ const Services = () => {
     <div className="">
       <SEO
         title="Branding, Social Media & Website Design Services in Chennai | MEY"
-        description="Explore MEY’s branding, social media marketing, website development, video production and advertising services in Chennai."
+        description="MEY offers expert branding, social media marketing, website development, performance marketing, video production and outdoor advertising services in Chennai."
+        keywords="branding services Chennai, social media marketing Chennai, website design Chennai, performance marketing Chennai, video production Chennai, outdoor advertising Chennai, MEY services"
       />
       <PageBanner title="Services" />
       <div className="p-3 md:px-20 md:p-10  relative">

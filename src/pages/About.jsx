@@ -31,8 +31,9 @@ const About = () => {
   return (
     <>
       <SEO
-        title="About MEY | Branding Agency in Chennai"
-        description="Learn about MEY, a branding and digital marketing agency in Chennai built on the principle Truth Before Business."
+        title="About MEY | Branding & Digital Marketing Agency in Chennai"
+        description="Learn about MEY — Chennai's trusted branding and digital marketing agency built on the principle 'Truth Before Business'. Know our story, team and approach."
+        keywords="about MEY, MEY agency Chennai, branding company Chennai, digital marketing team Chennai, MEY story, MEY digital"
       />
       <style>
         {`
@@ -87,12 +88,15 @@ const About = () => {
         <ThreePerspective />
         {/* <ProblemSection /> */}
 
-        <WhatMeyMeans />
+      
 
-        <HowWeThink />
-        <WeOperate />
+       
+      
 
+ <WeOperate />
+   <WhatMeyMeans />
         <WhatDrivesUs />
+         <HowWeThink />
         <WorkWithSection />
        
         <OutcomeSection />

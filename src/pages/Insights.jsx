@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import mk from "../assets/mk.jpg";
+import SEO from "../components/SEO";
 import PageBanner from "../components/PageBanner";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -73,6 +74,11 @@ const Insights = () => {
 
   return (
     <main>
+      <SEO
+        title="ThinkLab | Branding & Marketing Insights by MEY Chennai"
+        description="Read MEY's ThinkLab — expert articles on branding, social media strategy, website design, performance marketing and digital growth from Chennai."
+        keywords="branding insights Chennai, digital marketing blog India, social media strategy tips, MEY ThinkLab, website design tips, marketing articles"
+      />
       <PageBanner
         title="ThinkLab"
         breadcrumb="Insights"

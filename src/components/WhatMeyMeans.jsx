@@ -112,7 +112,7 @@ const WhatMeyMeans = () => {
   );
 
   return (
-    <section className="relative w-full py-24 md:py-32 bg-black flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative w-full py-24 md:py-32  flex flex-col items-center justify-center overflow-hidden">
 
 
       {/* Subtle Grid Background for light theme */}
@@ -120,7 +120,7 @@ const WhatMeyMeans = () => {
           className="absolute inset-0 pointer-events-none opacity-[0.03]"
           style={{
             backgroundImage:
-              "linear-gradient(#fff 2px, transparent 2px), linear-gradient(90deg, #fff 2px, transparent 2px)",
+              "linear-gradient(#000 2px, transparent 2px), linear-gradient(90deg, #000 2px, transparent 2px)",
             backgroundSize: "4rem 4rem",
           }}
         />

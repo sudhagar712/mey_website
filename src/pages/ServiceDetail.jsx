@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { services } from "../data/servicesData";
+import SEO from "../components/SEO";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { MdArrowBackIos } from "react-icons/md";
@@ -44,6 +45,12 @@ const ServiceDetail = () => {
 
   return (
     <div className="bg-[#050505] min-h-screen text-white overflow-hidden relative">
+      <SEO
+        title={`${service.title} in Chennai | MEY`}
+        description={`MEY offers professional ${service.title} services in Chennai. ${service.description?.slice(0, 120) || 'Premium quality, measurable results.'} Call +91 8939009966.`}
+        keywords={`${service.title} Chennai, ${service.title} agency Chennai, MEY ${service.title}, best ${service.title} company Chennai`}
+        ogImage={service.image}
+      />
       <Navbar />
 
       {/* Dynamic Hero Section */}

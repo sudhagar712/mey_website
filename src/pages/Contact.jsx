@@ -28,8 +28,9 @@ const Contact = () => {
     return (
       <main>
         <SEO
-          title="Contact MEY | Branding & Marketing Agency Chennai"
-          description="Contact MEY to start your next branding or digital marketing project with us."
+          title="Contact MEY | Branding & Digital Marketing Agency Chennai"
+          description="Contact MEY to start your branding or digital marketing project. Visit us in Chennai or call +91 8939009966. We respond within 24 hours."
+          keywords="contact MEY, MEY Chennai contact, digital marketing agency contact Chennai, branding agency phone Chennai, hire MEY"
         />
         {/* 1. Page Banner */}
         <PageBanner
