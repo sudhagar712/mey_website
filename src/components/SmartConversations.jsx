@@ -154,7 +154,7 @@ const SmartConversations = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="relative py-20 md:py-28 bg-white overflow-hidden">
+    <section ref={sectionRef} className="relative py-20 md:py-28  overflow-hidden">
       {/* ── Subtle grid ── */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.04]"
@@ -165,11 +165,7 @@ const SmartConversations = () => {
         }}
       />
 
-      {/* ── Ambient orbs ── */}
-      <Orb size="500px" top="-15%" left="-12%"  color="rgba(254,192,0,0.07)" blur="90px" dur={10} />
-      <Orb size="300px" top="60%"  left="80%"   color="rgba(254,192,0,0.05)" blur="70px" dur={7}  />
-      <Orb size="200px" top="5%"   left="85%"   color="rgba(0,0,0,0.04)"     blur="60px" dur={9}  />
-
+     
       <div className="max-w-[1300px] mx-auto px-4 md:px-8">
 
      

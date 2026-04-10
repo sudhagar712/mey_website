@@ -153,7 +153,7 @@ const clients = [
   { name: "Client 17", logos: [client17, client18] },
   { name: "Client 18", logos: [client18, client19] },
   { name: "Client 19", logos: [client19, client20] },
-  { name: "Client 20", logos: [client20, client1] },
+  { name: "Client 20", logos: [client2, client3] },
 ];
 
 /* 🔥 COIN FLIP CARD */
@@ -331,7 +331,7 @@ const DIFFERENTIATOR = () => {
       {/* 1. WHY MEY Section - Refined Proportions */}
       <section className="bg-black py-20 md:py-32 px-4 md:px-8 lg:px-16 relative overflow-hidden ">
         {/* Background subtle lines */}
-        <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:60px_60px]" />
+        <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:60px_60px]" />
 
         {/* Subtle Background Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
@@ -440,17 +440,21 @@ const DIFFERENTIATOR = () => {
 
       {/* 2. SELECT CLIENTS Section */}
       {/* 🔥 SELECT CLIENTS */}
-      <section className="bg-black py-32 md:py-40 px-2 md:px-12 lg:px-24 relative">
+      <section className=" py-32 md:py-40 px-2 md:px-12 lg:px-24 relative">
         {/* background */}
-        <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:60px_60px]" />
+        <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,#000_2px,transparent_2px),linear-gradient(to_bottom,#000_2px,transparent_2px)] bg-[size:60px_60px]" />
 
-        <div className="max-w-[1500px] mx-auto">
+        <div className=" max-w-[1500px] mx-auto text-center">
           {/* Heading */}
-          <div className="mb-24 text-center">
-            <h2 className="text-5xl text-[#fec000] md:text-7xl font-bold">
-              Trusted By
-            </h2>
-          </div>
+           <div
+                className="inline-flex items-center  gap-4 mb-6 md:mb-20"
+                data-aos="fade-up"
+              >
+                <span className="w-10 h-[3px] bg-[#f7d83c]"></span>
+                <h4 className="text-md md:text-3xl tracking-[0.3em] uppercase font-bold text-black">
+                  Trusted By
+                </h4>
+              </div>
 
           {/* GRID */}
           <div className="grid client-grid-container md:px-20 grid-cols-2 md:grid-cols-4  overflow-hidden">
@@ -474,11 +478,11 @@ const DIFFERENTIATOR = () => {
             alt="CTA Background"
             className="w-full h-full object-cover grayscale"
           />
-          <div className="absolute inset-0 bg-[#fec000]/80 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-[#fec000]/90 mix-blend-multiply"></div>
         </div>
 
         <div
-          className="relative z-10 max-w-4xl mx-auto scroll-fade-up"
+          className="relative z-10 max-w-5xl  mx-auto scroll-fade-up"
           ref={addToRefs}
         >
           <h2 className=" text-5xl sm:text-7xl md:text-[6rem] lg:text-[7.5rem] font-bold text-black tracking-tighter leading-[1.05] mb-6">
@@ -487,7 +491,7 @@ const DIFFERENTIATOR = () => {
           </h2>
 
           <p
-            className="text-2xl md:text-3xl font-bold text-black/70 mb-16 tracking-wide uppercase"
+            className="text-xl md:text-2xl font-bold text-black/50 mb-16 tracking-wide uppercase"
             style={{ fontFamily: "Poppins, sans-serif" }}
           >
             Start with MEY.

@@ -91,15 +91,15 @@ const Hero = () => {
         />
         <p className="text-2xl md:text-5xl  lg:text-3xl text-black/80    leading-[1.6] mb-10">
           We build{" "}
-          <span className="   border-b border-black/30 text-[#fec000] ">
+          <span className="   border-b border-black/30 text-[#fec000] font-bold ">
             clear
           </span>
           ,{" "}
-          <span className="   text-[#fec000]  border-b border-black/30">
+          <span className="   text-[#fec000]  border-b border-black/30 font-bold">
             powerful
           </span>{" "}
           and{" "}
-          <span className="  text-[#fec000]  border-b border-black/30">
+          <span className="  text-[#fec000]  border-b border-black/30 font-bold">
             growth-focused
           </span>{" "}
           brands for startups and ambitious businesses.
