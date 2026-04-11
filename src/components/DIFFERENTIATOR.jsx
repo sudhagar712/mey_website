@@ -187,7 +187,7 @@ const ClientCard = ({ logos, delay }) => {
           <img
             src={logos[0]}
             alt="client"
-            className="h-20 md:h-35 object-contain transition duration-500 group-hover:scale-110"
+            className="h-19 md:h-25 object-contain transition duration-500 group-hover:scale-110"
           />
         </div>
 
@@ -196,7 +196,7 @@ const ClientCard = ({ logos, delay }) => {
           <img
             src={logos[1]}
             alt="client"
-            className="h-20 md:h-35 object-contain transition duration-500 group-hover:scale-110"
+            className="h-19 md:h-25 object-contain transition duration-500 group-hover:scale-110"
           />
         </div>
       </motion.div>

@@ -23,25 +23,25 @@ const reelsData = [
   },
 
 
-    {
+  {
     title: "Reel 05",
     video:
       "https://res.cloudinary.com/dgphjgzgt/video/upload/v1775836079/Euro_Kids_uabzfv.mp4",
   },
 
-     {
+  {
     title: "Reel 06",
     video:
       "https://res.cloudinary.com/dgphjgzgt/video/upload/v1775836416/Kalour_FINAL_Reels_2_1_kbxriz.mp4",
   },
 
-     {
+  {
     title: "Reel 07",
     video:
       "https://res.cloudinary.com/dgphjgzgt/video/upload/v1775836398/Bake___arts_REEL_2_FINAL_2_1_mypnwf.mp4",
   },
 
-  
+
 
 
 
@@ -102,7 +102,7 @@ const Reels = () => {
 
       if (i === active) {
         video.currentTime = 0;
-        video.play().catch(() => {});
+        video.play().catch(() => { });
         animationFrame = requestAnimationFrame(updateProgress);
       } else {
         video.pause();
@@ -145,41 +145,41 @@ const Reels = () => {
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-    {/* GRID BACKGROUND SOFT */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage:
-              "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
-            backgroundSize: "3rem 3rem",
-          }}
-        />
+      {/* GRID BACKGROUND SOFT */}
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
+          backgroundSize: "3rem 3rem",
+        }}
+      />
 
-      
-      
+
+
 
       {/* HEADER */}
       <div className="container mx-auto px-6 lg:px-20 mb-16 relative z-20 flex flex-row justify-between items-center md:items-center gap-8">
         <div className="flex-1">
-           <div className="flex  gap-4 text-yellow-500 text-center mb-6">
- 
-        <h2 className="text-3xl md:text-5xl font-bold tracking-[0.3em] mb-2 uppercase">
-          Reels
-        </h2>
-       
-      </div>
-     
+          <div className="flex  gap-4 text-yellow-500 text-center mb-6">
+
+            <h2 className="text-3xl md:text-5xl font-bold tracking-[0.3em] mb-2 uppercase">
+              Reels
+            </h2>
+
+          </div>
+
         </div>
 
         <div className="flex gap-4">
-          <button 
-            onClick={prevSlide} 
+          <button
+            onClick={prevSlide}
             className="w-14 h-14 rounded-full flex items-center justify-center bg-yellow-500 border border-white/10 hover:bg-white/20 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-md group"
           >
             <svg className="w-6 h-6 text-white group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
           </button>
-          <button 
-            onClick={nextSlide} 
+          <button
+            onClick={nextSlide}
             className="w-14 h-14 rounded-full flex items-center justify-center bg-yellow-500 border border-white/10 hover:bg-white/20 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-md group"
           >
             <svg className="w-6 h-6 text-white group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
@@ -229,7 +229,7 @@ const Reels = () => {
                 top: "50%",
                 left: "50%",
                 zIndex: 20 - abs,
-                opacity: abs === 2 ? 0 : (abs === 1 ? 0.65 : 1),
+                opacity: abs === 2 ? 0 : (abs === 1 ? 0.35 : 1),
                 filter: isActive ? 'brightness(1)' : `brightness(${abs === 1 ? 0.65 : 0.2}) blur(${abs === 1 ? 0 : 3}px)`,
                 transition: "all 0.8s cubic-bezier(0.25, 1, 0.5, 1)",
               }}
@@ -257,7 +257,7 @@ const Reels = () => {
                         {item.title}
                       </h3>
                     </div>
-                    
+
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
@@ -266,9 +266,9 @@ const Reels = () => {
                       className="w-12 h-12 rounded-full bg-white/10 border border-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/30 hover:scale-110 transition-all shadow-lg shrink-0"
                     >
                       {isMuted ? (
-                         <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" /></svg>
+                        <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" /></svg>
                       ) : (
-                         <svg className="w-5 h-5 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" /></svg>
+                        <svg className="w-5 h-5 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" /></svg>
                       )}
                     </button>
                   </div>
