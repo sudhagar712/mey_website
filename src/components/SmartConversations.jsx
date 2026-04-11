@@ -177,7 +177,7 @@ const SmartConversations = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ amount: 0.4 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center text-[22px] sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-12 md:mb-16 leading-tight"
+          className="text-center text-[22px] sm:text-3xl md:text-4xl lg:text-4xl font-bold text-gray-900 mb-12 md:mb-16 leading-tight"
         >
           Engage Your Customers with{" "}
           <span
@@ -185,15 +185,7 @@ const SmartConversations = () => {
            
           >
             Smart Conversations
-            {/* Underline accent */}
-            <motion.span
-              className="absolute left-0 bottom-0 h-[3px] bg-[#fec000]/40 rounded-full"
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
-              style={{ originX: 0, width: "100%" }}
-            />
+          
           </span>
         </motion.h2>
 
@@ -286,7 +278,7 @@ const SmartConversations = () => {
               />
 
               <motion.div
-                className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 text-center"
+                className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8 text-center"
                 initial="hidden"
                 whileInView="show"
                 viewport={{ amount: 0.4 }}

@@ -273,7 +273,27 @@ const DIFFERENTIATOR = () => {
           color: black;
         }
 
-        @media (min-width: 1024px) {
+        .scroll-fade-up {
+          opacity: 0;
+          transform: translateY(40px);
+          transition: all 1s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .scroll-fade-up.is-visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        /* Mobile (< 768px) — 2 columns checkerboard */
+        @media (max-width: 767px) {
+          .client-grid-container > div:nth-child(4n + 2),
+          .client-grid-container > div:nth-child(4n + 3) {
+            background-color: #050505;
+            color: white;
+          }
+        }
+
+        /* Tablet & Desktop (>= 768px) — 4 columns checkerboard */
+        @media (min-width: 768px) {
           .client-grid-container > div:nth-child(8n + 2),
           .client-grid-container > div:nth-child(8n + 4),
           .client-grid-container > div:nth-child(8n + 5),
@@ -282,49 +302,6 @@ const DIFFERENTIATOR = () => {
             color: white;
           }
         }
-
-        @media (max-width: 1023px) {
-          .client-grid-container > div:nth-child(4n + 2),
-          .client-grid-container > div:nth-child(4n + 3) {
-            background-color: #050505;
-            color: white;
-          }
-        }
-                .scroll-fade-up {
-                    opacity: 0;
-                    transform: translateY(40px);
-                    transition: all 1s cubic-bezier(0.25, 1, 0.5, 1);
-                }
-                .scroll-fade-up.is-visible {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-                
-                /* Responsive Checkerboard for Client Grid */
-                .client-grid-container > div {
-                    background-color: white;
-                    color: black;
-                }
-                
-                /* Large Screens (4 columns) - Checkerboard logic */
-                @media (min-width: 1024px) {
-                    .client-grid-container > div:nth-child(8n + 2),
-                    .client-grid-container > div:nth-child(8n + 4),
-                    .client-grid-container > div:nth-child(8n + 5),
-                    .client-grid-container > div:nth-child(8n + 7) {
-                        background-color: #050505;
-                        color: white;
-                    }
-                }
-                
-                /* Medium Screens (2 columns) - Checkerboard logic */
-                @media (max-width: 1023px) {
-                    .client-grid-container > div:nth-child(4n + 2),
-                    .client-grid-container > div:nth-child(4n + 3) {
-                        background-color: #050505;
-                        color: white;
-                    }
-                }
                 `}
       </style>
 
