@@ -70,8 +70,8 @@ const Work = () => {
         <div className="max-w-6xl mx-auto w-full relative z-10 flex flex-col items-center">
           {/* TITLE */}
           <div className="mb-8 md:mb-16 text-center">
-            <h2 className="text-3xl md:text-5xl font-black text-yellow-500 tracking-tight">
-              Projects that <span className="text-white">define Websites</span>
+            <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight">
+              Projects that <span className="text-white"> define </span> <span className="text-yellow-500"> Websites</span>
             </h2>
           </div>
 
