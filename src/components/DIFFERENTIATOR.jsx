@@ -6,7 +6,10 @@ import client2 from "../assets/clientnew/Aspire.png";
 import client3 from "../assets/clientnew/Budanta-logo-color.png";
 import client4 from "../assets/clientnew/CURI Hospital.png";
 import client5 from "../assets/clientnew/DMK sport wing.png";
+
+
 import client6 from "../assets/clientnew/EA.png";
+import client6_0 from "../assets/clientnew/E0.png";
 import client7 from "../assets/clientnew/Forge Innovation and ventures.png";
 import client8 from "../assets/clientnew/Group 2.png";
 import client9 from "../assets/clientnew/Group 3.png";
@@ -138,8 +141,8 @@ const clients = [
   { name: "Client 2", logos: [client2, client3] },
   { name: "Client 3", logos: [client3, client4] },
   { name: "Client 4", logos: [client4, client5] },
-  { name: "Client 5", logos: [client5, client6] },
-  { name: "Client 6", logos: [client6, client7] },
+  { name: "Client 5", logos: [client5, client6_0] },
+  { name: "Client 6", logos: [client6_0, client7] },
   { name: "Client 7", logos: [client7, client8] },
   { name: "Client 8", logos: [client8, client9] },
   { name: "Client 9", logos: [client9, client10] },
@@ -184,7 +187,7 @@ const ClientCard = ({ logos, delay }) => {
           <img
             src={logos[0]}
             alt="client"
-            className="h-12 md:h-20 object-contain transition duration-500 group-hover:scale-110"
+            className="h-20 md:h-35 object-contain transition duration-500 group-hover:scale-110"
           />
         </div>
 
@@ -193,7 +196,7 @@ const ClientCard = ({ logos, delay }) => {
           <img
             src={logos[1]}
             alt="client"
-            className="h-12 md:h-16 object-contain transition duration-500 group-hover:scale-110"
+            className="h-20 md:h-35 object-contain transition duration-500 group-hover:scale-110"
           />
         </div>
       </motion.div>
@@ -426,15 +429,15 @@ const DIFFERENTIATOR = () => {
 
         <div className=" max-w-[1500px] mx-auto text-center">
           {/* Heading */}
-           <div
-                className="inline-flex items-center  gap-4 mb-6 md:mb-20"
-                data-aos="fade-up"
-              >
-                <span className="w-10 h-[3px] bg-[#f7d83c]"></span>
-                <h4 className="text-md md:text-3xl tracking-[0.3em] uppercase text-white font-bold ">
-                  Trusted By
-                </h4>
-              </div>
+          <div
+            className="inline-flex items-center  gap-4 mb-6 md:mb-20"
+            data-aos="fade-up"
+          >
+            <span className="w-10 h-[3px] bg-[#f7d83c]"></span>
+            <h4 className="text-md md:text-3xl tracking-[0.3em] uppercase text-white font-bold text-black">
+              Trusted By
+            </h4>
+          </div>
 
           {/* GRID */}
           <div className="grid client-grid-container md:px-20 grid-cols-2 md:grid-cols-4  overflow-hidden">

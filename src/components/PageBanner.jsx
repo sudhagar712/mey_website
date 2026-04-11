@@ -1,50 +1,50 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
-/* ─── Inline styles (no extra CSS file needed) ─── */
+/* ─── Keyframes ─── */
 const keyframes = `
-@keyframes waveFlow1 {
-  0%   { transform: translateX(0)   scaleY(1); }
-  50%  { transform: translateX(-6%) scaleY(1.08); }
-  100% { transform: translateX(0)   scaleY(1); }
+@keyframes waveL {
+  0%   { transform: translateX(0%)   scaleY(1); }
+  50%  { transform: translateX(-8%)  scaleY(1.07); }
+  100% { transform: translateX(0%)   scaleY(1); }
 }
-@keyframes waveFlow2 {
-  0%   { transform: translateX(0)   scaleY(1); }
-  50%  { transform: translateX(5%)  scaleY(0.94); }
-  100% { transform: translateX(0)   scaleY(1); }
+@keyframes waveR {
+  0%   { transform: translateX(0%)   scaleY(1); }
+  50%  { transform: translateX(7%)   scaleY(0.95); }
+  100% { transform: translateX(0%)   scaleY(1); }
 }
-@keyframes waveFlow3 {
-  0%   { transform: translateX(0)   scaleY(1); }
-  50%  { transform: translateX(-4%) scaleY(1.12); }
-  100% { transform: translateX(0)   scaleY(1); }
+@keyframes waveBreath {
+  0%,100% { transform: scaleY(1)   scaleX(1); }
+  40%      { transform: scaleY(1.1) scaleX(1.005); }
+  70%      { transform: scaleY(0.95) scaleX(0.998); }
 }
 @keyframes floatOrb {
   0%, 100% { transform: translateY(0px)   scale(1); }
-  50%       { transform: translateY(-20px) scale(1.05); }
+  50%       { transform: translateY(-22px) scale(1.06); }
 }
 @keyframes pulseGlow {
-  0%, 100% { opacity: 0.55; }
+  0%, 100% { opacity: 0.5; }
   50%       { opacity: 0.85; }
 }
-@keyframes shimmer {
-  0%   { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
 @keyframes particleDrift {
-  0%   { transform: translateY(0)   translateX(0)   opacity(0.6); }
-  50%  { transform: translateY(-30px) translateX(10px) opacity(1); }
-  100% { transform: translateY(0)   translateX(0)   opacity(0.6); }
+  0%   { transform: translateY(0)    translateX(0);  opacity: 0.55; }
+  50%  { transform: translateY(-28px) translateX(8px); opacity: 1; }
+  100% { transform: translateY(0)    translateX(0);  opacity: 0.55; }
+}
+@keyframes scanline {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
 }
 `;
 
-/* ─── Floating particle dots ─── */
-const PARTICLES = Array.from({ length: 18 }, (_, i) => ({
+/* ─── Floating particles ─── */
+const PARTICLES = Array.from({ length: 22 }, (_, i) => ({
   id: i,
-  left: `${5 + (i * 5.4) % 92}%`,
-  top:  `${10 + (i * 7.3) % 75}%`,
-  size: `${3 + (i % 4)}px`,
-  delay: `${(i * 0.37).toFixed(2)}s`,
-  duration: `${3 + (i % 3)}s`,
+  left: `${5 + (i * 4.3) % 92}%`,
+  top:  `${8  + (i * 6.9) % 78}%`,
+  size: `${2.5 + (i % 4)}px`,
+  delay: `${(i * 0.31).toFixed(2)}s`,
+  duration: `${2.8 + (i % 3) * 0.8}s`,
 }));
 
 const PageBanner = ({ title, breadcrumb, bgImage }) => {
@@ -58,7 +58,6 @@ const PageBanner = ({ title, breadcrumb, bgImage }) => {
     return () => { tag.remove(); };
   }, []);
 
-  /* Split title into chars for stagger */
   const chars = (title || '').split('');
 
   return (
@@ -71,14 +70,14 @@ const PageBanner = ({ title, breadcrumb, bgImage }) => {
         alignItems: 'center',
         justifyContent: 'center',
         overflow: 'hidden',
-        background: 'linear-gradient(135deg, #000000ff 0%, #111010 40%, #1a1200 100%)',
+        background: 'linear-gradient(135deg, #000000 0%, #0d0d00 45%, #1a1200 100%)',
       }}
     >
       {/* ── Ambient golden orbs ── */}
       {[
-        { w:'520px', h:'520px', left:'-12%', top:'-30%', delay:'0s',   dur:'7s'  },
-        { w:'400px', h:'400px', right:'-8%', bottom:'-25%', delay:'1s',   dur:'9s'  },
-        { w:'300px', h:'300px', left:'38%',  top:'10%',    delay:'2.5s', dur:'6s'  },
+        { w:'560px', h:'560px', left:'-10%', top:'-35%', delay:'0s',   dur:'7s'  },
+        { w:'420px', h:'420px', right:'-6%', bottom:'-22%', delay:'1.2s', dur:'9s' },
+        { w:'280px', h:'280px', left:'40%',  top:'5%',    delay:'2.8s', dur:'6s'  },
       ].map((orb, i) => (
         <div key={i} style={{
           position: 'absolute',
@@ -86,7 +85,7 @@ const PageBanner = ({ title, breadcrumb, bgImage }) => {
           left: orb.left, right: orb.right,
           top: orb.top, bottom: orb.bottom,
           borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(251, 184, 0, 0.46) 0%, rgba(251, 184, 0, 0.13) 55%, transparent 75%)',
+          background: 'radial-gradient(circle, rgba(251,184,0,0.42) 0%, rgba(251,184,0,0.1) 55%, transparent 75%)',
           animation: `floatOrb ${orb.dur} ease-in-out ${orb.delay} infinite, pulseGlow 4s ease-in-out ${orb.delay} infinite`,
           pointerEvents: 'none',
           zIndex: 1,
@@ -100,139 +99,122 @@ const PageBanner = ({ title, breadcrumb, bgImage }) => {
           left: p.left, top: p.top,
           width: p.size, height: p.size,
           borderRadius: '50%',
-          background: 'rgba(251,186,0,0.65)',
-          boxShadow: '0 0 6px rgba(251,186,0,0.8)',
+          background: 'rgba(251,186,0,0.7)',
+          boxShadow: '0 0 7px rgba(251,186,0,0.9)',
           animation: `particleDrift ${p.duration} ease-in-out ${p.delay} infinite`,
           pointerEvents: 'none',
           zIndex: 2,
         }} />
       ))}
 
-      {/* ── 3D Wave SVG stack ── */}
-      <div style={{ position:'absolute', inset:0, zIndex:3, pointerEvents:'none' }}>
+      {/* ── Wave SVG stack — overflow hidden so translateX never clips ── */}
+      <div style={{ position:'absolute', inset:0, zIndex:3, pointerEvents:'none', overflow:'hidden' }}>
 
-        {/* Wave layer 1 – deep gold */}
+        {/* Wave 1 — deep base, moves LEFT */}
         <svg
-          viewBox="0 0 1440 340"
+          viewBox="0 0 1600 340"
           preserveAspectRatio="none"
           style={{
-            position:'absolute', bottom:'-2px', left:0,
-            width:'110%', height:'65%',
-            animation: 'waveFlow1 8s ease-in-out infinite',
+            position:'absolute', bottom:'-2px',
+            left:'-15%', width:'130%', height:'68%',
+            animation: 'waveL 9s ease-in-out infinite',
             transformOrigin: 'bottom center',
-            filter: 'drop-shadow(0 -12px 30px rgba(251,186,0,0.25))',
+            filter: 'drop-shadow(0 -14px 32px rgba(251,186,0,0.2))',
           }}
         >
           <defs>
             <linearGradient id="wg1" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%"   stopColor="#fbba00" stopOpacity="0.18"/>
-              <stop offset="50%"  stopColor="#fcd34d" stopOpacity="0.30"/>
-              <stop offset="100%" stopColor="#fbba00" stopOpacity="0.18"/>
+              <stop offset="0%"   stopColor="#fbba00" stopOpacity="0.15"/>
+              <stop offset="50%"  stopColor="#fcd34d" stopOpacity="0.28"/>
+              <stop offset="100%" stopColor="#fbba00" stopOpacity="0.15"/>
             </linearGradient>
           </defs>
-          <path
-            d="M0,200 C180,120 360,280 540,200 C720,120 900,280 1080,200 C1260,120 1380,200 1440,180 L1440,340 L0,340 Z"
-            fill="url(#wg1)"
-          />
+          <path d="M0,200 C200,120 400,280 600,200 C800,120 1000,280 1200,200 C1400,120 1520,200 1600,180 L1600,340 L0,340 Z" fill="url(#wg1)" />
         </svg>
 
-        {/* Wave layer 2 – bright gold crest */}
+        {/* Wave 2 — mid layer, moves RIGHT */}
         <svg
-          viewBox="0 0 1440 340"
+          viewBox="0 0 1600 340"
           preserveAspectRatio="none"
           style={{
-            position:'absolute', bottom:'-2px', left:'-5%',
-            width:'115%', height:'58%',
-            animation: 'waveFlow2 11s ease-in-out infinite',
+            position:'absolute', bottom:'-2px',
+            left:'-15%', width:'130%', height:'60%',
+            animation: 'waveR 12s ease-in-out infinite',
             transformOrigin: 'bottom center',
-            filter: 'drop-shadow(0 -8px 24px rgba(251,186,0,0.35))',
+            filter: 'drop-shadow(0 -10px 26px rgba(251,186,0,0.32))',
           }}
         >
           <defs>
             <linearGradient id="wg2" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%"   stopColor="#fcd34d" stopOpacity="0.25"/>
+              <stop offset="0%"   stopColor="#fcd34d" stopOpacity="0.22"/>
               <stop offset="50%"  stopColor="#fbba00" stopOpacity="0.45"/>
-              <stop offset="100%" stopColor="#fcd34d" stopOpacity="0.25"/>
+              <stop offset="100%" stopColor="#fcd34d" stopOpacity="0.22"/>
             </linearGradient>
           </defs>
-          <path
-            d="M0,250 C240,160 480,310 720,220 C960,130 1200,290 1440,230 L1440,340 L0,340 Z"
-            fill="url(#wg2)"
-          />
+          <path d="M0,250 C270,160 540,310 800,220 C1060,130 1340,290 1600,230 L1600,340 L0,340 Z" fill="url(#wg2)" />
         </svg>
 
-        {/* Wave layer 3 – foreground glowing edge */}
+        {/* Wave 3 — foreground glowing crest, gentle breathe */}
         <svg
-          viewBox="0 0 1440 340"
+          viewBox="0 0 1600 340"
           preserveAspectRatio="none"
           style={{
-            position:'absolute', bottom:'-2px', left:'2%',
-            width:'108%', height:'48%',
-            animation: 'waveFlow3 6.5s ease-in-out infinite',
+            position:'absolute', bottom:'-2px',
+            left:'-15%', width:'130%', height:'50%',
+            animation: 'waveBreath 6.5s ease-in-out infinite',
             transformOrigin: 'bottom center',
-            filter: 'drop-shadow(0 -4px 18px rgba(251,186,0,0.6))',
+            filter: 'drop-shadow(0 -5px 20px rgba(251,186,0,0.65))',
           }}
         >
           <defs>
             <linearGradient id="wg3" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%"   stopColor="#fbba00" stopOpacity="0.5"/>
-              <stop offset="35%"  stopColor="#fff7d4" stopOpacity="0.6"/>
+              <stop offset="0%"   stopColor="#fbba00" stopOpacity="0.45"/>
+              <stop offset="35%"  stopColor="#fff7d4" stopOpacity="0.65"/>
               <stop offset="65%"  stopColor="#fbba00" stopOpacity="0.55"/>
-              <stop offset="100%" stopColor="#fbba00" stopOpacity="0.5"/>
+              <stop offset="100%" stopColor="#fbba00" stopOpacity="0.45"/>
             </linearGradient>
-            {/* Glowing stroke gradient */}
             <linearGradient id="wg3s" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%"   stopColor="#fbba00" stopOpacity="0.0"/>
-              <stop offset="30%"  stopColor="#fff7d4" stopOpacity="0.9"/>
-              <stop offset="70%"  stopColor="#fbba00" stopOpacity="0.8"/>
+              <stop offset="28%"  stopColor="#fff7d4" stopOpacity="1.0"/>
+              <stop offset="72%"  stopColor="#fbba00" stopOpacity="0.85"/>
               <stop offset="100%" stopColor="#fbba00" stopOpacity="0.0"/>
             </linearGradient>
           </defs>
-          <path
-            d="M0,280 C200,210 400,320 720,260 C1000,190 1220,310 1440,270 L1440,340 L0,340 Z"
-            fill="url(#wg3)"
-          />
+          <path d="M0,280 C220,210 440,320 800,258 C1060,190 1360,310 1600,268 L1600,340 L0,340 Z" fill="url(#wg3)" />
           {/* Glowing crest line */}
-          <path
-            d="M0,280 C200,210 400,320 720,260 C1000,190 1220,310 1440,270"
-            fill="none"
-            stroke="url(#wg3s)"
-            strokeWidth="2.5"
-          />
+          <path d="M0,280 C220,210 440,320 800,258 C1060,190 1360,310 1600,268"
+            fill="none" stroke="url(#wg3s)" strokeWidth="2.5" />
         </svg>
 
-        {/* Top decorative thin wave line */}
+        {/* Wave 4 — ultra-thin sparkle line on top, moves LEFT slow */}
         <svg
-          viewBox="0 0 1440 80"
+          viewBox="0 0 1600 80"
           preserveAspectRatio="none"
           style={{
-            position:'absolute', top:'18%', left:0,
-            width:'100%', height:'80px',
-            opacity: 0.35,
-            animation: 'waveFlow2 14s ease-in-out infinite',
+            position:'absolute', top:'16%',
+            left:'-15%', width:'130%', height:'80px',
+            opacity: 0.4,
+            animation: 'waveL 16s ease-in-out infinite',
           }}
         >
           <defs>
             <linearGradient id="wgtop" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%"   stopColor="transparent"/>
-              <stop offset="30%"  stopColor="#fbba00"/>
-              <stop offset="70%"  stopColor="#fcd34d"/>
+              <stop offset="25%"  stopColor="#fbba00"/>
+              <stop offset="55%"  stopColor="#fff7d4"/>
+              <stop offset="80%"  stopColor="#fbba00"/>
               <stop offset="100%" stopColor="transparent"/>
             </linearGradient>
           </defs>
-          <path
-            d="M0,40 C200,15 400,65 720,35 C1000,5 1220,55 1440,40"
-            fill="none"
-            stroke="url(#wgtop)"
-            strokeWidth="1.5"
-          />
+          <path d="M0,40 C230,12 460,68 800,34 C1100,4 1380,56 1600,38"
+            fill="none" stroke="url(#wgtop)" strokeWidth="1.5" />
         </svg>
       </div>
 
-      {/* ── Gold horizontal grid lines (depth illusion) ── */}
+      {/* ── Gold horizontal scan lines (depth illusion) ── */}
       <div style={{
         position:'absolute', inset:0, zIndex:2,
-        background: 'repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(251,186,0,0.04) 60px)',
+        background: 'repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(251,186,0,0.03) 60px)',
         pointerEvents:'none',
       }}/>
 
@@ -296,10 +278,9 @@ const PageBanner = ({ title, breadcrumb, bgImage }) => {
                   background: char === ' ' ? 'none' : 'linear-gradient(160deg, #ffffff 10%, #fbba00 55%, #fff7d4 100%)',
                   WebkitBackgroundClip: char === ' ' ? 'initial' : 'text',
                   WebkitTextFillColor: char === ' ' ? 'transparent' : 'transparent',
-                  backgroundClip: char === ' ' ? 'initial': 'text',
+                  backgroundClip: char === ' ' ? 'initial' : 'text',
                   color: char === ' ' ? 'transparent' : undefined,
                   minWidth: char === ' ' ? '0.35em' : undefined,
-                  textShadow: char === ' ' ? 'none' : undefined,
                   filter: char === ' ' ? 'none' : 'drop-shadow(0 2px 18px rgba(251,186,0,0.45))',
                 }}
               >

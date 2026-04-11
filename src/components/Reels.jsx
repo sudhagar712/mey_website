@@ -32,14 +32,16 @@ const reelsData = [
      {
     title: "Reel 06",
     video:
-      "https://res.cloudinary.com/dgphjgzgt/video/upload/v1775836398/Bake___arts_REEL_2_FINAL_2_1_mypnwf.mp4",
+      "https://res.cloudinary.com/dgphjgzgt/video/upload/v1775836416/Kalour_FINAL_Reels_2_1_kbxriz.mp4",
   },
 
      {
     title: "Reel 07",
     video:
-      "https://res.cloudinary.com/dgphjgzgt/video/upload/v1775836416/Kalour_FINAL_Reels_2_1_kbxriz.mp4",
+      "https://res.cloudinary.com/dgphjgzgt/video/upload/v1775836398/Bake___arts_REEL_2_FINAL_2_1_mypnwf.mp4",
   },
+
+  
 
 
 
@@ -227,8 +229,8 @@ const Reels = () => {
                 top: "50%",
                 left: "50%",
                 zIndex: 20 - abs,
-                opacity: abs === 2 ? 0 : (abs === 1 ? 0.4 : 1),
-                filter: isActive ? 'brightness(1)' : 'brightness(0.3) blur(2px)',
+                opacity: abs === 2 ? 0 : (abs === 1 ? 0.65 : 1),
+                filter: isActive ? 'brightness(1)' : `brightness(${abs === 1 ? 0.65 : 0.2}) blur(${abs === 1 ? 0 : 3}px)`,
                 transition: "all 0.8s cubic-bezier(0.25, 1, 0.5, 1)",
               }}
             >

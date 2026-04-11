@@ -1,3 +1,19 @@
+
+import outdoor1 from "../assets/outdoor/1.jpeg";
+import outdoor2 from "../assets/outdoor/2.jpeg";
+import outdoor3 from "../assets/outdoor/3.jpeg";
+import eurokids from "../assets/clientnew/Eurokids.png";
+
+
+
+
+
+
+
+
+
+
+
 export const services = [
 
   {
@@ -74,7 +90,7 @@ export const services = [
     slug: "Events",
     title: "Events",
     image:
-      "https://thepolykids.com/wp-content/uploads/2024/09/Untitled-design-2024-09-21T144025.917.jpg",
+      eurokids,
     description:
       "Experience our events through immersive visuals and storytelling. Every frame captures energy, emotion, and unforgettable moments.",
     points: [
@@ -144,9 +160,9 @@ export const services = [
       "Print advertisements",
     ],
     gallery: [
-      "https://i.pinimg.com/736x/f1/e0/41/f1e0412363a8eda2739b85a76f645e7d.jpg",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVSURq4T__0nQ-omDwtMhBbQRF3774NIFlmw&s",
-      "https://webneel.com/daily/sites/default/files/images/daily/05-2016/21-print-advertising-hlunkur.jpg"
+      outdoor1,
+      outdoor2,
+      outdoor3,
     ]
   },
 ];
