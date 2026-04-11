@@ -2,7 +2,7 @@
 import outdoor1 from "../assets/outdoor/1.jpeg";
 import outdoor2 from "../assets/outdoor/2.jpeg";
 import outdoor3 from "../assets/outdoor/3.jpeg";
-import eurokids from "../assets/clientnew/Eurokids.png";
+import eurokids from "../assets/clientnew/eurokids.png";
 
 
 
