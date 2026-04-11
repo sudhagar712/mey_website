@@ -259,7 +259,7 @@ const WhatDrivesUs = () => {
                 whileInView={{ opacity: 1, rotateX: 0, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.65, delay: i * 0.12, ease: [0.25, 1, 0.5, 1] }}
-                className="inline-block mr-4 text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tight"
+                className="inline-block mr-4 text-4xl md:text-5xl lg:text-5xl font-black text-white tracking-tight"
                 style={{ transformOrigin: "top center" }}
               >
                 {i === 1 ? (

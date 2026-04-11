@@ -159,9 +159,20 @@ const Reels = () => {
       {/* HEADER */}
       <div className="container mx-auto px-6 lg:px-20 mb-16 relative z-20 flex flex-row justify-between items-center md:items-center gap-8">
         <div className="flex-1">
-           <h2 className="text-3xl text-yellow-500 md:text-7xl font-black tracking-tight mb-4">
-             Reels <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600"></span>
-           </h2>
+           <div className="flex  gap-4 text-yellow-500 text-center mb-6">
+ 
+        <div
+                className="inline-flex items-center gap-4 mb-6"
+                data-aos="fade-up"
+              >
+                <span className="w-8 h-[2px] bg-[#f7d83c]"></span>
+                <h4 className="text-3xl md:text-5xl tracking-[0.3em] uppercase font-bold text-white">
+                  Reels
+                </h4>
+              </div>
+       
+      </div>
+     
         </div>
 
         <div className="flex gap-4">

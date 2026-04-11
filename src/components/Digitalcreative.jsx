@@ -84,17 +84,7 @@ const DigitalCreativeGrid = () => {
         </div>
 
         {/* 🔥 Metro Live Tiles Masonry Grid */}
-        <motion.div
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={{
-            hidden: { opacity: 0 },
-            show: {
-              opacity: 1,
-              transition: { staggerChildren: 0.08 },
-            },
-          }}
+        <div
           className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 auto-rows-[130px] md:auto-rows-[160px] gap-2 grid-flow-row-dense relative"
         >
           {gallery.map((item, index) => {
@@ -104,22 +94,6 @@ const DigitalCreativeGrid = () => {
               <motion.div
                 key={index}
                 onClick={() => setSelectedIndex(index)}
-                variants={{
-                  hidden: {
-                    opacity: 0,
-                    rotateX: -60,
-                    y: 50,
-                    transformPerspective: 1200,
-                  },
-                  show: {
-                    opacity: 1,
-                    rotateX: 0,
-                    y: 0,
-                    transformPerspective: 1200,
-                    transition: { type: "spring", stiffness: 150, damping: 20 },
-                  },
-                }}
-                // Pop the tile outward beautifully on hover so they can clearly inspect it
                 whileHover={{
                   scale: 1.03,
                   filter: "brightness(1.1)",
@@ -151,7 +125,7 @@ const DigitalCreativeGrid = () => {
               </motion.div>
             );
           })}
-        </motion.div>
+        </div>
       </div>
 
       {/* 🔥 Full Screen Modal (Carousel Lightbox) */}

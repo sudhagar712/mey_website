@@ -417,9 +417,12 @@ const DIFFERENTIATOR = () => {
 
       {/* 2. SELECT CLIENTS Section */}
       {/* 🔥 SELECT CLIENTS */}
-      <section className=" py-32 md:py-40 px-2 md:px-12 lg:px-24 relative">
-        {/* background */}
+      <section className=" py-32 md:py-40 bg-black   px-2 md:px-12 lg:px-24 relative">
+        {/* Background subtle lines */}
         <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,#000_2px,transparent_2px),linear-gradient(to_bottom,#000_2px,transparent_2px)] bg-[size:60px_60px]" />
+
+        {/* Subtle Background Pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_2px,transparent_2px),linear-gradient(to_bottom,#8080800a_2px,transparent_2px)] bg-[size:40px_40px] pointer-events-none"></div>
 
         <div className=" max-w-[1500px] mx-auto text-center">
           {/* Heading */}
@@ -428,7 +431,7 @@ const DIFFERENTIATOR = () => {
                 data-aos="fade-up"
               >
                 <span className="w-10 h-[3px] bg-[#f7d83c]"></span>
-                <h4 className="text-md md:text-3xl tracking-[0.3em] uppercase font-bold text-black">
+                <h4 className="text-md md:text-3xl tracking-[0.3em] uppercase text-white font-bold ">
                   Trusted By
                 </h4>
               </div>

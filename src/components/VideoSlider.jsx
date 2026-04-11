@@ -45,10 +45,14 @@ const VideoSlider = () => {
           className="flex flex-col items-center text-center max-w-3xl mx-auto mb-4 md:mb-0"
         >
         
-          <h2 className="text-5xl md:text-6xl  font-black text-yellow-500 tracking-tight">
-            Events <br className="hidden md:block"/>
-          
-          </h2>
+           <div
+                className="inline-flex items-center gap-4 mb-6"
+              >
+                <span className="w-10 h-[2px] bg-[#f7d83c]"></span>
+                <h4 className="text-3xl md:text-4xl tracking-[0.3em] uppercase font-bold text-white">
+                  Events
+                </h4>
+              </div>
         </motion.div>
 
         {/* Videos List (One by One) */}

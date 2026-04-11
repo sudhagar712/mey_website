@@ -45,11 +45,12 @@ const Printcreative = () => {
             backgroundSize: "3rem 3rem",
           }}
         />
-      <div className="flex items-center gap-4 mb-6">
+      <div className="flex items-center justify-center gap-4 text-black text-center mb-6">
         <div className="w-10 h-[2px] bg-yellow-500"></div>
-        <h2 className="text-md tracking-[0.4em] uppercase">
+        <h2 className="text-xl font-bold tracking-[0.4em] mb-2 uppercase">
           Print Creative
         </h2>
+       
       </div>
      
       <div

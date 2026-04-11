@@ -361,24 +361,10 @@ const OutdoorBranding = () => {
                 style={{ transformOrigin: "left" }}
                 className="w-10 h-[3px] rounded-full bg-[#FEC000]"
               />
-              <span className="text-[11px] font-bold tracking-[0.32em] uppercase text-black/35">Portfolio</span>
+              <span className="text-3xl  font-bold tracking-[0.32em] uppercase text-black">Outdoor Branding</span>
             </motion.div>
 
-            {/* 3D word flip */}
-            <div className="overflow-hidden" style={{ perspective: "800px" }}>
-              {["Outdoor", "Branding"].map((w, i) => (
-                <motion.span key={i}
-                  initial={{ opacity: 0, rotateX: -80, y: 32 }}
-                  whileInView={{ opacity: 1, rotateX: 0, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.65, delay: i * 0.13, ease: [0.25, 1, 0.5, 1] }}
-                  className={`inline-block mr-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight ${
-                    i === 1 ? "text-transparent bg-clip-text bg-gradient-to-r from-[#FEC000] to-[#f59e0b]" : "text-black"
-                  }`}
-                  style={{ transformOrigin: "top center" }}
-                >{w}</motion.span>
-              ))}
-            </div>
+
 
          
           </motion.div>

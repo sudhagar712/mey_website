@@ -14,12 +14,38 @@ const cards = [
   },
   {
     title: "Ad Campaign",
-   video: "https://res.cloudinary.com/dgphjgzgt/video/upload/v1774259179/Gulf_RENDER_COMP_Final_2_vigp9h.mp4",
+    video: "https://res.cloudinary.com/dgphjgzgt/video/upload/v1774259179/Gulf_RENDER_COMP_Final_2_vigp9h.mp4",
   },
   {
     title: "Product Shoot",
     video: "https://res.cloudinary.com/dgphjgzgt/video/upload/v1774259142/b0cd6816-c64a-42cb-8776-2e38fbbab640_kuiyfs.mp4",
   },
+  {
+    title: "Product Shoot",
+    video: "https://res.cloudinary.com/dgphjgzgt/video/upload/v1775900212/Medway_Gif_egr30k.mp4",
+  },
+
+  {
+    title: "Product Shoot",
+    video: "https://res.cloudinary.com/dgphjgzgt/video/upload/v1775900210/TNPDCL_LAUNCH_TOMOrROW_2_zrys7m.mp4",
+  },
+
+
+  {
+    title: "Product Shoot",
+    video: "https://res.cloudinary.com/dgphjgzgt/video/upload/v1775900210/Medway_Neubon_vdx98h.mp4",
+  },
+
+
+
+  {
+    title: "Product Shoot",
+    video: "https://res.cloudinary.com/dgphjgzgt/video/upload/v1775900209/Medway_Gif_2_dvsafi.mp4",
+  },
+
+
+
+
 ];
 
 const Motionposter = () => {
@@ -36,10 +62,10 @@ const Motionposter = () => {
   }, [isPaused]);
 
   return (
-    <div className="w-full px-4 md:px-10 lg:px-20 py-10 overflow-hidden">
+    <div className="w-full px-4 md:px-10 lg:px-20 py-10 md:py-30 overflow-hidden">
       {/* Heading */}
       <div className="text-center mb-8 md:mb-12">
-        <motion.h1 
+        <motion.h1
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -74,8 +100,8 @@ const Motionposter = () => {
           className="w-full h-full pb-14"
         >
           {cards.map((card, index) => (
-            <SwiperSlide 
-              key={index} 
+            <SwiperSlide
+              key={index}
               className="w-[85%] max-w-[350px] h-[90%] rounded-3xl overflow-hidden relative shadow-[0_15px_40px_rgba(0,0,0,0.3)] mt-2"
             >
               <video
@@ -88,13 +114,8 @@ const Motionposter = () => {
               />
               {/* Dark Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent pointer-events-none"></div>
-              
-              {/* Content */}
-              <div className="absolute bottom-0 left-0 w-full p-6 text-white pointer-events-none">
-                <h3 className="text-2xl font-bold tracking-wide drop-shadow-md">
-                  {card.title}
-                </h3>
-              </div>
+
+
             </SwiperSlide>
           ))}
         </Swiper>
@@ -127,8 +148,8 @@ const Motionposter = () => {
                 className="absolute inset-0 w-full h-full object-cover"
                 initial={false}
                 animate={{
-                   scale: isActive ? 1.05 : 1.25,
-                   filter: isActive ? "brightness(1) saturate(1.1)" : "brightness(0.3) saturate(0)",
+                  scale: isActive ? 1.05 : 1.25,
+                  filter: isActive ? "brightness(1) saturate(1.1)" : "brightness(0.3) saturate(0)",
                 }}
                 transition={{ duration: 0.8, ease: "easeInOut" }}
               />
@@ -136,17 +157,6 @@ const Motionposter = () => {
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none"></div>
 
-              {/* Content */}
-              <div className="relative z-10 p-8 text-white w-full pointer-events-none">
-                <motion.h3 
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 20 }}
-                  transition={{ duration: 0.5, delay: isActive ? 0.3 : 0 }}
-                  className="text-3xl lg:text-5xl font-black drop-shadow-xl tracking-tight whitespace-nowrap"
-                >
-                  {card.title}
-                </motion.h3>
-              </div>
             </motion.div>
           );
         })}
