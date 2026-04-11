@@ -161,15 +161,9 @@ const Reels = () => {
         <div className="flex-1">
            <div className="flex  gap-4 text-yellow-500 text-center mb-6">
  
-        <div
-                className="inline-flex items-center gap-4 mb-6"
-                data-aos="fade-up"
-              >
-                <span className="w-8 h-[2px] bg-[#f7d83c]"></span>
-                <h4 className="text-3xl md:text-5xl tracking-[0.3em] uppercase font-bold text-white">
-                  Reels
-                </h4>
-              </div>
+        <h2 className="text-3xl md:text-5xl font-bold tracking-[0.3em] mb-2 uppercase">
+          Reels
+        </h2>
        
       </div>
      
