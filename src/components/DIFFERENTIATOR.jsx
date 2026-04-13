@@ -177,7 +177,7 @@ const ClientCard = ({ logos, delay }) => {
       style={{ animationDelay: `${delay}ms` }}
     >
       <motion.div
-        className="relative w-full h-full flex items-center justify-center p-10"
+        className="relative w-full h-full flex items-center justify-center p-10 md:p-15"
         animate={{ rotateY: flipped ? 180 : 0 }}
         transition={{ duration: 0.8, ease: "easeInOut" }}
         style={{ transformStyle: "preserve-3d" }}
@@ -187,7 +187,7 @@ const ClientCard = ({ logos, delay }) => {
           <img
             src={logos[0]}
             alt="client"
-            className="h-19 md:h-25 object-contain transition duration-500 group-hover:scale-110"
+            className="h-15 md:h-23 object-contain transition duration-500 group-hover:scale-110"
           />
         </div>
 
@@ -196,7 +196,7 @@ const ClientCard = ({ logos, delay }) => {
           <img
             src={logos[1]}
             alt="client"
-            className="h-19 md:h-25 object-contain transition duration-500 group-hover:scale-110"
+            className="h-15 md:h-23 object-contain transition duration-500 group-hover:scale-110"
           />
         </div>
       </motion.div>

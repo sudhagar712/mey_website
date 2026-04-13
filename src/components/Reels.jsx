@@ -230,7 +230,7 @@ const Reels = () => {
                 left: "50%",
                 zIndex: 20 - abs,
                 opacity: abs === 2 ? 0 : (abs === 1 ? 0.35 : 1),
-                filter: isActive ? 'brightness(1)' : `brightness(${abs === 1 ? 0.65 : 0.2}) blur(${abs === 1 ? 0 : 3}px)`,
+                filter: isActive ? 'brightness(1)' : `brightness(${abs === 1 ? 0.43 : 0.2}) blur(${abs === 1 ? 0 : 3}px)`,
                 transition: "all 0.8s cubic-bezier(0.25, 1, 0.5, 1)",
               }}
             >
