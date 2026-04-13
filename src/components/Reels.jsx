@@ -4,50 +4,41 @@ const reelsData = [
   {
     title: "Reel 01",
     video:
-      "https://res.cloudinary.com/dgphjgzgt/video/upload/v1773929312/vv4_eptaeq.mp4",
+      "https://res.cloudinary.com/dgphjgzgt/video/upload/f_auto,q_auto,w_720/v1773929312/vv4_eptaeq.mp4",
   },
   {
     title: "Reel 02",
     video:
-      "https://res.cloudinary.com/dgphjgzgt/video/upload/v1773929318/vv1_acjmxd.mp4",
+      "https://res.cloudinary.com/dgphjgzgt/video/upload/f_auto,q_auto,w_720/v1773929318/vv1_acjmxd.mp4",
   },
   {
     title: "Reel 03",
     video:
-      "https://res.cloudinary.com/dgphjgzgt/video/upload/v1773929324/vv3_sczozq.mp4",
+      "https://res.cloudinary.com/dgphjgzgt/video/upload/f_auto,q_auto,w_720/v1773929324/vv3_sczozq.mp4",
   },
   {
     title: "Reel 04",
     video:
-      "https://res.cloudinary.com/dgphjgzgt/video/upload/v1773929363/vv2_kad9ol.mp4",
+      "https://res.cloudinary.com/dgphjgzgt/video/upload/f_auto,q_auto,w_720/v1773929363/vv2_kad9ol.mp4",
   },
-
-
   {
     title: "Reel 05",
     video:
-      "https://res.cloudinary.com/dgphjgzgt/video/upload/v1775836079/Euro_Kids_uabzfv.mp4",
+      "https://res.cloudinary.com/dgphjgzgt/video/upload/f_auto,q_auto,w_720/v1775836079/Euro_Kids_uabzfv.mp4",
   },
-
   {
     title: "Reel 06",
     video:
-      "https://res.cloudinary.com/dgphjgzgt/video/upload/v1775836416/Kalour_FINAL_Reels_2_1_kbxriz.mp4",
+      "https://res.cloudinary.com/dgphjgzgt/video/upload/f_auto,q_auto,w_720/v1775836416/Kalour_FINAL_Reels_2_1_kbxriz.mp4",
   },
-
   {
     title: "Reel 07",
     video:
-      "https://res.cloudinary.com/dgphjgzgt/video/upload/v1775836398/Bake___arts_REEL_2_FINAL_2_1_mypnwf.mp4",
+      "https://res.cloudinary.com/dgphjgzgt/video/upload/f_auto,q_auto,w_720/v1775836398/Bake___arts_REEL_2_FINAL_2_1_mypnwf.mp4",
   },
-
-
-
-
-
-
-
 ];
+
+
 
 const Reels = () => {
   const [active, setActive] = useState(0);
@@ -240,7 +231,7 @@ const Reels = () => {
                 muted={isMuted}
                 loop
                 playsInline
-                preload="auto"
+                preload="metadata"
                 className="w-full h-full object-cover scale-105" // Avoid transparent edges when transforming
               />
 

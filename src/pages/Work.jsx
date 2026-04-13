@@ -29,7 +29,7 @@ const projects = [
 const Work = () => {
 
   return (
-    <main className="w-full min-h-screen bg-[#fcfcfc] ">
+    <main className="w-full min-h-screen  ">
       <SEO
         title="Branding & Marketing Work | Portfolio Projects | MEY Chennai"
         description="Browse MEY's portfolio — branding, social media, website and advertising projects delivered for clients across Chennai and India. Real work. Real results."
@@ -43,16 +43,16 @@ const Work = () => {
       <Reels />
 
       <Printcreative />
-       <Digitalcreative />
+      <Digitalcreative />
 
-      <OutdoorBranding /> 
-     
+      <OutdoorBranding />
+
       <VideoSlider />
-   
-      <Motionposter />
-   
 
-    
+      <Motionposter />
+
+
+
 
       <div className="bg-black py-12 md:py-24 px-4 sm:px-6 relative overflow-hidden">
         {/* GRID BACKGROUND SOFT */}
