@@ -105,6 +105,7 @@ const DigitalCreativeGrid = () => {
               >
                 {/* Background Image with optional Metro Tinting */}
                 <img
+                  loading="lazy"
                   src={item.img}
                   alt={item.title}
                   // Raw image is revealed upon hover naturally by dropping the blend mode!
