@@ -240,6 +240,7 @@ const Reels = () => {
                 muted={isMuted}
                 loop
                 playsInline
+                preload="auto"
                 className="w-full h-full object-cover scale-105" // Avoid transparent edges when transforming
               />
 

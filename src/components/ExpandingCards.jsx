@@ -56,7 +56,7 @@ const ExpandingCards = () => {
     if (isPaused) return;
     const interval = setInterval(() => {
       setActive((prev) => (prev + 1) % cards.length);
-    }, 4000);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, [isPaused]);
@@ -75,7 +75,7 @@ const ExpandingCards = () => {
         onMouseLeave={() => setIsPaused(false)}
       >
 
-      
+
         {cards.map((card, index) => {
           const isActive = active === index;
           return (
@@ -182,7 +182,7 @@ const ExpandingCards = () => {
             slideShadows: false,
           }}
           autoplay={{
-            delay: 3500,
+            delay: 2000,
             disableOnInteraction: false,
           }}
           pagination={{
@@ -195,7 +195,7 @@ const ExpandingCards = () => {
           {cards.map((card, index) => (
             <SwiperSlide key={index} className="transition-transform duration-500">
               {({ isActive }) => (
-                <div 
+                <div
                   onClick={() => {
                     if (isActive) {
                       navigate(`/services/${card.slug}`);
