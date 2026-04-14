@@ -100,7 +100,7 @@ const ThreePerspective = () => {
         </motion.div>
 
         {/* ── Main heading — 3D word-by-word reveal ── */}
-        <div className="mb-12 md:mb-16 overflow-hidden" style={{ perspective: "800px" }}>
+        <div className="mb-12 md:mb-16 overflow-hidden">
           {["MEY", "began", "with", "three", "friends", "from", "completely", "different", "worlds,", "brought", "together", "by", "a", "shared", "discomfort", "they", "couldn't", "ignore."].map((word, i) => (
             <motion.span
               key={i}

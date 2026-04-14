@@ -49,8 +49,8 @@ const Contact = () => {
               backgroundSize: "4rem 4rem",
             }}
           />
-          <div className="md:px-10 ">
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-20 items-start">
+          <div className="max-w-[1200px] mx-auto ">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-10 items-start">
               {/* Sidebar Column (Left) */}
               <div className="w-full p-2 order-2 lg:order-1">
                 <ContactSidebar />
@@ -84,11 +84,7 @@ const Contact = () => {
             title="MEY Location"
           ></iframe>
 
-          {/* 🔴 Custom Red Pin */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="w-5 h-5 bg-red-500 rounded-full shadow-lg animate-ping"></div>
-            <div className="absolute w-4 h-4 bg-red-600 rounded-full"></div>
-          </div>
+         
         </section>
       </main>
     );

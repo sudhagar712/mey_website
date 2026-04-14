@@ -93,7 +93,7 @@ const ContactSidebar = () => {
               </span>
 
               <div>
-                <h4 className="text-lg md:text-xl font-semibold text-black group-hover:text-[#fbba00] transition">
+                <h4 className="text-sm md:text-base font-semibold text-black transition">
                   {step.title}
                 </h4>
                 <p className="text-black/70 text-sm md:text-base mt-1 leading-relaxed">

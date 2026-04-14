@@ -51,6 +51,8 @@ const Reels = () => {
   const touchStartX = useRef(0);
   const autoSlideRef = useRef(null);
 
+  
+
   // Responsive
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
@@ -241,14 +243,7 @@ const Reels = () => {
               {isActive && (
                 <div className="absolute inset-x-0 bottom-0 p-6 md:p-8 flex flex-col justify-end pointer-events-none animate-in fade-in slide-in-from-bottom-4 duration-700">
                   <div className="flex justify-between items-end gap-4 mb-5 pointer-events-auto">
-                    <div className="flex flex-col gap-2">
-                      <span className="inline-block w-fit px-3 py-1 rounded-full border border-yellow-400/30 bg-yellow-400/10 text-yellow-400 text-[10px] md:text-xs font-bold tracking-widest uppercase backdrop-blur-md">
-                        Latest Reel
-                      </span>
-                      <h3 className="text-2xl md:text-3xl font-bold text-white drop-shadow-lg leading-tight">
-                        {item.title}
-                      </h3>
-                    </div>
+
 
                     <button
                       onClick={(e) => {

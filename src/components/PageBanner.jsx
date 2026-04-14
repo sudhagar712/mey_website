@@ -272,16 +272,14 @@ const PageBanner = ({ title, breadcrumb, bgImage }) => {
                 key={i}
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.55, delay: 0.25 + i * 0.045, ease: [0.25, 1, 0.5, 1] }}
+                transition={{ 
+    duration: 0.5, 
+    ease: [0.25, 1, 0.5, 1] 
+  }}
                 style={{
                   display: 'inline-block',
-                  background: char === ' ' ? 'none' : 'linear-gradient(160deg, #ffffff 10%, #fbba00 55%, #fff7d4 100%)',
-                  WebkitBackgroundClip: char === ' ' ? 'initial' : 'text',
-                  WebkitTextFillColor: char === ' ' ? 'transparent' : 'transparent',
-                  backgroundClip: char === ' ' ? 'initial' : 'text',
-                  color: char === ' ' ? 'transparent' : undefined,
-                  minWidth: char === ' ' ? '0.35em' : undefined,
-                  filter: char === ' ' ? 'none' : 'drop-shadow(0 2px 18px rgba(251,186,0,0.45))',
+                   color: char === ' ' ? 'transparent' : '#fbba00',
+  minWidth: char === ' ' ? '0.35em' : undefined,
                 }}
               >
                 {char}

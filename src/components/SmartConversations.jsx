@@ -43,7 +43,7 @@ const CountUp = ({ value, suffix = "", duration = 2 }) => {
 const SmartConversations = () => {
   return (
     <motion.section
-      className="py-16 bg-white relative"
+      className="py-20 bg-white relative px-6 md:px-12 lg:px-24"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ amount: 0.25 }} // ❗ removed once:true
@@ -59,10 +59,10 @@ const SmartConversations = () => {
         }}
       />
 
-      <div className="max-w-[1300px] mx-auto">
+      <div className="max-w-[1200px] mx-auto">
         {/* Title */}
         <motion.h2
-          className="text-center text-[25px] sm:text-2xl md:text-3xl lg:text-[40px]  text-gray-900 mb-8 md:mb-10"
+          className="text-center text-xl sm:text-2xl md:text-md lg:text-2xl  text-gray-900 mb-8 md:mb-10"
           initial={{ y: 14, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ amount: 0.6 }} // ❗ re-trigger

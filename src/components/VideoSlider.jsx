@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const videosData = [
@@ -18,7 +18,87 @@ const videosData = [
   }
 ];
 
+
+
 const VideoSlider = () => {
+
+
+
+
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+        const index = videoRefs.current.findIndex((v) => v === video);
+
+        // ❌ visible illa na pause
+        if (!entry.isIntersecting) {
+          video.pause();
+
+          // ✅ UI update (play button thirumba varum)
+          setPlayingStates((prev) => {
+            const updated = [...prev];
+            updated[index] = false;
+            return updated;
+          });
+        }
+      });
+    },
+    {
+      threshold: 0.4, // 40% visible iruntha dhaan play state maintain
+    }
+  );
+
+  // observe all videos
+  videoRefs.current.forEach((video) => {
+    if (video) observer.observe(video);
+  });
+
+  return () => {
+    videoRefs.current.forEach((video) => {
+      if (video) observer.unobserve(video);
+    });
+  };
+}, []);
+
+
+
+
+
+
+
+
+
+
+
+
+  const videoRefs = useRef([]);
+
+  const [playingStates, setPlayingStates] = useState(
+    videosData.map(() => false)
+  );
+
+  const togglePlayPause = (index) => {
+    const video = videoRefs.current[index];
+    if (!video) return;
+
+    // one video only play
+    videoRefs.current.forEach((v, i) => {
+      if (v && i !== index) v.pause();
+    });
+
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
+
+    setPlayingStates(videosData.map((_, i) => i === index && !video.paused));
+  };
+
+
+
   return (
     <section className="w-full bg-black text-white py-24 md:py-36 relative border-y border-white/5 overflow-hidden">
       
@@ -106,31 +186,66 @@ const VideoSlider = () => {
                 </div>
               </div>
 
-              {/* Video Block */}
-              <div className="w-full lg:w-7/12 relative group mt-8 lg:mt-0">
-                {/* Decorative Glow behind video */}
-                <div className="absolute -inset-4 bg-gradient-to-r from-yellow-500/10 to-blue-500/10 rounded-[3rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none"></div>
+             {/* Video Block */}
+<div className="w-full lg:w-7/12 relative group mt-8 lg:mt-0">
+  {/* Decorative Glow behind video */}
+  <div className="absolute -inset-4 bg-gradient-to-r from-yellow-500/10 to-blue-500/10 rounded-[3rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none"></div>
 
-                {/* Main Video Wrapper */}
-                <div className="relative w-full aspect-video rounded-[2.5rem] overflow-hidden bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 group-hover:border-white/20 transition-all duration-700">
-                  <video
-                    src={item.src}
-                    controls
-                    className="w-full h-full object-cover scale-[1.02] opacity-80 group-hover:opacity-100 group-hover:scale-100 transition-all duration-[1.5s] ease-out"
-                  />
-                  
-                  {/* Glassmorphism Inner Frame */}
-                  <div className="absolute inset-0 border-[2px] border-white/5 rounded-[2.5rem] pointer-events-none mix-blend-overlay"></div>
-                </div>
+  {/* Main Video Wrapper */}
+  <div className="relative w-full aspect-video rounded-[2.5rem] overflow-hidden bg-zinc-900 shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 group-hover:border-white/20 transition-all duration-700">
+    
+    <video
+      ref={(el) => (videoRefs.current[index] = el)}
+      src={item.src}
+      className="w-full h-full object-cover scale-[1.02] opacity-80 group-hover:opacity-100 group-hover:scale-100 transition-all duration-[1.5s] ease-out"
+    />
 
-                {/* Corner Decorative Element */}
-                <div className={`absolute ${isEven ? '-left-6 md:-left-12' : '-right-6 md:-right-12'} -bottom-6 md:-bottom-10 w-24 h-24 md:w-32 md:h-32 bg-black/40 backdrop-blur-2xl rounded-full border border-white/10 hidden sm:flex items-center justify-center pointer-events-none z-10 shadow-2xl`}>
-                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-full border border-dashed border-white/20 animate-[spin_10s_linear_infinite]"></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="w-2 h-2 bg-yellow-400 rounded-full shadow-[0_0_10px_rgba(250,204,21,1)]"></span>
-                  </div>
-                </div>
-              </div>
+    {/* Glassmorphism Inner Frame */}
+    <div className="absolute inset-0 border-[2px] border-white/5 rounded-[2.5rem] pointer-events-none mix-blend-overlay"></div>
+  </div>
+
+  {/* Corner Decorative Element (UPDATED) */}
+  <div
+    className={`absolute ${
+      isEven ? "-left-6 md:-left-12" : "-right-6 md:-right-12"
+    } -bottom-6 md:-bottom-10 w-24 h-24 md:w-32 md:h-32 
+    bg-black/40 backdrop-blur-2xl rounded-full border border-white/10 
+    hidden sm:flex items-center justify-center z-10 shadow-2xl`}
+  >
+    {/* spinning ring */}
+    <div className="w-12 h-12 md:w-16 md:h-16 rounded-full border border-dashed border-white/20 animate-[spin_10s_linear_infinite]"></div>
+
+    {/* ▶ PLAY / PAUSE BUTTON */}
+    <button
+      onClick={() => togglePlayPause(index)}
+      className="absolute inset-0 flex items-center justify-center"
+    >
+      <div className="w-10 h-10 md:w-12 md:h-12 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition">
+        
+        {playingStates[index] ? (
+          // ⏸ PAUSE
+          <svg
+            className="w-4 h-4 text-black"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M6 5h4v14H6zm8 0h4v14h-4z" />
+          </svg>
+        ) : (
+          // ▶ PLAY
+          <svg
+            className="w-4 h-4 text-black ml-0.5"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        )}
+
+      </div>
+    </button>
+  </div>
+</div>
 
             </motion.div>
           );

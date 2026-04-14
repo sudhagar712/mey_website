@@ -309,14 +309,14 @@ const DIFFERENTIATOR = () => {
       </style>
 
       {/* 1. WHY MEY Section - Refined Proportions */}
-      <section className="bg-black py-20 md:py-32 px-4 md:px-8 lg:px-16 relative overflow-hidden ">
+      <section className="bg-black py-20 md:py-32 px-6 md:px-12 lg:px-24 relative overflow-hidden">
         {/* Background subtle lines */}
         <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,#000_2px,transparent_2px),linear-gradient(to_bottom,#000_2px,transparent_2px)] bg-[size:60px_60px]" />
 
         {/* Subtle Background Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_2px,transparent_2px),linear-gradient(to_bottom,#8080800a_2px,transparent_2px)] bg-[size:40px_40px] pointer-events-none"></div>
 
-        <div className="max-w-[1250px] mx-auto relative z-10">
+        <div className="max-w-[1200px] mx-auto relative z-10 w-full">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* LEFT COLUMN - STICKY HEADINGS */}
             <div className="lg:col-span-5 lg:sticky lg:top-32">
@@ -420,21 +420,21 @@ const DIFFERENTIATOR = () => {
 
       {/* 2. SELECT CLIENTS Section */}
       {/* 🔥 SELECT CLIENTS */}
-      <section className=" py-32 md:py-40 bg-black   px-2 md:px-12 lg:px-24 relative">
+      <section className="py-32 md:py-40 bg-black px-6 md:px-12 lg:px-24 relative">
         {/* Background subtle lines */}
         <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,#000_2px,transparent_2px),linear-gradient(to_bottom,#000_2px,transparent_2px)] bg-[size:60px_60px]" />
 
         {/* Subtle Background Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_2px,transparent_2px),linear-gradient(to_bottom,#8080800a_2px,transparent_2px)] bg-[size:40px_40px] pointer-events-none"></div>
 
-        <div className=" max-w-[1500px] mx-auto text-center">
+        <div className="max-w-[1200px] mx-auto text-center w-full">
           {/* Heading */}
           <div
-            className="inline-flex items-center  gap-4 mb-6 md:mb-20"
+            className="inline-flex items-center  gap-4 mb-10 md:mb-20"
             data-aos="fade-up"
           >
             <span className="w-10 h-[3px] bg-[#f7d83c]"></span>
-            <h4 className="text-md md:text-3xl tracking-[0.3em] uppercase text-white font-bold text-black">
+            <h4 className="text-xl md:text-2xl tracking-[0.3em]   uppercase text-white font-bold text-black">
               Trusted By
             </h4>
           </div>
@@ -453,7 +453,7 @@ const DIFFERENTIATOR = () => {
       </section>
 
       {/* 3. FINAL CTA Section */}
-      <section className="relative py-32 lg:py-56 px-6 md:px-12 text-center flex flex-col items-center overflow-hidden">
+      <section className="relative py-32 lg:py-56 px-6 md:px-12 lg:px-24 text-center flex flex-col items-center overflow-hidden">
         {/* Background Image & Overlay */}
         <div className="absolute inset-0 z-0">
           <img
@@ -474,7 +474,7 @@ const DIFFERENTIATOR = () => {
           </h2>
 
           <p
-            className="text-xl md:text-2xl font-bold text-black/50 mb-16 tracking-wide uppercase"
+            className="text-xl md:text-2xl font-bold text-black mb-16 tracking-wide uppercase"
             style={{ fontFamily: "Poppins, sans-serif" }}
           >
             Start with MEY.

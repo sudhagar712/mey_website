@@ -11,7 +11,7 @@ const Footer = () => {
 <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
   <div className="w-full h-full bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:40px_40px]" />
 </div>
-      <div className="max-w-[1400px] mx-auto relative z-10">
+      <div className="max-w-[1200px] mx-auto relative z-10">
         {/* Top Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 pb-20 border-b border-white/10">
           {/* Brand */}
@@ -76,7 +76,9 @@ const Footer = () => {
           </div>
         </div>
 
-        <hr className="text-gray-200" />
+     
+      </div>
+        <hr className="w-screen relative left-1/2 -translate-x-1/2 border-white/20" />
 
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-10">
@@ -94,7 +96,6 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-      </div>
     </footer>
   );
 };

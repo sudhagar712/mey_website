@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <>
       <motion.section
-        className="relative  bg-[#fec000] h-[350px] md:h-[800px] lg:h-[500px] p-5  flex flex-col items-center justify-center  overflow-hidden"
+        className="relative bg-[#fec000] h-[350px] md:h-[800px] lg:h-[500px] px-6 md:px-12 lg:px-24 flex flex-col items-center justify-center overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -24,7 +24,7 @@ const Hero = () => {
           }}
         />
 
-        <div className="relative z-10   mt-20  w-full  flex flex-col items-center text-center">
+        <div className="relative z-10 mt-20 max-w-[1400px] mx-auto w-full flex flex-col items-center text-center">
           {/* Giant Logo with Overlay Text */}
           <div className="relative mb-24  rounded-md p-8 md:p-10 w-full mt-10  flex flex-col items-center justify-center">
             {/* <motion.h1
@@ -89,7 +89,7 @@ const Hero = () => {
             backgroundSize: "4rem 4rem",
           }}
         />
-        <p className="text-2xl md:text-5xl  lg:text-3xl text-black/80    leading-[1.6] mb-10">
+        <p className="text-md md:text-3xl  lg:text-2xl text-black/80    leading-[1.6] mb-5">
           We build{" "}
           <span className="   border-b border-black/30 text-[#fec000] font-bold ">
             clear

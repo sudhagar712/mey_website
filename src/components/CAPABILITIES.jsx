@@ -115,7 +115,7 @@ const TiltCard = ({ cap, onClick, index }) => {
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         onClick={() => onClick(cap)}
-        className="group relative cursor-pointer min-h-[360px] w-full h-full rounded-[2rem]"
+        className="group relative cursor-pointer h-[320px] sm:h-[360px] lg:h-[420px] w-full rounded-[2rem]"
         style={{
           rotateX,
           rotateY,
@@ -155,7 +155,7 @@ const TiltCard = ({ cap, onClick, index }) => {
           <span className="text-sm font-bold tracking-[0.3em] text-yellow-400 mb-3 block drop-shadow-md">
             {cap.num} /
           </span>
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 drop-shadow-lg">
+          <h3 className="text-xl md:text-2xl font-bold text-white mb-2 drop-shadow-lg">
             {cap.title}
           </h3>
           <p className="text-sm md:text-base text-white/80 translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out">
@@ -173,7 +173,7 @@ const CAPABILITIES = () => {
   const closeModal = () => setSelectedCap(null);
 
   return (
-    <section className="bg-white py-24 px-4 md:px-12 relative lg:px-24">
+    <section className="bg-white py-24   px-6 md:px-12 lg:px-24 relative">
       {/* Subtle Grid Background */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.05]"
@@ -184,7 +184,7 @@ const CAPABILITIES = () => {
         }}
       />
 
-      <div className="max-w-[1400px] mx-auto">
+      <div className="max-w-[1200px] mx-auto">
         {/* HEADER */}
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
@@ -198,18 +198,18 @@ const CAPABILITIES = () => {
           </h4>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-end border-b pb-10 border-black/10">
-            <h2 className="text-4xl md:text-6xl font-bold leading-tight">
+            <h2 className="text-xl md:text-4xl font-bold leading-tight">
               Complete Brand & <br /> Marketing Solutions
             </h2>
 
-            <p className="text-lg md:text-xl text-black/70">
+            <p className="text-lg md:text-md text-black/70">
               Everything your brand needs — structured under one direction.
             </p>
           </div>
         </motion.div>
 
         {/* GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 relative z-10">
           {capabilities.map((cap, i) => (
             <TiltCard 
               key={cap.num} 
@@ -279,15 +279,15 @@ const CAPABILITIES = () => {
                   <div className="h-[1px] w-12 bg-yellow-400/50"></div>
                 </div>
 
-                <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+                <h2 className="text-2xl md:text-3xl font-bold mb-6 leading-tight">
                   {selectedCap.title}
                 </h2>
 
-                <p className="text-xl text-white/90 font-medium mb-6">
+                <p className="text-lg text-white/90 font-medium mb-4">
                   {selectedCap.desc}
                 </p>
 
-                <p className="text-white/60 leading-relaxed mb-10 text-justify">
+                <p className="text-white/60 leading-relaxed mb-6 text-justify">
                   {selectedCap.details}
                 </p>
 

@@ -12,17 +12,17 @@ import ContactSidebar from '../components/ContactSidebar'
 
 const Home = () => {
   return (
-    <div className="">
+    <div>
       <SEO
         title="MEY | Best Branding & Digital Marketing Agency in Chennai"
         description="MEY is Chennai's #1 branding and digital marketing agency. We offer brand identity design, social media marketing, website development, performance marketing, video production and outdoor advertising. Call +91 8939009966."
         keywords="MEY, MEY digital marketing, MEY branding, digital marketing agency Chennai, branding agency Chennai, social media marketing Chennai, website design Chennai, performance marketing Chennai, best marketing agency Chennai"
       />
       <Hero />
-      <div className="">
+      <div >
         <SmartConversations />
       </div>
-{/* 
+      {/* 
       <Mobileui/> */}
 
       <CAPABILITIES />
@@ -78,11 +78,7 @@ const Home = () => {
           title="MEY Location"
         ></iframe>
 
-        {/* 🔴 Custom Red Pin */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-5 h-5 bg-red-500 rounded-full shadow-lg animate-ping"></div>
-          <div className="absolute w-4 h-4 bg-red-600 rounded-full"></div>
-        </div>
+     
       </section>
     </div>
   );
