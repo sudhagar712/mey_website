@@ -89,7 +89,7 @@ const Hero = () => {
             backgroundSize: "4rem 4rem",
           }}
         />
-        <p className="text-md md:text-3xl  lg:text-2xl text-black/80    leading-[1.6] mb-5">
+        <p className="text-xl md:text-3xl  lg:text-xl text-black/80    leading-[1.6] mb-5">
           We build{" "}
           <span className="   border-b border-black/30 text-[#fec000] font-bold ">
             clear
