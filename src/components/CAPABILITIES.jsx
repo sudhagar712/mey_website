@@ -108,14 +108,14 @@ const TiltCard = ({ cap, onClick, index }) => {
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1], delay: index * 0.1 }}
       style={{ perspective: "1000px" }}
-      className="relative w-full"
+      className="relative w-full "
     >
       <motion.div
         ref={ref}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         onClick={() => onClick(cap)}
-        className="group relative cursor-pointer h-[320px] sm:h-[360px] lg:h-[420px] w-full rounded-[2rem]"
+        className="group relative cursor-pointer h-[320px] sm:h-[360px] lg:h-[370px] w-full rounded-[2rem]"
         style={{
           rotateX,
           rotateY,
@@ -158,7 +158,7 @@ const TiltCard = ({ cap, onClick, index }) => {
           <h3 className="text-xl md:text-2xl font-bold text-white mb-2 drop-shadow-lg">
             {cap.title}
           </h3>
-          <p className="text-sm md:text-base text-white/80 translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out">
+          <p className="text-sm md:text-md text-yellow-500 translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out">
             {cap.desc}
           </p>
         </div>
@@ -198,7 +198,7 @@ const CAPABILITIES = () => {
           </h4>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-end border-b pb-10 border-black/10">
-            <h2 className="text-xl md:text-4xl font-bold leading-tight">
+            <h2 className="text-3xl md:text-5xl font-bold leading-tight">
               Complete Brand & <br /> Marketing Solutions
             </h2>
 
@@ -287,7 +287,7 @@ const CAPABILITIES = () => {
                   {selectedCap.desc}
                 </p>
 
-                <p className="text-white/60 leading-relaxed mb-6 text-justify">
+                <p className="text-yellow-500 leading-relaxed mb-6 text-justify">
                   {selectedCap.details}
                 </p>
 

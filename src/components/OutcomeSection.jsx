@@ -72,7 +72,7 @@ const OutcomeSection = () => {
           transition={{ duration: 1.6, delay: 0.8 }}
           className="mt-10"
         >
-          <button className="relative px-8 py-4 border-3 border-[#f1bd40] text-[#f1bd40] font-bold tracking-[0.2em] text-sm overflow-hidden group">
+          <button className="relative px-8 py-4 bg-white mt-2 border-4 border-[#f1bd40] text-black font-bold tracking-[0.2em] text-sm overflow-hidden group">
             {/* Hover Fill */}
             <span className="absolute inset-0 bg-[#f1bd40] translate-y-full group-hover:translate-y-0 transition duration-500 ease-in-out" />
 

@@ -316,7 +316,7 @@ const OutdoorBranding = () => {
 
       <section
         ref={sectionRef}
-        className="relative w-full py-20 md:py-28 px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 bg-white overflow-hidden"
+        className="relative w-full py-20 md:py-28 px-4 sm:px-6 md:px-10 lg:px-40 xl:px-60 bg-white overflow-hidden"
         style={{ perspective: "1400px" }}
       >
         {/* ── Subtle grid ── */}

@@ -153,13 +153,13 @@ useEffect(() => {
               <div className="w-full lg:w-5/12 flex flex-col justify-center relative">
                 
                 {/* Big Background Number */}
-                <div className={`absolute top-[-10%] ${isEven ? 'left-[-10%]' : 'right-[-10%]'} text-[15rem] leading-none font-black text-white/[0.02] pointer-events-none select-none z-0`}>
+                <div className={`absolute top-[-10%] ${isEven ? 'left-[-10%]' : 'right-[-10%]'} text-[15rem] leading-none font-black text-white/10 pointer-events-none select-none z-0`}>
                   0{index + 1}
                 </div>
 
                 <div className="relative z-10">
                   <div className="flex items-center gap-4 mb-8">
-                    <span className="text-white/30 font-black text-5xl md:text-7xl tracking-tighter leading-none">
+                    <span className="text-yellow-500 font-black text-5xl md:text-7xl tracking-tighter leading-none">
                       0{index + 1}
                     </span>
                     <div className="h-12 w-[1px] bg-white/20 shadow-lg hidden md:block mx-2"></div>

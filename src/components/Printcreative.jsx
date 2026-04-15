@@ -13,29 +13,20 @@ const Printcreative = () => {
   const containerRef = useRef(null);
   const [paused, setPaused] = useState(false);
 
-  // 🔥 AUTO SCROLL (INFINITE LOOP FEEL)
-  useEffect(() => {
-    if (paused) return;
+useEffect(() => {
+  if (paused) return;
 
-    const scroll = setInterval(() => {
-      if (containerRef.current) {
-        containerRef.current.scrollLeft += 1;
+  const scroll = setInterval(() => {
+    if (containerRef.current) {
+      containerRef.current.scrollLeft += 1;
+    }
+  }, 16);
 
-        // infinite loop reset
-        if (
-          containerRef.current.scrollLeft >=
-          containerRef.current.scrollWidth / 2
-        ) {
-          containerRef.current.scrollLeft = 0;
-        }
-      }
-    }, 16); // smooth
-
-    return () => clearInterval(scroll);
-  }, [paused]);
+  return () => clearInterval(scroll);
+}, [paused]);
 
   return (
-    <section className="w-full py-16 md:py-24 md:px-5 md:p-10  overflow-hidden relative">
+    <section className="w-full py-16 md:py-30 md:px-5 md:p-10  overflow-hidden relative">
          {/* GRID BACKGROUND SOFT */}
         <div
           className="absolute inset-0 opacity-[0.03]"
@@ -55,7 +46,7 @@ const Printcreative = () => {
      
       <div
         ref={containerRef}
-        className="flex gap-6 md:gap-10 px-6 md:px-20 overflow-x-scroll no-scrollbar"
+        className="flex gap-6  md:gap-10 px-6 md:px-20 overflow-x-scroll no-scrollbar"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >

@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 const cards = [
   {
     title: "Brand Film",
-    video: "https://res.cloudinary.com/dgphjgzgt/video/upload/v1774259141/compressed-video_1_n99kv8.mp4",
+    video: "https://res.cloudinary.com/drnmkhg5o/video/upload/v1776255999/Regs_yieq96.mp4",
   },
   {
     title: "Ad Campaign",

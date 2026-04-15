@@ -136,12 +136,7 @@ const ThreePerspective = () => {
             whileInView={{ opacity: 1, rotateY: 0, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9, ease: [0.25, 1, 0.5, 1] }}
-            style={{
-              rotateX: imgRotX,
-              rotateY: imgRotY,
-              transformStyle: "preserve-3d",
-              perspective: "800px",
-            }}
+        
             className="relative w-full h-[350px] sm:h-[370px] md:h-[420px] lg:h-[480px] rounded-3xl overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.18)] cursor-pointer"
           >
             {/* Parallax image inner */}

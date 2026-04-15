@@ -29,7 +29,7 @@ const projects = [
 const Work = () => {
 
   return (
-    <main className="w-full min-h-screen  ">
+    <main className="w-full">
       <SEO
         title="Branding & Marketing Work | Portfolio Projects | MEY Chennai"
         description="Browse MEY's portfolio — branding, social media, website and advertising projects delivered for clients across Chennai and India. Real work. Real results."

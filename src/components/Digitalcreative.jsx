@@ -1,36 +1,27 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import img1 from "../assets/DigitalCreative/01 trauma.jpg";
-import img2 from "../assets/DigitalCreative/1.jpg";
-import img3 from "../assets/DigitalCreative/Luxus Camp.jpeg";
-import img4 from "../assets/DigitalCreative/3M car care.jpg";
-import img5 from "../assets/DigitalCreative/Alain Dehaze.jpg";
-import img6 from "../assets/DigitalCreative/Boosting Exports & Imports.jpg";
-import img7 from "../assets/DigitalCreative/bull show 2.jpg";
-import img8 from "../assets/DigitalCreative/Davos Series 8.jpg";
-import img9 from "../assets/DigitalCreative/cp 1.jpg";
-import img10 from "../assets/DigitalCreative/cultural fest 2.jpg";
-import img11 from "../assets/DigitalCreative/Davos Series 12.jpg";
-import img12 from "../assets/DigitalCreative/Davos Series 5.jpg";
-import img13 from "../assets/DigitalCreative/Vision and Ideas.jpg";
-import img14 from "../assets/DigitalCreative/Meet Successful IT Entrepreneurs.jpg";
 
 const gallery = [
-  { img: img1, title: "Trauma Care Campaign" },
-  { img: img2, title: "Brand Social Post" },
-  { img: img3, title: "Luxury Camp Branding" },
-  { img: img4, title: "3M Car Care Creative" },
-  { img: img5, title: "Corporate Leader Series" },
-  { img: img6, title: "Exports & Imports Campaign" },
-  { img: img7, title: "Event Promotion" },
-  { img: img8, title: "Davos Series Creative" },
-  { img: img9, title: "Corporate Post" },
-  { img: img10, title: "Cultural Fest Poster" },
-  { img: img11, title: "Davos Campaign" },
-  { img: img12, title: "Brand Identity Visual" },
-  { img: img13, title: "Vision Campaign" },
-  { img: img14, title: "Entrepreneurs Event" },
+  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/v1776258239/01_trauma_r7zcdu.jpg", title: "Trauma Care Campaign" },
+  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/v1776258241/1_sizkjp.jpg", title: "Brand Social Post" },
+  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/v1776258231/Luxus_Camp_yqcxkt.jpg", title: "Luxury Camp Branding" },
+  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/v1776258240/3M_car_care_mdxeaw.jpg", title: "3M Car Care Creative" },
+  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/v1776258271/Alain_Dehaze_awkhnq.jpg", title: "Corporate Leader Series" },
+  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/v1776258245/Boosting_Exports_Imports_mya8pe.jpg", title: "Exports & Imports Campaign" },
+  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/v1776258246/bull_show_2_izplp5.jpg", title: "Event Promotion" },
+  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/v1776258252/Davos_Series_8_vkw49u.jpg", title: "Davos Series Creative" },
+  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/v1776258249/cp_1_khh6na.jpg", title: "Corporate Post" },
+  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/v1776258247/cultural_fest_2_x1nhko.jpg", title: "Cultural Fest Poster" },
+  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/v1776258253/Davos_Series_12_sgpley.jpg", title: "Davos Campaign" },
+  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/v1776258250/Davos_Series_5_tlnvji.jpg", title: "Brand Identity Visual" },
+  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/v1776258242/Vision_and_Ideas_julkm9.jpg", title: "Vision Campaign" },
+  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/v1776258234/Meet_Successful_IT_Entrepreneurs_uboiup.jpg", title: "Entrepreneurs Event" },
+  
+
+
+
+
 ];
 
 const metroStyles = [

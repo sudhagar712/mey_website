@@ -4,37 +4,33 @@ const reelsData = [
   {
     title: "Reel 01",
     video:
-      "https://res.cloudinary.com/dgphjgzgt/video/upload/f_auto,q_auto,w_720/v1773929312/vv4_eptaeq.mp4",
+      "https://res.cloudinary.com/drnmkhg5o/video/upload/v1776251996/reelnew_xqqaaf.mp4",
   },
   {
     title: "Reel 02",
     video:
-      "https://res.cloudinary.com/dgphjgzgt/video/upload/f_auto,q_auto,w_720/v1773929318/vv1_acjmxd.mp4",
+      "https://res.cloudinary.com/drnmkhg5o/video/upload/v1776252001/reelnew2_r8s8rv.mp4",
   },
   {
     title: "Reel 03",
     video:
-      "https://res.cloudinary.com/dgphjgzgt/video/upload/f_auto,q_auto,w_720/v1773929324/vv3_sczozq.mp4",
+      "https://res.cloudinary.com/drnmkhg5o/video/upload/v1776251995/reelnew7_wiovzx.mp4",
   },
   {
     title: "Reel 04",
     video:
-      "https://res.cloudinary.com/dgphjgzgt/video/upload/f_auto,q_auto,w_720/v1773929363/vv2_kad9ol.mp4",
+      "https://res.cloudinary.com/drnmkhg5o/video/upload/v1776251993/reelnew3_rv8yqs.mp4",
   },
+
   {
     title: "Reel 05",
     video:
-      "https://res.cloudinary.com/dgphjgzgt/video/upload/f_auto,q_auto,w_720/v1775836079/Euro_Kids_uabzfv.mp4",
+      "https://res.cloudinary.com/drnmkhg5o/video/upload/v1776251988/reelnew6_dndlb6.mp4",
   },
   {
     title: "Reel 06",
     video:
-      "https://res.cloudinary.com/dgphjgzgt/video/upload/f_auto,q_auto,w_720/v1775836416/Kalour_FINAL_Reels_2_1_kbxriz.mp4",
-  },
-  {
-    title: "Reel 07",
-    video:
-      "https://res.cloudinary.com/dgphjgzgt/video/upload/f_auto,q_auto,w_720/v1775836398/Bake___arts_REEL_2_FINAL_2_1_mypnwf.mp4",
+      "https://res.cloudinary.com/drnmkhg5o/video/upload/v1776251992/reelnew5_xqp4zi.mp4",
   },
 ];
 
@@ -50,8 +46,9 @@ const Reels = () => {
   const videoRefs = useRef([]);
   const touchStartX = useRef(0);
   const autoSlideRef = useRef(null);
+  const componentRef = useRef(null);
 
-  
+
 
   // Responsive
   useEffect(() => {
@@ -59,6 +56,31 @@ const Reels = () => {
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // 👉 INTERSECTION OBSERVER FOR MUTING WHEN SCROLLING AWAY
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // If the component is less than 30% visible, mute the video
+          if (!entry.isIntersecting) {
+            setIsMuted(true);
+          }
+        });
+      },
+      { threshold: 0.3 } // Trigger when less than 30% is visible
+    );
+
+    if (componentRef.current) {
+      observer.observe(componentRef.current);
+    }
+
+    return () => {
+      if (componentRef.current) {
+        observer.unobserve(componentRef.current);
+      }
+    };
   }, []);
 
   // 👉 AUTO SLIDE (5 sec)
@@ -69,6 +91,7 @@ const Reels = () => {
       setActive((prev) =>
         prev === reelsData.length - 1 ? 0 : prev + 1
       );
+      // Keep muted state as-is; only user click should unmute
     }, 4500);
 
     return () => clearInterval(autoSlideRef.current);
@@ -110,12 +133,14 @@ const Reels = () => {
     setActive((prev) =>
       prev === reelsData.length - 1 ? 0 : prev + 1
     );
+    // Do NOT auto-unmute — only user click should unmute
   };
 
   const prevSlide = () => {
     setActive((prev) =>
       prev === 0 ? reelsData.length - 1 : prev - 1
     );
+    // Do NOT auto-unmute — only user click should unmute
   };
 
   // 👉 Swipe
@@ -134,7 +159,8 @@ const Reels = () => {
 
   return (
     <section
-      className="w-full bg-black  py-20 pb-32 flex flex-col justify-center overflow-hidden relative"
+      ref={componentRef}
+      className="w-full bg-black  py-20 pb-32 flex flex-col  justify-center overflow-hidden relative"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -164,7 +190,7 @@ const Reels = () => {
 
         </div>
 
-        <div className="flex gap-4">
+        <div className="flex gap-4 ">
           <button
             onClick={prevSlide}
             className="w-14 h-14 rounded-full flex items-center justify-center bg-yellow-500 border border-white/10 hover:bg-white/20 hover:border-yellow-400/50 transition-all duration-300 backdrop-blur-md group"
@@ -182,7 +208,7 @@ const Reels = () => {
 
       {/* CAROUSEL */}
       <div
-        className="relative w-full h-[550px] md:h-[650px] flex justify-center items-center z-20"
+        className="relative w-full h-[550px] md:h-[650px]  flex justify-center items-center z-20"
         style={{ perspective: "1500px" }}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
@@ -206,7 +232,7 @@ const Reels = () => {
             <div
               key={index}
               onClick={() => { if (!isActive) setActive(index); }}
-              className={`absolute aspect-[9/16] rounded-[2rem] overflow-hidden bg-zinc-900 
+              className={`absolute aspect-[9/16] rounded-[2rem]  overflow-hidden bg-zinc-900 
                 ${isActive ? 'border border-yellow-400/50 shadow-[0_0_50px_rgba(250,204,21,0.15)] cursor-default' : 'border border-white/5 cursor-pointer hover:border-white/20'}
               `}
               style={{
@@ -234,42 +260,88 @@ const Reels = () => {
                 loop
                 playsInline
                 preload="metadata"
-                className="w-full h-full object-cover scale-105" // Avoid transparent edges when transforming
+                className="w-full h-full object-cover scale-105"
               />
 
-              {/* Gradient Overlay for Text Readability */}
+              {/* Gradient Overlay */}
               <div className={`absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none transition-opacity duration-500 ${isActive ? 'opacity-100' : 'opacity-0'}`} />
 
               {isActive && (
-                <div className="absolute inset-x-0 bottom-0 p-6 md:p-8 flex flex-col justify-end pointer-events-none animate-in fade-in slide-in-from-bottom-4 duration-700">
-                  <div className="flex justify-between items-end gap-4 mb-5 pointer-events-auto">
-
-
+                <>
+                  {/* ─── CENTER MUTE/UNMUTE BUTTON ─── */}
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
-                        setIsMuted(!isMuted);
+                        setIsMuted((m) => !m);
                       }}
-                      className="w-12 h-12 rounded-full bg-white/10 border border-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white/30 hover:scale-110 transition-all shadow-lg shrink-0"
+                      className="pointer-events-auto group relative flex items-center justify-center"
+                      style={{
+                        width: 64,
+                        height: 64,
+                        borderRadius: "50%",
+                        background: isMuted
+                          ? "rgba(255,255,255,0.08)"
+                          : "rgba(250,204,21,0.15)",
+                        border: isMuted
+                          ? "1.5px solid rgba(255,255,255,0.18)"
+                          : "1.5px solid rgba(250,204,21,0.5)",
+                        backdropFilter: "blur(12px)",
+                        boxShadow: isMuted
+                          ? "0 4px 32px rgba(0,0,0,0.4)"
+                          : "0 4px 32px rgba(250,204,21,0.25), 0 0 0 8px rgba(250,204,21,0.07)",
+                        transition: "all 0.35s cubic-bezier(0.34,1.56,0.64,1)",
+                      }}
                     >
+                      {/* Pulse ring when muted */}
+                      {isMuted && (
+                        <span
+                          className="absolute inset-0 rounded-full animate-ping"
+                          style={{
+                            background: "rgba(255,255,255,0.07)",
+                            animationDuration: "1.8s",
+                          }}
+                        />
+                      )}
                       {isMuted ? (
-                        <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" /></svg>
+                        // Muted icon
+                        <svg
+                          className="w-7 h-7"
+                          style={{ color: "rgba(255,255,255,0.85)" }}
+                          fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8}
+                            d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8}
+                            d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+                        </svg>
                       ) : (
-                        <svg className="w-5 h-5 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" /></svg>
+                        // Unmuted icon
+                        <svg
+                          className="w-7 h-7"
+                          style={{ color: "#facc15" }}
+                          fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8}
+                            d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                        </svg>
                       )}
                     </button>
                   </div>
 
-                  {/* Progress Bar */}
-                  <div className="w-full h-1.5 bg-white/20 rounded-full overflow-hidden">
-                    <div
-                      className="h-full bg-gradient-to-r from-yellow-500 to-yellow-300 rounded-full relative"
-                      style={{ width: `${progress}%` }}
-                    >
-                      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.8)]"></div>
+                  {/* ─── BOTTOM CONTROLS ─── */}
+                  <div className="absolute inset-x-0 bottom-0 p-6 md:p-8 flex flex-col justify-end pointer-events-none animate-in fade-in slide-in-from-bottom-4 duration-700">
+                    {/* Progress Bar */}
+                    <div className="w-full h-1.5 bg-white/20 rounded-full overflow-hidden">
+                      <div
+                        className="h-full bg-gradient-to-r from-yellow-500 to-yellow-300 rounded-full relative"
+                        style={{ width: `${progress}%` }}
+                      >
+                        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.8)]"></div>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </>
               )}
             </div>
           );

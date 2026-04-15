@@ -43,7 +43,7 @@ const CountUp = ({ value, suffix = "", duration = 2 }) => {
 const SmartConversations = () => {
   return (
     <motion.section
-      className="py-20 bg-white relative px-6 md:px-12 lg:px-24"
+      className="py-20 bg-white relative px-2 md:px-12 lg:px-24"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ amount: 0.25 }} // ❗ removed once:true
