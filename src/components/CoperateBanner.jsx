@@ -8,7 +8,7 @@ const videos = [
   },
   {
     id: 2,
-    src: "https://res.cloudinary.com/dgphjgzgt/video/upload/v1774857167/RenewX_2MINS_VIDEO_OP2_1_gqxzpp.mp4",
+    src: "https://res.cloudinary.com/drnmkhg5o/video/upload/v1776627079/Cauvery_Rice_Correction_1_tu5t0m.mp4",
   },
   {
     id: 3,
