@@ -426,7 +426,7 @@ const ContactForm = () => {
             </div>
           </div>
 
-          <div className="flex flex-col relative group/input mb-12">
+          <div className="flex flex-col relative group/input mb-12 md:mb-37   ">
             <label className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-yellow-500 mb-3 transition-colors group-focus-within/input:text-black">
               Project Details
             </label>
@@ -435,7 +435,7 @@ const ContactForm = () => {
               value={form.details}
               onChange={handleChange}
               rows={4}
-              className="bg-[#fcfcfc] border-b-2 border-gray-200 px-4 py-4 text-black text-lg focus:outline-none focus:border-black transition-all duration-300 hover:bg-gray-50 resize-none rounded-t-lg"
+              className="bg-[#fcfcfc] border-b-2 border-gray-200 px-4 py-10 text-black text-lg focus:outline-none focus:border-black transition-all duration-300 hover:bg-gray-50 resize-none rounded-t-lg"
               placeholder="Enter a Project Details.."
             />
           </div>

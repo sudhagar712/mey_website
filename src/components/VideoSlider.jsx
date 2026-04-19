@@ -7,14 +7,14 @@ const videosData = [
     title: "Euro Kids Sports Day",
     category: "Event Highlight",
     description: "Experience our events through immersive visuals and storytelling. Every frame captures energy, emotion, and unforgettable moments.",
-    src: "https://res.cloudinary.com/dgphjgzgt/video/upload/v1773939894/Euro_Kids_Sports_Day_Full_event_usmcln.mp4",
+    src: "https://res.cloudinary.com/drnmkhg5o/video/upload/v1776625532/Euro_Kids_Sports_Day_Full_event_1_fzuuuo.mp4",
   },
   {
     id: 2,
     title: "Corporate Excellence",
     category: "Brand Story",
     description: "High-end corporate event coverage reflecting brand identity, premium aesthetics, and professional excellence.",
-    src: "https://res.cloudinary.com/dgphjgzgt/video/upload/v1775734423/MINISTER_FAISAL_AL_RAWAS_1_qdcaeu.mp4",
+    src: "https://res.cloudinary.com/drnmkhg5o/video/upload/v1776626155/new_mj09z5.mp4",
   }
 ];
 
@@ -165,7 +165,7 @@ useEffect(() => {
                     <div className="h-12 w-[1px] bg-white/20 shadow-lg hidden md:block mx-2"></div>
                     <div className="flex flex-col">
                       <span className="text-yellow-500 text-xs font-bold uppercase tracking-widest mb-1">{item.category}</span>
-                      <span className="text-gray-500 text-[10px] uppercase tracking-widest">MEY Studios</span>
+                     
                     </div>
                   </div>
                   
@@ -177,12 +177,12 @@ useEffect(() => {
                     {item.description}
                   </p>
 
-                  <div className="inline-flex items-center gap-4 text-sm font-semibold tracking-wider text-white uppercase group cursor-pointer hover:text-yellow-400 transition-colors duration-300">
+                  {/* <div className="inline-flex items-center gap-4 text-sm font-semibold tracking-wider text-white uppercase group cursor-pointer hover:text-yellow-400 transition-colors duration-300">
                     <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:border-yellow-400/50 group-hover:bg-yellow-400/10 transition-all duration-300">
                       <svg className="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                     </div>
                     Watch Full Video
-                  </div>
+                  </div> */}
                 </div>
               </div>
 

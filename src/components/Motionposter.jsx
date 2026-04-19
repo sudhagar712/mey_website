@@ -14,34 +14,27 @@ const cards = [
   },
   {
     title: "Ad Campaign",
-    video: "https://res.cloudinary.com/dgphjgzgt/video/upload/v1774259179/Gulf_RENDER_COMP_Final_2_vigp9h.mp4",
+    video: "https://res.cloudinary.com/drnmkhg5o/video/upload/v1776625852/TNPDCL_LAUNCH_TOMOrROW_2_givbgl.mp4",
   },
   {
     title: "Product Shoot",
-    video: "https://res.cloudinary.com/dgphjgzgt/video/upload/v1774259142/b0cd6816-c64a-42cb-8776-2e38fbbab640_kuiyfs.mp4",
+    video: "https://res.cloudinary.com/drnmkhg5o/video/upload/v1776625838/Medway_Gif_qn4nrd.mp4",
   },
   {
     title: "Product Shoot",
-    video: "https://res.cloudinary.com/dgphjgzgt/video/upload/v1775900212/Medway_Gif_egr30k.mp4",
+    video: "https://res.cloudinary.com/drnmkhg5o/video/upload/v1776625834/Medway_Neubon_szttqo.mp4",
   },
 
-  {
-    title: "Product Shoot",
-    video: "https://res.cloudinary.com/dgphjgzgt/video/upload/v1775900210/TNPDCL_LAUNCH_TOMOrROW_2_zrys7m.mp4",
-  },
+ 
 
 
   {
     title: "Product Shoot",
-    video: "https://res.cloudinary.com/dgphjgzgt/video/upload/v1775900210/Medway_Neubon_vdx98h.mp4",
+    video: "https://res.cloudinary.com/drnmkhg5o/video/upload/v1776625827/Medway_Gif_2_fz78gn.mp4",
   },
 
 
 
-  {
-    title: "Product Shoot",
-    video: "https://res.cloudinary.com/dgphjgzgt/video/upload/v1775900209/Medway_Gif_2_dvsafi.mp4",
-  },
 
 
 

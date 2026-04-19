@@ -184,7 +184,7 @@ const CAPABILITIES = () => {
         }}
       />
 
-      <div className="max-w-[1200px] mx-auto">
+      <div className="max-w-[1100px] mx-auto">
         {/* HEADER */}
         <motion.div 
           initial={{ opacity: 0, y: 50 }}

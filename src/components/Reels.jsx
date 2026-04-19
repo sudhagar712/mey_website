@@ -42,7 +42,9 @@ const Reels = () => {
   const [progress, setProgress] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+  const [isInView, setIsInView] = useState(true);
 
+  const prevActiveRef = useRef(0);
   const videoRefs = useRef([]);
   const touchStartX = useRef(0);
   const autoSlideRef = useRef(null);
@@ -63,8 +65,10 @@ const Reels = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
+          const isVisibleEnough = entry.isIntersecting && entry.intersectionRatio >= 0.3;
+          setIsInView(isVisibleEnough);
           // If the component is less than 30% visible, mute the video
-          if (!entry.isIntersecting) {
+          if (!isVisibleEnough) {
             setIsMuted(true);
           }
         });
@@ -111,22 +115,30 @@ const Reels = () => {
       animationFrame = requestAnimationFrame(updateProgress);
     };
 
-    setProgress(0);
-
     videoRefs.current.forEach((video, i) => {
       if (!video) return;
 
       if (i === active) {
-        video.currentTime = 0;
-        video.play().catch(() => { });
-        animationFrame = requestAnimationFrame(updateProgress);
+        if (prevActiveRef.current !== active) {
+          video.currentTime = 0;
+          setProgress(0);
+        }
+
+        if (isInView) {
+          video.play().catch(() => { });
+          animationFrame = requestAnimationFrame(updateProgress);
+        } else {
+          video.pause();
+        }
       } else {
         video.pause();
       }
     });
 
+    prevActiveRef.current = active;
+
     return () => cancelAnimationFrame(animationFrame);
-  }, [active]);
+  }, [active, isInView]);
 
   // 👉 Controls
   const nextSlide = () => {

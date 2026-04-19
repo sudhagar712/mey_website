@@ -59,10 +59,10 @@ const SmartConversations = () => {
         }}
       />
 
-      <div className="max-w-[1200px] mx-auto">
+      <div className="max-w-[850px] mx-auto">
         {/* Title */}
         <motion.h2
-          className="text-center text-xl sm:text-2xl md:text-md lg:text-2xl  text-gray-900 mb-8 md:mb-10"
+          className="text-center text-xl sm:text-2xl md:text-md lg:text-2xl font-bold text-gray-900 mb-8 md:mb-10"
           initial={{ y: 14, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ amount: 0.6 }} // ❗ re-trigger
@@ -123,10 +123,10 @@ const SmartConversations = () => {
                   show: { y: 0, opacity: 1 },
                 }}
               >
-                <div className="text-2xl md:text-4xl font-semibold mb-1">
+                <div className="text-2xl md:text-2xl font-semibold mb-1">
                   <CountUp value={3000} suffix="+" />
                 </div>
-                <div className="text-xs md:text-sm uppercase tracking-[0.2em] opacity-80">
+                <div className="text-xs md:text-xs uppercase tracking-[0.2em] opacity-80">
                   Happy <br /> Customer
                 </div>
               </motion.div>
@@ -138,10 +138,10 @@ const SmartConversations = () => {
                   show: { y: 0, opacity: 1 },
                 }}
               >
-                <div className="text-2xl md:text-4xl font-semibold mb-1">
+                <div className="text-2xl md:text-2xl font-semibold mb-1">
                   <CountUp value={50} suffix="+" />
                 </div>
-                <div className="text-xs md:text-sm uppercase tracking-[0.2em] opacity-80">
+                <div className="text-xs md:text-xs uppercase tracking-[0.2em] opacity-80">
                   Courses
                   <br />
                   Offered
@@ -155,10 +155,10 @@ const SmartConversations = () => {
                   show: { y: 0, opacity: 1 },
                 }}
               >
-                <div className="text-2xl md:text-4xl font-semibold mb-1">
+                <div className="text-2xl md:text-2xl font-semibold mb-1">
                   <CountUp value={100} suffix="+" />
                 </div>
-                <div className="text-xs md:text-sm uppercase tracking-[0.2em] opacity-80">
+                <div className="text-xs md:text-xs uppercase tracking-[0.2em] opacity-80">
                   Billion <br /> Message
                 </div>
               </motion.div>
@@ -170,10 +170,10 @@ const SmartConversations = () => {
                   show: { y: 0, opacity: 1 },
                 }}
               >
-                <div className="text-2xl md:text-4xl font-semibold mb-1">
+                <div className="text-2xl md:text-2xl font-semibold mb-1">
                   <CountUp value={99} suffix="%" />
                 </div>
-                <div className="text-xs md:text-sm uppercase tracking-[0.2em] opacity-80">
+                <div className="text-xs md:text-xs uppercase tracking-[0.2em] opacity-80">
                   API <br /> Delivery
                 </div>
               </motion.div>
@@ -185,10 +185,10 @@ const SmartConversations = () => {
                   show: { y: 0, opacity: 1 },
                 }}
               >
-                <div className="text-2xl md:text-4xl font-semibold mb-1">
+                <div className="text-2xl md:text-2xl font-semibold mb-1">
                   <CountUp value={70} suffix="%" />
                 </div>
-                <div className="text-xs md:text-sm uppercase tracking-[0.2em] opacity-80">
+                <div className="text-xs md:text-xs uppercase tracking-[0.2em] opacity-80">
                   Reducing <br /> Manual Work
                 </div>
               </motion.div>
@@ -200,10 +200,10 @@ const SmartConversations = () => {
                   show: { y: 0, opacity: 1 },
                 }}
               >
-                <div className="text-2xl md:text-4xl font-semibold mb-1">
+                <div className="text-2xl md:text-2xl font-semibold mb-1">
                   <CountUp value={85} suffix="%" />
                 </div>
-                <div className="text-xs md:text-sm uppercase tracking-[0.2em] opacity-80">
+                <div className="text-xs md:text-xs uppercase tracking-[0.2em] opacity-80">
                   Increasing <br /> Engagement
                 </div>
               </motion.div>
