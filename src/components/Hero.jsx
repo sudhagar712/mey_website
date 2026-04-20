@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <div className="min-h-screen ">
       <motion.section
-        className="relative bg-[#fec000] h-[350px] md:h-[70vh] lg:h-[70vh] px-6 md:px-12 lg:px-24 flex flex-col items-center justify-center overflow-hidden"
+        className="relative bg-[#fec000] h-[350px] md:h-[50vh] lg:h-[70vh] px-6 md:px-12 lg:px-24 flex flex-col items-center justify-center overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -89,7 +89,7 @@ const Hero = () => {
             backgroundSize: "4rem 4rem",
           }}
         />
-        <p className="text-xl md:text-5xl  lg:text-2xl text-black/80    leading-[1.6]  md:mb-10 lg:mb-5">
+        <p className="text-xl md:text-5xl  lg:text-2xl text-black/80    leading-[1.6] mb-8 md:mb-10 lg:mb-5">
           We build{" "}
           <span className="   border-b border-black/30 text-[#fec000] font-bold ">
             clear
