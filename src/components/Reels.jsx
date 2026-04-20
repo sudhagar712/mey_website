@@ -39,6 +39,7 @@ const reelsData = [
 const Reels = () => {
   const [active, setActive] = useState(0);
   const [isMuted, setIsMuted] = useState(true);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(true);
   const [progress, setProgress] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
@@ -60,20 +61,24 @@ const Reels = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // 👉 INTERSECTION OBSERVER FOR MUTING WHEN SCROLLING AWAY
+  // 👉 INTERSECTION OBSERVER FOR MUTING/PAUSING WHEN SCROLLING AWAY
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          const isVisibleEnough = entry.isIntersecting && entry.intersectionRatio >= 0.3;
+          // Pause if less than 50% of the component is visible
+          const isVisibleEnough = entry.isIntersecting && entry.intersectionRatio >= 0.5;
           setIsInView(isVisibleEnough);
-          // If the component is less than 30% visible, mute the video
+          
           if (!isVisibleEnough) {
             setIsMuted(true);
+            setIsVideoPlaying(false);
+          } else {
+            setIsVideoPlaying(true);
           }
         });
       },
-      { threshold: 0.3 } // Trigger when less than 30% is visible
+      { threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1] } 
     );
 
     if (componentRef.current) {
@@ -89,7 +94,7 @@ const Reels = () => {
 
   // 👉 AUTO SLIDE (5 sec)
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || !isInView || !isVideoPlaying) return;
 
     autoSlideRef.current = setInterval(() => {
       setActive((prev) =>
@@ -99,7 +104,7 @@ const Reels = () => {
     }, 4500);
 
     return () => clearInterval(autoSlideRef.current);
-  }, [active, isPaused]);
+  }, [active, isPaused, isInView, isVideoPlaying]);
 
   // 👉 VIDEO + PROGRESS
   useEffect(() => {
@@ -124,7 +129,7 @@ const Reels = () => {
           setProgress(0);
         }
 
-        if (isInView) {
+        if (isInView && isVideoPlaying) {
           video.play().catch(() => { });
           animationFrame = requestAnimationFrame(updateProgress);
         } else {
@@ -138,21 +143,21 @@ const Reels = () => {
     prevActiveRef.current = active;
 
     return () => cancelAnimationFrame(animationFrame);
-  }, [active, isInView]);
+  }, [active, isInView, isVideoPlaying]);
 
   // 👉 Controls
   const nextSlide = () => {
     setActive((prev) =>
       prev === reelsData.length - 1 ? 0 : prev + 1
     );
-    // Do NOT auto-unmute — only user click should unmute
+    setIsVideoPlaying(true);
   };
 
   const prevSlide = () => {
     setActive((prev) =>
       prev === 0 ? reelsData.length - 1 : prev - 1
     );
-    // Do NOT auto-unmute — only user click should unmute
+    setIsVideoPlaying(true);
   };
 
   // 👉 Swipe
@@ -190,7 +195,7 @@ const Reels = () => {
 
 
       {/* HEADER */}
-      <div className="container mx-auto px-6 lg:px-20 mb-16 relative z-20 flex flex-row justify-between items-center md:items-center gap-8">
+      <div className="container mx-auto px-6 lg:px-40 mb-16 relative z-20 flex flex-row justify-between items-center md:items-center gap-8">
         <div className="flex-1">
           <div className="flex  gap-4 text-yellow-500 text-center mb-6">
 
@@ -220,7 +225,7 @@ const Reels = () => {
 
       {/* CAROUSEL */}
       <div
-        className="relative w-full h-[550px] md:h-[650px]  flex justify-center items-center z-20"
+        className="relative w-full h-[550px] md:h-[600px]   flex justify-center items-center z-20"
         style={{ perspective: "1500px" }}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
@@ -243,7 +248,12 @@ const Reels = () => {
           return (
             <div
               key={index}
-              onClick={() => { if (!isActive) setActive(index); }}
+              onClick={() => {
+                if (!isActive) {
+                  setActive(index);
+                  setIsVideoPlaying(true);
+                }
+              }}
               className={`absolute aspect-[9/16] rounded-[2rem]  overflow-hidden bg-zinc-900 
                 ${isActive ? 'border border-yellow-400/50 shadow-[0_0_50px_rgba(250,204,21,0.15)] cursor-default' : 'border border-white/5 cursor-pointer hover:border-white/20'}
               `}
@@ -280,24 +290,25 @@ const Reels = () => {
 
               {isActive && (
                 <>
-                  {/* ─── CENTER MUTE/UNMUTE BUTTON ─── */}
-                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  {/* ─── TOP RIGHT CONTROLS (MUTE & PLAY/PAUSE) ─── */}
+                  <div className="absolute top-5 right-5 flex items-center justify-center gap-3 pointer-events-none z-30">
+                    {/* MUTE / UNMUTE */}
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
                         setIsMuted((m) => !m);
                       }}
-                      className="pointer-events-auto group relative flex items-center justify-center"
+                      className="pointer-events-auto group relative flex items-center justify-center transition-transform hover:scale-110"
                       style={{
-                        width: 64,
-                        height: 64,
+                        width: 44,
+                        height: 44,
                         borderRadius: "50%",
                         background: isMuted
                           ? "rgba(255,255,255,0.08)"
                           : "rgba(250,204,21,0.15)",
                         border: isMuted
-                          ? "1.5px solid rgba(255,255,255,0.18)"
-                          : "1.5px solid rgba(250,204,21,0.5)",
+                          ? "1px solid rgba(255,255,255,0.18)"
+                          : "1px solid rgba(250,204,21,0.5)",
                         backdropFilter: "blur(12px)",
                         boxShadow: isMuted
                           ? "0 4px 32px rgba(0,0,0,0.4)"
@@ -305,7 +316,6 @@ const Reels = () => {
                         transition: "all 0.35s cubic-bezier(0.34,1.56,0.64,1)",
                       }}
                     >
-                      {/* Pulse ring when muted */}
                       {isMuted && (
                         <span
                           className="absolute inset-0 rounded-full animate-ping"
@@ -316,9 +326,8 @@ const Reels = () => {
                         />
                       )}
                       {isMuted ? (
-                        // Muted icon
                         <svg
-                          className="w-7 h-7"
+                          className="w-5 h-5"
                           style={{ color: "rgba(255,255,255,0.85)" }}
                           fill="none" viewBox="0 0 24 24" stroke="currentColor"
                         >
@@ -328,14 +337,65 @@ const Reels = () => {
                             d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
                         </svg>
                       ) : (
-                        // Unmuted icon
                         <svg
-                          className="w-7 h-7"
+                          className="w-5 h-5"
                           style={{ color: "#facc15" }}
                           fill="none" viewBox="0 0 24 24" stroke="currentColor"
                         >
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8}
                             d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                        </svg>
+                      )}
+                    </button>
+
+                    {/* PLAY / PAUSE */}
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setIsVideoPlaying((p) => !p);
+                      }}
+                      className="pointer-events-auto group relative flex items-center justify-center transition-transform hover:scale-110"
+                      style={{
+                        width: 44,
+                        height: 44,
+                        borderRadius: "50%",
+                        background: !isVideoPlaying
+                          ? "rgba(255,255,255,0.08)"
+                          : "rgba(250,204,21,0.15)",
+                        border: !isVideoPlaying
+                          ? "1px solid rgba(255,255,255,0.18)"
+                          : "1px solid rgba(250,204,21,0.5)",
+                        backdropFilter: "blur(12px)",
+                        boxShadow: !isVideoPlaying
+                          ? "0 4px 32px rgba(0,0,0,0.4)"
+                          : "0 4px 32px rgba(250,204,21,0.25), 0 0 0 8px rgba(250,204,21,0.07)",
+                        transition: "all 0.35s cubic-bezier(0.34,1.56,0.64,1)",
+                      }}
+                    >
+                      {!isVideoPlaying && (
+                        <span
+                          className="absolute inset-0 rounded-full animate-ping"
+                          style={{
+                            background: "rgba(255,255,255,0.07)",
+                            animationDuration: "1.8s",
+                          }}
+                        />
+                      )}
+                      {!isVideoPlaying ? (
+                        <svg
+                          className="w-5 h-5 ml-0.5"
+                          style={{ color: "rgba(255,255,255,0.85)" }}
+                          fill="currentColor" viewBox="0 0 24 24"
+                        >
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      ) : (
+                        <svg
+                          className="w-5 h-5"
+                          style={{ color: "#facc15" }}
+                          fill="currentColor" viewBox="0 0 24 24"
+                        >
+                          <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
                         </svg>
                       )}
                     </button>

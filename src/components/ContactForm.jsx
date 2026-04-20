@@ -3,6 +3,7 @@ import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 
+
 // ─── EmailJS Config ───────────────────────────────────────
 // Replace these with your actual EmailJS credentials
 const EMAILJS_SERVICE_ID  = 'service_9yu5t4j';
@@ -64,6 +65,11 @@ const ContactForm = () => {
 
         if (!form.email.trim()) newErrors.email = 'Email is required';
         else if (!validateEmail(form.email)) newErrors.email = 'Enter a valid email address';
+
+        if (!form.company.trim()) newErrors.company = 'Company is required';
+        if (!form.service) newErrors.service = 'Service is required';
+        if (!form.budget) newErrors.budget = 'Budget is required';
+        if (!form.details.trim()) newErrors.details = 'Project details are required';
 
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
@@ -241,7 +247,7 @@ const ContactForm = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
           onSubmit={handleSubmit}
-          className="w-full bg-black rounded-[2.5rem] px-5 py-8 md:p-12 lg:p-16 shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-gray-100 relative group"
+          className="w-full bg-black rounded-[2.5rem] px-5 py-8 md:p-12 lg:px-16 lg:py-14 shadow-2xl border border-white/10 relative group"
         >
           {/* Subtle decorative accent */}
           <div className="absolute top-0 left-0 w-full h-2 rounded-t-[2.5rem]"></div>
@@ -287,16 +293,25 @@ const ContactForm = () => {
             </div>
             <div className="flex flex-col relative group/input">
               <label className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-yellow-500 mb-3 transition-colors group-focus-within/input:text-black">
-                Company
+                Company *
               </label>
               <input
                 type="text"
                 name="company"
                 value={form.company}
                 onChange={handleChange}
-                className="bg-[#fcfcfc] border-b-2 border-gray-200 px-4 py-4  text-lg focus:outline-none focus:border-black transition-all duration-300 hover:bg-gray-50 rounded-t-lg"
+                className={`bg-[#fcfcfc] border-b-2 px-4 py-4 text-black text-lg focus:outline-none transition-all duration-300 hover:bg-gray-50 rounded-t-lg ${
+                  errors.company
+                    ? "border-red-400 focus:border-red-500"
+                    : "border-gray-200 focus:border-black"
+                }`}
                 placeholder="Business Name"
               />
+              {errors.company && (
+                <p className="mt-1.5 text-xs text-red-400 font-medium">
+                  {errors.company}
+                </p>
+              )}
             </div>
           </div>
 
@@ -352,14 +367,18 @@ const ContactForm = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-10">
             <div className="flex flex-col relative group/input">
               <label className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-yellow-500 mb-3 transition-colors group-focus-within/input:text-black">
-                Service Required
+                Service Required *
               </label>
               <div className="relative">
                 <select
                   name="service"
                   value={form.service}
                   onChange={handleChange}
-                  className="w-full bg-[#fcfcfc] border-b-2 border-gray-200 px-4 py-4 text-black text-lg appearance-none cursor-pointer focus:outline-none focus:border-black transition-all duration-300 hover:bg-gray-50 rounded-t-lg"
+                  className={`w-full bg-[#fcfcfc] border-b-2 px-4 py-4 text-black text-lg appearance-none cursor-pointer focus:outline-none transition-all duration-300 hover:bg-gray-50 rounded-t-lg ${
+                    errors.service
+                      ? "border-red-400 focus:border-red-500"
+                      : "border-gray-200 focus:border-black"
+                  }`}
                 >
                   <option value="" disabled>
                     Select a service
@@ -386,17 +405,26 @@ const ContactForm = () => {
                   </svg>
                 </div>
               </div>
+              {errors.service && (
+                <p className="mt-1.5 text-xs text-red-400 font-medium">
+                  {errors.service}
+                </p>
+              )}
             </div>
             <div className="flex flex-col relative group/input">
               <label className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-yellow-500 mb-3 transition-colors group-focus-within/input:text-black">
-                Budget Range
+                Budget Range *
               </label>
               <div className="relative">
                 <select
                   name="budget"
                   value={form.budget}
                   onChange={handleChange}
-                  className="w-full bg-[#fcfcfc] border-b-2 border-gray-200 px-4 py-4 text-black text-lg appearance-none cursor-pointer focus:outline-none focus:border-black transition-all duration-300 hover:bg-gray-50 rounded-t-lg"
+                  className={`w-full bg-[#fcfcfc] border-b-2 px-4 py-4 text-black text-lg appearance-none cursor-pointer focus:outline-none transition-all duration-300 hover:bg-gray-50 rounded-t-lg ${
+                    errors.budget
+                      ? "border-red-400 focus:border-red-500"
+                      : "border-gray-200 focus:border-black"
+                  }`}
                 >
                   <option value="" disabled>
                     Select budget
@@ -423,24 +451,38 @@ const ContactForm = () => {
                   </svg>
                 </div>
               </div>
+              {errors.budget && (
+                <p className="mt-1.5 text-xs text-red-400 font-medium">
+                  {errors.budget}
+                </p>
+              )}
             </div>
           </div>
 
-          <div className="flex flex-col relative group/input mb-12 md:mb-37   ">
+          <div className="flex flex-col relative group/input mb-12 md:mb-37 ">
             <label className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-yellow-500 mb-3 transition-colors group-focus-within/input:text-black">
-              Project Details
+              Project Details *
             </label>
             <textarea
               name="details"
               value={form.details}
               onChange={handleChange}
               rows={4}
-              className="bg-[#fcfcfc] border-b-2 border-gray-200 px-4 py-10 text-black text-lg focus:outline-none focus:border-black transition-all duration-300 hover:bg-gray-50 resize-none rounded-t-lg"
+              className={`bg-[#fcfcfc] border-b-2 px-4 py-10 text-black text-lg focus:outline-none transition-all duration-300 hover:bg-gray-50 resize-none rounded-t-lg ${
+                errors.details
+                  ? "border-red-400 focus:border-red-500"
+                  : "border-gray-200 focus:border-black"
+              }`}
               placeholder="Enter a Project Details.."
             />
+            {errors.details && (
+              <p className="mt-1.5 text-xs text-red-400 font-medium">
+                {errors.details}
+              </p>
+            )}
           </div>
 
-          <div className="flex justify-center sm:justify-end">
+          <div className="flex justify-center  mt-[-90px] sm:justify-end">
             <motion.button
               whileHover={{ scale: loading ? 1 : 1.05 }}
               whileTap={{ scale: loading ? 1 : 0.95 }}

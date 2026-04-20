@@ -78,7 +78,7 @@ const Footer = () => {
 
      
       </div>
-        <hr className="w-screen relative left-1/2 -translate-x-1/2 border-white/20" />
+        <hr className="w-screen mt-4 relative left-1/2 -translate-x-1/2 border-1 border-white/50" />
 
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-10">

@@ -29,7 +29,7 @@ const Home = () => {
 
       <DIFFERENTIATOR />
 
-      <section className="bg-black py-24  md:px-12 lg:px-30 relative">
+      <section className="bg-black py-24 md:py-32 px-6 md:px-12 relative flex justify-center">
         {/* Subtle Grid Background */}
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.05]"
@@ -40,15 +40,15 @@ const Home = () => {
           }}
         />
 
-        <div className="">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-20 items-start">
+        <div className="w-full max-w-7xl mx-auto relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Sidebar Column (Left) */}
-            <div className="w-full order-2 lg:order-1 p-2">
+            <div className="w-full lg:col-span-5 order-2 lg:order-1">
               <ContactSidebar />
             </div>
 
             {/* Form Column (Right) */}
-            <div className="w-full lg:order-2 order-1 p-3 md:p-0">
+            <div className="w-full lg:col-span-7 order-1 lg:order-2 p-3 md:p-0">
               <Element name="contact">
                 <ContactForm />
               </Element>

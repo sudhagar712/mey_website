@@ -32,7 +32,7 @@ const articles = [
     id: "website-design-mistakes",
     title: "Website Design Mistakes Businesses Make (And How to Fix Them)",
     excerpt:
-      "A beautiful website that doesn’t convert is a liability. These are the most common design and structural mistakes we see—and the fixes.",
+      "A beautiful website that doesn’t convert is a liability. These are the most common design and structural mistakes we see and the fixes.",
     readTime: "8 min read",
     category: "Website",
     image:
@@ -187,13 +187,13 @@ const Insights = () => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 30, scale: 0.95 }}
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-white text-black rounded-3xl shadow-2xl"
+              className="relative w-full max-w-6xl max-h-[90vh] md:h-[85vh] flex flex-col md:flex-row overflow-hidden bg-white text-black rounded-3xl shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
               <button
                 onClick={closeModal}
-                className="absolute top-4 right-4 md:top-6 md:right-6 z-10 p-3 bg-black/40 hover:bg-black/60 text-white rounded-full backdrop-blur-md transition-colors"
+                className="absolute top-4 right-4 md:top-6 md:right-8 z-50 p-2 md:p-3 bg-black/40 hover:bg-black/60 md:bg-gray-100 md:hover:bg-gray-200 text-white md:text-black rounded-full backdrop-blur-md transition-colors shadow-sm"
                 aria-label="Close modal"
               >
                 <svg
@@ -212,7 +212,8 @@ const Insights = () => {
                 </svg>
               </button>
 
-              <div className="w-full h-[250px] md:h-[450px]">
+              {/* Left Side: Image */}
+              <div className="relative w-full h-[250px] md:h-auto md:w-[40%] lg:w-[45%] flex-shrink-0">
                 <img
                   src={
                     selectedArticle.id === "branding-vs-marketing-agency"
@@ -220,11 +221,12 @@ const Insights = () => {
                       : selectedArticle.image
                   }
                   alt={selectedArticle.title}
-                  className="w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
               </div>
 
-              <div className="p-8 md:p-14 lg:px-20">
+              {/* Right Side: Content */}
+              <div className="flex-1 overflow-y-auto p-8 md:p-12 lg:p-16 md:pr-24">
                 <div className="flex items-center gap-3 text-xs md:text-sm font-semibold text-yellow-600 mb-6 uppercase tracking-widest">
                   <span>{selectedArticle.category}</span>
                   <span>•</span>
@@ -281,7 +283,7 @@ const Insights = () => {
                     Instead, we advocate for a structured, deeply thoughtful
                     approach to building lasting brand value. It requires
                     discipline, research, and the willingness to make difficult
-                    choices about what your brand will—and will not—stand for.
+                    choices about what your brand will and will not stand for.
                   </p>
                 </div>
               </div>

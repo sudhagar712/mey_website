@@ -3,6 +3,7 @@ import SEO from '../components/SEO';
 import PageBanner from '../components/PageBanner';
 import ContactForm from '../components/ContactForm';
 import ContactSidebar from '../components/ContactSidebar';
+import { Element } from "react-scroll";
 
 const serviceOptions = [
     'Brand Identity Design',
@@ -49,19 +50,21 @@ const Contact = () => {
               backgroundSize: "4rem 4rem",
             }}
           />
-          <div className="max-w-[1200px] mx-auto ">
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-10 items-start">
-              {/* Sidebar Column (Left) */}
-              <div className="w-full p-2 order-2 lg:order-1">
-                <ContactSidebar />
-              </div>
+         <div className="w-full max-w-7xl mx-auto relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            {/* Sidebar Column (Left) */}
+            <div className="w-full lg:col-span-5 order-2 lg:order-1">
+              <ContactSidebar />
+            </div>
 
-              {/* Form Column (Right) */}
-              <div className="w-full p-2 order-1 lg:order-2">
+            {/* Form Column (Right) */}
+            <div className="w-full lg:col-span-7 order-1 lg:order-2 p-3 md:p-0">
+              <Element name="contact">
                 <ContactForm />
-              </div>
+              </Element>
             </div>
           </div>
+        </div>
         </section>
 
         {/* Google Map */}

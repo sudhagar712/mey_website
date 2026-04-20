@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const videos = [
   {
     id: 1,
-    src: "https://res.cloudinary.com/dgphjgzgt/video/upload/v1774856453/ASPIRE_DI_FINAL_VERSION_FINALOUT_1_dj6ozj.mp4",
+    src: "https://res.cloudinary.com/drnmkhg5o/video/upload/v1776666620/c1_gtyipy.mp4",
   },
   {
     id: 2,
@@ -12,11 +12,11 @@ const videos = [
   },
   {
     id: 3,
-    src: "https://res.cloudinary.com/dgphjgzgt/video/upload/v1774858181/Cauvery_Rice_Correction_1_aqfzf3.mp4",
+    src: "https://res.cloudinary.com/drnmkhg5o/video/upload/v1776667622/c3_db1gh4.mp4",
   },
   {
     id: 4,
-    src: "https://res.cloudinary.com/dgphjgzgt/video/upload/v1774858932/6bd12d62-4664-464f-ae50-67b24dc5afcd_wiftsq.mp4",
+    src: "https://res.cloudinary.com/drnmkhg5o/video/upload/v1776667651/c4_wdgte7.mp4",
   },
 ];
 
