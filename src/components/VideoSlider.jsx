@@ -207,10 +207,10 @@ useEffect(() => {
   {/* Corner Decorative Element (UPDATED) */}
   <div
     className={`absolute ${
-      isEven ? "-left-6 md:-left-12" : "-right-6 md:-right-12"
-    } -bottom-6 md:-bottom-10 w-24 h-24 md:w-32 md:h-32 
+      isEven ? "-left-4 md:-left-12" : "-right-4 md:-right-12"
+    } -bottom-6 md:-bottom-10 w-20 h-20 md:w-32 md:h-32 
     bg-black/40 backdrop-blur-2xl rounded-full border border-white/10 
-    hidden sm:flex items-center justify-center z-10 shadow-2xl`}
+    flex items-center justify-center z-10 shadow-2xl`}
   >
     {/* spinning ring */}
     <div className="w-12 h-12 md:w-16 md:h-16 rounded-full border border-dashed border-white/20 animate-[spin_10s_linear_infinite]"></div>
