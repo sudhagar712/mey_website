@@ -7,9 +7,9 @@ import logol from "../assets/logol2.png"
 
 const Hero = () => {
   return (
-    <div className="min-h-screen ">
+    <div className="min-h-screen mt-[-80px] ">
       <motion.section
-        className="relative bg-[#fec000] h-[350px] md:h-[800px] lg:h-[500px] px-6 md:px-12 lg:px-24 flex flex-col items-center justify-center overflow-hidden"
+        className="relative bg-[#fec000]  px-6 md:px-12 lg:px-24 flex flex-col items-center justify-center overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
