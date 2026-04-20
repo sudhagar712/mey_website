@@ -59,7 +59,7 @@ const SmartConversations = () => {
         }}
       />
 
-      <div className="max-w-[850px] mx-auto">
+      <div className="max-w-[1300px] mx-auto">
         {/* Title */}
         <motion.h2
           className="text-center text-xl sm:text-2xl md:text-md lg:text-2xl font-bold text-gray-900 mb-8 md:mb-10"
