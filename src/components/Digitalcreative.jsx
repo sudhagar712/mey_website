@@ -3,25 +3,20 @@ import { motion, AnimatePresence } from "framer-motion";
 
 
 const gallery = [
-  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/v1776258239/01_trauma_r7zcdu.jpg", title: "Trauma Care Campaign" },
-  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/v1776258241/1_sizkjp.jpg", title: "Brand Social Post" },
-  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/v1776258231/Luxus_Camp_yqcxkt.jpg", title: "Luxury Camp Branding" },
-  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/v1776258240/3M_car_care_mdxeaw.jpg", title: "3M Car Care Creative" },
-  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/v1776258271/Alain_Dehaze_awkhnq.jpg", title: "Corporate Leader Series" },
-  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/v1776258245/Boosting_Exports_Imports_mya8pe.jpg", title: "Exports & Imports Campaign" },
-  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/v1776258246/bull_show_2_izplp5.jpg", title: "Event Promotion" },
-  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/v1776258252/Davos_Series_8_vkw49u.jpg", title: "Davos Series Creative" },
-  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/v1776258249/cp_1_khh6na.jpg", title: "Corporate Post" },
-  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/v1776258247/cultural_fest_2_x1nhko.jpg", title: "Cultural Fest Poster" },
-  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/v1776258253/Davos_Series_12_sgpley.jpg", title: "Davos Campaign" },
-  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/v1776258250/Davos_Series_5_tlnvji.jpg", title: "Brand Identity Visual" },
-  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/v1776258242/Vision_and_Ideas_julkm9.jpg", title: "Vision Campaign" },
-  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/v1776258234/Meet_Successful_IT_Entrepreneurs_uboiup.jpg", title: "Entrepreneurs Event" },
-  
-
-
-
-
+  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/f_auto,q_auto/v1776258239/01_trauma_r7zcdu.jpg", title: "Trauma Care Campaign" },
+  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/f_auto,q_auto/v1776258241/1_sizkjp.jpg", title: "Brand Social Post" },
+  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/f_auto,q_auto/v1776258231/Luxus_Camp_yqcxkt.jpg", title: "Luxury Camp Branding" },
+  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/f_auto,q_auto/v1776258240/3M_car_care_mdxeaw.jpg", title: "3M Car Care Creative" },
+  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/f_auto,q_auto/v1776258271/Alain_Dehaze_awkhnq.jpg", title: "Corporate Leader Series" },
+  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/f_auto,q_auto/v1776258245/Boosting_Exports_Imports_mya8pe.jpg", title: "Exports & Imports Campaign" },
+  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/f_auto,q_auto/v1776258246/bull_show_2_izplp5.jpg", title: "Event Promotion" },
+  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/f_auto,q_auto/v1776258252/Davos_Series_8_vkw49u.jpg", title: "Davos Series Creative" },
+  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/f_auto,q_auto/v1776258249/cp_1_khh6na.jpg", title: "Corporate Post" },
+  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/f_auto,q_auto/v1776258247/cultural_fest_2_x1nhko.jpg", title: "Cultural Fest Poster" },
+  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/f_auto,q_auto/v1776258253/Davos_Series_12_sgpley.jpg", title: "Davos Campaign" },
+  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/f_auto,q_auto/v1776258250/Davos_Series_5_tlnvji.jpg", title: "Brand Identity Visual" },
+  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/f_auto,q_auto/v1776258242/Vision_and_Ideas_julkm9.jpg", title: "Vision Campaign" },
+  { img: "https://res.cloudinary.com/drnmkhg5o/image/upload/f_auto,q_auto/v1776258234/Meet_Successful_IT_Entrepreneurs_uboiup.jpg", title: "Entrepreneurs Event" },
 ];
 
 const metroStyles = [
@@ -97,8 +92,10 @@ const DigitalCreativeGrid = () => {
                 {/* Background Image with optional Metro Tinting */}
                 <img
                   onLoad={(e) => e.target.classList.remove("opacity-0")}
-                  src={item.img}
+                  src={item.img.replace('upload/f_auto,q_auto/', 'upload/f_auto,q_auto,w_600/')}
                   alt={item.title}
+                  loading="lazy"
+                  decoding="async"
                   // Raw image is revealed upon hover naturally by dropping the blend mode!
                   className={`absolute inset-0 w-full h-full object-cover transition-all duration-[1s] ease-out group-hover:scale-110 group-hover:mix-blend-normal group-hover:opacity-100 ${style.tintClass}`}
                 />
@@ -206,6 +203,7 @@ const DigitalCreativeGrid = () => {
                 <img
                   src={gallery[selectedIndex].img}
                   alt={gallery[selectedIndex].title}
+                  decoding="async"
                   className="max-w-full max-h-[75vh] object-contain rounded-xl shadow-[0_0_50px_rgba(0,0,0,0.5)] ring-1 ring-white/10 select-none pointer-events-none"
                 />
                 <div className="mt-8 text-center px-4">
