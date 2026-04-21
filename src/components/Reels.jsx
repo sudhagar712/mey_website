@@ -4,33 +4,33 @@ const reelsData = [
   {
     title: "Reel 01",
     video:
-      "https://res.cloudinary.com/drnmkhg5o/video/upload/v1776251996/reelnew_xqqaaf.mp4",
+      "https://res.cloudinary.com/drnmkhg5o/video/upload/f_auto,q_auto/v1776251996/reelnew_xqqaaf.mp4",
   },
   {
     title: "Reel 02",
     video:
-      "https://res.cloudinary.com/drnmkhg5o/video/upload/v1776252001/reelnew2_r8s8rv.mp4",
+      "https://res.cloudinary.com/drnmkhg5o/video/upload/f_auto,q_auto/v1776252001/reelnew2_r8s8rv.mp4",
   },
   {
     title: "Reel 03",
     video:
-      "https://res.cloudinary.com/drnmkhg5o/video/upload/v1776251995/reelnew7_wiovzx.mp4",
+      "https://res.cloudinary.com/drnmkhg5o/video/upload/f_auto,q_auto/v1776251995/reelnew7_wiovzx.mp4",
   },
   {
     title: "Reel 04",
     video:
-      "https://res.cloudinary.com/drnmkhg5o/video/upload/v1776251993/reelnew3_rv8yqs.mp4",
+      "https://res.cloudinary.com/drnmkhg5o/video/upload/f_auto,q_auto/v1776251993/reelnew3_rv8yqs.mp4",
   },
 
   {
     title: "Reel 05",
     video:
-      "https://res.cloudinary.com/drnmkhg5o/video/upload/v1776251988/reelnew6_dndlb6.mp4",
+      "https://res.cloudinary.com/drnmkhg5o/video/upload/f_auto,q_auto/v1776251988/reelnew6_dndlb6.mp4",
   },
   {
     title: "Reel 06",
     video:
-      "https://res.cloudinary.com/drnmkhg5o/video/upload/v1776251992/reelnew5_xqp4zi.mp4",
+      "https://res.cloudinary.com/drnmkhg5o/video/upload/f_auto,q_auto/v1776251992/reelnew5_xqp4zi.mp4",
   },
 ];
 
@@ -278,6 +278,7 @@ const Reels = () => {
               <video
                 ref={(el) => (videoRefs.current[index] = el)}
                 src={item.video}
+                poster={item.video.replace('.mp4', '.jpg')}
                 muted={isMuted}
                 loop
                 playsInline
