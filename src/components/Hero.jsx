@@ -40,7 +40,7 @@ const Hero = () => {
             <img
               src={logol}
               alt=""
-              className="w-[700px] h-[150px] md:h-[290px] md:mt-20"
+              className="w-[700px] h-[150px] md:h-[300px] lg:h-[350px] md:mt-20"
             />
 
             {/* Glassmorphism Strip Overlay */}
@@ -89,7 +89,7 @@ const Hero = () => {
             backgroundSize: "4rem 4rem",
           }}
         />
-        <p className="text-xl md:text-5xl  lg:text-2xl  text-black/80  md:mt-10 lg:mt-0   leading-[1.6] mb-8 md:mb-10 lg:mb-5">
+        <p className="text-xl md:text-2xl  lg:text-3xl  text-black/80  md:mt-10 lg:mt-0   leading-[1.6] mb-8 md:mb-10 lg:mb-5">
           We build{" "}
           <span className="   border-b border-black/30 text-[#fec000] font-bold ">
             clear
@@ -106,7 +106,7 @@ const Hero = () => {
         </p>
 
         <motion.div
-          className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto px-2"
+          className="flex flex-col sm:flex-row gap-6 w-full mt-4 sm:w-auto px-2"
           initial={{ y: 10, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true, amount: 0.6 }}

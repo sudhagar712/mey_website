@@ -482,7 +482,7 @@ const ContactForm = () => {
             )}
           </div>
 
-          <div className="flex justify-center  mt-[-90px] sm:justify-end">
+          <div className="flex justify-center  mt-0 md:mt-[-90px] sm:justify-end">
             <motion.button
               whileHover={{ scale: loading ? 1 : 1.05 }}
               whileTap={{ scale: loading ? 1 : 0.95 }}

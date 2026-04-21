@@ -29,7 +29,7 @@ const Home = () => {
 
       <DIFFERENTIATOR />
 
-      <section className="bg-black py-24 md:py-32 px-6 md:px-12 relative flex justify-center">
+      <section className="bg-black py-24 md:py-32  md:px-12 relative flex justify-center">
         {/* Subtle Grid Background */}
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.05]"
