@@ -50,21 +50,21 @@ const Contact = () => {
               backgroundSize: "4rem 4rem",
             }}
           />
-         <div className="w-full max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            {/* Sidebar Column (Left) */}
-            <div className="w-full lg:col-span-5 order-2 lg:order-1">
-              <ContactSidebar />
-            </div>
+          <div className="w-full max-w-7xl mx-auto relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+              {/* Sidebar Column (Left) */}
+              <div className="w-full lg:col-span-5 order-2 lg:order-1">
+                <ContactSidebar />
+              </div>
 
-            {/* Form Column (Right) */}
-            <div className="w-full lg:col-span-7 order-1 lg:order-2 p-3 md:p-0">
-              <Element name="contact">
-                <ContactForm />
-              </Element>
+              {/* Form Column (Right) */}
+              <div className="w-full lg:col-span-7 order-1 lg:order-2 p-3 md:p-0">
+                <Element name="contact">
+                  <ContactForm />
+                </Element>
+              </div>
             </div>
           </div>
-        </div>
         </section>
 
         {/* Google Map */}
@@ -78,16 +78,16 @@ const Contact = () => {
               backgroundSize: "4rem 4rem",
             }}
           />
+         
+
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.6042118807945!2d80.24194607454788!3d13.06084631291643!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526668672d75f1%3A0x168bf45159b6b928!2s11%2C%20Jagannathan%20St%2C%20Ponnangipuram%2C%20Nungambakkam%2C%20Chennai%2C%20Tamil%20Nadu%20600034!5e0!3m2!1sen!2sin!4v1773601855935!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.60396659267!2d80.2444118!3d13.060861899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267f015a9d433%3A0x2c6d4dc39a45597b!2sMEY!5e0!3m2!1sen!2sin!4v1777915189961!5m2!1sen!2sin"
             className="w-full h-full filter p-2 md:p-5 grayscale contrast-125 brightness-90"
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"
             title="MEY Location"
           ></iframe>
-
-         
         </section>
       </main>
     );

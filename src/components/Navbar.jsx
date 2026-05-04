@@ -121,7 +121,7 @@ export default function Navbar() {
                 <p className="text-sm md:text-lg">
                   Address:
                   <br />
-                  11, Jaganathan st, Nungambakkam, Chennai 600034.
+                 11, Jagannathan St, Ponnangipuram, Nungambakkam, Chennai, Tamil Nadu - 600034
                 </p>
               </div>
 

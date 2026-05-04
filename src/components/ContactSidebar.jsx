@@ -27,7 +27,12 @@ const ContactSidebar = () => {
               value: "+918939009966",
               href: "tel:918939009966",
             },
-            { label: "Location", value: "11, Jaganathan st, Nungambakkam, Chennai - 600034", href: null },
+            {
+              label: "Location",
+              value:
+                "11, Jagannathan St, Ponnangipuram, Nungambakkam, Chennai, Tamil Nadu - 600034",
+              href: null,
+            },
           ].map((item) => (
             <div key={item.label} className="group ">
               <p
